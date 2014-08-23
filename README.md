@@ -75,12 +75,12 @@ How the data is generated:
 
 Work that is not yet complete:
 
-[] Design to come from Public Society September 1st, 2014
-[] Image re-sizing during Jekyll build process (also need a way to reference the generated images)
-[] Sorting and filtering the modules list, possibly using Isotope
-[] Sub-views to display the related modules when in a module's detail view
-[] Gateway / intro / help / "how this works" view(s)
-[] Possible addition of search (mostly done via Jekyll Lunar.js search plugin)
-[] Offline mode
+- [ ] Design to come from Public Society September 1st, 2014
+- [ ] Image re-sizing during Jekyll build process (also need a way to reference the generated images)
+- [ ] Sorting and filtering the modules list, possibly using Isotope
+- [ ] Sub-views to display the related modules when in a module's detail view
+- [ ] Gateway / intro / help / "how this works" view(s)
+- [ ] Possible addition of search (mostly done via Jekyll Lunar.js search plugin)
+- [ ] Offline mode
 
 
