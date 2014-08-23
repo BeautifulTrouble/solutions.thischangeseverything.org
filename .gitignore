@@ -1,0 +1,7 @@
+_site
+.DS_Store
+.jekyll-assets-cache
+node_modules
+bower_components
+_vendor
+_Archive

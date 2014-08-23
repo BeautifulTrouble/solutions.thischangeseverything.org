@@ -1,0 +1,24 @@
+[
+{% for tactic in site.tactics %}
+{
+  "title"               : "{{ tactic.title }}",
+  "type"                : "tactic",
+  "related_values"      : [{% for item in tactic.values %}"{{ item }}",{% endfor %} null],
+  "related_tactics"     : [{% for item in tactic.related_tactics %}"{{ item }}",{% endfor %} null],
+  "related_theories"    : [{% for item in tactic.related_theories %}"{{ item }}",{% endfor %} null],
+  "contributors"        : [{% for item in tactic.contributors %}"{{ item }}",{% endfor %} null],
+  "learn_more"          : [{% for item in tactic.learn_more %}"{{ item }}",{% endfor %} null],
+  "tags"                : [{% for tag in tactic.tags %}"{{ tag }}",{% endfor %} null],
+  "images"              : [{% for image in tactic.images %} 
+                            { "url" : "{{ image.url }}", 
+                              "caption" : "{{ image.caption}}", 
+                              "source" : "{{ image.source }}" },
+                           {% endfor %} null],
+  "href"                : "{{ tactic.url }}",
+  "slug"                : "{{ tactic.title | downcase | replace: ' ', '-' }}",
+  "short_write_up"      : "{{ tactic.short_write_up }}",
+  "full_write_up"       : "{{ tactic.content | strip_newlines }}"
+}
+  {% if forloop.last %}{% else %},{% endif %}
+{% endfor %}
+]

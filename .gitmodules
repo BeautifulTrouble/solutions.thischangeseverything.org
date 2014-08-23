@@ -1,0 +1,6 @@
+[submodule "_plugins/asset_bundler"]
+	path = _plugins/asset_bundler
+	url = git://github.com/moshen/jekyll-asset_bundler.git
+[submodule "_jekyll-lunr-js-search"]
+	path = _jekyll-lunr-js-search
+	url = https://github.com/slashdotdash/jekyll-lunr-js-search
