@@ -7,7 +7,7 @@
   "when"                : "{{ solution.when }}",
   "who"                 : "{{ solution.who }}",
   "related_values"      : [{% for item in solution.values %}"{{ item }}",{% endfor %} null],
-  "related_theores"     : [{% for item in tactic.related_theories %}"{{ item }}",{% endfor %} null],
+  "related_theories"    : [{% for item in solution.related_theories %}"{{ item }}",{% endfor %} null],
   "related_tactics"     : [{% for item in solution.related_tactics %}"{{ item }}",{% endfor %} null],
   "contributors"        : [{% for item in solution.contributors %}"{{ item }}",{% endfor %} null],
   "learn_more"          : [{% for item in solution.learn_more %}"{{ item }}",{% endfor %} null],
