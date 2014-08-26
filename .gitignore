@@ -1,4 +1,6 @@
 _site
+*.swp
+*.swo
 .DS_Store
 .jekyll-assets-cache
 node_modules
