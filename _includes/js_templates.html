@@ -6,15 +6,63 @@
 </script>
 
 <script type="text/template" id="modules-list-item-template">
-<div class="module-list-item thumbnail tactic" data-category="tactic" id="<%= slug %>">
+<div class="module-list-item thumbnail <%= type %>" data-category="<%= type %>" id="<%= slug %>">
     <img src="<%= images[0].url %>" alt="...">
     <div class="caption">
+        <h5 class="type"><%= type %>:</h5>
         <h3 class="title"><%= title %></h3>
     </div>
 </div>
 </script>
 
 <script type="text/template" id="module-detail-template">
+<div class="container">
+    <article id="solution">
+        <figure>
+            <img src="<%= images[0].url %>" title="<%= images[0].caption %>">
+            <% if ( images[0].caption && images[0].source ) { %>
+            <figcaption><%= images[0].caption %> Photo credit: <% images[0].source %></figcaption>
+            <% } %>
+        </figure>
+        <header>
+            <h5 class="type"><%= type %>:</h5>
+            <h1 class="title"><%= title %></h1>
+        </header>
+<div class="row no-pad">
+<div class="col-md-7">
+        <section>
+            <button type="button" class="close close-detail"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <p><%- short_write_up %></p>
+            <div id="button-bar" class="clearfix">
+                <button type="button" class="toggle-learn-more">Learn More</button>
+                <button type="button" class="improve-this">Improve This</button>
+                <button type="button" class="pull-right toggle-share">Share</button>
+            </div>
+        </section>
+
+        <!-- Do these asides make more sense as points of insertion for views? -->
+
+        <aside id="learn-more" class="hide">
+            <button type="button" class="close close-learn-more"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <% _.each(learn_more, function(e) { print(e); }); %>
+        </aside>
+        <aside id="share" class="hide">
+            <button type="button" class="close close-share"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            Fakebook | Googol | Twittor
+        </aside>
+</div>
+<div class="col-md-5">
+        <aside id="related-entries">
+            <h3>Related Entries</h3>
+            <div id="related-list"></div>
+        </aside> 
+</div>
+</div>
+    </article>
+</div>
+</script>
+
+<script type="text/template" id="module-detail-template-old">
 <div class="container">
     <article id="solution">
     <button type="button" class="close" <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -77,3 +125,4 @@
     </article>
 </div>
 </script>
+

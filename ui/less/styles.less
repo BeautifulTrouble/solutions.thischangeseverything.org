@@ -51,15 +51,34 @@
 @fontDefault: "Lucida Grande", Verdana, sans-serif;
 @fontHeadersDefault: Georgia;
 
+// Brand coloring
+@brando: #49c8ef;
+
+// Sizes
+@std-padding: 20px;
 
 /* ==========================================================================
    Global 
    ========================================================================== */
 
+html {
+    overflow-y: scroll;
+}
+
 body {
     font-family: @fontDefault;
     background-color: @bodyBackground; 
     padding-bottom: 40px;
+    height: 100%;
+}
+
+.row.no-pad {
+  margin-right: 0;
+  margin-left: 0;
+}
+.row.no-pad > [class*='col-'] {
+  padding-right: 0;
+  padding-left: 0;
 }
 
 /* ==========================================================================
@@ -80,8 +99,11 @@ h1, h2, h3, h4 {
 
 // Module: Header navigation, .site-nav
 header.site-header {
-    background: rgba(0,0,0,.7);
+    background: @brando;
     .box-shadow;
+    h1 {
+        color: black;
+    }
 }
 .site-nav {
     border: none;
@@ -143,12 +165,57 @@ header.site-header {
     }
 
 // Module: Solution page
-    article {
-        margin-top: 20px;
-        padding: 20px 30px 40px 30px;;
-        background: rgba(255,255,255,0.8);
-        .rounded-corners;
-        .box-shadow;
+    article#solution {
+        figure {
+            img {
+                // Find a better solution
+                position: fixed;
+                top: 0; left: 0;
+                min-width: 100%;
+                min-height: 100%;
+                z-index: -9999;
+            }
+            figcaption {
+                color: white;
+                line-height: 1;
+                font-size: 90%;
+            }
+        }
+        header {
+            .type, .title {
+                color: white;
+                padding: 0 @std-padding;
+            }
+            .type {
+                text-transform: uppercase;
+            }
+        }
+        section {
+            background: white;
+            padding: @std-padding;
+        }
+        aside#learn-more, aside#share {
+            background: @brando;
+            color: white;
+            height: 150px;
+            position: absolute;
+            bottom: 50px;
+            width: 100%;
+            padding: @std-padding;
+        }
+        aside#learn-more {
+        }
+        aside#share {
+        }
+        aside#related-entries {
+            h3 {
+                color: white;
+                background: black;
+                text-transform: uppercase;
+                margin: 0 1px;
+                padding: 0 4px;
+            }
+        }
     }
 
 // Module: Fullpage
