@@ -2,10 +2,6 @@
 // Libraries concatenated & compressed by by jekyll-assets pipeline
 //= require backbone.js
 //= require backbone.layoutmanager.js
-//= require models.js
-//= require collections.js
-//= require views.js
-//= require router.js
 
 window.App = {};
 
