@@ -1,3 +1,5 @@
 ---
 ---
-{% include stories.json %}
+{% assign type = "story" %}
+{% assign collection = site.stories %}
+{% include content.json %}

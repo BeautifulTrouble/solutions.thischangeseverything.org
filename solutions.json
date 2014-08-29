@@ -1,3 +1,5 @@
 ---
 ---
-{% include solutions.json %}
+{% assign type = "solution" %}
+{% assign collection = site.solutions %}
+{% include content.json %}
