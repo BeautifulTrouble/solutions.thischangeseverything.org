@@ -10,7 +10,7 @@ values:
 - Promotes Equitable Distribution of Wealth
 - Defends and Extends the Commons
 - Rooted in Place
-related_tactics:
+related_solutions:
 - Community as Developer
 - Eminent Domain
 - Community Organizing

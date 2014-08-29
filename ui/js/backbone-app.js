@@ -37,9 +37,9 @@ App.StoriesCollection = Backbone.Collection.extend({
     url: "/stories.json",
     comparator: 'title'
 });
-App.TacticsCollection = Backbone.Collection.extend({
+App.SolutionsCollection = Backbone.Collection.extend({
     model: App.Module,
-    url: "/tactics.json",
+    url: "/solutions.json",
     comparator: 'title'
 });
 App.TheoriesCollection = Backbone.Collection.extend({
@@ -55,11 +55,11 @@ App.ModulesCollection = Backbone.Collection.extend({
 
 // Load the collections & models from the bootstrapped data
 App.Stories = new App.StoriesCollection(stories);
-App.Tactics = new App.TacticsCollection(tactics);
+App.Solutions = new App.SolutionsCollection(solutions);
 App.Theories = new App.TheoriesCollection(theories);
 
 // Add each collection to the collection of collections
-App.Collections = [App.Stories, App.Tactics, App.Theories];
+App.Collections = [App.Stories, App.Solutions, App.Theories];
 App.Modules = new App.ModulesCollection();
 _.each(App.Collections, function(collection){
     // Remember, add the *models* not the collection

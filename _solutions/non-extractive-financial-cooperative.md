@@ -7,7 +7,7 @@ values:
 - Restorative to People, Place and Planet
 - Reduces and Resists Extraction of Resources and Labor
 - Paves the Way for More Solutions
-related_tactics:
+related_solutions:
 - Community Development Credit Union
 - Worker Cooperative
 - Community Owned Renewable Energy

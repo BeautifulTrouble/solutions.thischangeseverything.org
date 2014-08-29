@@ -8,7 +8,7 @@
   "who"                 : "{{ story.who }}",
   "related_values"      : [{% for item in story.values %}"{{ item }}",{% endfor %} null],
   "related_theories"    : [{% for item in story.related_theories %}"{{ item }}",{% endfor %} null],
-  "related_tactics"     : [{% for item in story.related_tactics %}"{{ item }}",{% endfor %} null],
+  "related_solutions"   : [{% for item in story.related_solutions %}"{{ item }}",{% endfor %} null],
   "contributors"        : [{% for item in story.contributors %}"{{ item }}",{% endfor %} null],
   "learn_more"          : [{% for item in story.learn_more %}"{{ item }}",{% endfor %} null],
   "tags"                : [{% for tag in story.tags %}"{{ tag }}",{% endfor %} null],

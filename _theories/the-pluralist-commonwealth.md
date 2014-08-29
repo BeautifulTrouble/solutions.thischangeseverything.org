@@ -4,7 +4,7 @@ short_write_up: "If we don’t want corporate capitalism, and we don’t want au
 values:
 - Defends and Extends the Commons
 - Deepens democracy
-related_tactics:
+related_solutions:
 related_theories:
 tags: [decision-making, housing, planning, urban planning, community organizing, eminent domain]
 learn_more:

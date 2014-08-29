@@ -5,7 +5,7 @@
   "type"                : "theory",
   "related_values"      : [{% for item in theory.values %}"{{ item }}",{% endfor %} null],
   "related_theories"    : [{% for item in theory.related_theories %}"{{ item }}",{% endfor %} null],
-  "related_tactics"     : [{% for item in theory.related_theories %}"{{ item }}",{% endfor %} null],
+  "related_solutions"   : [{% for item in theory.related_theories %}"{{ item }}",{% endfor %} null],
   "contributors"        : [{% for item in theory.contributors %}"{{ item }}",{% endfor %} null],
   "learn_more"          : [{% for item in theory.learn_more %}"{{ item }}",{% endfor %} null],
   "tags"                : [{% for tag in theory.tags %}"{{ tag }}",{% endfor %} null],

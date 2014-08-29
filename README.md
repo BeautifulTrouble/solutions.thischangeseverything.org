@@ -62,7 +62,7 @@ It works nicely, but it's not fast.
 
 The app is set-up currently to:
 
-* Generate a JSON file for each collection (stories, theories, and tactics)
+* Generate a JSON file for each collection (stories, theories, and solutions)
 * Bootstrap the data directly into Backbone during the build process using a Jekyll include
 * Backbone then takes over for UI interactions when the index page is loaded
 
