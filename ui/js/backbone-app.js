@@ -32,9 +32,9 @@ App.PostsCollection = Backbone.Collection.extend({
     url: "/posts.json",
     comparator: 'title'
 });
-App.SolutionsCollection = Backbone.Collection.extend({
+App.StoriesCollection = Backbone.Collection.extend({
     model: App.Module,
-    url: "/solutions.json",
+    url: "/stories.json",
     comparator: 'title'
 });
 App.TacticsCollection = Backbone.Collection.extend({
@@ -54,7 +54,7 @@ App.ModulesCollection = Backbone.Collection.extend({
 });
 
 // Load the collections & models from the bootstrapped data
-App.Solutions = new App.SolutionsCollection(solutions);
+App.Solutions = new App.StoriesCollection(stories);
 App.Tactics = new App.TacticsCollection(tactics);
 App.Theories = new App.TheoriesCollection(theories);
 

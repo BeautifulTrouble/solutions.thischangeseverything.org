@@ -1,0 +1,27 @@
+[
+{% for story in site.stories %}
+{
+  "title"               : "{{ story.title }}",
+  "type"                : "story",
+  "where"               : "{{ story.where }}",
+  "when"                : "{{ story.when }}",
+  "who"                 : "{{ story.who }}",
+  "related_values"      : [{% for item in story.values %}"{{ item }}",{% endfor %} null],
+  "related_theories"    : [{% for item in story.related_theories %}"{{ item }}",{% endfor %} null],
+  "related_tactics"     : [{% for item in story.related_tactics %}"{{ item }}",{% endfor %} null],
+  "contributors"        : [{% for item in story.contributors %}"{{ item }}",{% endfor %} null],
+  "learn_more"          : [{% for item in story.learn_more %}"{{ item }}",{% endfor %} null],
+  "tags"                : [{% for tag in story.tags %}"{{ tag }}",{% endfor %} null],
+  "images"              : [{% for image in story.images %} 
+                            { "url" : "{{ image.url }}", 
+                              "caption" : "{{ image.caption}}", 
+                              "source" : "{{ image.source }}" },
+                           {% endfor %} null],
+  "href"                : "{{ story.url }}",
+  "slug"                : "{{ story.title | downcase | replace: ' ', '-' }}",
+  "short_write_up"      : "{{ story.short_write_up }}",
+  "full_write_up"       : "{{ story.content | strip_newlines }}"
+}
+  {% if forloop.last %}{% else %},{% endif %}
+{% endfor %}
+]

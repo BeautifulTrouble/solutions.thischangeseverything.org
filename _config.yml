@@ -10,7 +10,7 @@ logo: 'logo.png'
 collections:
 - tactics
 - theories
-- solutions
+- stories
 - values
 
 # Project settings - Analytics
