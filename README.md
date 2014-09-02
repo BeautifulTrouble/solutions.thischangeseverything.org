@@ -75,11 +75,15 @@ How the data is generated:
 
 Work that is not yet complete:
 
+- [ ] Move templates into .html files for easier development
+- [ ] Import entries from CSV
 - [ ] Design to come from Public Society September 1st, 2014
+- [ ] Integrate design
 - [ ] Image re-sizing during Jekyll build process (also need a way to reference the generated images)
 - [ ] Sorting and filtering the modules list, possibly using Isotope
 - [ ] Sub-views to display the related modules when in a module's detail view
 - [ ] Gateway / intro / help / "how this works" view(s)
+- [ ] Complile templates for production
 - [ ] Possible addition of search (mostly done via Jekyll Lunar.js search plugin)
 - [ ] Offline mode
 

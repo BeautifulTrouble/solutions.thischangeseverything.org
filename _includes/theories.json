@@ -1,5 +1,3 @@
----
----
 {% assign type = "theory" %}
 {% assign collection = site.theories %}
 {% include content.json %}
