@@ -6,7 +6,10 @@ baseurl: ""
 url: "http://solutions.thischangeseverything.org"
 logo: 'logo.png'
 
-# Project setting - Collections
+# Project settings - Reading
+exclude: [ 'local' ]
+
+# Project settings - Collections
 collections:
 - solutions
 - theories
