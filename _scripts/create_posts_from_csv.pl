@@ -5,7 +5,7 @@
 use strict;
 use warnings;
 use utf8;
-use 5.20.0;
+use feature 'say';
 
 # Find modules installed w/ Carton
 use FindBin;
