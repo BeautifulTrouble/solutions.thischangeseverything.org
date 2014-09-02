@@ -8,7 +8,34 @@ window.App = {};
 // Use the backbone.layoutmanager 
 // turn it on for all views by default
 Backbone.Layout.configure({
-    manage: true
+    manage: true,
+    // Set the prefix to where your templates live on the server
+    prefix: "/ui/templates/",
+
+    // This method will check for prebuilt templates first and fall back to
+    // loading in via AJAX.
+    fetchTemplate: function(path) {
+        // Check for a global JST object.  When you build your templates for
+        // production, ensure they are all attached here.
+        var JST = window.JST || {};
+
+        // If the path exists in the object, use it instead of fetching remotely.
+        if (JST[path]) {
+            console.log('cached');
+            return JST[path];
+        }
+
+        // If it does not exist in the JST object, mark this function as
+        // asynchronous.
+        var done = this.async();
+
+        // Fetch via jQuery's GET.  The third argument specifies the dataType.
+        $.get(path + '.html', function(contents) {
+            // Assuming you're using underscore templates, the compile step here is
+            // `_.template`.
+            done(_.template(contents));
+        }, "text");
+    }
 });
 
 // ===================================================================
@@ -72,7 +99,7 @@ App.ModulesListView = Backbone.View.extend({
         // Listen to events on the collection
         this.listenTo(this.collection, "add remove sync", this.render);
     },
-    template: "#modules-list-template",
+    template: "modules-list-template",
     serialize: function() {
         return { modules: this.collection };
     },
@@ -91,7 +118,7 @@ App.ModulesListItemView = Backbone.View.extend({
     initialize: function (options) {
         //console.log('ModulesListItemView initialized');
     },
-    template: "#modules-list-item-template",
+    template: "modules-list-item-template",
     el: false,
     events: {
         // Listen for a click anywhere on the sub-view
@@ -109,7 +136,7 @@ App.ModuleDetailView = Backbone.View.extend({
     initialize: function (options) {
         //console.log('ModuleDetailView initialized');
     },
-    template: "#module-detail-template",
+    template: "module-detail-template",
     events: {
         "click button.close-detail": "closeDetail",
         "click button.close-share":         function(e) { this.$("#share").addClass("hide"); },         // Simple function for this?
