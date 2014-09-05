@@ -95,6 +95,7 @@ assets:
     - bower_components/fullpage.js/
     - bower_components/fullpage.js/vendors/
     - bower_components/isotope/dist/
+    - bower_components/showdown/compressed/
   js_compressor: yui
   css_compressor: yui
   cache: true

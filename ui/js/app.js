@@ -5,6 +5,7 @@
 //= require bootstrap.js
 //= require underscore.js
 //= require isotope.pkgd.js
+//= require showdown.js
 
 
 //= when working on the Backbone app
