@@ -20,19 +20,29 @@
                         <li><%= value %></li>
                         <% } }); %>
                     </ul>
+                    <div class="share-icon">Share!</div>
+                    <div id="summary">
                     <p><%- short_write_up %></p>
+                    </div>
+                    <hr class="soften" />
+                    <!--https://basecamp.com/1850835/projects/6447119/messages/30549111#comment_195218482-->
+                    <ul class="tags">
+                        <% _.each(tags, function(tag) { if (tag) { %>
+                        <li><%= tag %></li>
+                        <% } }); %>
+                    </ul>
                     <% if ( type === 'story' ) { %>
                     <dl>
-                        <dt>Where:</dt><dd><%= where %></dd>
-                        <dt>When:</dt><dd><%= when %></dd>
+                        <dt>Location:</dt><dd><%= where %></dd>
+                        <dt>Timeline:</dt><dd><%= when %></dd>
                         <dt>Who:</dt><dd><%= who %></dd>
+                        <dt>Scale:</dt><dd>TODO</dd>
                     </dl>
                      <% } %>
-
+                    <hr class="soften" />
                     <div id="button-bar" class="clearfix">
                         <button type="button" class="toggle-learn-more">Learn More</button>
                         <button type="button" class="improve-this">Improve This</button>
-                        <button type="button" class="pull-right toggle-share">Share</button>
                     </div>
                 </section>
                         <!-- Do these asides make more sense as points of insertion for views? -->
