@@ -3,6 +3,7 @@ _site
 *.swo
 .DS_Store
 .jekyll-assets-cache
+/ui/css/
 node_modules
 bower_components
 _vendor
