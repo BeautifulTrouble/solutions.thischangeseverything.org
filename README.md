@@ -75,8 +75,8 @@ How the data is generated:
 
 Work that is not yet complete:
 
-- [ ] Move templates into .html files for easier development
-- [ ] Import entries from CSV
+- [x] Move templates into .html files for easier development
+- [x] Import entries from CSV
 - [ ] Design to come from Public Society September 1st, 2014
 - [ ] Integrate design
 - [ ] Image re-sizing during Jekyll build process (also need a way to reference the generated images)

@@ -42,7 +42,7 @@ Backbone.Layout.configure({
 // Models
 // ===================================================================
 App.Module = Backbone.Model.extend({
-    initialize: function () {
+    initialize: function() {
         //console.log('Initialized a Module model');
     }
 });
@@ -84,7 +84,7 @@ App.Theories = new App.TheoriesCollection(theories);
 // Add each collection to the collection of collections
 App.Collections = [App.Stories, App.Solutions, App.Theories];
 App.Modules = new App.ModulesCollection();
-_.each(App.Collections, function(collection){
+_.each(App.Collections, function(collection) {
     // Remember, add the *models* not the collection
     App.Modules.add(collection.models);
 });
@@ -95,13 +95,15 @@ _.each(App.Collections, function(collection){
 App.ModulesListView = Backbone.View.extend({
     el: false,
     collection: App.Modules,
-    initialize: function (options) {
+    initialize: function(options) {
         // Listen to events on the collection
         this.listenTo(this.collection, "add remove sync", this.render);
     },
     template: "modules-list-template",
     serialize: function() {
-        return { modules: this.collection };
+        return {
+            modules: this.collection
+        };
     },
     beforeRender: function() {
         // Add the subviews to the view
@@ -115,7 +117,7 @@ App.ModulesListView = Backbone.View.extend({
 
 // Sub-view for a single item in the list
 App.ModulesListItemView = Backbone.View.extend({
-    initialize: function (options) {
+    initialize: function(options) {
         //console.log('ModulesListItemView initialized');
     },
     template: "modules-list-item-template",
@@ -127,29 +129,62 @@ App.ModulesListItemView = Backbone.View.extend({
     viewDetail: function(e) {
         // Navigate to the detail view
         var name = this.model.get("slug");
-        App.router.navigate('module/' + name, {trigger: true});
+        App.router.navigate('module/' + name, {
+            trigger: true
+        });
     }
 });
 
 
 App.ModuleDetailView = Backbone.View.extend({
-    initialize: function (options) {
+    collection: new App.ModulesCollection(),
+    initialize: function(options) {
+        this.collection.reset();
+        this.listenTo(this.collection, "add", this.render );
         //console.log('ModuleDetailView initialized');
+        var relatedSolutions = this.model.get('related_solutions');
+        var relatedTheories = this.model.get('related_theories');
+        var relatedStories = this.model.get('related_stories');
+        var relatedModules = relatedSolutions.concat(relatedStories).concat(relatedTheories);
+        // console.log(relatedModules);
+        var self = this;
+        _.each(relatedModules, function(name){
+           //console.log(name);
+           var module = App.Modules.findWhere({title: name });
+           self.collection.add(module);
+        });
     },
     template: "module-detail-template",
     events: {
         "click button.close-detail": "closeDetail",
-        "click button.close-share":         function(e) { this.$("#share").addClass("hide"); },         // Simple function for this?
-        "click button.toggle-share":        function(e) { this.$("#share").toggleClass("hide"); },      // Something that can read a bunch of
-        "click button.close-learn-more":    function(e) { this.$("#learn-more").addClass("hide"); },    // actions off classes, for example?
-        "click button.toggle-learn-more":   function(e) { this.$("#learn-more").toggleClass("hide"); }, // class="auto-events close-share open-learn-more"
+        "click button.close-share": function(e) {
+            this.$("#share").addClass("hide");
+        }, // Simple function for this?
+        "click button.toggle-share": function(e) {
+            this.$("#share").toggleClass("hide");
+        }, // Something that can read a bunch of
+        "click button.close-learn-more": function(e) {
+            this.$("#learn-more").addClass("hide");
+        }, // actions off classes, for example?
+        "click button.toggle-learn-more": function(e) {
+            this.$("#learn-more").toggleClass("hide");
+        }, // class="auto-events close-share open-learn-more"
         //"click button.auto-events": "autoEventHandler",
     },
     closeDetail: function(e) {
         // Navigate back to the start view
-        App.router.navigate('', {trigger: true});
+        App.router.navigate('', {
+            trigger: true
+        });
     },
     beforeRender: function() {
+        // Add the subviews to the view
+        this.collection.each(function(module) {
+            this.insertView("#related-list", new App.ModulesListItemView({
+                model: module
+            }));
+        }, this);        
+
     }
 });
 
@@ -168,22 +203,25 @@ App.Layout = new Backbone.Layout({
 // ===================================================================
 App.Router = Backbone.Router.extend({
     collection: App.Modules,
-    initialize: function(options){
-    },
+    initialize: function(options) {},
     routes: {
-        '' : 'start',
-        'module(/:name)' : 'displayModule',
+        '': 'start',
+        'module(/:name)': 'displayModule',
         '*default': 'defaultRoute'
     },
     start: function() {
-        App.Layout.setView("#content", new App.ModulesListView() );
+        App.Layout.setView("#content", new App.ModulesListView());
         App.Layout.render();
     },
-    displayModule: function(name){
-        var model = this.collection.findWhere({"slug": name});
-        if ( model ) {
+    displayModule: function(name) {
+        var model = this.collection.findWhere({
+            "slug": name
+        });
+        if (model) {
             // Curious where the collection of related modules should be aggregated in order to insert the nested views
-            App.Layout.setView("#content", new App.ModuleDetailView({ model: model }) );
+            App.Layout.setView("#content", new App.ModuleDetailView({
+                model: model
+            }));
             App.Layout.render();
         } else {
             this.defaultRoute();
@@ -193,4 +231,3 @@ App.Router = Backbone.Router.extend({
         console.log("404");
     }
 });
-
