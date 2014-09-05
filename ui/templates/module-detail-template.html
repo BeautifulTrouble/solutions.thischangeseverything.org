@@ -10,99 +10,39 @@
             <h5 class="type"><%= type %>:</h5>
             <h1 class="title"><%= title %></h1>
         </header>
-<div class="row no-pad">
-<div class="col-md-7">
-        <section>
-            <button type="button" class="close close-detail"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <p><%- short_write_up %></p>
-            <div id="button-bar" class="clearfix">
-                <button type="button" class="toggle-learn-more">Learn More</button>
-                <button type="button" class="improve-this">Improve This</button>
-                <button type="button" class="pull-right toggle-share">Share</button>
-            </div>
-        </section>
-
-        <!-- Do these asides make more sense as points of insertion for views? -->
-
-        <aside id="learn-more" class="hide">
-            <button type="button" class="close close-learn-more"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <% _.each(learn_more, function(e) { print(e); }); %>
-        </aside>
-        <aside id="share" class="hide">
-            <button type="button" class="close close-share"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            Fakebook | Googol | Twittor
-        </aside>
-</div>
-<div class="col-md-5">
-        <aside id="related-entries">
-            <h3>Related Entries</h3>
-            <div id="related-list"></div>
-        </aside> 
-</div>
-</div>
-    </article>
-</div>
-</script>
-
-<script type="text/template" id="module-detail-template-old">
-<div class="container">
-    <article id="solution">
-    <button type="button" class="close" <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <header>
-            <h1><%= title %></h1>
-        </header>
-        <div id="solution-body">
-            <div class="row">
+        <div class="row no-pad">
             <div class="col-md-7">
-                <img alt="" src="<%= images[0].url %>" style="max-width: 520px; width:100%" />
+                <section>
+                    <button type="button" class="close close-detail"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <p class="byline">By <span class="contributor"><%= contributors[0] %></span></p>
+                    <p class="values">
+                        <% _.each(related_values, function(value) { print(value); }); %>
+                    </p>
+                    <p><%- short_write_up %></p>
+                    <div id="button-bar" class="clearfix">
+                        <button type="button" class="toggle-learn-more">Learn More</button>
+                        <button type="button" class="improve-this">Improve This</button>
+                        <button type="button" class="pull-right toggle-share">Share</button>
+                    </div>
+                </section>
+
+                <!-- Do these asides make more sense as points of insertion for views? -->
+
+                <aside id="learn-more" class="hide">
+                    <button type="button" class="close close-learn-more"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <% _.each(learn_more, function(e) { print(e); }); %>
+                </aside>
+                <aside id="share" class="hide">
+                    <button type="button" class="close close-share"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    Fakebook | Googol | Twittor
+                </aside>
             </div>
             <div class="col-md-5">
-                <% if ( type === 'solution' ) { %>
-                <dl>
-                    <dt>Where: </dt><dd><%= where %></dd></dt>
-                <dt>When: </dt><dd><%= when %><dd></dt>
-                    <dt><dd><%= who %></dd></dt>
-                </dl>
-                <% } %>
-                <p><%= short_write_up %></p>
-            </div>
+                <aside id="related-entries">
+                    <h3>Related Entries</h3>
+                    <div id="related-list"></div>
+                </aside> 
             </div>
         </div>
-        <footer>
-            <h2>Related Values</h2>
-            <ul class="values">
-                <% _.each(related_values, function(value) { if (value ) { %>
-                <li><%= value %></li>
-                <% } }); %>
-            </ul>
-            <h2>Related Entries</h2>
-            <!-- TODO: Replace these placeholders with a sub-view -->
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/300x200" alt="...">
-                        <div class="caption">
-                            <h3>Traffic Mimes in Bogota</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/300x200" alt="...">
-                        <div class="caption">
-                            <h3>The Commons</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/300x200" alt="...">
-                        <div class="caption">
-                            <h3>Environmental Justice</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer> 
     </article>
 </div>
