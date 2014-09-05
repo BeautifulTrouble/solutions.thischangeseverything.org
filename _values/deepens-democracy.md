@@ -40,7 +40,7 @@ related_stories:
 - Brazilian Landless Workers' Movement
 - Idle No More
 scale:
-tags: 
+tags:
 - cooperatives
 - decision-making
 - democracy

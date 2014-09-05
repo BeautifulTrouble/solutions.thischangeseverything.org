@@ -5,6 +5,9 @@ where:
 when:  
 who: 
 values:
+- Celebrates life
+- Creates more possibilities
+- Cultivates abundance
 related_solutions:
 - (Re)Claiming space through public art
 - Basic income
@@ -30,7 +33,7 @@ related_stories:
 - Trade school: barter-for-knowledge
 - Traffic mimes in Bogotá
 scale:
-tags: 
+tags:
 - culture
 - well-being
 learn_more:

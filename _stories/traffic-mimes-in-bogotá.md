@@ -5,6 +5,8 @@ where: Bogotá, Colombia
 when: 1995 present
 who: Antanas Mockus, mayor of Bogotá
 values:
+- Celebrates life
+- Extends the commons
 related_solutions:
 - (Re)Claiming space through public art
 - Solutions seized through direct action
@@ -15,7 +17,7 @@ related_theories:
 related_stories:
 scale:
 - Local
-tags: 
+tags:
 - culture
 - education
 - safety

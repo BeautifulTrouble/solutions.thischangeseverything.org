@@ -37,7 +37,7 @@ related_stories:
 - The Zapatista Little School
 - Brazilian Landless Workers' Movement
 scale:
-tags: 
+tags:
 - community development
 - movement building
 - open source

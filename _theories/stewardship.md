@@ -5,6 +5,12 @@ where:
 when:  
 who: 
 values:
+- Advances justice
+- Builds resilience
+- Celebrates life
+- Creates more possibilities
+- Cultivates abundance
+- Extends the commons
 related_solutions:
 - Community land trusts
 - Guerrilla gardening
@@ -26,7 +32,7 @@ related_stories:
 - Brazilian Landless Workers' Movement
 - Idle No More
 scale:
-tags: 
+tags:
 - agriculture
 - climate
 - food

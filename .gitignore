@@ -1,6 +1,7 @@
 _site
 *.swp
 *.swo
+.~lock*
 .DS_Store
 .jekyll-assets-cache
 /ui/css/

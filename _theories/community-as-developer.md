@@ -5,6 +5,11 @@ where:
 when:  
 who: 
 values:
+- Builds resilience
+- Creates more possibilities
+- Deepens democracy
+- Displaces extractive industry
+- Extends the commons
 related_solutions:
 - Community land trusts
 - Community wealth building
@@ -24,7 +29,7 @@ related_stories:
 - Dudley Street Neighborhood Initiative
 - Philidelphia Land Bank
 scale:
-tags: 
+tags:
 - community development
 - decision-making
 - democracy

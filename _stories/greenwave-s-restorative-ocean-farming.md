@@ -5,6 +5,11 @@ where: Long Island Sound
 when: 2012 Present
 who: GreenWave
 values:
+- Builds resilience
+- Creates more possibilities
+- Cultivates abundance
+- Deepens democracy
+- Extends the commons
 related_solutions:
 - Community supported agriculture
 - Permaculture
@@ -24,7 +29,7 @@ related_stories:
 scale:
 - Local
 - Regional
-tags: 
+tags:
 - agriculture
 - climate
 - cooperatives

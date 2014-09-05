@@ -88,6 +88,7 @@ where: <%= $module->{'Where?'} %>
 when: <%= $module->{'When? (start)'} %> <%= $module->{'When? (end)'} %>
 who: <%= $module->{'Who?'} %>
 values:
+<%= $parse_list->( $module->{'Values exemplified'} ) =%>
 related_solutions:
 <%= $parse_list->( $module->{'Related Solutions'} ) =%>
 related_theories:

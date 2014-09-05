@@ -5,6 +5,9 @@ where:
 when:  
 who: 
 values:
+- Builds resilience
+- Deepens democracy
+- Displaces extractive industry
 related_solutions:
 - Community wealth building
 - Non-extractive financial cooperative
@@ -17,7 +20,7 @@ related_stories:
 scale:
 - Local
 - Regional
-tags: 
+tags:
 - cooperatives
 - democracy
 - financing

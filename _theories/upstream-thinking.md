@@ -5,6 +5,9 @@ where:
 when:  
 who: 
 values:
+- Advances justice
+- Builds resilience
+- Creates more possibilities
 related_solutions:
 - Basic income
 - Community impacting investment
@@ -19,7 +22,7 @@ related_stories:
 - The river with the rights of a person
 - Resilence Circles
 scale:
-tags: 
+tags:
 - community development
 - education
 - equity
