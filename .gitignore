@@ -1,8 +1,11 @@
 _site
 *.swp
 *.swo
-.~lock*
-.DS_Store
+*.~lock
+*~
+*.lock
+*.DS_Store
+*.out
 .jekyll-assets-cache
 /ui/css/
 node_modules
