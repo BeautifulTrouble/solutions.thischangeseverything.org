@@ -140,7 +140,7 @@ App.ModuleDetailView = Backbone.View.extend({
     collection: new App.ModulesCollection(),
     initialize: function(options) {
         this.collection.reset();
-        this.listenTo(this.collection, "add", this.render );
+        this.listenTo(this.collection, "add", this.render);
         //console.log('ModuleDetailView initialized');
         var relatedSolutions = this.model.get('related_solutions');
         var relatedTheories = this.model.get('related_theories');
@@ -148,10 +148,12 @@ App.ModuleDetailView = Backbone.View.extend({
         var relatedModules = relatedSolutions.concat(relatedStories).concat(relatedTheories);
         // console.log(relatedModules);
         var self = this;
-        _.each(relatedModules, function(name){
-           //console.log(name);
-           var module = App.Modules.findWhere({title: name });
-           self.collection.add(module);
+        _.each(relatedModules, function(name) {
+            //console.log(name);
+            var module = App.Modules.findWhere({
+                title: name
+            });
+            self.collection.add(module);
         });
     },
     template: "module-detail-template",
@@ -183,7 +185,7 @@ App.ModuleDetailView = Backbone.View.extend({
             this.insertView("#related-list", new App.ModulesListItemView({
                 model: module
             }));
-        }, this);        
+        }, this);
 
     }
 });

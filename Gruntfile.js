@@ -177,7 +177,7 @@ module.exports = function(grunt) {
             'jsbeautifier',
             'jekyll:dist',
             'browserSync',
-            'open:dev',
+            //'open:dev',
             'watch'
         ]);
     });
