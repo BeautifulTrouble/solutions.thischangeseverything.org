@@ -19,7 +19,7 @@ module.exports = function(grunt) {
             },
             // Lint, beautify, copy assets and reload on JS file edits
             js: {
-                files: ['ui/js/*.js', '*.json', 'Gruntfile.js'],
+                files: ['ui/js/*.js', 'Gruntfile.js'],
                 tasks: ['jshint', 'jsbeautifier', 'copy:js'],
                 options: {
                     livereload: true
@@ -124,10 +124,10 @@ module.exports = function(grunt) {
             options: {
                 force: true
             },
-            all: ['ui/js/*.js', '*.json', 'Gruntfile.js', '!**/node_modules/**', '!**/bower_components/**'],
+            all: ['ui/js/*.js', 'Gruntfile.js', '!**/node_modules/**', '!**/bower_components/**'],
         },
         jsbeautifier: {
-            files: ['ui/js/*.js', '*.json', 'Gruntfile.js', '!**/node_modules/**', '!**/bower_components/**']
+            files: ['ui/js/*.js', 'Gruntfile.js', '!**/node_modules/**', '!**/bower_components/**']
         },
         // Jekyll tasks
         jekyll: {
@@ -157,13 +157,13 @@ module.exports = function(grunt) {
             }
         },
         // Open the browser!
-        open: {
-            dev: {
-                path: 'http://localhost:4000',
-                app: 'Google Chrome',
-                delay: 5
-            }
-        },
+        //open: {
+        //dev: {
+        //path: 'http://localhost:4000',
+        //app: 'Google Chrome',
+        //delay: 5
+        //}
+        //},
     });
 
     // Default task(s).

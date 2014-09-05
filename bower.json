@@ -1,26 +1,27 @@
 {
-  "name": "static-app-template.thetyee.ca",
-  "version": "0.0.1",
-  "authors": [
-    "Phillip Smith <ps@phillipadsmith.com>"
-  ],
-  "description": "Bottom Lines",
-  "license": "MIT",
-  "homepage": "static-app-template.thetyee.ca",
-  "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "bootstrap": "~3.1.1",
-    "backbone": "~1.1.2",
-    "modernizr": "~2.8.3",
-    "fullpage.js": "~2.0.7",
-    "isotope": "~2.0.0",
-    "layoutmanager": "~0.9.5"
-  }
+    "name": "solutions.thischangeseverything.org",
+    "version": "0.0.1",
+    "authors": [
+        "Phillip Smith <ps@phillipadsmith.com>",
+        "Adrian Carpenter <adriatic.c@gmail.com>"
+    ],
+    "description": "This Changes Everything, Beautiful Solutions",
+    "license": "MIT",
+    "homepage": "http://soltuions.thischangeseverything.org",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "bootstrap": "~3.1.1",
+        "backbone": "~1.1.2",
+        "modernizr": "~2.8.3",
+        "fullpage.js": "~2.0.7",
+        "isotope": "~2.0.0",
+        "layoutmanager": "~0.9.5"
+    }
 }
