@@ -48,7 +48,7 @@
                         <!-- Do these asides make more sense as points of insertion for views? -->
                 <aside id="learn-more" class="hide">
                     <button type="button" class="close close-learn-more"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <% _.each(learn_more, function(e) { print(e); }); %>
+                    <% _.each(learn_more, function(e) { if (e) { print(App.showdown.makeHtml(e)) } }); %>
                 </aside>
                 <aside id="share" class="hide">
                     <button type="button" class="close close-share"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>

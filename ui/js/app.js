@@ -17,7 +17,8 @@ $(function() {
     body.css("background", "url('/ui/img/cover_about.jpg') top center no-repeat black");
     body.css("background-size", "cover");
     body.css("min-height", window.innerHeight);
-
+    // Initialize a Showdown converter
+    App.showdown = new Showdown.converter();
     // Initialize the Backbone router.
     App.router = new App.Router();
     Backbone.history.start();
