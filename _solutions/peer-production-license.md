@@ -5,6 +5,7 @@ where:
 when:  
 who: 
 values:
+- Extends the commons
 related_solutions:
 related_theories:
 - Horizontalism
@@ -15,7 +16,7 @@ related_stories:
 scale:
 - National
 - Global
-tags: 
+tags:
 - governance
 - open source
 learn_more:

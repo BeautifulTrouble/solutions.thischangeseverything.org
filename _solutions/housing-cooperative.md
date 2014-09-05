@@ -5,6 +5,8 @@ where:
 when:  
 who: 
 values:
+- Deepens democracy
+- Extends the commons
 related_solutions:
 - Credit union
 - Worker cooperative
@@ -18,7 +20,7 @@ related_stories:
 scale:
 - Individual
 - Local
-tags: 
+tags:
 - community development
 - cooperatives
 - decision-making

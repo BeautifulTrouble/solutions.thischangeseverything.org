@@ -5,6 +5,10 @@ where:
 when:  
 who: 
 values:
+- Cultivates abundance
+- Deepens democracy
+- Displaces extractive industry
+- Extends the commons
 related_solutions:
 - Basic income
 - Community land trusts
@@ -33,7 +37,7 @@ related_stories:
 - Philidelphia Land Bank
 - Southern Grassroots Economies Project
 scale:
-tags: 
+tags:
 - community development
 - cooperatives
 - democracy

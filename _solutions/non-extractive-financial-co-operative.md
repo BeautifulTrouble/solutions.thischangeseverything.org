@@ -5,6 +5,12 @@ where:
 when:  
 who: 
 values:
+- Builds resilience
+- Creates more possibilities
+- Cultivates abundance
+- Deepens democracy
+- Displaces extractive industry
+- Extends the commons
 related_solutions:
 - Community impacting investment
 - Community wealth building
@@ -25,7 +31,7 @@ related_stories:
 - New Era Windows
 - Southern Grassroots Economies Project
 scale:
-tags: 
+tags:
 - community development
 - cooperatives
 - economics

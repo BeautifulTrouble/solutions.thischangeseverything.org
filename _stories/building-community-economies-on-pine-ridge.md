@@ -5,6 +5,10 @@ where: Pine Ridge, South Dakota, USA
 when: 2007 present
 who: Thunder Valley Community Development Corporation & Native American Natural Foods
 values:
+- Builds resilience
+- Cultivates abundance
+- Deepens democracy
+- Displaces extractive industry
 related_solutions:
 - Community impacting investment
 - Community wealth building
@@ -23,7 +27,7 @@ related_stories:
 scale:
 - Local
 - Regional
-tags: 
+tags:
 - community development
 - cooperatives
 - energy

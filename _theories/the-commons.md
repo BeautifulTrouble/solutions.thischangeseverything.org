@@ -5,6 +5,14 @@ where:
 when:  
 who: 
 values:
+- Advances justice
+- Builds resilience
+- Celebrates life
+- Creates more possibilities
+- Cultivates abundance
+- Deepens democracy
+- Displaces extractive industry
+- Extends the commons
 related_solutions:
 - Basic income
 - Community land trusts
@@ -35,7 +43,7 @@ related_stories:
 - The river with the rights of a person
 - Brazilian Landless Workers' Movement
 scale:
-tags: 
+tags:
 - agriculture
 - climate
 - indigenous rights

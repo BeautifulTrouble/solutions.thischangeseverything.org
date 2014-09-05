@@ -5,6 +5,10 @@ where:
 when:  
 who: 
 values:
+- Advances justice
+- Cultivates abundance
+- Deepens democracy
+- Extends the commons
 related_solutions:
 - Credit union
 - Non-extractive financial cooperative
@@ -17,7 +21,7 @@ related_stories:
 scale:
 - Local
 - Regional
-tags: 
+tags:
 - community development
 - equity
 - financing

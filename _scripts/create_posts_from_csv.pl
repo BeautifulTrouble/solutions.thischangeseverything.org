@@ -5,7 +5,7 @@
 use strict;
 use warnings;
 use utf8;
-use 5.20.0;
+use feature 'say';
 
 # Find modules installed w/ Carton
 use FindBin;
@@ -88,6 +88,7 @@ where: <%= $module->{'Where?'} %>
 when: <%= $module->{'When? (start)'} %> <%= $module->{'When? (end)'} %>
 who: <%= $module->{'Who?'} %>
 values:
+<%= $parse_list->( $module->{'Values exemplified'} ) =%>
 related_solutions:
 <%= $parse_list->( $module->{'Related Solutions'} ) =%>
 related_theories:
