@@ -43,7 +43,7 @@ related_stories:
 - Brazilian Landless Workers' Movement
 - Idle No More
 scale:
-tags: 
+tags:
 - climate
 - community development
 - crisis response

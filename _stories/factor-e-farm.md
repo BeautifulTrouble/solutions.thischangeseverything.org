@@ -5,6 +5,10 @@ where: North of Kansas City, Missouri, USA
 when: 2007 present
 who: Open Source Ecology
 values:
+- Builds resilience
+- Creates more possibilities
+- Cultivates abundance
+- Extends the commons
 related_solutions:
 - Community supported agriculture
 - Peer Production License
@@ -19,7 +23,7 @@ related_stories:
 - Resilence Circles
 scale:
 - Local
-tags: 
+tags:
 - agriculture
 - education
 - food

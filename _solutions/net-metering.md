@@ -5,6 +5,8 @@ where:
 when:  
 who: 
 values:
+- Builds resilience
+- Extends the commons
 related_solutions:
 related_theories:
 - Pluralist commonwealth
@@ -16,7 +18,7 @@ related_stories:
 scale:
 - Individual
 - Local
-tags: 
+tags:
 - energy
 - policy
 - urban planning

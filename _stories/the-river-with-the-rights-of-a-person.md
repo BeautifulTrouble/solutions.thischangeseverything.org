@@ -5,6 +5,10 @@ where: Whanganui River, New Zealand
 when: 19th century 2014
 who: Maori tribes near the Whanganui River in conjunction with the New Zealand Government
 values:
+- Advances justice
+- Celebrates life
+- Creates more possibilities
+- Extends the commons
 related_solutions:
 - Solutions seized through direct action
 - Reclaiming common wealth
@@ -25,7 +29,7 @@ related_stories:
 scale:
 - Regional
 - National
-tags: 
+tags:
 - indigenous rights
 - justice
 - land use

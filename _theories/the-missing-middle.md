@@ -5,6 +5,7 @@ where:
 when:  
 who: 
 values:
+- Cultivates abundance
 related_solutions:
 - Community impacting investment
 - Non-extractive financial cooperative
@@ -12,7 +13,7 @@ related_theories:
 - Solidarity economics
 related_stories:
 scale:
-tags: 
+tags:
 - agriculture
 - community development
 - financing

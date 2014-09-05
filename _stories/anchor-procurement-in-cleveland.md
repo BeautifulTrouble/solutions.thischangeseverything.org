@@ -5,6 +5,11 @@ where: Cleveland, Ohio, United States
 when: 2008 Present
 who: Evergreen Cooperatives and local universities & hospitals
 values:
+- Creates more possibilities
+- Cultivates abundance
+- Deepens democracy
+- Displaces extractive industry
+- Extends the commons
 related_solutions:
 - Community wealth building
 - Public ownership
@@ -15,7 +20,7 @@ related_theories:
 related_stories:
 scale:
 - Local
-tags: 
+tags:
 - community development
 - cooperatives
 - equity

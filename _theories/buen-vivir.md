@@ -5,6 +5,9 @@ where:
 when:  
 who: 
 values:
+- Builds resilience
+- Celebrates life
+- Cultivates abundance
 related_solutions:
 related_theories:
 - Appropriate scale
@@ -18,7 +21,7 @@ related_stories:
 - Initiative 136
 - The river with the rights of a person
 scale:
-tags: 
+tags:
 - community development
 - culture
 - economics

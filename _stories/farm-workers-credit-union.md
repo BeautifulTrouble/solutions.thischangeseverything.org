@@ -5,6 +5,10 @@ where: Delano, California
 when: 1963 1993
 who: Cesar Chavez & the United Farm Workers of America
 values:
+- Advances justice
+- Builds resilience
+- Deepens democracy
+- Displaces extractive industry
 related_solutions:
 - Credit union
 - Non-extractive financial cooperative
@@ -18,7 +22,7 @@ related_stories:
 - Brazilian Landless Workers' Movement
 scale:
 - Regional
-tags: 
+tags:
 - cooperatives
 - decision-making
 - financing
