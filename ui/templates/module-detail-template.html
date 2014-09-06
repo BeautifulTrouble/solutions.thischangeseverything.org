@@ -3,7 +3,7 @@
         <figure>
             <img src="<%= images[0].url %>" title="<%= images[0].caption %>">
             <% if ( images[0].caption && images[0].source ) { %>
-            <figcaption><%= images[0].caption %> Photo credit: <% images[0].source %></figcaption>
+            <figcaption><%= images[0].caption %> | <%= images[0].source %></figcaption>
             <% } %>
         </figure>
         <header>
@@ -12,21 +12,29 @@
         </header>
         <div class="row no-pad">
             <div class="col-md-7">
-                <section>
                     <button type="button" class="close close-detail"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <p class="byline">By <span class="contributor"><%= contributors[0] %></span></p>
-                    <ul class="values">
-                        <% _.each(related_values, function(value) { if (value) { %>
-                        <li><%= value %></li>
-                        <% } }); %>
-                    </ul>
-                    <div class="share-icon">Share!</div>
+                <section>
+                    <div class="row no-pad">
+                       <div class="col-md-3">
+                            <p class="byline">By <span class="contributor"><%= contributors[0] %></span></p>
+                       </div> 
+                       <div class="col-md-8">
+                            <ul class="values list-comma">
+                                <span>Values: </span>
+                                <% _.each(related_values, function(value) { if (value) { %>
+                                <li><%= value %></li>
+                                <% } }); %>
+                            </ul>
+                        </div>
+                        <div class="col-md-1 share-icon"><i class="glyphicon glyphicon-share-alt"></i></div>
+                    </div>
                     <div id="summary">
                     <p><%- short_write_up %></p>
                     </div>
                     <hr class="soften" />
                     <!--https://basecamp.com/1850835/projects/6447119/messages/30549111#comment_195218482-->
-                    <ul class="tags">
+                    <ul class="tags list-comma">
+                        <span>Tags:</span>
                         <% _.each(tags, function(tag) { if (tag) { %>
                         <li><%= tag %></li>
                         <% } }); %>
@@ -63,7 +71,7 @@
         </div>
         <div class="col-md-5">
             <aside id="related-entries">
-                <h3>Related Entries</h3>
+                <h3 class="list-header">Related Entries</h3>
                 <div id="related-list"></div>
             </aside> 
         </div>

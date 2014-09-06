@@ -112,6 +112,9 @@ App.ModulesListView = Backbone.View.extend({
                 model: module
             }));
         }, this);
+    },
+    afterRender: function() {
+        $('body').attr("class", "modules-list-view");
     }
 });
 
@@ -187,6 +190,9 @@ App.ModuleDetailView = Backbone.View.extend({
             }));
         }, this);
 
+    },
+    afterRender: function() {
+        $('body').attr("class", "module-detail-view");
     }
 });
 

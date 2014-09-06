@@ -21,6 +21,24 @@
   box-shadow: @arguments;
 }
 
+.text-shadow (@string: 0 1px 3px rgba(0, 0, 0, 0.25)) {
+	text-shadow: @string;
+}
+.list-comma {
+    display: inline;
+    list-style: none;
+    padding: 0;
+    li {
+      display: inline;
+    }
+    li:after {
+      content: ", ";
+    }
+    li:last-child:after {
+      content: "";
+    }
+}
+
 /* ==========================================================================
    Variables
    ========================================================================== */
@@ -50,9 +68,14 @@
 @buttons: #49c8ef;
 
 // Style tiles, Fonts
-// TODO come back to this once TypeKit is working
 @fontDefault: "source-sans-pro";
 @fontHeadersDefault: "alternate-gothic-no-2-d";
+.mixin-photocredits {
+    color: white;
+    font-family: @fontDefault;
+    font-size: 0.9em;
+    .text-shadow;
+}
 
 // Brand coloring
 @brando: #49c8ef;
@@ -72,7 +95,6 @@ body {
     font-family: @fontDefault;
     background-color: @bodyBackground; 
     padding-bottom: 40px;
-    height: 100%;
 }
 
 .row.no-pad {
@@ -134,41 +156,14 @@ header.site-header {
     }
 }
 
-//// Module: About View
-
-//#intro {
-    //background: rgba(0,0,0,.5);
-    //padding: 10px;
-    //color: white;
-    //margin-top: 40%;
-    //text-align: center;
-    //.rounded-corners;
-//}
-
-//#intro p {
-    //text-align: left;
-//}
-
 // Module: Modules list view (gallery view) 
+// body.modules-list-view
     #content {
-        //background: rgba(0,0,0,0.5);
-        padding: 40px 0 80px 0;
+        padding: 30px 0 80px 0;
     }
-    //.thumbnail {
-        //max-width: 290px;
-        //min-width: 200px;
-        //display: block;
-        //padding: 4px;
-        //margin-bottom: 20px;
-        //line-height: 1.42857143;
-        //background-color: #000;
-        //border: 1px solid #535353;
-        //.caption {
-            //color: white;
-        //}
-    //}
 
 // Module: Module detail view
+// body.module-detail-view
     article#module {
         figure {
             img {
@@ -179,9 +174,7 @@ header.site-header {
                 z-index: -9999;
             }
             figcaption {
-                color: white;
-                line-height: 1;
-                font-size: 90%;
+                .mixin-photocredits;
             }
         }
         header {
@@ -193,10 +186,25 @@ header.site-header {
             .type {
                 text-transform: uppercase;
             }
+            h1 {
+                margin: 0; 
+            }
+            h5 {
+                font-family: @fontHeadersDefault;
+                margin: 0; 
+            }
         }
         section {
             background: white;
             padding: @std-padding;
+            .share-icon .glyphicon {
+                float: right;
+            }
+            #summary {
+                font-family: "source-sans-pro",sans-serif;
+                font-style: normal;
+                font-weight: 300;
+            }
         }
         #button-bar button {
             background-color: @buttons;
@@ -220,19 +228,33 @@ header.site-header {
         }
         aside#related-entries {
                 color: white;
-            h3 {
+            h3.list-header {
                 background: black;
                 text-transform: uppercase;
                 margin: 0 1px;
-                padding: 0 4px;
+                padding: 2px 0 0 4px;
             }
             .module-list-item {
-                width: 49%;
+                width: 32%;
+                min-height: 100px;
                 float: left;
-                margin-left: 0.9%;
+                margin-left: 1%;
+                margin-top: 1%;
                 background-image: none !important;
+                h5 {
+                    font-family: @fontHeadersDefault;
+                    margin: 0;
+                    text-transform: uppercase;
+                }
                 h3 {
+                    font-family: @fontDefault;
+                    font-size: 1em;
                     background: none;
+                    margin: 0;
+                    .text-shadow;
+                }
+                .caption {
+                    padding: 6px;
                 }
             }
             .tactic {
@@ -262,7 +284,6 @@ header.site-header {
         }
     }
 
-// Module: Fullpage
 
 /* ==========================================================================
    Progressively enhance for larger screens 

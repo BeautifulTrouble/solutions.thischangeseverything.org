@@ -39,11 +39,13 @@ tags:
 learn_more:
 - "[Dudley Street Neighborhood Initiative Website](http://www.dsni.org/)"
 - "[Peter Medoff & Holly Sklar. Streets of Hope: The Fall and Rise of an Urban Neighborhood. South End Press, 1994.](http://www.southendpress.org/2004/items/StreetsHope)"
+- "[Dudley Street Neighborhood Initiative Website](http://www.dsni.org/)"
+- "[Peter Medoff & Holly Sklar. Streets of Hope: The Fall and Rise of an Urban Neighborhood. South End Press, 1994.](http://www.southendpress.org/2004/items/StreetsHope)"
 images:
 -
     url: http://www.dsni.org/sites/default/files/IMG_2135.jpg
-    caption:
-    source:
+    caption: "So and sos do something somewhere that's beautiful"
+    source: "Photo by Another Soandso"
 contributors:
 - Paul J. Kuttner
 ---
