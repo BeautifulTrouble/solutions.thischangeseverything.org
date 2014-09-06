@@ -3,6 +3,7 @@ _site
 *.swo
 *.~lock
 *~
+*.~
 *.lock
 *.DS_Store
 *.out
