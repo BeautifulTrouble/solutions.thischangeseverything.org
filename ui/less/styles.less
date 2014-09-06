@@ -43,12 +43,16 @@
 @articleHeaders: #628C00;
 @articleDesc: #575756;
 @linkText: #083643;
-@bodyBackground: black;
+@bodyBackground: white;
+@tactic: rgba(39,48,30,0.5);
+@solution: rgba(82,44,2,0.5);
+@theory: rgba(84,23,37,0.5);
+@buttons: #49c8ef;
 
 // Style tiles, Fonts
 // TODO come back to this once TypeKit is working
-@fontDefault: "Lucida Grande", Verdana, sans-serif;
-@fontHeadersDefault: Georgia;
+@fontDefault: "source-sans-pro";
+@fontHeadersDefault: "alternate-gothic-no-2-d";
 
 // Brand coloring
 @brando: #49c8ef;
@@ -99,6 +103,8 @@ h1, h2, h3, h4 {
 // Module: Header navigation, .site-nav
 header.site-header {
     background: @brando;
+    height: 40px;
+    overflow: hidden;
     .box-shadow;
     h1 {
         color: black;
@@ -128,50 +134,48 @@ header.site-header {
     }
 }
 
-// Module: About View
+//// Module: About View
 
-#intro {
-    background: rgba(0,0,0,.5);
-    padding: 10px;
-    color: white;
-    margin-top: 40%;
-    text-align: center;
-    .rounded-corners;
-}
+//#intro {
+    //background: rgba(0,0,0,.5);
+    //padding: 10px;
+    //color: white;
+    //margin-top: 40%;
+    //text-align: center;
+    //.rounded-corners;
+//}
 
-#intro p {
-    text-align: left;
-}
+//#intro p {
+    //text-align: left;
+//}
 
-// Module: Solutions view 
-
+// Module: Modules list view (gallery view) 
     #content {
-        background: rgba(0,0,0,0.5);
+        //background: rgba(0,0,0,0.5);
         padding: 40px 0 80px 0;
     }
-    .thumbnail {
-        max-width: 290px;
-        min-width: 200px;
-        display: block;
-        padding: 4px;
-        margin-bottom: 20px;
-        line-height: 1.42857143;
-        background-color: #000;
-        border: 1px solid #535353;
-        .caption {
-            color: white;
-        }
-    }
+    //.thumbnail {
+        //max-width: 290px;
+        //min-width: 200px;
+        //display: block;
+        //padding: 4px;
+        //margin-bottom: 20px;
+        //line-height: 1.42857143;
+        //background-color: #000;
+        //border: 1px solid #535353;
+        //.caption {
+            //color: white;
+        //}
+    //}
 
-// Module: Module page
+// Module: Module detail view
     article#module {
         figure {
             img {
                 // Find a better solution
                 position: fixed;
                 top: 0; left: 0;
-                min-width: 100%;
-                min-height: 100%;
+                width: 100%;
                 z-index: -9999;
             }
             figcaption {
@@ -194,6 +198,13 @@ header.site-header {
             background: white;
             padding: @std-padding;
         }
+        #button-bar button {
+            background-color: @buttons;
+            text-transform: uppercase;
+            border: none;
+            color: white;
+            padding: 4px 8px 4px 8px;
+        }
         aside#learn-more, aside#share {
             background: @brando;
             color: white;
@@ -208,12 +219,45 @@ header.site-header {
         aside#share {
         }
         aside#related-entries {
-            h3 {
                 color: white;
+            h3 {
                 background: black;
                 text-transform: uppercase;
                 margin: 0 1px;
                 padding: 0 4px;
+            }
+            .module-list-item {
+                width: 49%;
+                float: left;
+                margin-left: 0.9%;
+                background-image: none !important;
+                h3 {
+                    background: none;
+                }
+            }
+            .tactic {
+                background-color: @tactic;
+            }
+            .theory {
+                background-color: @theory;
+            }
+            .solution {
+                background-color: @solution;
+            }
+        }
+        aside#learn-more {
+            .learn-more-item-list {
+                float: left;
+                width: 100%;
+                height: 100px;
+                overflow: hidden; /* TODO deal with lots of references */
+            }
+            .learn-more-item {
+                width: 49%;
+                float: left;
+                a {
+                    color: white;
+                }
             }
         }
     }

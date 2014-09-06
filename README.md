@@ -38,7 +38,7 @@ Then install the project requirements in local directory so that you know you're
 
 ## Bundler, Jekyll & development modes
 
-If you run Jekyll though Bundler the project can the gems installed in the `_vendor` directory: 
+If you run Jekyll though Bundler the project can the gems installed in the `_vendor` directory:
 
 `bundle exec jekyll serve -w --config _config.yml`
 
@@ -54,9 +54,9 @@ The [Jekyll Assets Pipeline](http://ixti.net/jekyll-assets/) automatically compi
 
 ## Development with Jekyll & Grunt
 
-It's also possible to run the development set-up through Grunt. The `Gruntfile.js` has sensible defaults for developing that auto-compiles, lints, and beautifies JavaScript and Less, as well as BrowserSync for multi-screen testing, and Live Reload for template changes. 
+It's also possible to run the development set-up through Grunt. The `Gruntfile.js` has sensible defaults for developing that auto-compiles, lints, and beautifies JavaScript and Less, as well as BrowserSync for multi-screen testing, and Live Reload for template changes.
 
-It works nicely, but it's not fast. 
+It works nicely, but it's not fast.
 
 ## General concepts
 
