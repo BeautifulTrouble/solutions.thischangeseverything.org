@@ -8,7 +8,7 @@ related_solutions:
 related_theories:
 tags: [decision-making, housing, planning, urban planning, community organizing, eminent domain]
 learn_more:
-- "[The Pluralist Commonwealth](http://pluralistcommonwealth.org)"
+- "[The Pluralist Commonwealth](http://pluralistcommonwealth.org 'Website')"
 - "Gar Alperovitz. America Beyond Capitalism: Reclaiming Our Wealth, Our Liberty, and Our Democracy. Democracy Collaborative Press, 2011."
 contributors:
 - Gar Alperovitz

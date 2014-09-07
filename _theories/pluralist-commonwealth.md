@@ -45,8 +45,8 @@ tags:
 - living economies
 - politics
 learn_more:
-- "[Dudley Street Neighborhood Initiative Website](http://www.dsni.org/)"
-- "[Peter Medoff & Holly Sklar. Streets of Hope: The Fall and Rise of an Urban Neighborhood. South End Press, 1994.](http://www.southendpress.org/2004/items/StreetsHope)"
+- "[The Pluralist Commonwealth](http://pluralistcommonwealth.org 'Website')"
+- "Gar Alperovitz. America Beyond Capitalism: Reclaiming Our Wealth, Our Liberty, and Our Democracy. Democracy Collaborative Press, 2011."
 images:
 -
     url: http://www.dsni.org/sites/default/files/IMG_2135.jpg

@@ -15,12 +15,12 @@
                     <button type="button" class="close close-detail"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <section>
                     <div class="row no-pad">
-                       <div class="col-md-3">
-                            <p class="byline">By <span class="contributor"><%= contributors[0] %></span></p>
+                       <div class="col-md-3 byline">
+                            <p>by <span class="contributor"><%= contributors[0] %></span></p>
                        </div> 
-                       <div class="col-md-8">
-                            <ul class="values list-comma">
-                                <span>Values: </span>
+                       <div class="col-md-8 values">
+                            <ul class="list-comma">
+                                <span>Values</span>
                                 <% _.each(related_values, function(value) { if (value) { %>
                                 <li><%= value %></li>
                                 <% } }); %>
@@ -30,26 +30,36 @@
                     </div>
                     <div id="summary">
                     <p><%- short_write_up %></p>
-                    </div>
-                    <hr class="soften" />
-                    <!--https://basecamp.com/1850835/projects/6447119/messages/30549111#comment_195218482-->
-                    <ul class="tags list-comma">
-                        <span>Tags:</span>
-                        <% _.each(tags, function(tag) { if (tag) { %>
-                        <li><%= tag %></li>
-                        <% } }); %>
-                    </ul>
-                    <% if ( type === 'story' ) { %>
-                    <dl>
-                        <dt>Location:</dt><dd><%= where %></dd>
-                        <dt>Timeline:</dt><dd><%= when %></dd>
-                        <dt>Who:</dt><dd><%= who %></dd>
-                        <dt>Scale:</dt><dd>TODO</dd>
+                    <dl class="learn-more-item-list">
+                        <dt>Learn More</dt>
+                    <% _.each(learn_more, function(e) { if (e) { %>
+                        <dd class="learn-more-item"><%= App.showdown.makeHtml(e) %></dd>
+                    <% } }); %>
                     </dl>
-                     <% } %>
-                    <hr class="soften" />
+                    </div>
+                    <div class="meta clearfix">
+                        <div class="icon-tags">
+                        <i class="glyphicon glyphicon-tags"></i>
+                        </div>
+                    <!--https://basecamp.com/1850835/projects/6447119/messages/30549111#comment_195218482-->
+                        <div class="meta-info">
+                            <ul class="tags list-comma">
+                                <span>Tags</span>
+                                <% _.each(tags, function(tag) { if (tag) { %>
+                                <li><%= tag %></li>
+                                <% } }); %>
+                            </ul>
+                            <% if ( type === 'story' ) { %>
+                            <dl>
+                                <dt>Who:</dt><dd><%= who %></dd>
+                                <dt>When:</dt><dd><%= when %></dd>
+                                <dt>Where:</dt><dd><%= where %></dd>
+                                <dt>Scale:</dt><dd>TODO</dd>
+                            </dl>
+                             <% } %>
+                         </div>
+                     </div>
                     <div id="button-bar" class="clearfix">
-                        <button type="button" class="toggle-learn-more">Learn More</button>
                         <button type="button" class="improve-this">Improve This</button>
                     </div>
                 </section>
