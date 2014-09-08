@@ -130,37 +130,46 @@ h1, h2, h3, h4 {
 
 // Module: Header navigation, .site-nav
 header.site-header {
-    height: 44px;
+    height: 42px;
     overflow: hidden;
     background: @brando;
     .navbar-toggle {
-        display: block;
-        //float: left;
-        margin-top: 4px;
-        width: 34px;
-        .icon-bar {
-           height: 3px;
-        }
+        //display: block;
+        ////float: left;
+        //margin-top: 4px;
+        //width: 34px;
+        //.icon-bar {
+           //height: 3px;
+        //}
+    }
+    .icon-button {
+        color: white;
+        position: relative;
+        top: 10px;
+        font-size: 1.5em;
     }
     .tce {
         float: left;
         min-width: 350px;
         width: 35%;
-        height: 44px;
+        height: 42px;
         background: black;
         h1 {
-            background: url('/ui/img/logo-tce.png') no-repeat 42px 10px black;
+            background: url('/ui/img/logo-tce.png') no-repeat 15px 10px black;
             text-indent: -5000px;
             float: right;
             width: 295px;
             margin: 0px;
         }
-        button {
+        .icon-button {
             float: right;
+            color: @bodyText;
+            position: relative;
+            right: 24px;
         }
-        .icon-bar {
-            background: @bodyText;
-        }
+        //.icon-bar {
+            //background: @bodyText;
+        //}
     }
     .bsol {
         float: left;
@@ -172,12 +181,18 @@ header.site-header {
             text-indent: -5000px;
             margin: 0px;
         }
-        button {
+        .icon-button {
             float: left;
+            position: relative;
+            left: 10px;
         }
-        .icon-bar {
-            background: white;
-        }
+        //.icon-bar {
+            //background: white;
+        //}
+    }
+    .app-mode-toggle {
+        float: right;
+        width: 9%;
     }
 }
 .site-nav {
