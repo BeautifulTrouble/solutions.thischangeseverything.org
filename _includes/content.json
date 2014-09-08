@@ -7,6 +7,7 @@
     "where"             : "{{ module.where }}",
     "when"              : "{{ module.when }}",
     "who"               : "{{ module.who }}",
+    "scale"             : "{{ module.scale }}",
     {% endif %}
     "related_values"    : [{% for item in module.values %}"{{ item }}",{% endfor %} null],
     "related_solutions" : [{% for item in module.related_solutions %}"{{ item }}",{% endfor %} null],

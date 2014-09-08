@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 # Install requirements with `carton install`
-# Run with `carton exec _scripts/create_posts_from_csv.pl modules.csv`
+# Run with `carton exec _scripts/create_posts_from_csv.pl _data/modules.csv`
 
 use strict;
 use warnings;
@@ -23,7 +23,7 @@ use Mojo::Template;
 my $input_file = shift @ARGV;
 die 'No input file specified' unless $input_file;
 
-my $filename = "$FindBin::Bin/$input_file";
+my $filename = $input_file;
 my @rows;
 my $csv
     = Text::CSV_XS->new( { binary => 1, eol => $/, allow_loose_quotes => 1 }
@@ -87,6 +87,7 @@ short_write_up: "<%= $module->{'Short Write-Up'} %>"
 where: <%= $module->{'Where?'} %>
 when: <%= $module->{'When? (start)'} %> <%= $module->{'When? (end)'} %>
 who: <%= $module->{'Who?'} %>
+scale: <%= $module->{'Scale'} %>
 values:
 <%= $parse_list->( $module->{'Values exemplified'} ) =%>
 related_solutions:
@@ -95,8 +96,6 @@ related_theories:
 <%= $parse_list->( $module->{'Related Theories'} ) =%>
 related_stories:
 <%= $parse_list->( $module->{'Related Stories'} ) =%>
-scale:
-<%= $parse_list->( $module->{'Scale'} ) =%>
 tags:
 <%= $parse_list->( $module->{'Tags'} ) =%>
 learn_more:
