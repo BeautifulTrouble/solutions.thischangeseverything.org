@@ -5,7 +5,7 @@
 
 window.App = {};
 
-// Use the backbone.layoutmanager 
+// Use the backbone.layoutmanager
 // turn it on for all views by default
 Backbone.Layout.configure({
     manage: true,
@@ -50,11 +50,6 @@ App.Module = Backbone.Model.extend({
 // ===================================================================
 // Collections
 // ===================================================================
-App.PostsCollection = Backbone.Collection.extend({
-    model: App.Module,
-    url: "/posts.json",
-    comparator: 'title'
-});
 App.StoriesCollection = Backbone.Collection.extend({
     model: App.Module,
     url: "/stories.json",
@@ -70,6 +65,11 @@ App.TheoriesCollection = Backbone.Collection.extend({
     url: "/theories.json",
     comparator: 'title'
 });
+App.ValuesCollection = Backbone.Collection.extend({
+    model: App.Module,
+    url: "/values.json",
+    comparator: 'title'
+});
 // Collection of collections
 App.ModulesCollection = Backbone.Collection.extend({
     model: App.Module,
@@ -80,9 +80,10 @@ App.ModulesCollection = Backbone.Collection.extend({
 App.Stories = new App.StoriesCollection(stories);
 App.Solutions = new App.SolutionsCollection(solutions);
 App.Theories = new App.TheoriesCollection(theories);
+App.Values = new App.ValuesCollection(values);
 
 // Add each collection to the collection of collections
-App.Collections = [App.Stories, App.Solutions, App.Theories];
+App.Collections = [App.Stories, App.Solutions, App.Theories, App.Values];
 App.Modules = new App.ModulesCollection();
 _.each(App.Collections, function(collection) {
     // Remember, add the *models* not the collection
@@ -130,7 +131,14 @@ App.ModulesListItemView = Backbone.View.extend({
         // Listen for a click anywhere on the sub-view
         "click": "viewDetail"
     },
-    viewDetail: function() { navTo('module/', this); }
+    viewDetail: function() { 
+        var type = this.model.get("type");
+        if ( type === 'value' ) {
+            navTo('value/', this);
+        } else {
+            navTo('module/', this); 
+        }
+    }
 });
 
 
@@ -188,6 +196,42 @@ App.ModuleDetailView = Backbone.View.extend({
     }
 });
 
+App.ValueDetailView = Backbone.View.extend({
+    collection: new App.ModulesCollection(),
+    initialize: function(options) {
+        this.collection.reset();
+        this.listenTo(this.collection, "add", this.render);
+        //console.log('ModuleDetailView initialized');
+        var relatedSolutions = this.model.get('related_solutions');
+        var relatedTheories = this.model.get('related_theories');
+        var relatedStories = this.model.get('related_stories');
+        var relatedModules = relatedSolutions.concat(relatedStories).concat(relatedTheories);
+        // console.log(relatedModules);
+        var self = this;
+        _.each(relatedModules, function(name) {
+            var module = App.Modules.findWhere({
+                title: name
+            });
+            self.collection.add(module);
+        });
+    },
+    template: "value-detail-template",
+    events: {
+        "click button.close-detail": "closeDetail",
+    },
+    closeDetail: function(e) { navTo(); },
+    beforeRender: function() {
+        // Add the subviews to the view
+        this.collection.each(function(module) {
+            this.insertView("#related-list", new App.ModulesListItemView({
+                model: module
+            }));
+        }, this);
+    },
+    afterRender: function() {
+        $('body').attr("class", "value-detail-view");
+    }
+});
 App.IdeaLabListView = Backbone.View.extend({
     template: "idealab-list-template",
     afterRender: function() {
@@ -232,6 +276,7 @@ var navTo = function(prefix, context) {
     //  navTo();
     //  navTo('about');
     //  navTo('module/', this);
+    //  navTo('value/', this);
     //  navTo('idealab/published/', this);
     var slug = context ? context.model.get("slug") : "",
         prefix = prefix ? prefix : "";
@@ -246,6 +291,7 @@ App.Router = Backbone.Router.extend({
     routes: {
         '': 'start',
         'module(/:name)': 'displayModule',
+        'value(/:name)': 'displayValue',
         'idealab/:state(/:name)': 'displayIdeaLab',
         '*default': 'defaultRoute'
     },
@@ -260,6 +306,19 @@ App.Router = Backbone.Router.extend({
         if (model) {
             // Curious where the collection of related modules should be aggregated in order to insert the nested views
             App.Layout.setView("#content", new App.ModuleDetailView({
+                model: model
+            }));
+            App.Layout.render();
+        } else {
+            this.defaultRoute();
+        }
+    },
+    displayValue: function(name) {
+        var model = this.collection.findWhere({
+            "slug": name
+        });
+        if (model) {
+            App.Layout.setView("#content", new App.ValueDetailView({
                 model: model
             }));
             App.Layout.render();
