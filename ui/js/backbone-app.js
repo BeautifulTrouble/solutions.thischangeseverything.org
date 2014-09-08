@@ -164,8 +164,9 @@ App.ModuleDetailView = Backbone.View.extend({
     },
     template: "module-detail-template",
     events: {
-        "click button.improve-this": "improveThis",
         "click button.close-detail": "closeDetail",
+        "click .values li": "viewValue",
+        "click button.improve-this": "improveThis",
         "click button.close-share": function(e) {
             this.$("#share").addClass("hide");
         }, // Simple function for this?
@@ -182,6 +183,12 @@ App.ModuleDetailView = Backbone.View.extend({
     },
     closeDetail: function(e) { navTo(); },
     improveThis: function(e) { navTo('idealab/published/', this); },
+    viewValue: function(e) { 
+        var valueName = e.currentTarget.innerHTML;
+        var value = App.Values.findWhere({title: valueName});
+        var slug = value.get("slug");
+        navTo('value/' + slug); 
+    },
     beforeRender: function() {
         // Add the subviews to the view
         this.collection.each(function(module) {
