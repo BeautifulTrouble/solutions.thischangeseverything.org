@@ -230,6 +230,11 @@ App.ValueDetailView = Backbone.View.extend({
     },
     afterRender: function() {
         $('body').attr("class", "value-detail-view");
+        var container = $('#related-list');
+        container.isotope({
+          itemSelector: '.module-list-item',
+          layoutMode: 'fitRows'
+        });
     }
 });
 App.IdeaLabListView = Backbone.View.extend({
