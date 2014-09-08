@@ -92,6 +92,7 @@ _.each(App.Collections, function(collection) {
 // ===================================================================
 // Views
 // ===================================================================
+
 App.ModulesListView = Backbone.View.extend({
     el: false,
     collection: App.Modules,
@@ -129,13 +130,7 @@ App.ModulesListItemView = Backbone.View.extend({
         // Listen for a click anywhere on the sub-view
         "click": "viewDetail"
     },
-    viewDetail: function(e) {
-        // Navigate to the detail view
-        var name = this.model.get("slug");
-        App.router.navigate('module/' + name, {
-            trigger: true
-        });
-    }
+    viewDetail: function() { navTo('module/', this); }
 });
 
 
@@ -161,6 +156,7 @@ App.ModuleDetailView = Backbone.View.extend({
     },
     template: "module-detail-template",
     events: {
+        "click button.improve-this": "improveThis",
         "click button.close-detail": "closeDetail",
         "click button.close-share": function(e) {
             this.$("#share").addClass("hide");
@@ -176,12 +172,8 @@ App.ModuleDetailView = Backbone.View.extend({
         }, // class="auto-events close-share open-learn-more"
         //"click button.auto-events": "autoEventHandler",
     },
-    closeDetail: function(e) {
-        // Navigate back to the start view
-        App.router.navigate('', {
-            trigger: true
-        });
-    },
+    closeDetail: function(e) { navTo(); },
+    improveThis: function(e) { navTo('idealab/published/', this); },
     beforeRender: function() {
         // Add the subviews to the view
         this.collection.each(function(module) {
@@ -193,6 +185,31 @@ App.ModuleDetailView = Backbone.View.extend({
     },
     afterRender: function() {
         $('body').attr("class", "module-detail-view");
+    }
+});
+
+App.IdeaLabListView = Backbone.View.extend({
+    template: "idealab-list-template",
+    afterRender: function() {
+        $('body').attr("class", "idealab-list-view");
+    }
+});
+
+App.IdeaLabDetailView = Backbone.View.extend({
+    template: "idealab-detail-template",
+    initialize: function(options) {
+    },
+    events: {
+        "click button.view-published-idea": "viewPublishedIdea"
+    },
+    viewPublishedIdea: function(e) { navTo('module/', this); },
+    afterRender: function() {
+        // TODO: google oauth refuses these redirects :( ...so use an ajaxier approach
+        this.$('a.login').each(function () {
+            var next_param = (this.href.indexOf('?') != -1) ? '&next=' : '?next=';
+            this.href = this.href + next_param + window.location.pathname + '%23' + Backbone.history.fragment;
+        });
+        $('body').attr("class", "idealab-detail-view");
     }
 });
 
@@ -209,12 +226,27 @@ App.Layout = new Backbone.Layout({
 // ===================================================================
 // Router
 // ===================================================================
+
+var navTo = function(prefix, context) {
+    // Examples:
+    //  navTo();
+    //  navTo('about');
+    //  navTo('module/', this);
+    //  navTo('idealab/published/', this);
+    var slug = context ? context.model.get("slug") : "",
+        prefix = prefix ? prefix : "";
+    App.router.navigate(prefix + slug, {
+        trigger: true
+    });
+};
+
 App.Router = Backbone.Router.extend({
     collection: App.Modules,
     initialize: function(options) {},
     routes: {
         '': 'start',
         'module(/:name)': 'displayModule',
+        'idealab/:state(/:name)': 'displayIdeaLab',
         '*default': 'defaultRoute'
     },
     start: function() {
@@ -230,6 +262,18 @@ App.Router = Backbone.Router.extend({
             App.Layout.setView("#content", new App.ModuleDetailView({
                 model: model
             }));
+            App.Layout.render();
+        } else {
+            this.defaultRoute();
+        }
+    },
+    displayIdeaLab: function(state, name) {
+        if (state == "published" || state == "submitted") {
+            var model = (state == "published") ? this.collection.findWhere({ "slug": name })
+                                               : null;  // TODO: add ideas collection
+            var view = model ? new App.IdeaLabDetailView({model: model})
+                             : new App.IdeaLabListView();
+            App.Layout.setView("#content", view);
             App.Layout.render();
         } else {
             this.defaultRoute();

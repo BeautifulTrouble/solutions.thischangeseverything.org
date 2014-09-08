@@ -1,0 +1,42 @@
+<div class="container">
+    <article id="idealab">
+        <div class="row no-pad">
+            <div class="col-md-7">
+                <header>
+                    <button type="button" class="view-all-ideas">View All Ideas</button>
+                    <button type="button" class="view-gallery">View Gallery</button>
+                    <button type="button" class="view-published-idea">View Published Idea</button>
+                    <h1><%= title %></h1>
+                    <div class="byline">
+                        <p>
+                            by <span class="contributor"><%= contributors[0] %></span>
+                            <span class="date-added">Added [we don't store this]</span>
+                            <span class="module-type-icon">[*]</span><%= type %>
+                        </p>
+                    </div> 
+                </header>
+                <section>
+                    <p><%= short_write_up %></p>
+                    <div class="meta clearfix">
+                        <div class="icon-tags">
+                            <i class="glyphicon glyphicon-tags"></i>
+                        </div>
+                        <div class="meta-info">
+                            <ul class="tags list-comma">
+                                <span>Tags</span>
+                                <% _.each(tags, function(tag) { if (tag) { %>
+                                <li><%= tag %></li>
+                                <% } }); %>
+                            </ul>
+                         </div>
+                     </div>
+                </section>
+            </div>
+        </div>
+        <!-- TODO: add url endpoints to either jekyll or flask -->
+        <a class="login" href="/api/logout">logout</a><br>
+        <a class="login" href="/api/login/google">login with google</a><br>
+        <a class="login" href="/api/login/facebook">login with facebook</a><br>
+        <a class="login" href="/api/login/twitter">login with twitter</a><br>
+    </article>
+</div>
