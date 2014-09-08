@@ -186,8 +186,12 @@ App.ModuleDetailView = Backbone.View.extend({
     viewValue: function(e) { 
         var valueName = e.currentTarget.innerHTML;
         var value = App.Values.findWhere({title: valueName});
-        var slug = value.get("slug");
-        navTo('value/' + slug); 
+        if ( value ) {
+            var slug = value.get("slug");
+            navTo('value/' + slug); 
+        } else {
+            console.log('TODO');
+        }
     },
     beforeRender: function() {
         // Add the subviews to the view
