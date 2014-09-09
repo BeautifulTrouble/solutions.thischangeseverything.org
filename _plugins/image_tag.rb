@@ -76,14 +76,6 @@ module Jekyll
         html_attr = preset['attr'].merge(html_attr)
       end
 
-      html_attr_string = html_attr.inject('') { |string, attrs|
-        if attrs[1]
-          string << "#{attrs[0]}=\"#{attrs[1]}\" "
-        else
-          string << "#{attrs[0]} "
-        end
-      }
-
       # Raise some exceptions before we start expensive processing
       raise "Image Tag can't find the \"#{markup[:preset]}\" preset. Check image: presets in _config.yml for a list of presets." unless preset || dim ||  markup[:preset].nil?
 
@@ -94,7 +86,7 @@ module Jekyll
       end
 
       # Return the markup!
-      "<img src=\"#{generated_src}\" #{html_attr_string}>"
+      "#{generated_src}"
     end
 
     def generate_image(instance, site_source, site_dest, image_source, image_dest)
