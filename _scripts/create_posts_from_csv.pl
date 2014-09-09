@@ -82,12 +82,13 @@ __DATA__
 % my $module = shift;
 % my $parse_list = shift;
 ---
+id: <%= $module->{'Beautiful Solutions Entry: ID'} %>
 title: <%= $module->{'Beautiful Solutions Entry: beautiful solution name'} %>
 short_write_up: "<%= $module->{'Short Write-Up'} %>"
-where: <%= $module->{'Where?'} %>
-when: <%= $module->{'When? (start)'} %> <%= $module->{'When? (end)'} %>
-who: <%= $module->{'Who?'} %>
-scale: <%= $module->{'Scale'} %>
+where: "<%= $module->{'Where?'} %>"
+when: "<%= $module->{'When'} %>"
+who: "<%= $module->{'Who?'} %>"
+scale: "<%= $module->{'Scale'} %>"
 values:
 <%= $parse_list->( $module->{'Values exemplified'} ) =%>
 related_solutions:
@@ -99,14 +100,25 @@ related_stories:
 tags:
 <%= $parse_list->( $module->{'Tags'} ) =%>
 learn_more:
-- "[Dudley Street Neighborhood Initiative Website](http://www.dsni.org/)"
-- "[Peter Medoff & Holly Sklar. Streets of Hope: The Fall and Rise of an Urban Neighborhood. South End Press, 1994.](http://www.southendpress.org/2004/items/StreetsHope)"
 images:
+<% if ( $module->{'image_name'} ) { =%>
 -
-    url: http://www.dsni.org/sites/default/files/IMG_2135.jpg
-    caption:
-    source:
+    url: <%= $module->{'image_name'} %>
+    name: <%= $module->{'image_name'} %>
+    caption: "<%= $module->{'image_caption'} %>"
+    source: "<%= $module->{'image_source'} %>"
+    source_url: "<%= $module->{'image_source_url'} %>"
+    rights: "<%= $module->{'IMAGE RIGHTS'} %>"
+<% } else { =%>
+-
+    url: 'Community-Wealth-Building.jpg'
+    name: 'Community-Wealth-Building.jpg' 
+    caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
+    source: "Ecomundo Cleaning Co-operative"
+    source_url: "https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater"
+    rights: "By permission of Ecomundo Cleaning"
+<% } =%>
 contributors:
-- <%= $module->{'Primary contributor name'} %>
+- "<%= $module->{'Primary contributor name'} %>"
 ---
-Full write-up would go here in theory.
+Full write-up would go here.
