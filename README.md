@@ -14,6 +14,8 @@ Jekyll plugins (still TBD)
 
 There's extra stuff in here for local development with Grunt, which can be ignored for now (the same functionality is included in Jekyll for the most part)
 
+ImageMagick for the image resizing.
+
 ## Installation
 
 1. Get the source / sub-modules
