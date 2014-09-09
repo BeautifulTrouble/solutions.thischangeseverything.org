@@ -17,8 +17,11 @@
     "tags"              : [{% for tag in module.tags %}"{{ tag }}",{% endfor %} null],
     "images"            : [{% for image in module.images %} 
                             { "url" : "{{ image.url }}", 
+                              "name" : "{{ image.name }}", 
                               "caption" : "{{ image.caption}}", 
-                              "source" : "{{ image.source }}" },
+                              "source" : "{{ image.source }}",
+                              "thumb_url" : "{% image thumb {{image.url}} %}"
+                            },
                            {% endfor %} null],
     "href"              : "{{ module.url }}",
     "slug"              : "{{ module.title | downcase | replace: ' ', '-' }}",

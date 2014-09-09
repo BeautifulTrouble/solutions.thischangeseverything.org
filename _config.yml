@@ -16,6 +16,15 @@ collections:
 - stories
 - values
 
+# Project settings - Jekyll Image Tag
+image:
+  source: full_images
+  output: gen_images
+  presets:
+    thumb:
+      width: 200
+      height: AUTO 
+
 # Project settings - Analytics
 analytics:
     ga_tracking_id: 'UA-12345-5'
