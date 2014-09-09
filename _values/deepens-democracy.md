@@ -1,9 +1,11 @@
 ---
+id: a16E0000002QA25
 title: Deepens democracy
 short_write_up: "Democracy, “the direct exercise of sovereignty by the people themselves” (Fotopoulos), is not a new idea. As much as anything else, human history is the story of groups of people trying to put democracy into practice; still today, the liberatory potential of true democracy continues to shine as a beacon for popular struggles worldwide. Whether it’s workers organizing to take over a shuttered factory, landless peasants squatting and farming on fallow land, or a neighborhood assembly deciding how their share of the city budget will be allocated, people are working together in countless ways to bring about a truly democratic world. The solutions that most deepen democracy are those that provide meaningful opportunities for people to participate — individually and in concert with others — in setting the course of their own lives."
-where: 
-when:  
-who: 
+where: ""
+when: ""
+who: ""
+scale: ""
 values:
 related_solutions:
 - Community land trusts
@@ -25,7 +27,7 @@ related_theories:
 - Solidarity economics
 related_stories:
 - Boulder, Colorado vs. Xcel energy
-- Building community economies on Pine Ridgege
+- Building community economies on Pine Ridge
 - Cooperative Homecare Associates
 - Co-op Power
 - Dudley Street Neighborhood Initiative
@@ -39,7 +41,6 @@ related_stories:
 - Working Families Party
 - Brazilian Landless Workers' Movement
 - Idle No More
-scale:
 tags:
 - cooperatives
 - decision-making
@@ -53,14 +54,15 @@ tags:
 - politics
 - taxation
 learn_more:
-- "[Dudley Street Neighborhood Initiative Website](http://www.dsni.org/)"
-- "[Peter Medoff & Holly Sklar. Streets of Hope: The Fall and Rise of an Urban Neighborhood. South End Press, 1994.](http://www.southendpress.org/2004/items/StreetsHope)"
 images:
 -
-    url: http://www.dsni.org/sites/default/files/IMG_2135.jpg
-    caption:
-    source:
+    url: 'Community-Wealth-Building.jpg'
+    name: 'Community-Wealth-Building.jpg' 
+    caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
+    source: "Ecomundo Cleaning Co-operative"
+    source_url: "https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater"
+    rights: "By permission of Ecomundo Cleaning"
 contributors:
-- Dave Oswald Mitchell
+- "Dave Oswald Mitchell"
 ---
-Full write-up would go here in theory.
+Full write-up would go here.

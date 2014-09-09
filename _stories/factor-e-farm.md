@@ -1,9 +1,11 @@
 ---
+id: a16E0000002QA1M
 title: Factor E Farm
 short_write_up: "Factor E Farm is an experiment in creating resilient communities through open-source design. Located in rural Missouri, Factor E Farm serves as the hub of a dispersed network of farmers, engineers, architects and supporters that is working to develop the Global Village Construction Set, which developers describe as “an open technological platform that allows for the easy fabrication of the fifty different industrial machines that it takes to build a small civilization with modern comforts.” The goal is to produce these machines at the cost of materials in zero waste, self-replicating “micro-factories.” The project is volunteer-driven, fully open source, and prioritizes cradle-to-cradle construction."
-where: North of Kansas City, Missouri, USA
-when: 2007 present
-who: Open Source Ecology
+where: "North of Kansas City, Missouri, USA"
+when: "2007 — Present"
+who: "Open Source Ecology"
+scale: "Local"
 values:
 - Builds resilience
 - Creates more possibilities
@@ -21,22 +23,21 @@ related_theories:
 related_stories:
 - Trade school: barter-for-knowledge
 - Resilence Circles
-scale:
-- Local
 tags:
 - agriculture
 - education
 - food
 - open source
 learn_more:
-- "[Dudley Street Neighborhood Initiative Website](http://www.dsni.org/)"
-- "[Peter Medoff & Holly Sklar. Streets of Hope: The Fall and Rise of an Urban Neighborhood. South End Press, 1994.](http://www.southendpress.org/2004/items/StreetsHope)"
 images:
 -
-    url: http://www.dsni.org/sites/default/files/IMG_2135.jpg
-    caption:
-    source:
+    url: Factor-E-Farm.jpg
+    name: Factor-E-Farm.jpg
+    caption: "LifeTrac 4 is a low-cost, multipurpose, open-source tractor that is designed and built with a focus on a lifetime of usage and ease of repair."
+    source: "Open Source Ecology"
+    source_url: ""
+    rights: "Creative Commons Attribution – ShareAlike 4.0"
 contributors:
-- Dave Oswald Mitchell
+- "Dave Oswald Mitchell"
 ---
-Full write-up would go here in theory.
+Full write-up would go here.

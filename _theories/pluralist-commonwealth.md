@@ -1,9 +1,11 @@
 ---
+id: a16E0000002QA2K
 title: Pluralist commonwealth
 short_write_up: "If we don’t want corporate capitalism, and we don’t want authoritarian state socialism, what do we want? The pluralist commonwealth is a vision of an economic and political system designed to ensure environmental sustainability, genuine democracy, community, and greater equality and personal liberty. Crucially: it’s a commonwealth, meaning that ownership of the economic foundations of society is broadly distributed and democratized, and it’s pluralist, meaning that there is no single magic bullet; instead, we need a system made up of different kinds of institutions at different scales, from worker cooperatives and community ownership at smaller scales to public ownership in critically important larger sectors."
-where: 
-when:  
-who: 
+where: ""
+when: ""
+who: ""
+scale: ""
 values:
 - Cultivates abundance
 - Deepens democracy
@@ -36,7 +38,6 @@ related_stories:
 - Initiative 136
 - Philidelphia Land Bank
 - Southern Grassroots Economies Project
-scale:
 tags:
 - community development
 - cooperatives
@@ -45,14 +46,15 @@ tags:
 - living economies
 - politics
 learn_more:
-- "[The Pluralist Commonwealth](http://pluralistcommonwealth.org 'Website')"
-- "Gar Alperovitz. America Beyond Capitalism: Reclaiming Our Wealth, Our Liberty, and Our Democracy. Democracy Collaborative Press, 2011."
 images:
 -
-    url: http://www.dsni.org/sites/default/files/IMG_2135.jpg
-    caption:
-    source:
+    url: 'Community-Wealth-Building.jpg'
+    name: 'Community-Wealth-Building.jpg' 
+    caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
+    source: "Ecomundo Cleaning Co-operative"
+    source_url: "https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater"
+    rights: "By permission of Ecomundo Cleaning"
 contributors:
-- Gar Alperovitz
+- "Gar Alperovitz"
 ---
-Full write-up would go here in theory.
+Full write-up would go here.

@@ -1,9 +1,11 @@
 ---
+id: a16E0000002QA0i
 title: Non-extractive financial co-operative
 short_write_up: "A non-extractive financial cooperative is owned and operated by its members — the loan or equity recipients. Unlike most banks, its mission is not to extract profit from the community, but to leave more value in a community than it took out. For instance, it might provide the capital and technical assistance a small business needs to transition to community ownership. Rather than dictating the terms of investment, a non-extractive financial cooperative makes sure the terms are set by the people and communities involved. It thus inverts the power of capital, turning money into a tool for people — rather than the other way around."
-where: 
-when:  
-who: 
+where: ""
+when: ""
+who: ""
+scale: ""
 values:
 - Builds resilience
 - Creates more possibilities
@@ -30,21 +32,21 @@ related_stories:
 - Farm Workers Credit Union
 - New Era Windows
 - Southern Grassroots Economies Project
-scale:
 tags:
 - community development
 - cooperatives
 - economics
 - financing
 learn_more:
-- "[Dudley Street Neighborhood Initiative Website](http://www.dsni.org/)"
-- "[Peter Medoff & Holly Sklar. Streets of Hope: The Fall and Rise of an Urban Neighborhood. South End Press, 1994.](http://www.southendpress.org/2004/items/StreetsHope)"
 images:
 -
-    url: http://www.dsni.org/sites/default/files/IMG_2135.jpg
-    caption:
-    source:
+    url: 'Community-Wealth-Building.jpg'
+    name: 'Community-Wealth-Building.jpg' 
+    caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
+    source: "Ecomundo Cleaning Co-operative"
+    source_url: "https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater"
+    rights: "By permission of Ecomundo Cleaning"
 contributors:
-- Rachel Berliner Plattus
+- "Rachel Berliner Plattus"
 ---
-Full write-up would go here in theory.
+Full write-up would go here.

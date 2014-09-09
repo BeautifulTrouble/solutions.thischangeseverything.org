@@ -1,9 +1,11 @@
 ---
+id: a16E0000002QA0n
 title: Upstream thinking
 short_write_up: "Our current approach to healthcare is equivalent to jumping into a river to pull out drowning children, when instead we should head upstream to figure out why these children are falling in the river in the first place. The lesson is clear: to improve our health and wellbeing, we need to move beyond reactive healthcare and focus on the “upstream” factors — or social determinants — that most impact our health: income and its distribution, education, housing, nutrition, employment and the wider environment. Upstream thinking means taking wise collective action to ensure better outcomes rather than simply responding to, and being overwhelmed by, crises we could have foreseen."
-where: 
-when:  
-who: 
+where: ""
+when: ""
+who: ""
+scale: ""
 values:
 - Advances justice
 - Builds resilience
@@ -21,7 +23,6 @@ related_theories:
 related_stories:
 - The river with the rights of a person
 - Resilence Circles
-scale:
 tags:
 - community development
 - education
@@ -31,14 +32,15 @@ tags:
 - taxation
 - well-being
 learn_more:
-- "[Dudley Street Neighborhood Initiative Website](http://www.dsni.org/)"
-- "[Peter Medoff & Holly Sklar. Streets of Hope: The Fall and Rise of an Urban Neighborhood. South End Press, 1994.](http://www.southendpress.org/2004/items/StreetsHope)"
 images:
 -
-    url: http://www.dsni.org/sites/default/files/IMG_2135.jpg
-    caption:
-    source:
+    url: 'Community-Wealth-Building.jpg'
+    name: 'Community-Wealth-Building.jpg' 
+    caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
+    source: "Ecomundo Cleaning Co-operative"
+    source_url: "https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater"
+    rights: "By permission of Ecomundo Cleaning"
 contributors:
-- Ryan Meili
+- "Ryan Meili"
 ---
-Full write-up would go here in theory.
+Full write-up would go here.
