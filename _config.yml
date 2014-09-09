@@ -22,9 +22,8 @@ image:
   output: gen_images
   presets:
     thumb:
-      width: 200
-      height: AUTO 
-
+      height: 400
+      width: AUTO
 # Project settings - Analytics
 analytics:
     ga_tracking_id: 'UA-12345-5'

@@ -1,4 +1,5 @@
-<div class="module-list-item <%= type %>" data-category="<%= type %>" id="<%= slug %>" style="background-image: url('<%= images[0].thumb_url %>'); background-size: cover; background-repeat: no-repeat;">
+<% var random = Math.floor(Math.random() * 3) + 1 %>
+<div class="module-list-item <%= type %> size-<%= random%>" data-category="<%= type %>" id="<%= slug %>" style="background-image: url('<%= images[0].thumb_url %>'); background-size: cover; background-repeat: no-repeat;">
     <div class="caption">
         <h5 class="type"><%= type %>:</h5>
         <h3 class="title"><%= title %></h3>
