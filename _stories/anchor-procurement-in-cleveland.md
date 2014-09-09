@@ -32,7 +32,8 @@ learn_more:
 - "[Peter Medoff & Holly Sklar. Streets of Hope: The Fall and Rise of an Urban Neighborhood. South End Press, 1994.](http://www.southendpress.org/2004/items/StreetsHope)"
 images:
 -
-    url: http://www.dsni.org/sites/default/files/IMG_2135.jpg
+    url: "Anchor-Procurement-In-Cleveland.jpg"
+    name: "Anchor-Procurement-In-Cleveland.jpg"
     caption:
     source:
 contributors:
