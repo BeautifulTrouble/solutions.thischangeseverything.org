@@ -117,6 +117,17 @@ App.ModulesListView = Backbone.View.extend({
     },
     afterRender: function() {
         $('body').attr("class", "modules-list-view");
+        this.container = $('#modules-list');
+        this.container.isotope({
+          // options
+          itemSelector: '.module-list-item',
+          layoutMode: 'masonry',
+          getSortData: {
+            type: '[data-category]',
+            title: '.caption .title'
+          },
+          sortBy: 'random'
+        });
     }
 });
 
