@@ -31,10 +31,6 @@
                     <div id="summary">
                     <p><%- short_write_up %></p>
                     <dl class="learn-more-item-list">
-                        <dt>Learn More</dt>
-                    <% _.each(learn_more, function(e) { if (e) { %>
-                        <dd class="learn-more-item"><%= App.showdown.makeHtml(e) %></dd>
-                    <% } }); %>
                     </dl>
                     </div>
                     <div class="meta clearfix">
@@ -69,11 +65,6 @@
                 <aside id="learn-more" class="hide">
                     <button type="button" class="close close-learn-more"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                     <div class="learn-more-item-list">
-                    <% _.each(learn_more, function(e) { if (e) { %>
-                        <div class="learn-more-item">
-                            <%= App.showdown.makeHtml(e) %>
-                        </div>
-                    <% } }); %>
                     </div>
                 </aside>
                 <aside id="share" class="hide">
