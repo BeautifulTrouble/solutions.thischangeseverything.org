@@ -137,7 +137,7 @@ App.ModulesListView = Backbone.View.extend({
         };
     },
     events: {
-      'click .filter': "filterList",  
+        'click .filter': "filterList",  
     },
     beforeRender: function() {
         // Add the subviews to the view
@@ -151,21 +151,24 @@ App.ModulesListView = Backbone.View.extend({
         $('body').attr("class", "modules-list-view");
         this.container = $('#modules-list');
         this.container.isotope({
-          // options
-          itemSelector: '.module-list-item',
-          layoutMode: 'masonry',
-          getSortData: {
-            type: '[data-category]',
-            title: '.caption .title'
-          },
-          sortBy: 'random'
+            // options
+            itemSelector: '.module-list-item',
+            layoutMode: 'masonry',
+            getSortData: {
+                type: '[data-category]',
+                title: '.caption .title'
+            },
+            sortBy: 'random'
         });
+        this.filterControl = $('#modules-gallery ul li');
     },
     filterList: function(e) {
-        console.log(e.currentTarget.getAttribute("data-filter"));
+        this.filterControl.removeClass("active")
+        //console.log(e.currentTarget.getAttribute("data-filter"));
         var user_filter = e.currentTarget.getAttribute("data-filter");
+        $( e.currentTarget ).addClass("active");
         if ( user_filter ) {
-        this.container.isotope({filter: user_filter});   
+            this.container.isotope({filter: user_filter});   
         }
     }
 });
@@ -293,8 +296,8 @@ App.ValueDetailView = Backbone.View.extend({
         $('body').attr("class", "value-detail-view");
         var container = $('#related-list');
         container.isotope({
-          itemSelector: '.module-list-item',
-          layoutMode: 'fitRows'
+            itemSelector: '.module-list-item',
+            layoutMode: 'fitRows'
         });
     }
 });
@@ -345,7 +348,7 @@ var navTo = function(prefix, context) {
     //  navTo('value/', this);
     //  navTo('idealab/published/', this);
     var slug = context ? context.model.get("slug") : "",
-        prefix = prefix ? prefix : "";
+    prefix = prefix ? prefix : "";
     App.router.navigate(prefix + slug, {
         trigger: true
     });
@@ -395,11 +398,11 @@ App.Router = Backbone.Router.extend({
     displayIdeaLab: function(state, name) {
         if (state == "published" || state == "submitted") {
             var model = (state == "published") ? this.collection.findWhere({ "slug": name })
-                                               : null;  // TODO: add ideas collection
-            var view = model ? new App.IdeaLabDetailView({model: model})
-                             : new App.IdeaLabListView();
-            App.Layout.setView("#content", view);
-            App.Layout.render();
+                : null;  // TODO: add ideas collection
+                var view = model ? new App.IdeaLabDetailView({model: model})
+                    : new App.IdeaLabListView();
+                    App.Layout.setView("#content", view);
+                    App.Layout.render();
         } else {
             this.defaultRoute();
         }
