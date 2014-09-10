@@ -47,6 +47,18 @@ App.Module = Backbone.Model.extend({
     }
 });
 
+App.IdeaLabModel = Backbone.Model.extend({
+    parse: function(response) { 
+        return "data" in response ? response['data'] : response;
+    }
+});
+App.Idea = App.IdeaLabModel.extend({
+    urlRoot: "/api/ideas"
+});
+App.Improvement = App.IdeaLabModel.extend({
+    urlRoot: "/api/improvements"
+});
+
 // ===================================================================
 // Collections
 // ===================================================================
@@ -89,6 +101,22 @@ _.each(App.Collections, function(collection) {
     // Remember, add the *models* not the collection
     App.Modules.add(collection.models);
 });
+
+// IdeaLab Collections
+App.IdeaLabCollection = Backbone.Collection.extend({
+    parse: function(response) {
+        return response['data'];
+    }
+});
+App.IdeasCollection = App.IdeaLabCollection.extend({
+    model: App.Idea,
+    url: "/api/ideas"
+});
+App.ImprovementsCollection = App.IdeaLabCollection.extend({
+    model: App.Improvement,
+    url: "/api/improvements"
+});
+
 
 // ===================================================================
 // Views
