@@ -94,6 +94,7 @@ _.each(App.Collections, function(collection) {
 // Views
 // ===================================================================
 
+
 App.ModulesListView = Backbone.View.extend({
     el: false,
     collection: App.Modules,
@@ -107,10 +108,13 @@ App.ModulesListView = Backbone.View.extend({
             modules: this.collection
         };
     },
+    events: {
+      'click .filter': "filterList",  
+    },
     beforeRender: function() {
         // Add the subviews to the view
         this.collection.each(function(module) {
-            this.insertView("div#modules-list", new App.ModulesListItemView({
+            this.insertView("#modules-list", new App.ModulesListItemView({
                 model: module
             }));
         }, this);
@@ -128,6 +132,13 @@ App.ModulesListView = Backbone.View.extend({
           },
           sortBy: 'random'
         });
+    },
+    filterList: function(e) {
+        console.log(e.currentTarget.getAttribute("data-filter"));
+        var user_filter = e.currentTarget.getAttribute("data-filter");
+        if ( user_filter ) {
+        this.container.isotope({filter: user_filter});   
+        }
     }
 });
 
