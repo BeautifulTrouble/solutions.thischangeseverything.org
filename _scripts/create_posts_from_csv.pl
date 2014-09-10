@@ -123,7 +123,8 @@ images:
     url: <%= $module->{'image_name'} %>
     name: <%= $module->{'image_name'} %>
     caption: "<%= $module->{'image_caption'} %>"
-    rights: "<%= $module->{'IMAGE RIGHTS'} %>"
+    source: "<%= $module->{'image_source'} %>"
+    source_url: "<%= $module->{'image_source_url'} %>"
 <% } else { =%>
 -
     url: 'Community-Wealth-Building.jpg'
