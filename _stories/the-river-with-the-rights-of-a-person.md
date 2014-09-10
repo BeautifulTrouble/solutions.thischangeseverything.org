@@ -35,6 +35,21 @@ tags:
 - living economies
 - resource use
 learn_more:
+-
+    title: "An indivisible and living whole"
+    description: "by Jen Wilton, New Internationalist"
+    type: "Article"
+    url: "http://newint.org/issues/2014/09/01/"
+-
+    title: "New Zealand’s Whanganui River gains a legal voice"
+    description: "by Alison Fairbrother, Huffington Post"
+    type: "Article"
+    url: "http://www.huffingtonpost.com/2012/09/18/new-zealand-whanganui-river_n_1894893.html"
+-
+    title: "I am the river"
+    description: "Documentary by Mark McNeill, Al Jazeera"
+    type: "Video"
+    url: "http://www.aljazeera.com/programmes/witness/2013/09/i-am-river-201392410212172573.html"
 images:
 -
     url: The-River-With-The-Rights-Of-A-Person.jpg
@@ -42,7 +57,6 @@ images:
     caption: "Looking out over the Whanganui river."
     source: "Kathrin & Stefan Marks"
     source_url: "http://www.flickr.com/photos/ks_marks/8477072494/"
-    rights: "creative Commons Attribution – ShareAlike 4.0"
 contributors:
 - "Jen Wilton"
 ---

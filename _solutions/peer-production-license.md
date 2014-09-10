@@ -19,14 +19,28 @@ tags:
 - governance
 - open source
 learn_more:
+-
+    title: "Capital for the Commons"
+    description: "An article by Michael Bauwens"
+    type: "Article"
+    url: "http://p2pfoundation.net/From_the_Communism_of_Capital_to_a_Capital_for_the_Commons"
+-
+    title: "Commons: FLOK Society"
+    description: "An article in STIR online magazine"
+    type: "Article"
+    url: "http://stirtoaction.com/commons-flok-society/"
+-
+    title: "The Telekommunist Manifesto"
+    description: "by Dmytri Kleiner"
+    type: "Article"
+    url: "http://telekommunisten.net/the-telekommunist-manifesto/"
 images:
 -
-    url: 'Community-Wealth-Building.jpg'
-    name: 'Community-Wealth-Building.jpg' 
-    caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
-    source: "Ecomundo Cleaning Co-operative"
-    source_url: "https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater"
-    rights: "By permission of Ecomundo Cleaning"
+    url: Peer-Production-License.jpg
+    name: Peer-Production-License.jpg
+    caption: "Grafitti artist Banksy's work, including this 2008 Simpsons-inspired New Orleans mural, often plays with questions of ownership and commodification of art."
+    source: "BusinessInsider"
+    source_url: "http://static.businessinsider.com/image/5254122569bedd4b4522cfae/image.jpg"
 contributors:
 - "Helene Finidori"
 ---

@@ -53,7 +53,6 @@ tags:
 - policy
 - politics
 - taxation
-learn_more:
 images:
 -
     url: 'Community-Wealth-Building.jpg'

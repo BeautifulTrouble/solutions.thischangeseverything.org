@@ -24,6 +24,21 @@ tags:
 - democracy
 - financing
 learn_more:
+-
+    title: "Credit Union History"
+    description: "The story of the credit union movement"
+    type: "Website"
+    url: "http://cuhistory.blogspot.ca/"
+-
+    title: "How do I switch from my bank to a credit union?"
+    description: "by Alan Henry, Lifehacker"
+    type: "Article"
+    url: "http://lifehacker.com/5857091/how-do-i-switch-from-my-bank-to-a-credit-union"
+-
+    title: "How Credit Unions Survived the Crash"
+    description: "by Ralph Nader, Counterpunch"
+    type: "Article"
+    url: "http://www.counterpunch.org/2009/02/23/how-credit-unions-survived-the-crash/"
 images:
 -
     url: 'Community-Wealth-Building.jpg'

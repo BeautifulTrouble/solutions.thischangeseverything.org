@@ -30,14 +30,23 @@ tags:
 - movement building
 - organized labor
 learn_more:
+-
+    title: "Farm Worker Credit Union (essay & photos)"
+    description: "by Abby Flores Rivera"
+    type: "Article"
+    url: "https://libraries.ucsd.edu/farmworkermovement/2010/03/farm-worker-credit-union-by-abby-flores-rivera-2/"
+-
+    title: "Why David Sometimes Wins"
+    description: "by Marshall Ganz"
+    type: "Book"
+    url: "http://books.google.ca/books?id=CEqz-KxbHDIC&dq=farm+worker+credit+union"
 images:
 -
     url: Farm-Workers-Credit-Union.jpg
     name: Farm-Workers-Credit-Union.jpg
-    caption: "Newspaper profiles the growing power of the Farm Workers Credit Union."
+    caption: "Newspaper clippings document the growing power of the Farm Workers Credit Union."
     source: "Farmworker Movement Documentation Project"
     source_url: ""
-    rights: "Scholarly fair use - remixed"
 contributors:
 - "Eli Feghali"
 ---

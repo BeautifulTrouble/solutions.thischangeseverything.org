@@ -22,21 +22,35 @@ related_theories:
 - The commons
 related_stories:
 - Trade school: barter-for-knowledge
-- Resilence Circles
+- Resilience Circles
 tags:
 - agriculture
 - education
 - food
 - open source
 learn_more:
+-
+    title: "Open Source Ecology: Factor e Farm in Five Minutes"
+    description: "Introducing the Global Village Construction Set"
+    type: "Article"
+    url: "http://www.scribd.com/doc/12745753/Factor-E-Farm-about"
+-
+    title: "Factor e Farm Social Contract"
+    description: "Joining an experimental community"
+    type: "Webpage"
+    url: "http://opensourceecology.org/wiki/Factor_e_Farm_Social_Contract_v1.0 "
+-
+    title: "Factor E Farm Economic Model"
+    description: "Open source, community supported manufacturing"
+    type: "Webpage"
+    url: "http://opensourceecology.org/wiki/Factor_e_Farm_Economic_Model"
 images:
 -
     url: Factor-E-Farm.jpg
     name: Factor-E-Farm.jpg
-    caption: "LifeTrac 4 is a low-cost, multipurpose, open-source tractor that is designed and built with a focus on a lifetime of usage and ease of repair."
+    caption: "LifeTrac 4 is a multipurpose, open-source tractor that is designed and built with a focus on a lifetime of usage and ease of repair."
     source: "Open Source Ecology"
     source_url: ""
-    rights: "Creative Commons Attribution – ShareAlike 4.0"
 contributors:
 - "Dave Oswald Mitchell"
 ---

@@ -36,6 +36,21 @@ tags:
 - resource use
 - work
 learn_more:
+-
+    title: "Thunder Valley Community Development Corporation"
+    description: "Native youth on the move"
+    type: "Webpage"
+    url: "http://thundervalley.org"
+-
+    title: "Tanka: Native American Natural Foods"
+    description: "Innovating food products based on traditional values"
+    type: "Website"
+    url: "http://tankabar.com"
+-
+    title: "New Developments in Community Wealth Building"
+    description: "Social enterprises in Native American communities"
+    type: "Website"
+    url: "http://community-wealth.org/content/indian-country-site-new-developments-community-wealth-building"
 images:
 -
     url: Building-Community-Economies-On-Pine-Ridge.jpg
@@ -43,7 +58,6 @@ images:
     caption: "A prototype house for Thunder Valley CDC’s Regenerative Community project, using native materials like strawbale to reduce the ecological impacts and costs of construction."
     source: "Annie Coombs & Zoe Malliaros, Post-Reservation"
     source_url: ""
-    rights: "(Image used with permission of Post-Reservation, http://postrez.wordpress.com/)"
 contributors:
 - "Sarah McKinley"
 ---

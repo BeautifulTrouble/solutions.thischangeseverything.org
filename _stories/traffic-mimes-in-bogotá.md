@@ -23,14 +23,28 @@ tags:
 - safety
 - transportation
 learn_more:
+-
+    title: "Academic turns city into a social experiment"
+    description: "by María Cristina Caballero, Harvard Gazette"
+    type: "Article"
+    url: "http://news.harvard.edu/gazette/2004/03.11/01-mockus.html"
+-
+    title: "Bogotá Change"
+    description: "Documentary by Andreas M. Dalsgaard"
+    type: "Video"
+    url: "http://youtu.be/5OdhD5D5its"
+-
+    title: "Colombians Fear Ridicule More Than Being Fined"
+    description: "by Sarah Marsh, The Guardian"
+    type: "Article"
+    url: "http://www.theguardian.com/public-leaders-network/2013/oct/28/antanas-mockus-bogota-mayor"
 images:
 -
     url: Traffic-Mimes.jpg
     name: Traffic-Mimes.jpg
-    caption: "Traffic mime assists elder across the street in related initiative in Venezuela."
+    caption: "A traffic mime in a Venezuela initiative inspired by Bogotá helps a woman cross the street."
     source: "Associated Press"
     source_url: ""
-    rights: "Associated Press"
 contributors:
 - "Tomaz Capobianco"
 ---

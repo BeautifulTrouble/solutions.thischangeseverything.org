@@ -42,6 +42,16 @@ tags:
 - land use
 - resource use
 learn_more:
+-
+    title: "The Assisi Declarations"
+    description: "Messages on humanity and nature from four major world religions"
+    type: "Article"
+    url: "http://www.arcworld.org/downloads/THE%20ASSISI%20DECLARATIONS.pdf"
+-
+    title: "The Myth of Ownership"
+    description: "By Liam Murphy and Thomas Nagel"
+    type: "Book"
+    url: "http://books.google.com/books?id=7PF--OQMwYUC&printsec=frontcover&dq=murphy+nagel+the+myth+of+ownership&hl=en&sa=X&ei=RZwDVJK-EoeCjAKy0oGgCg&ved=0CCoQ6AEwAA#v=onepage&q&f=false"
 images:
 -
     url: Stewardship.jpg
@@ -49,7 +59,6 @@ images:
     caption: "Intergenerational rice terraces in China."
     source: "Opalpeterliu"
     source_url: ""
-    rights: "Attribution-NonCommercial-NoDerivs 2.0"
 contributors:
 - "Sofia Fenner"
 ---

@@ -28,14 +28,33 @@ tags:
 - urban planning
 - work
 learn_more:
+-
+    title: "The Cleveland Model: Leveraging anchor purchasing for community benefit"
+    description: "by Steve Dubb, The Democracy Collective"
+    type: "Article"
+    url: "http://www.icic.org/connection/blog-entry/blog-the-cleveland-model-leveraging-anchor-purchasing-for-community-benefit "
+-
+    title: "Shift Change"
+    description: "A film by Mark Dworkin & Melissa Young"
+    type: "Video"
+    url: "http://shiftchange.org"
+-
+    title: "Community Wealth & The Cleveland Model"
+    description: "Community-wealth.org’s collected resources on the Cleveland Model"
+    type: "Website"
+    url: "http://community-wealth.org/content/anchor-mission-leveraging-power-anchor-institutions-build-community-wealth"
+-
+    title: "The Cleveland Model: Co-ops are a vibrant response to economic distress"
+    description: "by Gar Alperovitz, Thad Williamson & Ted Howard, The Nation"
+    type: "Article"
+    url: "http://www.thenation.com/article/cleveland-model"
 images:
 -
     url: Anchor-Procurement-In-Cleveland.jpg
     name: Anchor-Procurement-In-Cleveland.jpg
-    caption: "Worker owner tending to greenhouse."
+    caption: "Worker/owner tending to greenhouse."
     source: "Greater University Circle Neighborhood Voice"
     source_url: ""
-    rights: "Non-commercial re-use"
 contributors:
 - "Steve Dubb"
 ---

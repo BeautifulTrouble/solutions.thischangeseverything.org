@@ -37,7 +37,6 @@ tags:
 - cooperatives
 - economics
 - financing
-learn_more:
 images:
 -
     url: 'Community-Wealth-Building.jpg'

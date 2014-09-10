@@ -24,7 +24,6 @@ tags:
 - cooperatives
 - decision-making
 - housing
-learn_more:
 images:
 -
     url: 'Community-Wealth-Building.jpg'

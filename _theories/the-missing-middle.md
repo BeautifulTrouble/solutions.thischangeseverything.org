@@ -19,7 +19,6 @@ tags:
 - community development
 - financing
 - food
-learn_more:
 images:
 -
     url: 'Community-Wealth-Building.jpg'

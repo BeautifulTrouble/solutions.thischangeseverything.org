@@ -43,7 +43,6 @@ tags:
 - movement building
 - open source
 - well-being
-learn_more:
 images:
 -
     url: 'Community-Wealth-Building.jpg'

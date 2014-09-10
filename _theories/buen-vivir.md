@@ -31,6 +31,26 @@ tags:
 - resource use
 - well-being
 learn_more:
+-
+    title: "The Social Philosophy Inspiring Movements in South America"
+    description: "Eduardo Gudynas & Oliver Balch, The Guardian"
+    type: "Article"
+    url: "http://www.theguardian.com/sustainable-business/blog/buen-vivir-philosophy-south-america-eduardo-gudynas "
+-
+    title: "Buen Vivir: Today’s Tomorrow"
+    description: "Trends in discourse around Buen Vivir"
+    type: "Article"
+    url: "http://www.palgrave-journals.com/development/journal/v54/n4/full/dev201186a.html "
+-
+    title: "The Concept of Good Living in a Bolivian Context"
+    description: "Dr. Beat Dietschy and Carlos Larrea on Buen Vivir"
+    type: "Video"
+    url: "https://www.youtube.com/watch?v=mZOUfYKWKDc "
+-
+    title: "Ecuador, Open Knowledge, & Buen Vivir"
+    description: "by John Thackara"
+    type: "Article"
+    url: "http://www.resilience.org/stories/2013-12-17/ecuador-open-knowledge-and-buen-vivir"
 images:
 -
     url: Buen-Vivir.jpg
@@ -38,7 +58,6 @@ images:
     caption: "Buen vivir illustrated by graphic notes"
     source: "Zulma Patarroyo"
     source_url: ""
-    rights: "submitted by contributor"
 contributors:
 - "Sergio Beltrán"
 ---

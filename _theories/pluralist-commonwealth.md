@@ -36,7 +36,7 @@ related_stories:
 - Cooperative Homecare Associates
 - Co-op Power
 - Initiative 136
-- Philidelphia Land Bank
+- Philadelphia Land Bank
 - Southern Grassroots Economies Project
 tags:
 - community development
@@ -46,14 +46,23 @@ tags:
 - living economies
 - politics
 learn_more:
+-
+    title: "The Pluralist Commonwealth"
+    description: "A project of The Democracy Collaborative"
+    type: "Website"
+    url: "http://pluralistcommonwealth.org"
+-
+    title: "America Beyond Capitalism"
+    description: "by Gar Alperovitz"
+    type: "Book"
+    url: "http://community-wealth.org/content/america-beyond-capitalism-reclaiming-our-wealth-our-liberty-and-our-democracy"
 images:
 -
-    url: 'Community-Wealth-Building.jpg'
-    name: 'Community-Wealth-Building.jpg' 
-    caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
-    source: "Ecomundo Cleaning Co-operative"
-    source_url: "https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater"
-    rights: "By permission of Ecomundo Cleaning"
+    url: Pluralist-Commonwealth.jpg
+    name: Pluralist-Commonwealth.jpg
+    caption: "Economic democracy is a crucial element of a pluralist commonwealth."
+    source: "Popular Resistance"
+    source_url: "http://www.popularresistance.org/wp-content/uploads/2013/07/Economic-Democracy1.jpg"
 contributors:
 - "Gar Alperovitz"
 ---

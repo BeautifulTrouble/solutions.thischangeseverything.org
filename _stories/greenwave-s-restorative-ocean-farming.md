@@ -36,14 +36,28 @@ tags:
 - resource use
 - work
 learn_more:
+-
+    title: "GreenWave"
+    description: "GreenWave’s project website"
+    type: "Website"
+    url: "http://www.greenwave.org/"
+-
+    title: "Kelp: The Elegant Solution"
+    description: "The new super vegetable comes from the sea"
+    type: "Video"
+    url: "http://blogs.scientificamerican.com/food-matters/2014/07/11/move-over-kale-the-new-super-vegetable-comes-from-the-sea-video/"
+-
+    title: "The Least Deadliest Catch"
+    description: "TEDx Talk on 3D Ocean Farming"
+    type: "Video"
+    url: "https://www.youtube.com/watch?v=j8ViaskDSeI"
 images:
 -
     url: Greenwaves-Restorative-Ocean-Farming.jpg
     name: Greenwaves-Restorative-Ocean-Farming.jpg
-    caption: "3D Ocean Farming: Turning Fishermen into Climate Farmers."
+    caption: "3D ocean farming: Turning fishermen into climate farmers."
     source: "Greenwave"
     source_url: ""
-    rights: "Bren Smith sent us smaller photos so I grabbed this one from the homepage. He is the CEO of the org."
 contributors:
 - "Bren Smith"
 ---

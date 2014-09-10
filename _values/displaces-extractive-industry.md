@@ -55,7 +55,6 @@ tags:
 - land use
 - racial justice
 - resource use
-learn_more:
 images:
 -
     url: 'Community-Wealth-Building.jpg'

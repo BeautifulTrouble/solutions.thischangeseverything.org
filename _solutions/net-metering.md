@@ -22,6 +22,21 @@ tags:
 - policy
 - urban planning
 learn_more:
+-
+    title: "Net metering programs by US state"
+    description: "An interactive map"
+    type: "Website"
+    url: "http://www.c2es.org/us-states-regions/policy-maps/net-metering"
+-
+    title: "How net metering works"
+    description: "by Stephanie Watson, HowStuffWorks.com"
+    type: "Article"
+    url: "http://www.howstuffworks.com/environmental/green-science/net-metering.htm"
+-
+    title: "US favors net metering while Europe, Japan like feed-in tariffs"
+    description: "by Linda Hardesty, Energy Manager Today"
+    type: "Article"
+    url: "http://www.energymanagertoday.com/us-favors-net-metering-while-europe-japan-like-feed-in-tariffs-092374/"
 images:
 -
     url: Net-Metering.jpg
@@ -29,7 +44,6 @@ images:
     caption: "Solar Co-operative with net metering."
     source: "Andrewglaser"
     source_url: ""
-    rights: "Creative Commons Attriibution ShareAlike 3.0 Unported"
 contributors:
 - "Johnny Weiss"
 ---

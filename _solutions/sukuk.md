@@ -25,14 +25,23 @@ tags:
 - equity
 - financing
 learn_more:
+-
+    title: "Islamic Development Bank: What is Sukuk?"
+    description: "A secure return through an ethical investment"
+    type: "Article"
+    url: "http://thatswhy.isdb.org/irj/go/km/docs/documents/IDBDevelopments/Internet/thatswhy/en/sukuk/what-is-sukuk.html"
+-
+    title: "Understanding Sukuk"
+    description: "A presentation by Deloitte"
+    type: "Video"
+    url: "http://www.deloitte.com/view/en_XD/xd/glossary/understandingsukuk/"
 images:
 -
     url: Sukuk.jpg
     name: Sukuk.jpg
-    caption: "The answers to many of our current dilemmas can be found in exisiting cultural traditions."
+    caption: "The answers to many of our current dilemmas can be found in existing cultural traditions."
     source: "Pentocelo"
     source_url: ""
-    rights: "Creative Commons Attribution 3.0 Unported"
 contributors:
 - "Sofia Fenner"
 ---

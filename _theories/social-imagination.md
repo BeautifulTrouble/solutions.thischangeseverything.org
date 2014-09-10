@@ -37,7 +37,6 @@ related_stories:
 tags:
 - culture
 - well-being
-learn_more:
 images:
 -
     url: Social-Imagination.jpg
