@@ -13,7 +13,15 @@
     "related_solutions" : [{% for item in module.related_solutions %}"{{ item }}",{% endfor %} null],
     "related_theories"  : [{% for item in module.related_theories %}"{{ item }}",{% endfor %} null],
     "contributors"      : [{% for item in module.contributors %}"{{ item }}",{% endfor %} null],
-    "learn_more"        : [{% for item in module.learn_more %}"{{ item }}",{% endfor %} null],
+    "learn_more"        : [{% for item in module.learn_more %} 
+                            {  
+                              "title" : "{{ item.title }}", 
+                              "description" : "{{ item.description }}", 
+                              "type" : "{{ item.type }}",
+                              "url" : "{{ item.url }}"
+                            },
+                           {% endfor %} null],
+
     "tags"              : [{% for tag in module.tags %}"{{ tag }}",{% endfor %} null],
     "images"            : [{% for image in module.images %} 
                             { "url" : "{{ image.url }}", 
@@ -25,9 +33,8 @@
                            {% endfor %} null],
     "href"              : "{{ module.url }}",
     "slug"              : "{{ module.title | downcase | replace: ' ', '-' }}",
-    "short_write_up"    : "{{ module.short_write_up }}",
-    "full_write_up"     : "{{ module.content | strip_newlines }}"
-}
-  {% if forloop.last %}{% else %},{% endif %}
+    "short_write_up"    : "{{ module.short_write_up | | newline_to_br }}",
+    "full_write_up"     : "{{ module.content | newline_to_br | strip_newlines }}"
+}{% if forloop.last %}{% else %},{% endif %}
 {% endfor %}
 ]
