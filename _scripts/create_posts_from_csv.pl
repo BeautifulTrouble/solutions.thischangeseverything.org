@@ -15,7 +15,7 @@ use lib "$FindBin::Bin/../local/lib/perl5";
 use Data::Dumper;
 use Text::CSV_XS;
 
-use Mojo::Util qw/ encode slurp spurt /;
+use Mojo::Util qw/ trim encode slurp spurt /;
 use Mojo::Loader;
 use Mojo::Template;
 
@@ -58,7 +58,7 @@ for my $row ( @rows ) {
     my $loader      = Mojo::Loader->new;
     my $template    = $loader->data( __PACKAGE__, 'module' );
     my $mt          = Mojo::Template->new;
-    my $output_str  = $mt->render( $template, $row, \&parse_list );
+    my $output_str  = $mt->render( $template, $row, \&parse_list, \&parse_learn );
     $output_str = encode 'UTF-8', $output_str;
 
     ## Write the template output to a filehandle
@@ -76,11 +76,27 @@ sub parse_list {
     }
     return $output_str;
 }
+sub parse_learn {
+    my $str = shift;
+    return unless defined $str;
+    my @learn_items = split('\n\n', $str );
+    my $output_str = '';
+    for my $item ( @learn_items ) {
+        my ($title, $description, $type, $url ) = split( '\n', $item);
+        $output_str .= "-\n";
+        $output_str .= "    title: \"$title\"\n";
+        $output_str .= "    description: \"$description\"\n";
+        $output_str .= "    type: \"$type\"\n";
+        $output_str .= "    url: \"$url\"\n";
+    }
+    return $output_str;
+}
 
 __DATA__
 @@ module
 % my $module = shift;
 % my $parse_list = shift;
+% my $parse_learn = shift;
 ---
 id: <%= $module->{'Beautiful Solutions Entry: ID'} %>
 title: <%= $module->{'Beautiful Solutions Entry: beautiful solution name'} %>
@@ -100,14 +116,13 @@ related_stories:
 tags:
 <%= $parse_list->( $module->{'Tags'} ) =%>
 learn_more:
+<%= $parse_learn->( $module->{'Learn More'} ) =%>
 images:
 <% if ( $module->{'image_name'} ) { =%>
 -
     url: <%= $module->{'image_name'} %>
     name: <%= $module->{'image_name'} %>
     caption: "<%= $module->{'image_caption'} %>"
-    source: "<%= $module->{'image_source'} %>"
-    source_url: "<%= $module->{'image_source_url'} %>"
     rights: "<%= $module->{'IMAGE RIGHTS'} %>"
 <% } else { =%>
 -
