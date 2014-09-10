@@ -18,6 +18,7 @@ use Text::CSV_XS;
 use Mojo::Util qw/ trim encode slurp spurt /;
 use Mojo::Loader;
 use Mojo::Template;
+use HTML::Entities;
 
 # Read the output path and filename from STDIN
 my $input_file = shift @ARGV;
@@ -52,13 +53,14 @@ for my $row ( @rows ) {
         = $row->{'Beautiful Solutions Entry: beautiful solution name'};
     my $module_type = $row->{'Type'};
     next unless $module_name && $module_type;
+    my $summary = encode_entities( $row->{'Short Write-Up'} );
     my $dir = $module_type_map{ lc( $module_type ) };
     ( my $output_file = lc( $module_name ) ) =~ s/\W/-/g;
     my $output_path = $dir . '/' . $output_file . '.md';
     my $loader      = Mojo::Loader->new;
     my $template    = $loader->data( __PACKAGE__, 'module' );
     my $mt          = Mojo::Template->new;
-    my $output_str  = $mt->render( $template, $row, \&parse_list, \&parse_learn );
+    my $output_str  = $mt->render( $template, $summary, $row, \&parse_list, \&parse_learn );
     $output_str = encode 'UTF-8', $output_str;
 
     ## Write the template output to a filehandle
@@ -72,6 +74,7 @@ sub parse_list {
     my @list_items = split( '; ', $list_str );
     my $output_str = '';
     for my $item ( @list_items ) {
+        $item = encode_entities( $item );
         $output_str .= "- $item\n";
     }
     return $output_str;
@@ -83,6 +86,8 @@ sub parse_learn {
     my $output_str = '';
     for my $item ( @learn_items ) {
         my ($title, $description, $type, $url ) = split( '\n', $item);
+        $title = encode_entities( $title );
+        $description = encode_entities( $description );
         $output_str .= "-\n";
         $output_str .= "    title: \"$title\"\n";
         $output_str .= "    description: \"$description\"\n";
@@ -94,13 +99,14 @@ sub parse_learn {
 
 __DATA__
 @@ module
+% my $summary = shift;
 % my $module = shift;
 % my $parse_list = shift;
 % my $parse_learn = shift;
 ---
 id: <%= $module->{'Beautiful Solutions Entry: ID'} %>
 title: <%= $module->{'Beautiful Solutions Entry: beautiful solution name'} %>
-short_write_up: "<%= $module->{'Short Write-Up'} %>"
+short_write_up: "<%= $summary %>"
 where: "<%= $module->{'Where?'} %>"
 when: "<%= $module->{'When'} %>"
 who: "<%= $module->{'Who?'} %>"
