@@ -4,9 +4,11 @@
             <div class="col-md-7">
                 <h4>Welcome to the</h4>
                 <h1>Idea Lab</h1>
+                <button class="published">published</button>
+                <button class="submitted">submitted</button>
                 <% if (state == "published") { %>
                 <table id="idealab-published" class="table">
-                    <caption>Published Gallery</caption>
+                    <caption class="hide">Published Gallery</caption>
                     <thead>
                         <tr>
                             <th>Idea</th>
@@ -16,7 +18,7 @@
                     </thead>
                     <tbody>
                         <% published.each(function(model) { if (model) { %>
-                        <tr class="<%= model.attributes.type %>">
+                        <tr class="<%= model.attributes.type %> data-slug" data-slug="<%= model.attributes.slug %>">
                             <td><%= model.attributes.title %></td>
                             <td>
                                 <ul class="list-comma">
@@ -32,7 +34,7 @@
                 </table>
                 <% } else if (state == "submitted") { %>
                 <table id="idealab-submitted" class="table">
-                    <caption>Submitted Ideas</caption>
+                    <caption class="hide">Submitted Ideas</caption>
                     <thead>
                         <tr>
                             <th>Idea</th>
@@ -43,7 +45,7 @@
                     </thead>
                     <tbody>
                         <% submitted.each(function(model) { if (model) { %>
-                        <tr class="<%= model.attributes.type %>">
+                        <tr class="<%= model.attributes.type %> data-slug" data-slug="<%= model.attributes.slug %>">
                             <td><%= model.attributes.title %></td>
                             <td><%= model.attributes.name %></td>
                             <td><%= model.attributes.short_date %></td>

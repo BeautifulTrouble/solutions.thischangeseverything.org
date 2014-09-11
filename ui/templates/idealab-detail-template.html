@@ -6,11 +6,11 @@
                     <button type="button" class="view-all-ideas">View All Ideas</button>
                     <button type="button" class="view-gallery">View Gallery</button>
                     <button type="button" class="view-published-idea">View Published Idea</button>
-                    <h1><%= title %></h1>
                     <div class="byline">
                         <p>
-                            by <span class="contributor"><%= contributors[0] %></span>
+                            by <span class="contributor"></span>
                             <span class="date-added">Added [we don't store this]</span>
+                            <!-- TODO: differs between submitted and published -->
                             <span class="module-type-icon">[*]</span><%= type %>
                         </p>
                     </div> 
@@ -22,6 +22,7 @@
                             <i class="glyphicon glyphicon-tags"></i>
                         </div>
                         <div class="meta-info">
+                            <!-- TODO: differs between submitted and published -->
                             <ul class="tags list-comma">
                                 <span>Tags</span>
                                 <% _.each(tags, function(tag) { if (tag) { %>
@@ -33,7 +34,6 @@
                 </section>
             </div>
         </div>
-        <!-- TODO: add url endpoints to either jekyll or flask -->
         <a class="login" href="/api/logout">logout</a><br>
         <a class="login" href="/api/login/google">login with google</a><br>
         <a class="login" href="/api/login/facebook">login with facebook</a><br>
