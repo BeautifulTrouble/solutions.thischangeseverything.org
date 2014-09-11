@@ -27,8 +27,8 @@
         </div>
     </div>
     <article id="modules-gallery" class="container">
-        <header>
-            <ul class="list-inline">
+        <header class="row">
+            <ul class="list-inline col-md-6">
                 <li>Filter:</li>
                 <li class="filter active" data-filter="*">All</li>
                 <li class="filter" data-filter=".value">Values</li>
@@ -36,6 +36,14 @@
                 <li class="filter" data-filter=".solution">Solutions</li>
                 <li class="filter" data-filter=".theory">Theories</li>
             </ul>
+            <div class="form-group col-md-6">
+              <select id="filter-passion" class="form-control">
+                  <option value="all" data-filter=".*">What are you passionate about?</option>
+                  <% _.each(tags, function(tag) { if (tag) { %>
+                  <option value=".<%= tag.replace(/\s/g , "-") %>" data-filter=".<%= tag.replace(/\s/g , "-") %>"><%= tag %></option>
+                  <% } }) %>
+              </select>
+            </div>
         </header>
         <section id="modules-list">
 

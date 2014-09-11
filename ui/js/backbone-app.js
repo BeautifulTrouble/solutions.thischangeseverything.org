@@ -102,6 +102,9 @@ _.each(App.Collections, function(collection) {
     App.Modules.add(collection.models);
 });
 
+// Make module tags available to app
+//App.Tags = _.unique(_.flatten(App.Modules.pluck("tags")));
+
 // IdeaLab Collections
 App.IdeaLabCollection = Backbone.Collection.extend({
     parse: function(response) {
@@ -122,22 +125,25 @@ App.ImprovementsCollection = App.IdeaLabCollection.extend({
 // Views
 // ===================================================================
 
-
 App.ModulesListView = Backbone.View.extend({
-    el: false,
+    //el: false,
     collection: App.Modules,
+    tags: '',
     initialize: function(options) {
         // Listen to events on the collection
         this.listenTo(this.collection, "add remove sync", this.render);
+        this.tags = _.unique(_.flatten(this.collection.pluck("tags")));
     },
     template: "modules-list-template",
     serialize: function() {
         return {
-            modules: this.collection
+            modules: this.collection,
+            tags: this.tags
         };
     },
     events: {
-        'click .filter': "filterList",  
+        'click .filter': "filterList",
+        'change select#filter-passion': "filterList"
     },
     beforeRender: function() {
         // Add the subviews to the view
@@ -163,9 +169,8 @@ App.ModulesListView = Backbone.View.extend({
         this.filterControl = $('#modules-gallery ul li');
     },
     filterList: function(e) {
-        this.filterControl.removeClass("active")
-        //console.log(e.currentTarget.getAttribute("data-filter"));
-        var user_filter = e.currentTarget.getAttribute("data-filter");
+        this.filterControl.removeClass("active");
+        var user_filter = $( e.currentTarget ).attr("data-filter") || $( e.currentTarget ).val();
         $( e.currentTarget ).addClass("active");
         if ( user_filter ) {
             this.container.isotope({filter: user_filter});   
