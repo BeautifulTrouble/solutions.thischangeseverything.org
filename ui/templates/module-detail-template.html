@@ -26,16 +26,16 @@
                                 <% } }); %>
                             </ul>
                         </div>
-                        <div class="col-md-1 share-icon"><i class="glyphicon glyphicon-share-alt"></i></div>
+                        <div class="col-md-1 share-icon"><i class="icon icon-share"></i></div>
                     </div>
                     <div id="summary">
-                    <p><%- short_write_up %></p>
-                    <dl class="learn-more-item-list">
-                    </dl>
+                        <p><%- short_write_up %></p>
+                         <dl class="learn-more-item-list">
+                        </dl>
                     </div>
                     <div class="meta clearfix">
                         <div class="icon-tags">
-                        <i class="glyphicon glyphicon-tags"></i>
+                        <i class="icon icon-tag"></i>
                         </div>
                     <!--https://basecamp.com/1850835/projects/6447119/messages/30549111#comment_195218482-->
                         <div class="meta-info">
@@ -60,24 +60,28 @@
                     <div id="button-bar" class="clearfix">
                         <button type="button" class="improve-this">Improve This</button>
                     </div>
+                    <aside id="learn-more">
+                        <h2 class="learn-more">Learn More</h2>
+                        <div class="row">
+                            <% _.each(learn_more, function(item) { if (item) { %>
+                            <div class="learn-more-type col-md-2">
+                                <p><%= item.type %></p>
+                            </div>
+                            <div class="learn-more-item col-md-10">
+                                <p class="title"><a href="<%= item.url %>"><%= item.title %></a><br />
+                                    <span class="description"><%= item.description %></span></p>
+                            </div>
+                            <% } }) %>
+                        </div>
+                    </aside>
                 </section>
-                        <!-- Do these asides make more sense as points of insertion for views? -->
-                <aside id="learn-more" class="hide">
-                    <button type="button" class="close close-learn-more"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <div class="learn-more-item-list">
-                    </div>
-                </aside>
-                <aside id="share" class="hide">
-                    <button type="button" class="close close-share"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    Fakebook | Googol | Twittor
-                </aside>
-        </div>
-        <div class="col-md-5">
-            <aside id="related-entries">
-                <h3 class="list-header">Related Entries</h3>
-                <div id="related-list"></div>
-            </aside> 
-        </div>
+            </div>
+            <div class="col-md-5">
+                <aside id="related-entries">
+                    <h3 class="list-header">Related Entries</h3>
+                    <div id="related-list"></div>
+                </aside> 
+            </div>
         </div>
     </article>
 </div>

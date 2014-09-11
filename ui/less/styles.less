@@ -2,6 +2,7 @@
 CSS/LESS includes 
 ========================================================================== */
 //= require bootstrap.css
+//= require bsol.css
 
 
 /* ==========================================================================
@@ -148,8 +149,8 @@ header.site-header {
     .icon-button {
         color: white;
         position: relative;
-        top: 10px;
-        font-size: 1.5em;
+        top: 12px;
+        font-size: 1.2em;
     }
     .tce {
         float: left;
@@ -170,9 +171,6 @@ header.site-header {
             position: relative;
             right: 24px;
         }
-        //.icon-bar {
-            //background: @bodyText;
-        //}
     }
     .bsol {
         float: left;
@@ -393,8 +391,9 @@ article#module {
     section {
         background: white;
         padding: @std-padding;
-        .share-icon .glyphicon {
+        .share-icon {
             float: right;
+            color: @brando;
         }
         .byline {
             border-right: 1px solid @lightGray;
@@ -471,23 +470,41 @@ article#module {
         color: white;
         padding: 4px 8px 4px 8px;
     }
-    aside#learn-more, aside#share {
-        background: @brando;
-        color: white;
-        height: 150px;
-        position: absolute;
-        bottom: 50px;
-        width: 100%;
-        padding: @std-padding;
-    }
-    dl.learn-more-item-list { // TODO: temporary for mock-up
-        dt {
-            text-transform: uppercase;
-            font-family: @fontHeadersDefault;
-            font-size: 1em;
-        }
-    }
+    //aside#learn-more, aside#share {
+        //background: @brando;
+        //color: white;
+        //height: 150px;
+        //position: absolute;
+        //bottom: 50px;
+        //width: 100%;
+        //padding: @std-padding;
+    //}
+    //dl.learn-more-item-list { // TODO: temporary for mock-up
+        //dt {
+            //text-transform: uppercase;
+            //font-family: @fontHeadersDefault;
+            //font-size: 1em;
+        //}
+    //}
     aside#learn-more {
+        h2 {
+            background: @bodyText; 
+            color: white;
+            font-size: 1.436em;
+            font-family: @fontHeadersDefault;
+            font-weight: normal;
+            padding: 4px 0px 0px 20px;
+            text-transform: uppercase;
+        }
+        .learn-more-type {
+            padding-left: 35px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8em;
+        }
+        .learn-more-item {
+            padding-right: 30px;
+        }
     }
     aside#share {
     }
@@ -530,21 +547,6 @@ article#module {
         }
         .solution {
             background-color: @solution;
-        }
-    }
-    aside#learn-more {
-        .learn-more-item-list {
-            float: left;
-            width: 100%;
-            height: 100px;
-            overflow: hidden; /* TODO deal with lots of references */
-        }
-        .learn-more-item {
-            width: 49%;
-            float: left;
-            a {
-                color: white;
-            }
         }
     }
 }
