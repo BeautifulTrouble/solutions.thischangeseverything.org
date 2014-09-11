@@ -47,15 +47,15 @@ App.Module = Backbone.Model.extend({
     }
 });
 
-App.IdeaLabModel = Backbone.Model.extend({
+App.IdeaLabModule = Backbone.Model.extend({
     parse: function(response) { 
         return "data" in response ? response['data'] : response;
     }
 });
-App.Idea = App.IdeaLabModel.extend({
+App.Idea = App.IdeaLabModule.extend({
     urlRoot: "/api/ideas"
 });
-App.Improvement = App.IdeaLabModel.extend({
+App.Improvement = App.IdeaLabModule.extend({
     urlRoot: "/api/improvements"
 });
 
@@ -227,17 +227,16 @@ App.ModuleDetailView = Backbone.View.extend({
         "click button.improve-this": "improveThis",
         "click button.close-share": function(e) {
             this.$("#share").addClass("hide");
-        }, // Simple function for this?
+        },
         "click button.toggle-share": function(e) {
             this.$("#share").toggleClass("hide");
-        }, // Something that can read a bunch of
+        },
         "click button.close-learn-more": function(e) {
             this.$("#learn-more").addClass("hide");
-        }, // actions off classes, for example?
+        },
         "click button.toggle-learn-more": function(e) {
             this.$("#learn-more").toggleClass("hide");
-        }, // class="auto-events close-share open-learn-more"
-        //"click button.auto-events": "autoEventHandler",
+        }
     },
     closeDetail: function(e) { navTo(); },
     improveThis: function(e) { navTo('idealab/published/', this); },
@@ -306,27 +305,56 @@ App.ValueDetailView = Backbone.View.extend({
         });
     }
 });
+
 App.IdeaLabListView = Backbone.View.extend({
     template: "idealab-list-template",
+    initialize: function(options) {
+        this.state = options.state;
+        this.published = App.Modules;
+        this.submitted = new App.IdeasCollection();
+        // Better yet, how can I defer rendering this until the collection fetches?
+        this.listenTo(this.submitted, "reset", this.render);
+        this.submitted.fetch({reset: true});
+    },
+    serialize: function() { 
+        return {
+            state: this.state,
+            published: this.published,
+            submitted: this.submitted
+        }
+    },
+    events: {
+        "click #idealab-published tr.data-slug": function (e) { 
+            navTo('idealab/published/' + e.currentTarget.dataset.slug);
+        },
+        "click #idealab-submitted tr.data-slug": function (e) { 
+            navTo('idealab/submitted/' + e.currentTarget.dataset.slug);
+        },
+        "click button.published": function () { navTo('idealab/published'); },
+        "click button.submitted": function () { navTo('idealab/submitted'); },
+    },
     afterRender: function() {
         $('body').attr("class", "idealab-list-view");
     }
 });
-
 App.IdeaLabDetailView = Backbone.View.extend({
     template: "idealab-detail-template",
     initialize: function(options) {
     },
     events: {
-        "click button.view-published-idea": "viewPublishedIdea"
+        "click button.view-published-idea": "viewPublishedIdea",
+        "click button.view-all-ideas": "viewAllIdeas",
     },
-    viewPublishedIdea: function(e) { navTo('module/', this); },
+    viewPublishedIdea: function() { navTo('module/', this); },
+    viewAllIdeas: function() { navTo('idealab/published'); },
     afterRender: function() {
+        /*
         // TODO: google oauth refuses these redirects :( ...so use an ajaxier approach
         this.$('a.login').each(function () {
             var next_param = (this.href.indexOf('?') != -1) ? '&next=' : '?next=';
             this.href = this.href + next_param + window.location.pathname + '%23' + Backbone.history.fragment;
         });
+        */
         $('body').attr("class", "idealab-detail-view");
     }
 });
@@ -361,7 +389,6 @@ var navTo = function(prefix, context) {
 
 App.Router = Backbone.Router.extend({
     collection: App.Modules,
-    initialize: function(options) {},
     routes: {
         '': 'start',
         'module(/:name)': 'displayModule',
@@ -401,13 +428,22 @@ App.Router = Backbone.Router.extend({
         }
     },
     displayIdeaLab: function(state, name) {
-        if (state == "published" || state == "submitted") {
-            var model = (state == "published") ? this.collection.findWhere({ "slug": name })
-                : null;  // TODO: add ideas collection
-                var view = model ? new App.IdeaLabDetailView({model: model})
-                    : new App.IdeaLabListView();
-                    App.Layout.setView("#content", view);
-                    App.Layout.render();
+        // XXX: Trying to cram multiple routes in here has been nothing but extra work
+        if (state == 'published' || state == 'submitted') {
+            if (state == 'published') {
+                var model = this.collection.findWhere({slug: name});
+                if (model) {
+                    view = new App.IdeaLabDetailView({model: model, state: state, name: name});
+                } else {
+                    view = new App.IdeaLabListView({state: state});
+                }
+            } else {
+                view = new App.IdeaLabListView({state: state});
+                // TODO: add slugs to the idealab api
+                //var model = this.collection.findWhere({slug: name.toLowerCase().replace(/\W+/g, '-')})
+            }
+            App.Layout.setView("#content", view);
+            App.Layout.render();
         } else {
             this.defaultRoute();
         }
