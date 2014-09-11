@@ -1,5 +1,63 @@
 <div class="container">
     <div id="idealab">
-        <h1>IDEA LAB INDEX</h1>
+        <div class="row no-pad">
+            <div class="col-md-7">
+                <h4>Welcome to the</h4>
+                <h1>Idea Lab</h1>
+                <% if (state == "published") { %>
+                <table id="idealab-published" class="table">
+                    <caption>Published Gallery</caption>
+                    <thead>
+                        <tr>
+                            <th>Idea</th>
+                            <th>Contributor(s)</th>
+                            <th>_</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% published.each(function(model) { if (model) { %>
+                        <tr class="<%= model.attributes.type %>">
+                            <td><%= model.attributes.title %></td>
+                            <td>
+                                <ul class="list-comma">
+                                    <% _.each(model.attributes.contributors, function(contributor) { if (contributor) { %>
+                                    <li><%= contributor %></li>
+                                    <% } }); %>
+                                </ul>
+                            </td>
+                            <td>?</td>
+                        </tr>
+                        <% } }); %>
+                    </tbody>
+                </table>
+                <% } else if (state == "submitted") { %>
+                <table id="idealab-submitted" class="table">
+                    <caption>Submitted Ideas</caption>
+                    <thead>
+                        <tr>
+                            <th>Idea</th>
+                            <th>Contributor</th>
+                            <th>Added</th>
+                            <th>Votes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% submitted.each(function(model) { if (model) { %>
+                        <tr class="<%= model.attributes.type %>">
+                            <td><%= model.attributes.title %></td>
+                            <td><%= model.attributes.name %></td>
+                            <td><%= model.attributes.short_date %></td>
+                            <td>?</td>
+                        </tr>
+                        <% } }); %>
+                    </tbody>
+                </table>
+                <% } %>
+            </div>
+            <div class="col-md-5">
+                <div id="idealab-sidebar">
+                </div>
+            </div>
+        </div>
     </div>
 </div>

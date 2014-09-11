@@ -47,15 +47,15 @@ App.Module = Backbone.Model.extend({
     }
 });
 
-App.IdeaLabModel = Backbone.Model.extend({
+App.IdeaLabModule = Backbone.Model.extend({
     parse: function(response) { 
         return "data" in response ? response['data'] : response;
     }
 });
-App.Idea = App.IdeaLabModel.extend({
+App.Idea = App.IdeaLabModule.extend({
     urlRoot: "/api/ideas"
 });
-App.Improvement = App.IdeaLabModel.extend({
+App.Improvement = App.IdeaLabModule.extend({
     urlRoot: "/api/improvements"
 });
 
@@ -222,17 +222,16 @@ App.ModuleDetailView = Backbone.View.extend({
         "click button.improve-this": "improveThis",
         "click button.close-share": function(e) {
             this.$("#share").addClass("hide");
-        }, // Simple function for this?
+        },
         "click button.toggle-share": function(e) {
             this.$("#share").toggleClass("hide");
-        }, // Something that can read a bunch of
+        },
         "click button.close-learn-more": function(e) {
             this.$("#learn-more").addClass("hide");
-        }, // actions off classes, for example?
+        },
         "click button.toggle-learn-more": function(e) {
             this.$("#learn-more").toggleClass("hide");
-        }, // class="auto-events close-share open-learn-more"
-        //"click button.auto-events": "autoEventHandler",
+        }
     },
     closeDetail: function(e) { navTo(); },
     improveThis: function(e) { navTo('idealab/published/', this); },
@@ -301,17 +300,32 @@ App.ValueDetailView = Backbone.View.extend({
         });
     }
 });
+
 App.IdeaLabListView = Backbone.View.extend({
     template: "idealab-list-template",
+    initialize: function(options) {
+        this.state = options.state;
+        this.published = App.Modules;
+        this.submitted = new App.IdeasCollection();
+        this.listenTo(this.submitted, "reset", this.render);
+        this.submitted.fetch({reset: true});
+    },
+    serialize: function() { 
+        //return this.serialized; },
+        console.log('serialize called');
+        return {
+            state: this.state,
+            published: this.published,
+            submitted: this.submitted
+        }
+    },
     afterRender: function() {
+        console.log('after render called');
         $('body').attr("class", "idealab-list-view");
     }
 });
-
 App.IdeaLabDetailView = Backbone.View.extend({
     template: "idealab-detail-template",
-    initialize: function(options) {
-    },
     events: {
         "click button.view-published-idea": "viewPublishedIdea"
     },
@@ -396,13 +410,19 @@ App.Router = Backbone.Router.extend({
         }
     },
     displayIdeaLab: function(state, name) {
-        if (state == "published" || state == "submitted") {
-            var model = (state == "published") ? this.collection.findWhere({ "slug": name })
-                : null;  // TODO: add ideas collection
-                var view = model ? new App.IdeaLabDetailView({model: model})
-                    : new App.IdeaLabListView();
-                    App.Layout.setView("#content", view);
-                    App.Layout.render();
+        // New strategy/experiment for these things I'll call route dispatchers...
+        // Limit their function to passing information from the url to views,
+        // and then the views can go about fetching their own data in their 
+        // initialize functions.
+        console.log('dispatch');
+        if (name || (state == 'submitted' || state == 'published')) {
+            if (name) {
+                view = new App.IdeaLabDetailView({state: state, name: name});
+            } else {
+                view = new App.IdeaLabListView({state: state});
+            }
+            App.Layout.setView("#content", view);
+            App.Layout.render();
         } else {
             this.defaultRoute();
         }
