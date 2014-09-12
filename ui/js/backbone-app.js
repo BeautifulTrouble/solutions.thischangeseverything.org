@@ -257,10 +257,15 @@ App.ModuleDetailView = Backbone.View.extend({
                 model: module
             }));
         }, this);
-
     },
     afterRender: function() {
         $('body').attr("class", "module-detail-view");
+        $('.icon-share').popover({ 
+            html : true, 
+            placement: 'top',
+            content: function() {
+              return $('#share-popover').html();
+        }});
     }
 });
 
