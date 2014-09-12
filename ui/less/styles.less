@@ -115,6 +115,12 @@ a:link, a:visited, a:hover {
     color: @brando;
 }
 
+// Let's add some pointers
+
+.icon-button, .module-list-item, .filter, .values li, .tags li {
+    cursor: pointer;
+}
+
 /* ==========================================================================
 Type
 ========================================================================== */
@@ -158,10 +164,6 @@ header.site-header {
             margin: 0px;
             float: left;
         }
-        .icon-button {
-            float: right;
-            color: @bodyText;
-        }
     }
     .bsol {
         height: 42px;
@@ -172,6 +174,7 @@ header.site-header {
             width: 240px;
             text-indent: -5000px;
             margin: 0px;
+            cursor: pointer;
         }
         .icon-menu {
             float: left;
@@ -184,34 +187,9 @@ header.site-header {
         }
     }
 }
-.site-nav {
-    //border: none;
-    //margin-bottom: 0px;
-    //background-color: inherit;
-    //.navbar-toggle {
-        //border: none;
-        //margin-right: 0px;
-        //.icon-bar {
-            ////background-color: black;
-            //height: 4px;
-        //}
-    //}
-    //h1 {
-        //margin: 0;
-        //padding: 0;
-        //display: inline;
-        //line-height: inherit;
-    //}
-    //.navbar-brand {
-        //padding: 15px 0;
-        //color: lighten(@bodyBackground, 95%);
-    //}
-}
 
 // Module: Modules list view (gallery view)
 // body.modules-list-view
-#content {
-}
 body.modules-list-view {
     #modules-gallery{
         padding-top: 10px;
