@@ -360,12 +360,29 @@ App.IdeaLabDetailView = Backbone.View.extend({
 });
 
 
+App.HeaderView = Backbone.View.extend({
+    template: "header",
+    events: {
+        'click .bsol h1': function() { navTo(); },
+        'click .icon-gallery': function() { navTo(); },
+        'click .icon-add': function() { navTo('idealab'); }
+    }
+});
+
+App.FooterView = Backbone.View.extend({
+    template: "footer"
+});
+
 // ===================================================================
 // Layouts
 // ===================================================================
 App.Layout = new Backbone.Layout({
     // Attach the Layout to the main container.
-    el: "body"
+    el: "body",
+    views: {
+        "header": new App.HeaderView(),
+        "footer": new App.FooterView()
+    }
 });
 
 

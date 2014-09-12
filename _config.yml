@@ -39,15 +39,6 @@ asset_paths:
     img: ""
     js:  ""
 
-# Project settings - URLs
-urls:
-    display: 'solutions.thischangeseverything.org'
-    privacy: 'http://solutions.thischangeseverything.org/privacy_url'
-    credits: 'http://solutions.thischangeseverything.org/credits_url'
-    github: 'http://github.com/BeautifulTrouble/'
-    hosting_name: 'Fast, secure, Canadian hosting by GT.net'
-    hosting_url: 'https://gt.net/'
-
 # Project settings - Social
 social:
     facebook:
