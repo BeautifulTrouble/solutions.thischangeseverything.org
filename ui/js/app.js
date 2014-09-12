@@ -1,5 +1,7 @@
 /* App JS */
 // Libraries concatenated & compressed by by jekyll-assets pipeline
+//
+// First the scaffolding
 //= require jquery.js
 //= require modernizr.js
 //= require bootstrap.js
@@ -8,7 +10,7 @@
 //= require showdown.js
 
 
-//= when working on the Backbone app
+//= Then the app
 //=require backbone-app.js
 
 $(function() {
@@ -16,5 +18,6 @@ $(function() {
     App.showdown = new Showdown.converter();
     // Initialize the Backbone router.
     App.router = new App.Router();
+    // TODO change to PushState
     Backbone.history.start();
 });
