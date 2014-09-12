@@ -1,5 +1,5 @@
 /* ==========================================================================
-CSS/LESS includes 
+CSS/LESS includes
 ========================================================================== */
 //= require bootstrap.css
 //= require bsol.css
@@ -89,7 +89,7 @@ Variables
 @std-padding: 20px;
 
 /* ==========================================================================
-Global 
+Global selectors
 ========================================================================== */
 
 html {
@@ -97,10 +97,9 @@ html {
 }
 
 body {
-    background-color: @bodyBackground; 
+    background-color: @bodyBackground;
     color: @bodyText;
     font-family: @fontDefault;
-    padding-bottom: 40px;
 }
 
 .row.no-pad {
@@ -121,31 +120,28 @@ Type
 ========================================================================== */
 
 h1, h2, h3, h4 {
-    font-family: @fontHeadersDefault; 
+    font-family: @fontHeadersDefault;
 }
 
 /* ==========================================================================
 Layout
 ========================================================================== */
 
+footer.site-footer {
+    background: black;
+    height: 200px;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
 /* ==========================================================================
-Modules 
+Modules
 ========================================================================== */
 
 // Module: Header navigation, .site-nav
 header.site-header {
-    height: 42px;
-    overflow: hidden;
-    background: @brando;
-    .navbar-toggle {
-        //display: block;
-        ////float: left;
-        //margin-top: 4px;
-        //width: 34px;
-        //.icon-bar {
-            //height: 3px;
-        //}
-    }
+    background: black;
+    padding-left: 0px;
     .icon-button {
         color: white;
         position: relative;
@@ -153,47 +149,39 @@ header.site-header {
         font-size: 1.2em;
     }
     .tce {
-        float: left;
-        min-width: 350px;
-        width: 35%;
         height: 42px;
         background: black;
         h1 {
-            background: url('/ui/img/logo-tce.png') no-repeat 15px 10px black;
+            background: url('/ui/img/TCEwordmark.svg') no-repeat 0px 8px black;
             text-indent: -5000px;
-            float: right;
             width: 295px;
             margin: 0px;
+            float: left;
         }
         .icon-button {
             float: right;
             color: @bodyText;
-            position: relative;
-            right: 24px;
         }
     }
     .bsol {
-        float: left;
-        width: 38%;
+        height: 42px;
+        background-color: @brando;
         h1 {
-            background: url('/ui/img/logo-bsol.png') no-repeat 14px 10px;
+            background: url('/ui/img/BSOLwordmark.svg') no-repeat 0px 8px;
             float: left;
-            width: 230px;
+            width: 240px;
             text-indent: -5000px;
             margin: 0px;
         }
-        .icon-button {
+        .icon-menu {
             float: left;
-            position: relative;
-            left: 10px;
         }
-        //.icon-bar {
-            //background: white;
-        //}
-    }
-    .app-mode-toggle {
-        float: right;
-        width: 9%;
+        .icon-gallery {
+            float: right;
+        }
+        .icon-lab {
+            float: right;
+        }
     }
 }
 .site-nav {
@@ -220,40 +208,41 @@ header.site-header {
     //}
 }
 
-// Module: Modules list view (gallery view) 
+// Module: Modules list view (gallery view)
 // body.modules-list-view
 #content {
 }
 body.modules-list-view {
-   #modules-gallery{
+    #modules-gallery{
         padding-top: 10px;
         header ul {
+            padding-top: 6px;
             li {
-               color: @brando;
-               font-family: @fontHeadersDefault;
-               font-size: 1.438em;
-               text-transform: uppercase;
+                color: @brando;
+                font-family: @fontHeadersDefault;
+                font-size: 1.438em;
+                text-transform: uppercase;
             }
             li.filter {
-               color: @bodyText;
+                color: @bodyText;
             }
             li.active {
                 color: black;
             }
         }
-   }
-   .module-list-item.size-1 {
-       width: 310px;
-       height: 250px;
-   }
-   .module-list-item.size-2 {
-       width: 310px;
-       height: 300px;
-   }
-   .module-list-item.size-3 {
-       width: 310px;
-       height: 400px;
-   }
+    }
+    .module-list-item.size-1 {
+        width: 310px;
+        height: 250px;
+    }
+    .module-list-item.size-2 {
+        width: 310px;
+        height: 300px;
+    }
+    .module-list-item.size-3 {
+        width: 310px;
+        height: 400px;
+    }
     .caption {
         width: 100%;
         height: 100%;
@@ -320,7 +309,7 @@ article#value {
         .type {
             text-transform: uppercase;
             position: relative;
-            top: 5px; 
+            top: 5px;
         }
         h1 {
             margin: 0;
@@ -330,16 +319,16 @@ article#value {
         }
         h5 {
             font-family: @fontHeadersDefault;
-            margin: 0; 
+            margin: 0;
             font-size: 1.188em;
         }
     }
     section
-        #summary {
-            padding-right: 20px;
-        }
-       #button-bar {
-        button { 
+    #summary {
+        padding-right: 20px;
+    }
+    #button-bar {
+        button {
             color: white;
             font-weight: bold;
             background: @bodyText;
@@ -376,7 +365,7 @@ article#module {
         .type {
             text-transform: uppercase;
             position: relative;
-            top: 5px; 
+            top: 5px;
         }
         h1 {
             margin: 0;
@@ -384,7 +373,7 @@ article#module {
         }
         h5 {
             font-family: @fontHeadersDefault;
-            margin: 0; 
+            margin: 0;
             font-size: 1.188em;
         }
     }
@@ -488,7 +477,7 @@ article#module {
     //}
     aside#learn-more {
         h2 {
-            background: @bodyText; 
+            background: @bodyText;
             color: white;
             font-size: 1.436em;
             font-family: @fontHeadersDefault;
@@ -553,7 +542,7 @@ article#module {
 
 
 /* ==========================================================================
-Progressively enhance for larger screens 
+Progressively enhance for larger screens
 ========================================================================== */
 
 @media screen and (min-width: 768px) { /* Adjust for large desktop */
@@ -564,7 +553,7 @@ Progressively enhance for larger screens
 
 }
 
-@media screen and (min-width:768px) and (max-width: 992px) { /* portrait tablets */ 
+@media screen and (min-width:768px) and (max-width: 992px) { /* portrait tablets */
 
 }
 
@@ -597,43 +586,40 @@ Should be inlined to avoid required HTTP connection: h5bp.com/r
         content: " (" attr(title) ")";
     }
 
-    /*
-     * Don't show links for images, or javascript/internal links
-     */
+// Don't show links for images, or javascript/internal links
 
-a[href^="javascript:"]:after,
-a[href^="#"]:after {
-    content: "";
-}
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
 
-pre,
-blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-}
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
 
-thead {
-    display: table-header-group; /* h5bp.com/t */
-}
+    thead {
+        display: table-header-group; // h5bp.com/t //
+    }
 
-tr,
-img {
-    page-break-inside: avoid;
-}
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
 
-img {
-    max-width: 100% !important;
-}
+    img {
+        max-width: 100% !important;
+    }
 
-p,
-h2,
-h3 {
-    orphans: 3;
-    widows: 3;
-}
-
-h2,
-h3 {
-    page-break-after: avoid;
-}
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
 }
