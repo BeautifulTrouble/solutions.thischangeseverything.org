@@ -71,6 +71,8 @@ Variables
 @theory: rgba(84,23,37,0.5);
 @buttons: #49c8ef;
 @meta: #5c5d60;
+// Brand coloring
+@brando: #49c8ef;
 
 // Style tiles, Fonts
 @fontDefault: "source-sans-pro";
@@ -81,9 +83,6 @@ Variables
     font-size: 0.9em;
     .text-shadow;
 }
-
-// Brand coloring
-@brando: #49c8ef;
 
 // Sizes
 @std-padding: 20px;
@@ -103,12 +102,12 @@ body {
 }
 
 .row.no-pad {
-    margin-right: 0;
     margin-left: 0;
+    margin-right: 0;
 }
 .row.no-pad > [class*='col-'] {
-    padding-right: 0;
     padding-left: 0;
+    padding-right: 0;
 }
 
 a:link, a:visited, a:hover {
@@ -138,6 +137,7 @@ footer.site-footer {
     height: 200px;
     margin-top: 20px;
     padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 /* ==========================================================================
@@ -150,9 +150,9 @@ header.site-header {
     padding-left: 0px;
     .icon-button {
         color: white;
+        font-size: 1.2em;
         position: relative;
         top: 12px;
-        font-size: 1.2em;
     }
     .tce {
         height: 42px;
@@ -331,6 +331,8 @@ article#module {
         }
         figcaption {
             .mixin-photocredits;
+            position: relative;
+            top: 10px;
         }
     }
     header {
@@ -437,22 +439,6 @@ article#module {
         color: white;
         padding: 4px 8px 4px 8px;
     }
-    //aside#learn-more, aside#share {
-        //background: @brando;
-        //color: white;
-        //height: 150px;
-        //position: absolute;
-        //bottom: 50px;
-        //width: 100%;
-        //padding: @std-padding;
-    //}
-    //dl.learn-more-item-list { // TODO: temporary for mock-up
-        //dt {
-            //text-transform: uppercase;
-            //font-family: @fontHeadersDefault;
-            //font-size: 1em;
-        //}
-    //}
     aside#learn-more {
         h2 {
             background: @bodyText;
