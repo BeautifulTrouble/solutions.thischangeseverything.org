@@ -9,48 +9,48 @@ when: ""
 who: ""
 scale: ""
 values:
-- Advances justice
-- Builds resilience
-- Celebrates life
-- Creates more possibilities
-- Cultivates abundance
-- Deepens democracy
-- Displaces extractive industry
-- Extends the commons
+- "Advances justice"
+- "Builds resilience"
+- "Celebrates life"
+- "Creates more possibilities"
+- "Cultivates abundance"
+- "Deepens democracy"
+- "Displaces extractive industry"
+- "Extends the commons"
 related_solutions:
-- Basic income
-- Community land trusts
-- Guerrilla gardening
-- Peer Production License
-- Public ownership
-- Cap & dividend
-- Reclaiming common wealth
+- "Basic income"
+- "Community land trusts"
+- "Guerrilla gardening"
+- "Peer Production License"
+- "Public ownership"
+- "Cap & dividend"
+- "Reclaiming common wealth"
 related_theories:
-- Appropriate scale
-- Buen vivir
-- Comunalidad
-- Cooperative commonwealth
-- Environmental justice
-- Pluralist commonwealth
-- Sharing economy
-- Solidarity economics
-- Stewardship
-- Usufruct
+- "Appropriate scale"
+- "Buen vivir"
+- "Comunalidad"
+- "Cooperative commonwealth"
+- "Environmental justice"
+- "Pluralist commonwealth"
+- "Sharing economy"
+- "Solidarity economics"
+- "Stewardship"
+- "Usufruct"
 related_stories:
-- 596 Acres
-- Alaska Permanent Fund
-- Building community economies on Pine Ridge
-- Factor E Farm
-- Great Lakes Commons Initiative
-- Initiative 136
-- The Beaver Lake Cree's tarsands lawsuit
-- The river with the rights of a person
-- Brazilian Landless Workers' Movement
+- "596 Acres"
+- "Alaska Permanent Fund"
+- "Building community economies on Pine Rid"
+- "Factor E Farm"
+- "Great Lakes Commons Initiative"
+- "Initiative 136"
+- "The Beaver Lake Cree's tarsands lawsuit"
+- "The river with the rights of a person"
+- "Brazilian Landless Workers' Movement"
 tags:
-- agriculture
-- climate
-- indigenous rights
-- open source
+- "agriculture"
+- "climate"
+- "indigenous rights"
+- "open source"
 learn_more:
 -
     title: "Capitalism 3.0: A Guide to Reclaiming the Commons"
@@ -69,11 +69,12 @@ learn_more:
     url: "http://www.commoner.org.uk/"
 images:
 -
-    url: The-Commons.jpg
-    name: The-Commons.jpg
-    caption: "Activists in Alberta, Canada, campaign to have water protected as a commons, and allocated equitably."
-    source: "Paula Kirman"
-    source_url: ""
+    url: 'Community-Wealth-Building.jpg'
+    name: 'Community-Wealth-Building.jpg' 
+    caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
+    source: 'Ecomundo Cleaning Co-operative'
+    source_url: 'https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater'
+    rights: 'By permission of Ecomundo Cleaning'
 contributors:
 - "Peter Barnes"
 ---

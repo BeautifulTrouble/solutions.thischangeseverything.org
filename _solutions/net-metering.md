@@ -7,20 +7,20 @@ when: ""
 who: ""
 scale: "Individual; Local"
 values:
-- Builds resilience
-- Extends the commons
+- "Builds resilience"
+- "Extends the commons"
 related_solutions:
 related_theories:
-- Pluralist commonwealth
-- The commons
+- "Pluralist commonwealth"
+- "The commons"
 related_stories:
-- Boulder, Colorado vs. Xcel energy
-- Co-op Power
-- Ethical Electric
+- "Boulder, Colorado vs. Xcel energy"
+- "Co-op Power"
+- "Ethical Electric"
 tags:
-- energy
-- policy
-- urban planning
+- "energy"
+- "policy"
+- "urban planning"
 learn_more:
 -
     title: "Net metering programs by US state"
@@ -39,11 +39,12 @@ learn_more:
     url: "http://www.energymanagertoday.com/us-favors-net-metering-while-europe-japan-like-feed-in-tariffs-092374/"
 images:
 -
-    url: Net-Metering.jpg
-    name: Net-Metering.jpg
-    caption: "Solar Co-operative with net metering."
-    source: "Andrewglaser"
-    source_url: ""
+    url: 'Community-Wealth-Building.jpg'
+    name: 'Community-Wealth-Building.jpg' 
+    caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
+    source: 'Ecomundo Cleaning Co-operative'
+    source_url: 'https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater'
+    rights: 'By permission of Ecomundo Cleaning'
 contributors:
 - "Johnny Weiss"
 ---

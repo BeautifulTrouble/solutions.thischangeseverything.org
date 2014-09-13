@@ -7,28 +7,28 @@ when: "1963 &mdash; 1993"
 who: "Cesar Chavez & the United Farm Workers of America"
 scale: "Regional"
 values:
-- Advances justice
-- Builds resilience
-- Deepens democracy
-- Displaces extractive industry
+- "Advances justice"
+- "Builds resilience"
+- "Deepens democracy"
+- "Displaces extractive industry"
 related_solutions:
-- Credit union
-- Non-extractive financial cooperative
-- Sukuk
-- Divest/invest
+- "Credit union"
+- "Non-extractive financial cooperative"
+- "Sukuk"
+- "Divest/invest"
 related_theories:
-- Economic democracy
-- Resilience-based organizing
-- Solidarity economics
+- "Economic democracy"
+- "Resilience-based organizing"
+- "Solidarity economics"
 related_stories:
-- Brazilian Landless Workers' Movement
+- "Brazilian Landless Workers' Movement"
 tags:
-- cooperatives
-- decision-making
-- financing
-- justice
-- movement building
-- organized labor
+- "cooperatives"
+- "decision-making"
+- "financing"
+- "justice"
+- "movement building"
+- "organized labor"
 learn_more:
 -
     title: "Farm Worker Credit Union (essay & photos)"
@@ -42,11 +42,12 @@ learn_more:
     url: "http://books.google.ca/books?id=CEqz-KxbHDIC&dq=farm+worker+credit+union"
 images:
 -
-    url: Farm-Workers-Credit-Union.jpg
-    name: Farm-Workers-Credit-Union.jpg
-    caption: "Newspaper clippings document the growing power of the Farm Workers Credit Union."
-    source: "Farmworker Movement Documentation Project"
-    source_url: ""
+    url: 'Community-Wealth-Building.jpg'
+    name: 'Community-Wealth-Building.jpg' 
+    caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
+    source: 'Ecomundo Cleaning Co-operative'
+    source_url: 'https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater'
+    rights: 'By permission of Ecomundo Cleaning'
 contributors:
 - "Eli Feghali"
 ---

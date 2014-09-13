@@ -7,33 +7,33 @@ when: "19th century &mdash; 2014"
 who: "Maori tribes near the Whanganui River in conjunction with the New Zealand Government"
 scale: "Regional; National"
 values:
-- Advances justice
-- Celebrates life
-- Creates more possibilities
-- Extends the commons
+- "Advances justice"
+- "Celebrates life"
+- "Creates more possibilities"
+- "Extends the commons"
 related_solutions:
-- Solutions seized through direct action
-- Reclaiming common wealth
+- "Solutions seized through direct action"
+- "Reclaiming common wealth"
 related_theories:
-- Buen vivir
-- Decolonization
-- Environmental justice
-- Sense of place
-- Social imagination
-- Stewardship
-- The commons
+- "Buen vivir"
+- "Decolonization"
+- "Environmental justice"
+- "Sense of place"
+- "Social imagination"
+- "Stewardship"
+- "The commons"
 related_stories:
-- Great Lakes Commons Initiative
-- Initiative 136
-- The Beaver Lake Cree's tarsands lawsuit
-- The Zapatista Little School
-- Idle No More
+- "Great Lakes Commons Initiative"
+- "Initiative 136"
+- "The Beaver Lake Cree's tarsands lawsuit"
+- "The Zapatista Little School"
+- "Idle No More"
 tags:
-- indigenous rights
-- justice
-- land use
-- living economies
-- resource use
+- "indigenous rights"
+- "justice"
+- "land use"
+- "living economies"
+- "resource use"
 learn_more:
 -
     title: "An indivisible and living whole"
@@ -52,11 +52,12 @@ learn_more:
     url: "http://www.aljazeera.com/programmes/witness/2013/09/i-am-river-201392410212172573.html"
 images:
 -
-    url: The-River-With-The-Rights-Of-A-Person.jpg
-    name: The-River-With-The-Rights-Of-A-Person.jpg
-    caption: "Looking out over the Whanganui river."
-    source: "Kathrin & Stefan Marks"
-    source_url: "http://www.flickr.com/photos/ks_marks/8477072494/"
+    url: 'Community-Wealth-Building.jpg'
+    name: 'Community-Wealth-Building.jpg' 
+    caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
+    source: 'Ecomundo Cleaning Co-operative'
+    source_url: 'https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater'
+    rights: 'By permission of Ecomundo Cleaning'
 contributors:
 - "Jen Wilton"
 ---

@@ -7,27 +7,27 @@ when: "2007 — Present"
 who: "Open Source Ecology"
 scale: "Local"
 values:
-- Builds resilience
-- Creates more possibilities
-- Cultivates abundance
-- Extends the commons
+- "Builds resilience"
+- "Creates more possibilities"
+- "Cultivates abundance"
+- "Extends the commons"
 related_solutions:
-- Community supported agriculture
-- Peer Production License
+- "Community supported agriculture"
+- "Peer Production License"
 related_theories:
-- Appropriate scale
-- Pluralist commonwealth
-- Sharing economy
-- Social imagination
-- The commons
+- "Appropriate scale"
+- "Pluralist commonwealth"
+- "Sharing economy"
+- "Social imagination"
+- "The commons"
 related_stories:
-- Trade school: barter-for-knowledge
-- Resilience Circles
+- "Trade school: barter-for-knowledge"
+- "Resilence Circles"
 tags:
-- agriculture
-- education
-- food
-- open source
+- "agriculture"
+- "education"
+- "food"
+- "open source"
 learn_more:
 -
     title: "Open Source Ecology: Factor e Farm in Five Minutes"
@@ -46,11 +46,12 @@ learn_more:
     url: "http://opensourceecology.org/wiki/Factor_e_Farm_Economic_Model"
 images:
 -
-    url: Factor-E-Farm.jpg
-    name: Factor-E-Farm.jpg
-    caption: "LifeTrac 4 is a multipurpose, open-source tractor that is designed and built with a focus on a lifetime of usage and ease of repair."
-    source: "Open Source Ecology"
-    source_url: ""
+    url: 'Community-Wealth-Building.jpg'
+    name: 'Community-Wealth-Building.jpg' 
+    caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
+    source: 'Ecomundo Cleaning Co-operative'
+    source_url: 'https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater'
+    rights: 'By permission of Ecomundo Cleaning'
 contributors:
 - "Dave Oswald Mitchell"
 ---

@@ -7,21 +7,21 @@ when: "1995 &mdash; Present"
 who: "Antanas Mockus, mayor of Bogotá"
 scale: "Local"
 values:
-- Celebrates life
-- Extends the commons
+- "Celebrates life"
+- "Extends the commons"
 related_solutions:
-- (Re)Claiming space through public art
-- Solutions seized through direct action
+- "(Re)Claiming space through public art"
+- "Solutions seized through direct action"
 related_theories:
-- Social imagination
-- Solutionary action logic
-- The commons
+- "Social imagination"
+- "Solutionary action logic"
+- "The commons"
 related_stories:
 tags:
-- culture
-- education
-- safety
-- transportation
+- "culture"
+- "education"
+- "safety"
+- "transportation"
 learn_more:
 -
     title: "Academic turns city into a social experiment"
@@ -40,11 +40,12 @@ learn_more:
     url: "http://www.theguardian.com/public-leaders-network/2013/oct/28/antanas-mockus-bogota-mayor"
 images:
 -
-    url: Traffic-Mimes.jpg
-    name: Traffic-Mimes.jpg
-    caption: "A traffic mime in a Venezuela initiative inspired by Bogotá helps a woman cross the street."
-    source: "Associated Press"
-    source_url: ""
+    url: 'Community-Wealth-Building.jpg'
+    name: 'Community-Wealth-Building.jpg' 
+    caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
+    source: 'Ecomundo Cleaning Co-operative'
+    source_url: 'https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater'
+    rights: 'By permission of Ecomundo Cleaning'
 contributors:
 - "Tomaz Capobianco"
 ---

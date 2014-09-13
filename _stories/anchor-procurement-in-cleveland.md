@@ -7,26 +7,26 @@ when: "2008 &mdash; Present"
 who: "Evergreen Cooperatives and local universities & hospitals"
 scale: "Local"
 values:
-- Creates more possibilities
-- Cultivates abundance
-- Deepens democracy
-- Displaces extractive industry
-- Extends the commons
+- "Creates more possibilities"
+- "Cultivates abundance"
+- "Deepens democracy"
+- "Displaces extractive industry"
+- "Extends the commons"
 related_solutions:
-- Community wealth building
-- Public ownership
-- Worker cooperative
+- "Community wealth building"
+- "Public ownership"
+- "Worker cooperative"
 related_theories:
-- Cooperative commonwealth
-- Pluralist commonwealth
+- "Cooperative commonwealth"
+- "Pluralist commonwealth"
 related_stories:
 tags:
-- community development
-- cooperatives
-- equity
-- planning
-- urban planning
-- work
+- "community development"
+- "cooperatives"
+- "equity"
+- "planning"
+- "urban planning"
+- "work"
 learn_more:
 -
     title: "The Cleveland Model: Leveraging anchor purchasing for community benefit"
@@ -50,11 +50,12 @@ learn_more:
     url: "http://www.thenation.com/article/cleveland-model"
 images:
 -
-    url: Anchor-Procurement-In-Cleveland.jpg
-    name: Anchor-Procurement-In-Cleveland.jpg
-    caption: "Worker/owner tending to greenhouse."
-    source: "Greater University Circle Neighborhood Voice"
-    source_url: ""
+    url: 'Community-Wealth-Building.jpg'
+    name: 'Community-Wealth-Building.jpg' 
+    caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
+    source: 'Ecomundo Cleaning Co-operative'
+    source_url: 'https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater'
+    rights: 'By permission of Ecomundo Cleaning'
 contributors:
 - "Steve Dubb"
 ---

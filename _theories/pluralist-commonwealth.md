@@ -7,44 +7,44 @@ when: ""
 who: ""
 scale: ""
 values:
-- Cultivates abundance
-- Deepens democracy
-- Displaces extractive industry
-- Extends the commons
+- "Cultivates abundance"
+- "Deepens democracy"
+- "Displaces extractive industry"
+- "Extends the commons"
 related_solutions:
-- Basic income
-- Community land trusts
-- Community wealth building
-- Non-extractive financial cooperative
-- Participatory budgeting
-- Peer Production License
-- Public ownership
-- Dividends for all
-- Reclaiming common wealth
+- "Basic income"
+- "Community land trusts"
+- "Community wealth building"
+- "Non-extractive financial cooperative"
+- "Participatory budgeting"
+- "Peer Production License"
+- "Public ownership"
+- "Dividends for all"
+- "Reclaiming common wealth"
 related_theories:
-- Economic democracy
-- Sharing economy
-- Solidarity economics
-- Stewardship
-- The commons
-- The generative economy
-- Upstream thinking
-- Usufruct
+- "Economic democracy"
+- "Sharing economy"
+- "Solidarity economics"
+- "Stewardship"
+- "The commons"
+- "The generative economy"
+- "Upstream thinking"
+- "Usufruct"
 related_stories:
-- Anchor procurement in Cleveland
-- Boulder, Colorado vs. Xcel energy
-- Cooperative Homecare Associates
-- Co-op Power
-- Initiative 136
-- Philadelphia Land Bank
-- Southern Grassroots Economies Project
+- "Anchor procurement in Cleveland"
+- "Boulder, Colorado vs. Xcel energy"
+- "Cooperative Homecare Associates"
+- "Co-op Power"
+- "Initiative 136"
+- "Philidelphia Land Bank"
+- "Southern Grassroots Economies Project"
 tags:
-- community development
-- cooperatives
-- democracy
-- governance
-- living economies
-- politics
+- "community development"
+- "cooperatives"
+- "democracy"
+- "governance"
+- "living economies"
+- "politics"
 learn_more:
 -
     title: "The Pluralist Commonwealth"
@@ -58,11 +58,12 @@ learn_more:
     url: "http://community-wealth.org/content/america-beyond-capitalism-reclaiming-our-wealth-our-liberty-and-our-democracy"
 images:
 -
-    url: Pluralist-Commonwealth.jpg
-    name: Pluralist-Commonwealth.jpg
-    caption: "Economic democracy is a crucial element of a pluralist commonwealth."
-    source: "Popular Resistance"
-    source_url: "http://www.popularresistance.org/wp-content/uploads/2013/07/Economic-Democracy1.jpg"
+    url: 'Community-Wealth-Building.jpg'
+    name: 'Community-Wealth-Building.jpg' 
+    caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
+    source: 'Ecomundo Cleaning Co-operative'
+    source_url: 'https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater'
+    rights: 'By permission of Ecomundo Cleaning'
 contributors:
 - "Gar Alperovitz"
 ---

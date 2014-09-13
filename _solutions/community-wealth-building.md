@@ -11,25 +11,25 @@ when: ""
 who: ""
 scale: ""
 values:
-- Builds resilience
-- Creates more possibilities
-- Deepens democracy
-- Displaces extractive industry
-- Extends the commons
+- "Builds resilience"
+- "Creates more possibilities"
+- "Deepens democracy"
+- "Displaces extractive industry"
+- "Extends the commons"
 related_solutions:
-- Community currency
-- Community impacting investment
+- "Community currency"
+- "Community impacting investment"
 related_theories:
-- Community as developer
+- "Community as developer"
 related_stories:
-- Anchor procurement in Cleveland
-- Building community economies on Pine Ridge
-- Dudley Street Neighborhood Initiative
+- "Anchor procurement in Cleveland"
+- "Building community economies on Pine Rid"
+- "Dudley Street Neighborhood Initiative"
 tags:
-- community development
-- cooperatives
-- policy
-- urban planning
+- "community development"
+- "cooperatives"
+- "policy"
+- "urban planning"
 learn_more:
 -
     title: "Community-Wealth.org"
@@ -43,11 +43,12 @@ learn_more:
     url: "http://api.prx.org/pieces/112193-a-parade-of-dwarves-democratizing-wealth-for-a-ne"
 images:
 -
-    url: Community-Wealth-Building.jpg
-    name: Community-Wealth-Building.jpg
+    url: 'Community-Wealth-Building.jpg'
+    name: 'Community-Wealth-Building.jpg' 
     caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
-    source: "Ecomundo Cleaning Co-operative"
-    source_url: "https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater"
+    source: 'Ecomundo Cleaning Co-operative'
+    source_url: 'https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater'
+    rights: 'By permission of Ecomundo Cleaning'
 contributors:
 - "Ted Howard"
 ---

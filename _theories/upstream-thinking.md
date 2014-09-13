@@ -7,30 +7,30 @@ when: ""
 who: ""
 scale: ""
 values:
-- Advances justice
-- Builds resilience
-- Creates more possibilities
+- "Advances justice"
+- "Builds resilience"
+- "Creates more possibilities"
 related_solutions:
-- Basic income
-- Community impacting investment
-- Participatory budgeting
-- Shorter work week
+- "Basic income"
+- "Community impacting investment"
+- "Participatory budgeting"
+- "Shorter work week"
 related_theories:
-- Buen vivir
-- Economic democracy
-- Environmental justice
-- Stewardship
+- "Buen vivir"
+- "Economic democracy"
+- "Environmental justice"
+- "Stewardship"
 related_stories:
-- The river with the rights of a person
-- Resilience Circles
+- "The river with the rights of a person"
+- "Resilence Circles"
 tags:
-- community development
-- education
-- equity
-- health
-- policy
-- taxation
-- well-being
+- "community development"
+- "education"
+- "equity"
+- "health"
+- "policy"
+- "taxation"
+- "well-being"
 learn_more:
 -
     title: "Investigating the root causes of the global health crisis"
@@ -49,11 +49,12 @@ learn_more:
     url: "http://www.thecanadianfacts.org/"
 images:
 -
-    url: Upstream-Thinking.jpg
-    name: Upstream-Thinking.jpg
-    caption: "Healthy communities create healthy people."
-    source: "Upstream"
-    source_url: ""
+    url: 'Community-Wealth-Building.jpg'
+    name: 'Community-Wealth-Building.jpg' 
+    caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
+    source: 'Ecomundo Cleaning Co-operative'
+    source_url: 'https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater'
+    rights: 'By permission of Ecomundo Cleaning'
 contributors:
 - "Ryan Meili"
 ---
