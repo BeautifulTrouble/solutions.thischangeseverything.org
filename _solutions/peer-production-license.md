@@ -36,12 +36,11 @@ learn_more:
     url: "http://telekommunisten.net/the-telekommunist-manifesto/"
 images:
 -
-    url: 'Community-Wealth-Building.jpg'
-    name: 'Community-Wealth-Building.jpg' 
-    caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
-    source: 'Ecomundo Cleaning Co-operative'
-    source_url: 'https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater'
-    rights: 'By permission of Ecomundo Cleaning'
+    url: "Peer-Production-License.jpg"
+    name: "Peer-Production-License.jpg"
+    caption: "Grafitti artist Banksy's work, including this 2008 Simpsons-inspired New Orleans mural, often plays with questions of ownership and commodification of art."
+    source: ""
+    source_url: ""
 contributors:
 - "Helene Finidori"
 ---

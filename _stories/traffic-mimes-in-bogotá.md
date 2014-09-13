@@ -40,12 +40,11 @@ learn_more:
     url: "http://www.theguardian.com/public-leaders-network/2013/oct/28/antanas-mockus-bogota-mayor"
 images:
 -
-    url: 'Community-Wealth-Building.jpg'
-    name: 'Community-Wealth-Building.jpg' 
-    caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
-    source: 'Ecomundo Cleaning Co-operative'
-    source_url: 'https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater'
-    rights: 'By permission of Ecomundo Cleaning'
+    url: "Traffic-Mimes.jpg"
+    name: "Traffic-Mimes.jpg"
+    caption: "A traffic mime in a Venezuela initiative inspired by Bogotá helps a woman cross the street."
+    source: ""
+    source_url: ""
 contributors:
 - "Tomaz Capobianco"
 ---

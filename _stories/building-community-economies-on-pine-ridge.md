@@ -53,12 +53,11 @@ learn_more:
     url: "http://community-wealth.org/content/indian-country-site-new-developments-community-wealth-building"
 images:
 -
-    url: 'Community-Wealth-Building.jpg'
-    name: 'Community-Wealth-Building.jpg' 
-    caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
-    source: 'Ecomundo Cleaning Co-operative'
-    source_url: 'https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater'
-    rights: 'By permission of Ecomundo Cleaning'
+    url: "Building-Community-Economies-On-Pine-Ridge.jpg"
+    name: "Building-Community-Economies-On-Pine-Ridge.jpg"
+    caption: "A prototype house for Thunder Valley CDC’s Regenerative Community project, using native materials like strawbale to reduce the ecological impacts and costs of construction."
+    source: ""
+    source_url: ""
 contributors:
 - "Sarah McKinley"
 ---

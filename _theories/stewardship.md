@@ -25,7 +25,7 @@ related_theories:
 - "The commons"
 - "Usufruct"
 related_stories:
-- "Building community economies on Pine Rid"
+- "Building community economies on Pine Ridge"
 - "Great Lakes Commons Initiative"
 - "Greenwave's restorative ocean farming"
 - "Initiative 136"
@@ -54,12 +54,11 @@ learn_more:
     url: "http://books.google.com/books?id=7PF--OQMwYUC&printsec=frontcover&dq=murphy+nagel+the+myth+of+ownership&hl=en&sa=X&ei=RZwDVJK-EoeCjAKy0oGgCg&ved=0CCoQ6AEwAA#v=onepage&q&f=false"
 images:
 -
-    url: 'Community-Wealth-Building.jpg'
-    name: 'Community-Wealth-Building.jpg' 
-    caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
-    source: 'Ecomundo Cleaning Co-operative'
-    source_url: 'https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater'
-    rights: 'By permission of Ecomundo Cleaning'
+    url: "Stewardship.jpg"
+    name: "Stewardship.jpg"
+    caption: "Intergenerational rice terraces in China."
+    source: ""
+    source_url: ""
 contributors:
 - "Sofia Fenner"
 ---

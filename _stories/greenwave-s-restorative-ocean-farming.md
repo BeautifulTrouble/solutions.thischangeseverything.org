@@ -25,7 +25,7 @@ related_theories:
 - "The commons"
 - "Usufruct"
 related_stories:
-- "Building community economies on Pine Rid"
+- "Building community economies on Pine Ridge"
 - "Equitable Food Initiative"
 - "Great Lakes Commons Initiative"
 tags:
@@ -53,12 +53,11 @@ learn_more:
     url: "https://www.youtube.com/watch?v=j8ViaskDSeI"
 images:
 -
-    url: 'Community-Wealth-Building.jpg'
-    name: 'Community-Wealth-Building.jpg' 
-    caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
-    source: 'Ecomundo Cleaning Co-operative'
-    source_url: 'https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater'
-    rights: 'By permission of Ecomundo Cleaning'
+    url: "Greenwaves-Restorative-Ocean-Farming.jpg"
+    name: "Greenwaves-Restorative-Ocean-Farming.jpg"
+    caption: "3D ocean farming: Turning fishermen into climate farmers."
+    source: ""
+    source_url: ""
 contributors:
 - "Bren Smith"
 ---

@@ -27,7 +27,7 @@ related_theories:
 related_stories:
 - "596 Acres"
 - "Boulder, Colorado vs. Xcel energy"
-- "Building community economies on Pine Rid"
+- "Building community economies on Pine Ridge"
 - "Dudley Street Neighborhood Initiative"
 - "Philidelphia Land Bank"
 tags:
@@ -51,12 +51,11 @@ learn_more:
     url: "http://f4dc.org/2013/economic-incentives-yes-but-directly-to-the-community/"
 images:
 -
-    url: 'Community-Wealth-Building.jpg'
-    name: 'Community-Wealth-Building.jpg' 
-    caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
-    source: 'Ecomundo Cleaning Co-operative'
-    source_url: 'https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater'
-    rights: 'By permission of Ecomundo Cleaning'
+    url: "Community-As-Developer.jpg"
+    name: "Community-As-Developer.jpg"
+    caption: "What could our communities look like if they weren't designed to maximize profit?"
+    source: ""
+    source_url: ""
 contributors:
 - "Ed Whitfield"
 ---
