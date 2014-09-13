@@ -119,6 +119,9 @@ a:link, a:visited, a:hover {
 .icon-button, .module-list-item, .filter, .values li, .tags li {
     cursor: pointer;
 }
+.values li:hover, .tags li:hover {
+    text-decoration: underline;
+}
 
 /* ==========================================================================
 Type
@@ -377,7 +380,7 @@ article#module {
             font-weight: bold;
         }
         .byline span {
-            color: @brando;
+            color: @bodyText;
             text-transform: uppercase;
             font-weight: normal;
         }
