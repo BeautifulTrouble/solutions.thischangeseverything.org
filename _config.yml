@@ -1,10 +1,11 @@
 # Project settings - General
 version: 0.0.1
-title: "Project title"
-description: "Project description"
+title: "Beautiful Solutions | This Changes Everything"
+description: "We're gathering the most promising and contagious strategies for building a just, democratic, and resilient world."
 baseurl: ""
-url: "http://solutions.thischangeseverything.org"
+url: "https://solutions.thischangeseverything.org"
 logo: 'logo.png'
+favicon: 'favicon.ico'
 
 # Project settings - Reading
 exclude: [ 'local' ]
