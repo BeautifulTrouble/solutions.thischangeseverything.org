@@ -525,13 +525,21 @@ article#idealab-list, article#idealab-detail {
         line-height: 1em;
         display: inline-block;
         background-size: cover;
-        &.tab-active { background-image: url('/ui/img/tab-blue.svg'); }
-        &.tab-inactive { background-image: url('/ui/img/tab-gray.svg'); }
+        &.tab-active { 
+            background-image: url('/ui/img/tab-blue.svg'); 
+            z-index: 2;
+        }
+        &.tab-inactive { 
+            background-image: url('/ui/img/tab-gray.svg'); 
+            z-index: 1;
+        }
         // There's some nutty math behind this actually working
         padding: 11px 16px;
-        width: 152px;
-        &:nth-last-of-type(1) { // fancy!
-            width: 160px;
+        width: 160px;
+        position: relative;
+        right: 6px;
+        &:nth-of-type(1) { // fancy!
+            right: 0;
         }
     }
     header {
