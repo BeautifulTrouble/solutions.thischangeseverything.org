@@ -324,8 +324,8 @@ App.IdeaLabListView = Backbone.View.extend({
         "click #idealab-submitted tr.data-slug": function (e) { 
             navTo('idealab/submitted/' + e.currentTarget.dataset.slug);
         },
-        "click button.published": function () { navTo('idealab/published'); },
-        "click button.submitted": function () { navTo('idealab/submitted'); },
+        "click span.published": function () { navTo('idealab/published'); },
+        "click span.submitted": function () { navTo('idealab/submitted'); },
     },
     afterRender: function() {
         $('body').attr("class", "idealab-list-view");

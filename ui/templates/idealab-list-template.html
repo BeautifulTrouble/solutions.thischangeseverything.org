@@ -8,8 +8,8 @@
                     <p>
                         Bacon ipsum sin guacamole de los estudiantes en el chupacabra.
                     </p>
-                    <button class="published">Published Gallery</button>
-                    <button class="submitted">Submitted Ideas</button>
+
+                    <span class="published tab tab-<%= state=='published'?'active':'inactive' %>">Published Gallery</span><span class="submitted tab tab-<%= state=='submitted'?'active':'inactive' %>">Submitted Ideas</span>
                 </header>
 
                 <% if (state == "published") { %>
@@ -19,7 +19,7 @@
                     <thead>
                         <tr>
                             <th>Idea</th>
-                            <th>Contributor(s)</th>
+                            <th>Contributor</th>
                             <th><i class="glyphicon glyphicon-user"></i></th>
                         </tr>
                     </thead>

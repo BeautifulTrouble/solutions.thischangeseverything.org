@@ -517,6 +517,23 @@ article#module {
 
 // Module: IdeaLab
 article#idealab-list, article#idealab-detail {
+    .tab {
+        font-family: @fontHeadersDefault;
+        font-size: 1.4em;
+        color: white;
+        text-transform: uppercase;
+        line-height: 1em;
+        display: inline-block;
+        background-size: cover;
+        &.tab-active { background-image: url('/ui/img/tab-blue.svg'); }
+        &.tab-inactive { background-image: url('/ui/img/tab-gray.svg'); }
+        // There's some nutty math behind this actually working
+        padding: 11px 16px;
+        width: 152px;
+        &:nth-last-of-type(1) { // fancy!
+            width: 160px;
+        }
+    }
     header {
         margin-top: 42px;
         h1 {
