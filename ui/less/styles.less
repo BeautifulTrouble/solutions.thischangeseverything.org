@@ -59,6 +59,7 @@ Variables
 // Style tiles, Colours
 @white: #ffffff;
 @gray: #7A7979;
+@darkGray: #393939;
 @lightGray: rgb(240,240,240);
 @bodyText: #5c5d60;
 @blockHeaders: #093742;
@@ -66,9 +67,14 @@ Variables
 @articleDesc: #575756;
 @linkText: #083643;
 @bodyBackground: white;
-@tactic: rgba(39,48,30,0.5);
-@solution: rgba(82,44,2,0.5);
-@theory: rgba(84,23,37,0.5);
+@value: #4fa179;
+@story: #97c23a;
+@solution: #eb9626;
+@theory: #d65031;
+@principle: #4daec4;
+@tacticBackground: rgba(39,48,30,0.5);
+@solutionBackground: rgba(82,44,2,0.5);
+@theoryBackground: rgba(84,23,37,0.5);
 @buttons: #49c8ef;
 @meta: #5c5d60;
 // Brand coloring
@@ -491,14 +497,81 @@ article#module {
             }
         }
         .tactic {
-            background-color: @tactic;
+            background-color: @tacticBackground;
         }
         .theory {
-            background-color: @theory;
+            background-color: @theoryBackground;
         }
         .solution {
-            background-color: @solution;
+            background-color: @solutionBackground;
         }
+    }
+}
+
+// Module: IdeaLab
+article#idealab-list, article#idealab-detail {
+    header {
+        margin-top: 42px;
+        h1 {
+            margin: 0;
+            font-size: 4.375em;
+        }
+        h5 {
+            font-family: @fontHeadersDefault;
+            margin: 0;
+            font-size: 1.188em;
+        }
+    }   
+    table {
+        th, td {
+            padding: 10px 15px;
+            border-bottom: 1px solid @gray;
+            line-height: 1em;
+        }
+        thead tr {
+            border-left: 4px solid @brando;
+        }
+        tbody tr {
+            border-left: 4px solid transparent;
+        }
+        tr:nth-child(odd) {
+        }
+        tr:nth-child(even) {
+            //background: green;
+        }
+        th {
+            text-transform: uppercase;
+            font-family: @fontHeadersDefault;
+            font-size: 1.4em;
+            vertical-align: bottom;
+            line-height: 1em;
+            color: @darkGray;
+            background: @brando;
+            .glyphicon {
+                color: white;
+            }
+        }
+        &#idealab-published {
+            tr.value { border-left: 4px solid @value; }
+            tr.story { border-left: 4px solid @story; }
+            tr.solution { border-left: 4px solid @solution; }
+            tr.theory { border-left: 4px solid @theory; }
+            tr.principle { border-left: 4px solid @principle; }
+        }
+        &#idealab-submitted {
+
+        }
+    }
+    #button-bar button {
+        background-color: @buttons;
+        text-align: center;
+        text-transform: uppercase;
+        //font-size: 1.4rem;
+        font-family: @fontHeadersDefault;
+        font-weight: bold;
+        border: none;
+        color: white;
+        padding: 6px 8px 6px 8px;
     }
 }
 
