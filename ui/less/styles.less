@@ -66,9 +66,9 @@ Variables
 @articleDesc: #575756;
 @linkText: #083643;
 @bodyBackground: white;
-@tactic: rgba(39,48,30,0.5);
-@solution: rgba(82,44,2,0.5);
-@theory: rgba(84,23,37,0.5);
+@solution: #eb9626;
+@theory: #965031;
+@story: rgb(151, 194, 58); 
 @buttons: #49c8ef;
 @meta: #5c5d60;
 // Brand coloring
@@ -500,14 +500,14 @@ article#module {
                 padding: 6px;
             }
         }
-        .tactic {
-            background-color: @tactic;
-        }
         .theory {
-            background-color: @theory;
+            background-color: fadeout(@theory, 45%);
         }
         .solution {
-            background-color: @solution;
+            background-color: fadeout(@solution, 45%);
+        }
+        .story {
+            background-color: fadeout(@story, 45%);
         }
     }
 }
