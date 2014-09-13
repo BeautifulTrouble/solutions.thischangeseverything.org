@@ -8,8 +8,8 @@
                     <p>
                         Bacon ipsum sin guacamole de los estudiantes en el chupacabra.
                     </p>
-                    <span class="published tab tab-<%= state=='published'?'active':'inactive' %>">Published Gallery</span><span class="submitted tab tab-<%= state=='submitted'?'active':'inactive' %>">Submitted Ideas</span>
                 </header>
+                <span class="published tab tab-<%= state=='published'?'active':'inactive' %>">Published Gallery</span><span class="submitted tab tab-<%= state=='submitted'?'active':'inactive' %>">Submitted Ideas</span>
 
                 <% if (state == "published") { %>
 
@@ -68,8 +68,21 @@
 
             </div>
             <div class="col-md-5">
-                <div id="idealab-sidebar" style="background:#aaa;height:1000px;">
-                </div>
+                <aside id="idealab-sidebar">
+                    <h2>Add your own idea</h2>
+                    <p>Great minds think in Lorem Ipsum.</p>
+                    <form>
+                        <h3>Title:</h3>
+                        <input type="text" name="title"><br>
+                        <h3>Description:</h3>
+                        <input type="textarea" name="short_write_up"><br>
+                        <h3>Your name:</h3>
+                        <input type="text" name="name"><br>
+                        <h3>Your email:</h3>
+                        <input type="text" name="contact"><br>
+                        <input type="button" value="Contribute" class="add-idea">
+                    </form>
+                </aside>
             </div>
         </div>
     </article>

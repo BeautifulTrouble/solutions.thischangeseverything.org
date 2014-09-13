@@ -11,38 +11,59 @@
                         <% } %>
                     </div>
                     <h1 class="title"><%= title %></h1>
-                    <div class="byline">
-                        <p>
-                            by <span class="contributor"><%= contributors[0] %></span>
-                            <% if (state == 'published') { %>
-                            <!-- TODO: update module schema to include user-submitted flag; include ": User submitted" with type -->
-                            <span class="module-type-icon"><%= type %></span>
-                            <% } else { %>
-                            <span class="date-added">Added <%= long_date %></span>
-                            <span class="vote"><i class="icon icon-love"></i>Love this idea</span>
-                            <% } %>
-                            <div class="col-md-1 share-icon"><i class="icon icon-share"></i></div>
-                        </p>
-                    </div> 
                 </header>
                 <section>
-                    <p><%= short_write_up %></p>
-                    <% if (state == 'published') { %>
-                    <div class="meta clearfix">
-                        <div class="icon-tags">
-                            <i class="icon icon-tag"></i>
+                    <div class="row no-pad">
+                        <div class="col-md-3 byline">
+                            <p>by <span class="contributor"><%= contributors[0] %></span></p>
+                        </div> 
+                        
+                        <% if (state == 'published') { %>
+                        <!-- TODO: update module schema to include user-submitted flag; include ": User submitted" with type -->
+                        <div class="col-md-2">
+                            <span class="module-type-icon"><%= type %></span>
                         </div>
-                        <div class="meta-info">
-                            <ul class="tags list-comma">
-                                <span>Tags</span>
-                                <% _.each(tags, function(tag) { if (tag) { %>
-                                <li><%= tag %></li>
-                                <% } }); %>
-                            </ul>
+                        <% } else { %>
+                        <div class="col-md-2">
+                            <span class="date-added">Added <%= long_date %></span>
+                        </div>
+                        <div class="col-md-2">
+                            <span class="vote"><i class="icon icon-love"></i>Love this idea</span>
+                        </div>
+                        <% } %>
+
+                        <span class="col-md-1 share-icon"><i class="icon icon-share"></i></span>
+                    </div>
+
+                    <div class="row no-pad">
+                        <div id="summary">
+                            <p><%= short_write_up %></p>
+                        </div>
+                    </div>
+                    
+                    <% if (state == 'published') { %>
+                    <div class="row no-pad">
+                        <div class="meta clearfix">
+                            <div class="icon-tags">
+                                <i class="icon icon-tag"></i>
+                            </div>
+                            <div class="meta-info">
+                                <ul class="tags list-comma">
+                                    <span>Tags</span>
+                                    <% _.each(tags, function(tag) { if (tag) { %>
+                                    <li><%= tag %></li>
+                                    <% } }); %>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <% } %>
+
                 </section>
+            </div>
+            <div class="col-md-5">
+                <aside id="idealab-sidebar">
+                </aside>
             </div>
         </div>
         <a class="login" href="/api/logout">logout</a><br>

@@ -39,6 +39,34 @@ Backbone.Layout.configure({
 });
 
 // ===================================================================
+// Utilities
+// ===================================================================
+var navTo = function(prefix, context) {
+    // Examples:
+    //  navTo();
+    //  navTo('about');
+    //  navTo('module/', this);
+    //  navTo('value/', this);
+    //  navTo('idealab/published/', this);
+    var slug = context ? context.model.get("slug") : "",
+    prefix = prefix ? prefix : "";
+    App.router.navigate(prefix + slug, {
+        trigger: true
+    });
+};
+
+var getForm = function(jForm) {
+    // Example use:
+    // var idea = new App.Idea(getFormFields(this.$('form#whatever')));
+    // idea.save();
+    var results = {};
+    $.each(jForm.serializeArray(), function(i, field) {
+        results[field.name] = field.value;
+    });
+    return results;
+};
+
+// ===================================================================
 // Models
 // ===================================================================
 App.Module = Backbone.Model.extend({
@@ -326,6 +354,16 @@ App.IdeaLabListView = Backbone.View.extend({
         },
         "click span.published": function () { navTo('idealab/published'); },
         "click span.submitted": function () { navTo('idealab/submitted'); },
+        "click input.add-idea": function () { 
+            var idea = new App.Idea(getForm(this.$('form')));
+            idea.save()
+            .done(function () {
+                console.log('Saved.');
+            })
+            .fail(function () {
+                console.log('Not Saved.');
+            });
+        }
     },
     afterRender: function() {
         $('body').attr("class", "idealab-list-view");
@@ -396,20 +434,6 @@ App.Layout = new Backbone.Layout({
 // ===================================================================
 // Router
 // ===================================================================
-
-var navTo = function(prefix, context) {
-    // Examples:
-    //  navTo();
-    //  navTo('about');
-    //  navTo('module/', this);
-    //  navTo('value/', this);
-    //  navTo('idealab/published/', this);
-    var slug = context ? context.model.get("slug") : "",
-    prefix = prefix ? prefix : "";
-    App.router.navigate(prefix + slug, {
-        trigger: true
-    });
-};
 
 App.Router = Backbone.Router.extend({
     collection: App.Modules,

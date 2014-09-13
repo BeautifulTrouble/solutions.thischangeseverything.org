@@ -76,6 +76,7 @@ Variables
 @meta: #5c5d60;
 // Brand coloring
 @brando: #49c8ef;
+@lightBrando: #dbf4fc;
 
 // Style tiles, Fonts
 @fontDefault: "source-sans-pro";
@@ -515,8 +516,62 @@ article#module {
     }
 }
 
-// Module: IdeaLab
-article#idealab-list, article#idealab-detail {
+// Module: IdeaLab-detail
+article#idealab-detail {
+    header {
+        margin-top: 26px;
+        margin-right: 20px;
+        margin-left: 20px;
+        h1 {
+            margin: 0;
+            font-size: 4.375em;
+            margin-top: 24px;
+        }
+        h5 {
+            font-family: @fontHeadersDefault;
+            margin: 0;
+            font-size: 1.188em;
+        }
+        /*
+        #button-bar button {
+            color: white;
+            font-size: 1.4em;
+            font-family: @fontHeadersDefault;
+            background: @gray;
+            border: none;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 5px;
+            padding: 4px 8px 4px 8px;
+            i { // unify all these button styles
+                font-size: .8em;
+                //position: relative;
+                //top: -2%
+                vertical-align: middle;
+            }
+        }
+        */
+    }   
+    section {
+        padding: @std-padding;
+        .share-icon {
+            float: right;
+            color: @brando;
+        }
+        .byline {
+            border-right: 1px solid @lightGray;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        .byline span {
+            color: @bodyText;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+    }
+}
+// Module: IdeaLab-list
+article#idealab-list {
     .tab {
         font-family: @fontHeadersDefault;
         font-size: 1.4em;
@@ -544,6 +599,8 @@ article#idealab-list, article#idealab-detail {
     }
     header {
         margin-top: 42px;
+        margin-right: 20px;
+        margin-left: 20px;
         h1 {
             margin: 0;
             font-size: 4.375em;
@@ -552,6 +609,10 @@ article#idealab-list, article#idealab-detail {
             font-family: @fontHeadersDefault;
             margin: 0;
             font-size: 1.188em;
+        }
+        p {
+            margin-top: 20px;
+            margin-bottom: 20px; 
         }
     }   
     table {
@@ -589,16 +650,9 @@ article#idealab-list, article#idealab-detail {
 
         }
     }
-    #button-bar button {
-        background-color: @buttons;
-        text-align: center;
-        text-transform: uppercase;
-        //font-size: 1.4rem;
-        font-family: @fontHeadersDefault;
-        font-weight: bold;
-        border: none;
-        color: white;
-        padding: 6px 8px 6px 8px;
+    aside#idealab-sidebar {
+        padding: @std-padding;
+        background: @lightBrando;
     }
 }
 
