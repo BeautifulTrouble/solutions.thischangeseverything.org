@@ -12,6 +12,7 @@
     "related_values"    : [{% for item in module.values %}"{{ item }}",{% endfor %} null],
     "related_solutions" : [{% for item in module.related_solutions %}"{{ item }}",{% endfor %} null],
     "related_theories"  : [{% for item in module.related_theories %}"{{ item }}",{% endfor %} null],
+    "related_stories"  :  [{% for item in module.related_stories %}"{{ item }}",{% endfor %} null],
     "contributors"      : [{% for item in module.contributors %}"{{ item }}",{% endfor %} null],
     "learn_more"        : [{% for item in module.learn_more %} 
                             {  
