@@ -566,10 +566,8 @@ article#idealab-list, article#idealab-detail {
         tbody tr {
             border-left: 4px solid transparent;
         }
-        tr:nth-child(odd) {
-        }
-        tr:nth-child(even) {
-            //background: green;
+        th:last-child, td:last-child { // icon column
+            text-align: center;
         }
         th {
             text-transform: uppercase;
@@ -579,9 +577,6 @@ article#idealab-list, article#idealab-detail {
             line-height: 1em;
             color: @darkGray;
             background: @brando;
-            .glyphicon {
-                color: white;
-            }
         }
         &#idealab-published {
             tr.value { border-left: 4px solid @value; }
