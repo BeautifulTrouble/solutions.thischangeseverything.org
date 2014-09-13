@@ -1,36 +1,47 @@
 <div class="container">
-    <article id="idealab">
+    <article id="idealab-detail">
         <div class="row no-pad">
             <div class="col-md-7">
                 <header>
-                    <button type="button" class="view-all-ideas">View All Ideas</button>
-                    <button type="button" class="view-gallery">View Gallery</button>
-                    <button type="button" class="view-published-idea">View Published Idea</button>
+                    <div id="button-bar" class="clearfix">
+                        <button type="button" class="view-all-<%= state %>-ideas">View All Ideas<i class="icon-lab"></i></button>
+                        <button type="button" class="view-gallery">View Gallery<i class="icon-gallery"></i></button>
+                        <% if (state == 'published') { %>
+                        <button type="button" class="view-published-idea">View Published Idea</button>
+                        <% } %>
+                    </div>
+                    <h1 class="title"><%= title %></h1>
                     <div class="byline">
                         <p>
-                            by <span class="contributor"></span>
-                            <span class="date-added">Added [we don't store this]</span>
-                            <!-- TODO: differs between submitted and published -->
-                            <span class="module-type-icon">[*]</span><%= type %>
+                            by <span class="contributor"><%= contributors[0] %></span>
+                            <% if (state == 'published') { %>
+                            <!-- TODO: update module schema to include user-submitted flag; include ": User submitted" with type -->
+                            <span class="module-type-icon"><%= type %></span>
+                            <% } else { %>
+                            <span class="date-added">Added <%= long_date %></span>
+                            <span class="votes"><i class="glyphicon glyphicon-heart"></i>Love this idea</span>
+                            <% } %>
+                            <div class="col-md-1 share-icon"><i class="icon icon-share"></i></div>
                         </p>
                     </div> 
                 </header>
                 <section>
                     <p><%= short_write_up %></p>
+                    <% if (state == 'published') { %>
                     <div class="meta clearfix">
                         <div class="icon-tags">
-                            <i class="glyphicon glyphicon-tags"></i>
+                            <i class="icon icon-tag"></i>
                         </div>
                         <div class="meta-info">
-                            <!-- TODO: differs between submitted and published -->
                             <ul class="tags list-comma">
                                 <span>Tags</span>
                                 <% _.each(tags, function(tag) { if (tag) { %>
                                 <li><%= tag %></li>
                                 <% } }); %>
                             </ul>
-                         </div>
-                     </div>
+                        </div>
+                    </div>
+                    <% } %>
                 </section>
             </div>
         </div>
@@ -39,4 +50,10 @@
         <a class="login" href="/api/login/facebook">login with facebook</a><br>
         <a class="login" href="/api/login/twitter">login with twitter</a><br>
     </article>
+</div>
+<div id="share-popover" style="display:none;">
+    <ul class="list-inline share-tools">
+        <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
+        <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+    </ul>
 </div>

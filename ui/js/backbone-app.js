@@ -225,18 +225,6 @@ App.ModuleDetailView = Backbone.View.extend({
         "click button.close-detail": "closeDetail",
         "click .values li": "viewValue",
         "click button.improve-this": "improveThis",
-        "click button.close-share": function(e) {
-            this.$("#share").addClass("hide");
-        },
-        "click button.toggle-share": function(e) {
-            this.$("#share").toggleClass("hide");
-        },
-        "click button.close-learn-more": function(e) {
-            this.$("#learn-more").addClass("hide");
-        },
-        "click button.toggle-learn-more": function(e) {
-            this.$("#learn-more").toggleClass("hide");
-        }
     },
     closeDetail: function(e) { navTo(); },
     improveThis: function(e) { navTo('idealab/published/', this); },
@@ -311,6 +299,7 @@ App.ValueDetailView = Backbone.View.extend({
     }
 });
 
+
 App.IdeaLabListView = Backbone.View.extend({
     template: "idealab-list-template",
     initialize: function(options) {
@@ -345,13 +334,20 @@ App.IdeaLabListView = Backbone.View.extend({
 App.IdeaLabDetailView = Backbone.View.extend({
     template: "idealab-detail-template",
     initialize: function(options) {
+        this.state = options.state;
+        this.model = options.model;
+    },
+    serialize: function() { 
+        return _.extend(this.model.attributes, {
+            state: this.state, 
+        }); 
     },
     events: {
-        "click button.view-published-idea": "viewPublishedIdea",
-        "click button.view-all-ideas": "viewAllIdeas",
+        "click button.view-published-idea": function() { navTo('module/', this); },
+        "click button.view-gallery": function() { navTo(); },
+        "click button.view-all-published-ideas": function() { navTo('idealab/published'); },
+        "click button.view-all-submitted-ideas": function() { navTo('idealab/submitted'); }
     },
-    viewPublishedIdea: function() { navTo('module/', this); },
-    viewAllIdeas: function() { navTo('idealab/published'); },
     afterRender: function() {
         /*
         // TODO: google oauth refuses these redirects :( ...so use an ajaxier approach
@@ -361,6 +357,12 @@ App.IdeaLabDetailView = Backbone.View.extend({
         });
         */
         $('body').attr("class", "idealab-detail-view");
+        this.$('.icon-share').popover({ 
+            html : true, 
+            placement: 'top',
+            content: function() {
+              return $('#share-popover').html();
+        }});
     }
 });
 
@@ -370,7 +372,7 @@ App.HeaderView = Backbone.View.extend({
     events: {
         'click .bsol h1': function() { navTo(); },
         'click .icon-gallery': function() { navTo(); },
-        'click .icon-add': function() { navTo('idealab'); }
+        'click .icon-lab': function() { navTo('idealab/published'); }
     }
 });
 
@@ -415,6 +417,7 @@ App.Router = Backbone.Router.extend({
         '': 'start',
         'module(/:name)': 'displayModule',
         'value(/:name)': 'displayValue',
+        'idealab': 'displayIdeaLab',
         'idealab/:state(/:name)': 'displayIdeaLab',
         '*default': 'defaultRoute'
     },
@@ -450,24 +453,25 @@ App.Router = Backbone.Router.extend({
         }
     },
     displayIdeaLab: function(state, name) {
-        // XXX: Trying to cram multiple routes in here has been nothing but extra work
-        if (state == 'published' || state == 'submitted') {
-            if (state == 'published') {
-                var model = this.collection.findWhere({slug: name});
-                if (model) {
-                    view = new App.IdeaLabDetailView({model: model, state: state, name: name});
-                } else {
-                    view = new App.IdeaLabListView({state: state});
+        if (!state && !name) { state = 'published'; }
+        if (state == 'submitted') {
+            // Where else can this awful async handler go?
+            var collection = new App.IdeasCollection();
+            collection.fetch({
+                success: function() { 
+                    var model = collection.findWhere({slug: name});
+                    var view = model ? new App.IdeaLabDetailView({model: model, state: state})
+                                     : new App.IdeaLabListView({state: state});
+                    App.Layout.setView("#content", view);
+                    App.Layout.render();
                 }
-            } else {
-                view = new App.IdeaLabListView({state: state});
-                // TODO: add slugs to the idealab api
-                //var model = this.collection.findWhere({slug: name.toLowerCase().replace(/\W+/g, '-')})
-            }
+            });
+        } else {
+            var model = this.collection.findWhere({slug: name});
+            var view = model ? new App.IdeaLabDetailView({model: model, state: state})
+                             : new App.IdeaLabListView({state: state});
             App.Layout.setView("#content", view);
             App.Layout.render();
-        } else {
-            this.defaultRoute();
         }
     },
     defaultRoute: function() {
