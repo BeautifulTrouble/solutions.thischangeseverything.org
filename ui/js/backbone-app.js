@@ -170,8 +170,9 @@ App.ModulesListView = Backbone.View.extend({
         };
     },
     events: {
+        'click .reset':  "resetFilters",
         'click .filter': "filterList",
-        'change select#filter-passion': "filterList"
+        'change select#filter-passion': "filterPassion"
     },
     beforeRender: function() {
         // Add the subviews to the view
@@ -196,13 +197,31 @@ App.ModulesListView = Backbone.View.extend({
         });
         this.filterControl = $('#modules-gallery ul li');
     },
+    resetFilters: function(e) {
+       $('.filter.active').removeClass('active');
+       $("select#filter-passion")[0].selectedIndex = 0;
+       this.filters = new Array();
+       this.setFilters();
+    },
+    filterPassion: function(e) {
+        select = $("select#filter-passion");
+        passion = select.val();
+        this.filters.push(passion)
+        select.toggleClass('active');
+        this.setFilters();
+    },
     filterList: function(e) {
-        this.filterControl.removeClass("active");
-        var user_filter = $( e.currentTarget ).attr("data-filter") || $( e.currentTarget ).val();
-        $( e.currentTarget ).addClass("active");
-        if ( user_filter ) {
-            this.container.isotope({filter: user_filter});   
-        }
+        $( e.currentTarget ).toggleClass("active");
+        //var active_filters = $('.filter.active');
+        var actives = $('.filter.active');
+        //var user_filter = $( e.currentTarget ).attr("data-filter") || $( e.currentTarget ).val();
+        this.filters = _.map(actives, function(active) { 
+            return $(active).attr('data-filter');            
+        });
+        this.setFilters();
+    },
+    setFilters: function() {
+            this.container.isotope({filter: this.filters.join() });   
     }
 });
 
