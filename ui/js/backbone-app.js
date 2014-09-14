@@ -410,7 +410,7 @@ App.HeaderView = Backbone.View.extend({
     events: {
         'click .bsol h1': function() { navTo(); },
         'click .icon-gallery': function() { navTo(); },
-        'click .icon-lab': function() { navTo('idealab/published'); }
+        'click .icon-lab': function() { navTo('idealab'); }
     }
 });
 
@@ -479,10 +479,10 @@ App.Router = Backbone.Router.extend({
     displayIdeaLab: function(state, name) {
         if (!state && !name) { state = 'published'; }
         if (state == 'submitted') {
-            // Where else can this awful async handler go?
+            // Where else can this awful async handler go? It's blocking the page rendering.
             var collection = new App.IdeasCollection();
             collection.fetch({
-                success: function() { 
+                done: function() { 
                     var model = collection.findWhere({slug: name});
                     var view = model ? new App.IdeaLabDetailView({model: model, state: state})
                                      : new App.IdeaLabListView({state: state});
