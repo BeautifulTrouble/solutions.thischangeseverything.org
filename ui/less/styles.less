@@ -210,6 +210,9 @@ Type
 h1, h2, h3, h4 {
     font-family: @fontHeadersDefault;
 }
+h1 {
+    line-height: 1;
+}
 
 /* ==========================================================================
 Layout
@@ -641,7 +644,7 @@ article#idealab-detail {
         }
     }   
     section {
-        padding: @std-padding;
+        padding: 0 @std-padding @std-padding @std-padding;
         .share-icon {
             float: right;
             color: @brando;
@@ -656,6 +659,10 @@ article#idealab-detail {
         }
         .module-type-icon {
             text-transform: uppercase;
+            &.value { color: @value; }
+            &.story { color: @story; }
+            &.solution { color: @solution; }
+            &.theory { color: @theory; }
         }
         .byline, .module-type-icon {
             font-size: 0.9em;
@@ -687,6 +694,9 @@ article#idealab-detail {
         .tags li {
             color: @brando;
             font-size: 0.9em;
+        }
+        #summary {
+            padding-top: @std-padding;
         }
     }
 }
@@ -764,7 +774,7 @@ article#idealab-list {
             tr.story { border-left: 4px solid @story; }
             tr.solution { border-left: 4px solid @solution; }
             tr.theory { border-left: 4px solid @theory; }
-            tr.principle { border-left: 4px solid @principle; }
+            //tr.principle { border-left: 4px solid @principle; }
         }
         &#idealab-submitted {
 

@@ -20,7 +20,7 @@
                         
                         <% if (state == 'published') { %>
                         <!-- TODO: update module schema to include user-submitted flag; include ": User submitted" with type -->
-                            <span class="module-type-icon"><%= type %></span>
+                            <span class="module-type-icon <%= type %>"><%= type %></span>
                         <% } else { %>
                             <span class="date-added">Added <span class="date"><%= long_date %></span></span>
                             <span class="vote"><i class="icon icon-love"></i>Love this idea</span>
@@ -60,10 +60,6 @@
                 </aside>
             </div>
         </div>
-        <a class="login" href="/api/logout">logout</a><br>
-        <a class="login" href="/api/login/google">login with google</a><br>
-        <a class="login" href="/api/login/facebook">login with facebook</a><br>
-        <a class="login" href="/api/login/twitter">login with twitter</a><br>
     </article>
 </div>
 <div id="share-popover" style="display:none;">
