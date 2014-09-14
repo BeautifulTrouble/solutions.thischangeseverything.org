@@ -42,6 +42,29 @@ Globals & Mixins
         content: "";
     }
 }
+.button-style(@color: @buttons) {
+    background-color: @color;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 1.4em;
+    font-family: @fontHeadersDefault;
+    border: none;
+    color: white;
+    padding: 6px 20px 4px 20px;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    i {
+        font-size: .8em;
+        position: relative;
+        left: 3%;
+    }
+}
+.mixin-photocredits {
+    color: white;
+    font-family: @fontDefault;
+    font-size: 0.9em;
+    .text-shadow;
+}
 
 .instagram(@color, @size:18em) when (@use-instagram) {
     // Generate some gauzy instagram-style phony coloring
@@ -108,7 +131,7 @@ Variables
 @solution: #eb9626;
 @theory: #d65031;
 @principle: #4daec4;
-@buttons: #49c8ef;
+@buttons: @brando;
 @meta: #5c5d60;
 // Brand coloring
 @brando: #49c8ef;
@@ -117,12 +140,6 @@ Variables
 // Style tiles, Fonts
 @fontDefault: "source-sans-pro";
 @fontHeadersDefault: "alternate-gothic-no-2-d";
-.mixin-photocredits {
-    color: white;
-    font-family: @fontDefault;
-    font-size: 0.9em;
-    .text-shadow;
-}
 
 // Sizes
 @std-padding: 20px;
@@ -391,16 +408,10 @@ article#value {
     section #summary {
         margin-right: @std-padding;
     }
-    #button-bar {
-        button {
-            color: white;
-            font-weight: bold;
-            background: @bodyText;
-            border: none;
-            text-align: center;
-            text-transform: uppercase;
-            padding: 6px 40px 6px 40px;
-        }
+    #button-bar button {
+        .button-style(@bodyText);
+        padding-left: 40px;
+        padding-right: 40px;
     }
 }
 
@@ -519,11 +530,7 @@ article#module {
         }
     }
     #button-bar button {
-        background-color: @buttons;
-        text-transform: uppercase;
-        border: none;
-        color: white;
-        padding: 4px 8px 4px 8px;
+        .button-style;
     }
     aside#learn-more {
         margin-bottom: 20px;
@@ -608,25 +615,9 @@ article#idealab-detail {
             margin: 0;
             font-size: 1.188em;
         }
-        /*
         #button-bar button {
-            color: white;
-            font-size: 1.4em;
-            font-family: @fontHeadersDefault;
-            background: @gray;
-            border: none;
-            text-align: center;
-            text-transform: uppercase;
-            margin: 5px;
-            padding: 4px 8px 4px 8px;
-            i { // unify all these button styles
-                font-size: .8em;
-                //position: relative;
-                //top: -2%
-                vertical-align: middle;
-            }
+            .button-style;
         }
-        */
     }   
     section {
         padding: @std-padding;
