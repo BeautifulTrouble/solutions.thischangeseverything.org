@@ -7,26 +7,26 @@ when: "2008 &mdash; Present"
 who: "Evergreen Cooperatives and local universities & hospitals"
 scale: "Local"
 values:
-- Creates more possibilities
-- Cultivates abundance
-- Deepens democracy
-- Displaces extractive industry
-- Extends the commons
+- "Creates more possibilities"
+- "Cultivates abundance"
+- "Deepens democracy"
+- "Displaces extractive industry"
+- "Extends the commons"
 related_solutions:
-- Community wealth building
-- Public ownership
-- Worker cooperative
+- "Community wealth building"
+- "Public ownership"
+- "Worker cooperative"
 related_theories:
-- Cooperative commonwealth
-- Pluralist commonwealth
+- "Cooperative commonwealth"
+- "Pluralist commonwealth"
 related_stories:
 tags:
-- community development
-- cooperatives
-- equity
-- planning
-- urban planning
-- work
+- "community development"
+- "cooperatives"
+- "equity"
+- "planning"
+- "urban planning"
+- "work"
 learn_more:
 -
     title: "The Cleveland Model: Leveraging anchor purchasing for community benefit"
@@ -50,10 +50,10 @@ learn_more:
     url: "http://www.thenation.com/article/cleveland-model"
 images:
 -
-    url: Anchor-Procurement-In-Cleveland.jpg
-    name: Anchor-Procurement-In-Cleveland.jpg
+    url: "Anchor-Procurement-In-Cleveland.jpg"
+    name: "Anchor-Procurement-In-Cleveland.jpg"
     caption: "Worker/owner tending to greenhouse."
-    source: "Greater University Circle Neighborhood Voice"
+    source: ""
     source_url: ""
 contributors:
 - "Steve Dubb"

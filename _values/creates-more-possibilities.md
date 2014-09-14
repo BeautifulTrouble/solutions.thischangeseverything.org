@@ -8,49 +8,50 @@ who: ""
 scale: ""
 values:
 related_solutions:
-- Basic income
-- Job guarantee
-- Land value tax
-- Public banking
-- Shorter work week
-- Solutions seized through direct action
-- Divest/invest
-- Reclaiming common wealth
+- "Basic income"
+- "Job guarantee"
+- "Land value tax"
+- "Public banking"
+- "Shorter work week"
+- "Solutions seized through direct action"
+- "Divest/invest"
+- "Reclaiming common wealth"
 related_theories:
-- Buen vivir
-- Comunalidad
-- Emergent strategy
-- Horizontalism
-- Resilience-based organizing
-- Sense of place
-- Sharing economy
-- Social imagination
-- The commons
+- "Buen vivir"
+- "Comunalidad"
+- "Emergent strategy"
+- "Horizontalism"
+- "Resilience-based organizing"
+- "Sense of place"
+- "Sharing economy"
+- "Social imagination"
+- "The commons"
 related_stories:
-- 596 Acres
-- Anchor procurement in Cleveland
-- Building community economies on Pine Ridge
-- Dudley Street Neighborhood Initiative
-- Greenwave's restorative ocean farming
-- Initiative 136
-- Marinaleda's direct action economy
-- Running Chokwe Lumumba for mayor
-- Southern Grassroots Economies Project
-- The Zapatista Little School
-- Brazilian Landless Workers' Movement
+- "596 Acres"
+- "Anchor procurement in Cleveland"
+- "Building community economies on Pine Rid"
+- "Dudley Street Neighborhood Initiative"
+- "Greenwave's restorative ocean farming"
+- "Initiative 136"
+- "Marinaleda's direct action economy"
+- "Running Chokwe Lumumba for mayor"
+- "Southern Grassroots Economies Project"
+- "The Zapatista Little School"
+- "Brazilian Landless Workers' Movement"
 tags:
-- community development
-- movement building
-- open source
-- well-being
+- "community development"
+- "movement building"
+- "open source"
+- "well-being"
+learn_more:
 images:
 -
     url: 'Community-Wealth-Building.jpg'
     name: 'Community-Wealth-Building.jpg' 
     caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
-    source: "Ecomundo Cleaning Co-operative"
-    source_url: "https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater"
-    rights: "By permission of Ecomundo Cleaning"
+    source: 'Ecomundo Cleaning Co-operative'
+    source_url: 'https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater'
+    rights: 'By permission of Ecomundo Cleaning'
 contributors:
 - "Rachel Berliner Plattus"
 ---

@@ -39,6 +39,34 @@ Backbone.Layout.configure({
 });
 
 // ===================================================================
+// Utilities
+// ===================================================================
+var navTo = function(prefix, context) {
+    // Examples:
+    //  navTo();
+    //  navTo('about');
+    //  navTo('module/', this);
+    //  navTo('value/', this);
+    //  navTo('idealab/published/', this);
+    var slug = context ? context.model.get("slug") : "",
+    prefix = prefix ? prefix : "";
+    App.router.navigate(prefix + slug, {
+        trigger: true
+    });
+};
+
+var getForm = function(jForm) {
+    // Example use:
+    // var idea = new App.Idea(getFormFields(this.$('form#whatever')));
+    // idea.save();
+    var results = {};
+    $.each(jForm.serializeArray(), function(i, field) {
+        results[field.name] = field.value;
+    });
+    return results;
+};
+
+// ===================================================================
 // Models
 // ===================================================================
 App.Module = Backbone.Model.extend({
@@ -129,6 +157,7 @@ App.ModulesListView = Backbone.View.extend({
     //el: false,
     collection: App.Modules,
     tags: '',
+    filters: [],
     initialize: function(options) {
         // Listen to events on the collection
         this.listenTo(this.collection, "add remove sync", this.render);
@@ -142,6 +171,7 @@ App.ModulesListView = Backbone.View.extend({
         };
     },
     events: {
+        'click .reset':  "resetFilters",
         'click .filter': "filterList",
         'change select#filter-passion': "filterList"
     },
@@ -168,13 +198,37 @@ App.ModulesListView = Backbone.View.extend({
         });
         this.filterControl = $('#modules-gallery ul li');
     },
+    resetFilters: function(e) {
+        $('.filter.active').removeClass('active');
+        $("select#filter-passion")[0].selectedIndex = 0;
+        this.filters = [];
+        this.setFilters();
+    },
     filterList: function(e) {
-        this.filterControl.removeClass("active");
-        var user_filter = $( e.currentTarget ).attr("data-filter") || $( e.currentTarget ).val();
-        $( e.currentTarget ).addClass("active");
-        if ( user_filter ) {
-            this.container.isotope({filter: user_filter});   
+        // TODO Need to clean this up a lot
+        // currently, the filters are additive.
+        // It should work that once the tag filter is activated
+        // the type filters actually become subtractive.
+        var elem = e.currentTarget;
+        if ( elem.nodeName === 'SELECT') {
+            if ( $( elem ).val() === 'What are you passionate about') {
+                this.resetFilters();
+            }
+            else {
+                $("select#filter-passion option").removeClass("active");
+                $("select#filter-passion option:selected").addClass("active");               
+            }
+        } else {
+            $( e.currentTarget ).toggleClass("active");
         }
+        var actives = $('.filter.active');
+        this.filters = _.map(actives, function(active) { 
+            return $(active).attr('data-filter');            
+        });
+        this.setFilters();
+    },
+    setFilters: function() {
+        this.container.isotope({filter: this.filters.join() });   
     }
 });
 
@@ -225,18 +279,6 @@ App.ModuleDetailView = Backbone.View.extend({
         "click button.close-detail": "closeDetail",
         "click .values li": "viewValue",
         "click button.improve-this": "improveThis",
-        "click button.close-share": function(e) {
-            this.$("#share").addClass("hide");
-        },
-        "click button.toggle-share": function(e) {
-            this.$("#share").toggleClass("hide");
-        },
-        "click button.close-learn-more": function(e) {
-            this.$("#learn-more").addClass("hide");
-        },
-        "click button.toggle-learn-more": function(e) {
-            this.$("#learn-more").toggleClass("hide");
-        }
     },
     closeDetail: function(e) { navTo(); },
     improveThis: function(e) { navTo('idealab/published/', this); },
@@ -264,8 +306,8 @@ App.ModuleDetailView = Backbone.View.extend({
             html : true, 
             placement: 'top',
             content: function() {
-              return $('#share-popover').html();
-        }});
+                return $('#share-popover').html();
+            }});
     }
 });
 
@@ -311,6 +353,7 @@ App.ValueDetailView = Backbone.View.extend({
     }
 });
 
+
 App.IdeaLabListView = Backbone.View.extend({
     template: "idealab-list-template",
     initialize: function(options) {
@@ -335,8 +378,18 @@ App.IdeaLabListView = Backbone.View.extend({
         "click #idealab-submitted tr.data-slug": function (e) { 
             navTo('idealab/submitted/' + e.currentTarget.dataset.slug);
         },
-        "click button.published": function () { navTo('idealab/published'); },
-        "click button.submitted": function () { navTo('idealab/submitted'); },
+        "click span.published": function () { navTo('idealab/published'); },
+        "click span.submitted": function () { navTo('idealab/submitted'); },
+        "click input.add-idea": function () { 
+            var idea = new App.Idea(getForm(this.$('form')));
+            idea.save()
+            .done(function () {
+                console.log('Saved.');
+            })
+            .fail(function () {
+                console.log('Not Saved.');
+            });
+        }
     },
     afterRender: function() {
         $('body').attr("class", "idealab-list-view");
@@ -345,132 +398,133 @@ App.IdeaLabListView = Backbone.View.extend({
 App.IdeaLabDetailView = Backbone.View.extend({
     template: "idealab-detail-template",
     initialize: function(options) {
+        this.state = options.state;
+        this.model = options.model;
+    },
+    serialize: function() { 
+        return _.extend(this.model.attributes, {
+            state: this.state, 
+        }); 
     },
     events: {
-        "click button.view-published-idea": "viewPublishedIdea",
-        "click button.view-all-ideas": "viewAllIdeas",
+        "click button.view-published-idea": function() { navTo('module/', this); },
+        "click button.view-gallery": function() { navTo(); },
+        "click button.view-all-published-ideas": function() { navTo('idealab/published'); },
+        "click button.view-all-submitted-ideas": function() { navTo('idealab/submitted'); }
     },
-    viewPublishedIdea: function() { navTo('module/', this); },
-    viewAllIdeas: function() { navTo('idealab/published'); },
     afterRender: function() {
         /*
-        // TODO: google oauth refuses these redirects :( ...so use an ajaxier approach
-        this.$('a.login').each(function () {
-            var next_param = (this.href.indexOf('?') != -1) ? '&next=' : '?next=';
-            this.href = this.href + next_param + window.location.pathname + '%23' + Backbone.history.fragment;
-        });
-        */
-        $('body').attr("class", "idealab-detail-view");
-    }
+    // TODO: google oauth refuses these redirects :( ...so use an ajaxier approach
+    this.$('a.login').each(function () {
+    var next_param = (this.href.indexOf('?') != -1) ? '&next=' : '?next=';
+    this.href = this.href + next_param + window.location.pathname + '%23' + Backbone.history.fragment;
+    });
+    */
+                     $('body').attr("class", "idealab-detail-view");
+                     this.$('.icon-share').popover({ 
+html : true, 
+placement: 'top',
+content: function() {
+return $('#share-popover').html();
+}});
+}
 });
 
 
 App.HeaderView = Backbone.View.extend({
-    template: "header",
-    events: {
-        'click .bsol h1': function() { navTo(); },
-        'click .icon-gallery': function() { navTo(); },
-        'click .icon-add': function() { navTo('idealab'); }
-    }
+template: "header",
+events: {
+'click .bsol h1': function() { navTo(); },
+'click .icon-gallery': function() { navTo(); },
+'click .icon-lab': function() { navTo('idealab'); }
+}
 });
 
 App.FooterView = Backbone.View.extend({
-    template: "footer"
+template: "footer"
 });
 
 // ===================================================================
 // Layouts
 // ===================================================================
 App.Layout = new Backbone.Layout({
-    // Attach the Layout to the main container.
-    el: "body",
-    views: {
-        "header": new App.HeaderView(),
-        "footer": new App.FooterView()
-    }
+        // Attach the Layout to the main container.
+el: "body",
+views: {
+"header": new App.HeaderView(),
+"footer": new App.FooterView()
+}
 });
 
 
-// ===================================================================
-// Router
-// ===================================================================
+        // ===================================================================
+        // Router
+        // ===================================================================
 
-var navTo = function(prefix, context) {
-    // Examples:
-    //  navTo();
-    //  navTo('about');
-    //  navTo('module/', this);
-    //  navTo('value/', this);
-    //  navTo('idealab/published/', this);
-    var slug = context ? context.model.get("slug") : "",
-    prefix = prefix ? prefix : "";
-    App.router.navigate(prefix + slug, {
-        trigger: true
-    });
-};
-
-App.Router = Backbone.Router.extend({
-    collection: App.Modules,
-    routes: {
-        '': 'start',
-        'module(/:name)': 'displayModule',
-        'value(/:name)': 'displayValue',
-        'idealab/:state(/:name)': 'displayIdeaLab',
-        '*default': 'defaultRoute'
-    },
-    start: function() {
-        App.Layout.setView("#content", new App.ModulesListView());
-        App.Layout.render();
-    },
-    displayModule: function(name) {
-        var model = this.collection.findWhere({
-            "slug": name
-        });
-        if (model) {
-            // Curious where the collection of related modules should be aggregated in order to insert the nested views
-            App.Layout.setView("#content", new App.ModuleDetailView({
-                model: model
-            }));
-            App.Layout.render();
-        } else {
-            this.defaultRoute();
-        }
-    },
-    displayValue: function(name) {
-        var model = this.collection.findWhere({
-            "slug": name
-        });
-        if (model) {
-            App.Layout.setView("#content", new App.ValueDetailView({
-                model: model
-            }));
-            App.Layout.render();
-        } else {
-            this.defaultRoute();
-        }
-    },
-    displayIdeaLab: function(state, name) {
-        // XXX: Trying to cram multiple routes in here has been nothing but extra work
-        if (state == 'published' || state == 'submitted') {
-            if (state == 'published') {
-                var model = this.collection.findWhere({slug: name});
+        App.Router = Backbone.Router.extend({
+            collection: App.Modules,
+            routes: {
+                '': 'start',
+                'module(/:name)': 'displayModule',
+                'value(/:name)': 'displayValue',
+                'idealab': 'displayIdeaLab',
+                'idealab/:state(/:name)': 'displayIdeaLab',
+                '*default': 'defaultRoute'
+            },
+            start: function() {
+                App.Layout.setView("#content", new App.ModulesListView());
+                App.Layout.render();
+            },
+            displayModule: function(name) {
+                var model = this.collection.findWhere({
+                    "slug": name
+                });
                 if (model) {
-                    view = new App.IdeaLabDetailView({model: model, state: state, name: name});
+                    // Curious where the collection of related modules should be aggregated in order to insert the nested views
+                    App.Layout.setView("#content", new App.ModuleDetailView({
+                        model: model
+                    }));
+                    App.Layout.render();
                 } else {
-                    view = new App.IdeaLabListView({state: state});
+                    this.defaultRoute();
                 }
-            } else {
-                view = new App.IdeaLabListView({state: state});
-                // TODO: add slugs to the idealab api
-                //var model = this.collection.findWhere({slug: name.toLowerCase().replace(/\W+/g, '-')})
+            },
+            displayValue: function(name) {
+                var model = this.collection.findWhere({
+                    "slug": name
+                });
+                if (model) {
+                    App.Layout.setView("#content", new App.ValueDetailView({
+                        model: model
+                    }));
+                    App.Layout.render();
+                } else {
+                    this.defaultRoute();
+                }
+            },
+            displayIdeaLab: function(state, name) {
+                if (!state && !name) { state = 'published'; }
+                if (state == 'submitted') {
+                    // Where else can this awful async handler go? It's blocking the page rendering.
+                    var collection = new App.IdeasCollection();
+                    collection.fetch({
+                        done: function() { 
+                            var model = collection.findWhere({slug: name});
+                            var view = model ? new App.IdeaLabDetailView({model: model, state: state})
+                                : new App.IdeaLabListView({state: state});
+                                App.Layout.setView("#content", view);
+                                App.Layout.render();
+                        }
+                    });
+                } else {
+                    var model = this.collection.findWhere({slug: name});
+                    var view = model ? new App.IdeaLabDetailView({model: model, state: state})
+                        : new App.IdeaLabListView({state: state});
+                        App.Layout.setView("#content", view);
+                        App.Layout.render();
+                }
+            },
+            defaultRoute: function() {
+                console.log("404");
             }
-            App.Layout.setView("#content", view);
-            App.Layout.render();
-        } else {
-            this.defaultRoute();
-        }
-    },
-    defaultRoute: function() {
-        console.log("404");
-    }
-});
+        });

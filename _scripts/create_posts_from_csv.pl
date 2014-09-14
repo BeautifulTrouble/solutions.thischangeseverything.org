@@ -72,7 +72,7 @@ sub parse_list {
     my @list_items = split( '; ', $list_str );
     my $output_str = '';
     for my $item ( @list_items ) {
-        $output_str .= "- $item\n";
+        $output_str .= "- \"$item\"\n";
     }
     return $output_str;
 }
@@ -120,8 +120,8 @@ learn_more:
 images:
 <% if ( $module->{'image_name'} ) { =%>
 -
-    url: <%= $module->{'image_name'} %>
-    name: <%= $module->{'image_name'} %>
+    url: "<%= $module->{'image_name'} %>"
+    name: "<%= $module->{'image_name'} %>"
     caption: "<%= $module->{'image_caption'} %>"
     source: "<%= $module->{'image_source'} %>"
     source_url: "<%= $module->{'image_source_url'} %>"
@@ -130,9 +130,9 @@ images:
     url: 'Community-Wealth-Building.jpg'
     name: 'Community-Wealth-Building.jpg' 
     caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
-    source: "Ecomundo Cleaning Co-operative"
-    source_url: "https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater"
-    rights: "By permission of Ecomundo Cleaning"
+    source: 'Ecomundo Cleaning Co-operative'
+    source_url: 'https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater'
+    rights: 'By permission of Ecomundo Cleaning'
 <% } =%>
 contributors:
 - "<%= $module->{'Primary contributor name'} %>"

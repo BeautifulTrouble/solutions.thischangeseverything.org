@@ -7,26 +7,37 @@ when: ""
 who: ""
 scale: ""
 values:
-- Cultivates abundance
+- "Cultivates abundance"
 related_solutions:
-- Community impacting investment
-- Non-extractive financial cooperative
+- "Community impacting investment"
+- "Non-extractive financial cooperative"
 related_theories:
-- Solidarity economics
+- "Solidarity economics"
 related_stories:
 tags:
-- agriculture
-- community development
-- financing
-- food
+- "agriculture"
+- "community development"
+- "financing"
+- "food"
+learn_more:
+-
+    title: "Root Capital"
+    description: "Growing rural prosperity"
+    type: "Website"
+    url: "http://www.rootcapital.org/our-approach"
+-
+    title: "The Missing Middle"
+    description: "by the Center for International Development"
+    type: "Article"
+    url: "http://www.hks.harvard.edu/centers/cid/programs/entrepreneurial-finance-lab-research-initiative/the-missing-middle"
 images:
 -
     url: 'Community-Wealth-Building.jpg'
     name: 'Community-Wealth-Building.jpg' 
     caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
-    source: "Ecomundo Cleaning Co-operative"
-    source_url: "https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater"
-    rights: "By permission of Ecomundo Cleaning"
+    source: 'Ecomundo Cleaning Co-operative'
+    source_url: 'https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater'
+    rights: 'By permission of Ecomundo Cleaning'
 contributors:
 - "Stephanie Daniels"
 ---

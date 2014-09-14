@@ -1,19 +1,24 @@
 <div class="container">
-    <div id="idealab">
-        <div class="row no-pad">
+    <article id="idealab-list">
+        <div class="row">
             <div class="col-md-7">
-                <h4>Welcome to the</h4>
-                <h1>Idea Lab</h1>
-                <button class="published">published</button>
-                <button class="submitted">submitted</button>
+                <header>
+                    <h5>Welcome to the</h5>
+                    <h1>Idea Lab</h1>
+                    <p>Welcome to the Beautiful Solutions Lab! If you, like millions around the world, have been busy building just and sustainable alternatives in your own community, we want to hear from you. Please share your solutions, ideas and resources on this platform, and explore the ideas others have submitted.</p>
+                    <p>Thanks in advance for your contributions!</p>
+                </header>
+                <span class="published tab tab-<%= state=='published'?'active':'inactive' %>">Published Gallery</span><span class="submitted tab tab-<%= state=='submitted'?'active':'inactive' %>">Submitted Ideas</span>
+
                 <% if (state == "published") { %>
-                <table id="idealab-published" class="table">
+
+                <table id="idealab-published" class="table table-striped">
                     <caption class="hide">Published Gallery</caption>
                     <thead>
                         <tr>
                             <th>Idea</th>
-                            <th>Contributor(s)</th>
-                            <th>_</th>
+                            <th>Contributor</th>
+                            <th><i class="icon icon-usersubmit"></i></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -27,39 +32,57 @@
                                     <% } }); %>
                                 </ul>
                             </td>
-                            <td>?</td>
+                            <!-- TODO: show user-submitted-ness -->
+                            <td></td>
                         </tr>
                         <% } }); %>
                     </tbody>
                 </table>
+
                 <% } else if (state == "submitted") { %>
-                <table id="idealab-submitted" class="table">
+
+                <table id="idealab-submitted" class="table table-striped">
                     <caption class="hide">Submitted Ideas</caption>
                     <thead>
                         <tr>
                             <th>Idea</th>
                             <th>Contributor</th>
                             <th>Added</th>
-                            <th>Votes</th>
+                            <th><i class="icon icon-love"></i></th>
                         </tr>
                     </thead>
                     <tbody>
                         <% submitted.each(function(model) { if (model) { %>
-                        <tr class="<%= model.attributes.type %> data-slug" data-slug="<%= model.attributes.slug %>">
+                        <tr class="data-slug" data-slug="<%= model.attributes.slug %>">
                             <td><%= model.attributes.title %></td>
-                            <td><%= model.attributes.name %></td>
+                            <td><%= model.attributes.contributors[0] %></td>
                             <td><%= model.attributes.short_date %></td>
-                            <td>?</td>
+                            <td>0</td>
                         </tr>
                         <% } }); %>
                     </tbody>
                 </table>
+
                 <% } %>
+
             </div>
             <div class="col-md-5">
-                <div id="idealab-sidebar">
-                </div>
+                <aside id="idealab-sidebar">
+                    <h2>Add your own idea</h2>
+                    <p>Great minds think in Lorem Ipsum.</p>
+                    <form>
+                        <h3>Title:</h3>
+                        <input type="text" name="title"><br>
+                        <h3>Description:</h3>
+                        <input type="textarea" name="short_write_up"><br>
+                        <h3>Your name:</h3>
+                        <input type="text" name="name"><br>
+                        <h3>Your email:</h3>
+                        <input type="text" name="contact"><br>
+                        <input type="button" value="Contribute" class="add-idea">
+                    </form>
+                </aside>
             </div>
         </div>
-    </div>
+    </article>
 </div>

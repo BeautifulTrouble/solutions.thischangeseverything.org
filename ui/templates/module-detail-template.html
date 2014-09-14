@@ -1,10 +1,15 @@
 <div class="container">
     <article id="module">
         <figure>
-            <img src="/full_images/<%= images[0].url %>" title="<%= images[0].caption %>">
-            <% if ( images[0].caption && images[0].source ) { %>
-            <figcaption><%= images[0].caption %> | <%= images[0].source %></figcaption>
-            <% } %>
+            <div class="background-wrapper">
+                <img src="/full_images/<%= images[0].url %>" title="<%= images[0].caption %>">
+            </div>
+            <figcaption>
+                <% if ( images[0].caption && images[0].source ) { %>
+                <%= images[0].caption %> | <%= images[0].source %>
+                <% } %>
+            </figcaption>
+            <div class="filter <%= type %>"></div>
         </figure>
         <header>
             <h5 class="type"><%= type %>:</h5>
@@ -28,7 +33,7 @@
                         <div class="col-md-1 share-icon"><i class="icon icon-share"></i></div>
                     </div>
                     <div id="summary">
-                        <p><%- short_write_up %></p>
+                        <p><%= short_write_up %></p>
                          <dl class="learn-more-item-list">
                         </dl>
                     </div>
@@ -56,10 +61,7 @@
                              <% } %>
                          </div>
                      </div>
-                    <div id="button-bar" class="clearfix">
-                        <button type="button" class="improve-this">Improve This</button>
-                    </div>
-                    <aside id="learn-more">
+                    <aside id="learn-more" class="clearfix" class="clearfix">
                         <h2 class="learn-more">Learn More</h2>
                         <div class="row">
                             <% _.each(learn_more, function(item) { if (item) { %>
@@ -73,6 +75,9 @@
                             <% } }) %>
                         </div>
                     </aside>
+                    <div id="button-bar" class="clearfix">
+                        <button type="button" class="improve-this">Improve This</button>
+                    </div>
                 </section>
             </div>
             <div class="col-md-5">

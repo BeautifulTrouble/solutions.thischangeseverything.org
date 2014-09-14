@@ -7,37 +7,37 @@ when: ""
 who: ""
 scale: ""
 values:
-- Builds resilience
-- Creates more possibilities
-- Deepens democracy
-- Displaces extractive industry
-- Extends the commons
+- "Builds resilience"
+- "Creates more possibilities"
+- "Deepens democracy"
+- "Displaces extractive industry"
+- "Extends the commons"
 related_solutions:
-- Community land trusts
-- Community wealth building
-- Participatory budgeting
-- Public banking
-- Public ownership
+- "Community land trusts"
+- "Community wealth building"
+- "Participatory budgeting"
+- "Public banking"
+- "Public ownership"
 related_theories:
-- Cooperative commonwealth
-- Economic democracy
-- Participatory democracy
-- Sense of place
-- The commons
+- "Cooperative commonwealth"
+- "Economic democracy"
+- "Participatory democracy"
+- "Sense of place"
+- "The commons"
 related_stories:
-- 596 Acres
-- Boulder, Colorado vs. Xcel energy
-- Building community economies on Pine Ridge
-- Dudley Street Neighborhood Initiative
-- Philadelphia Land Bank
+- "596 Acres"
+- "Boulder, Colorado vs. Xcel energy"
+- "Building community economies on Pine Ridge"
+- "Dudley Street Neighborhood Initiative"
+- "Philidelphia Land Bank"
 tags:
-- community development
-- decision-making
-- democracy
-- housing
-- land use
-- planning
-- urban planning
+- "community development"
+- "decision-making"
+- "democracy"
+- "housing"
+- "land use"
+- "planning"
+- "urban planning"
 learn_more:
 -
     title: "Why the 'teach a man to fish' parable is a lie"
@@ -51,11 +51,11 @@ learn_more:
     url: "http://f4dc.org/2013/economic-incentives-yes-but-directly-to-the-community/"
 images:
 -
-    url: Community-As-Developer.jpg
-    name: Community-As-Developer.jpg
+    url: "Community-As-Developer.jpg"
+    name: "Community-As-Developer.jpg"
     caption: "What could our communities look like if they weren't designed to maximize profit?"
-    source: "Mad Physicist"
-    source_url: "https://www.flickr.com/photos/madphysicist/4373620486/sizes/l"
+    source: ""
+    source_url: ""
 contributors:
 - "Ed Whitfield"
 ---

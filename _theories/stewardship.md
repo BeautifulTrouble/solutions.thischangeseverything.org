@@ -7,40 +7,40 @@ when: ""
 who: ""
 scale: ""
 values:
-- Advances justice
-- Builds resilience
-- Celebrates life
-- Creates more possibilities
-- Cultivates abundance
-- Extends the commons
+- "Advances justice"
+- "Builds resilience"
+- "Celebrates life"
+- "Creates more possibilities"
+- "Cultivates abundance"
+- "Extends the commons"
 related_solutions:
-- Community land trusts
-- Guerrilla gardening
-- Permaculture
+- "Community land trusts"
+- "Guerrilla gardening"
+- "Permaculture"
 related_theories:
-- Appropriate scale
-- Buen vivir
-- Comunalidad
-- Environmental justice
-- The commons
-- Usufruct
+- "Appropriate scale"
+- "Buen vivir"
+- "Comunalidad"
+- "Environmental justice"
+- "The commons"
+- "Usufruct"
 related_stories:
-- Building community economies on Pine Ridge
-- Great Lakes Commons Initiative
-- Greenwave's restorative ocean farming
-- Initiative 136
-- The Beaver Lake Cree's tarsands lawsuit
-- The river with the rights of a person
-- Brazilian Landless Workers' Movement
-- Idle No More
+- "Building community economies on Pine Ridge"
+- "Great Lakes Commons Initiative"
+- "Greenwave's restorative ocean farming"
+- "Initiative 136"
+- "The Beaver Lake Cree's tarsands lawsuit"
+- "The river with the rights of a person"
+- "Brazilian Landless Workers' Movement"
+- "Idle No More"
 tags:
-- agriculture
-- climate
-- food
-- indigenous rights
-- justice
-- land use
-- resource use
+- "agriculture"
+- "climate"
+- "food"
+- "indigenous rights"
+- "justice"
+- "land use"
+- "resource use"
 learn_more:
 -
     title: "The Assisi Declarations"
@@ -54,10 +54,10 @@ learn_more:
     url: "http://books.google.com/books?id=7PF--OQMwYUC&printsec=frontcover&dq=murphy+nagel+the+myth+of+ownership&hl=en&sa=X&ei=RZwDVJK-EoeCjAKy0oGgCg&ved=0CCoQ6AEwAA#v=onepage&q&f=false"
 images:
 -
-    url: Stewardship.jpg
-    name: Stewardship.jpg
+    url: "Stewardship.jpg"
+    name: "Stewardship.jpg"
     caption: "Intergenerational rice terraces in China."
-    source: "Opalpeterliu"
+    source: ""
     source_url: ""
 contributors:
 - "Sofia Fenner"

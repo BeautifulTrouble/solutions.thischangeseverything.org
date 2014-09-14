@@ -7,17 +7,17 @@ when: ""
 who: ""
 scale: "National; Global"
 values:
-- Extends the commons
+- "Extends the commons"
 related_solutions:
 related_theories:
-- Horizontalism
-- Social imagination
-- The commons
+- "Horizontalism"
+- "Social imagination"
+- "The commons"
 related_stories:
-- Factor E Farm
+- "Factor E Farm"
 tags:
-- governance
-- open source
+- "governance"
+- "open source"
 learn_more:
 -
     title: "Capital for the Commons"
@@ -36,11 +36,11 @@ learn_more:
     url: "http://telekommunisten.net/the-telekommunist-manifesto/"
 images:
 -
-    url: Peer-Production-License.jpg
-    name: Peer-Production-License.jpg
+    url: "Peer-Production-License.jpg"
+    name: "Peer-Production-License.jpg"
     caption: "Grafitti artist Banksy's work, including this 2008 Simpsons-inspired New Orleans mural, often plays with questions of ownership and commodification of art."
-    source: "BusinessInsider"
-    source_url: "http://static.businessinsider.com/image/5254122569bedd4b4522cfae/image.jpg"
+    source: ""
+    source_url: ""
 contributors:
 - "Helene Finidori"
 ---

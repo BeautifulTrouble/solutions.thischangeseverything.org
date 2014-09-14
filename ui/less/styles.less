@@ -42,41 +42,26 @@ Globals & Mixins
         content: "";
     }
 }
-
-/* ==========================================================================
-Variables
-========================================================================== */
-
-// Breakpoints
-
-//("all", 0px),
-//("small", 420px),
-//("medium", 640px),
-//("large", 960px),
-//("xlarge", 1200px)
-
-
-// Style tiles, Colours
-@white: #ffffff;
-@gray: #7A7979;
-@lightGray: rgb(240,240,240);
-@bodyText: #5c5d60;
-@blockHeaders: #093742;
-@articleHeaders: #628C00;
-@articleDesc: #575756;
-@linkText: #083643;
-@bodyBackground: white;
-@tactic: rgba(39,48,30,0.5);
-@solution: rgba(82,44,2,0.5);
-@theory: rgba(84,23,37,0.5);
-@buttons: #49c8ef;
-@meta: #5c5d60;
-// Brand coloring
-@brando: #49c8ef;
-
-// Style tiles, Fonts
-@fontDefault: "source-sans-pro";
-@fontHeadersDefault: "alternate-gothic-no-2-d";
+.button-style(@color: @buttons, @hoverColor: @bodyText) {
+    background-color: @color;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 1.4em;
+    font-family: @fontHeadersDefault;
+    border: none;
+    color: white;
+    padding: 3px 12px 0px 12px;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    i {
+        font-size: .8em;
+        position: relative;
+        left: 3%;
+    }
+    &:hover {
+        background-color: @hoverColor;
+    }
+}
 .mixin-photocredits {
     color: white;
     font-family: @fontDefault;
@@ -84,8 +69,85 @@ Variables
     .text-shadow;
 }
 
+.instagram(@color, @size:18em) when (@use-instagram) {
+    // Generate some gauzy instagram-style phony coloring
+    @r1: 30;    // % range that gradient centers deviate from corners
+    @b2: 20%;   // Base fadeout value...
+    @r2: 30;    // ...plus a random percentage up to this number
+    @b3: 40%;   // Base desaturate value...
+    @r3: 10;    // ...plus a random percentage up to this number
+    @trans: transparent; //rgba(100,100,100,.05);  // What everything fades to
+    @x1: percentage(`Math.random()*@{r1}/100`); @y1: percentage(`Math.random()*@{r1}/100`);
+    @x2: percentage(`Math.random()*@{r1}/100`); @y2: 100% - percentage(`Math.random()*@{r1}/100`);
+    @x3: 100% - percentage(`Math.random()*@{r1}/100`); @y3: percentage(`Math.random()*@{r1}/100`);
+    @x4: 100% - percentage(`Math.random()*@{r1}/100`); @y4: 100% - percentage(`Math.random()*@{r1}/100`);
+    @f1: @b2 + percentage(`Math.random()*@{r2}/100`); @f2: @b2 + percentage(`Math.random()*@{r2}/100`);
+    @f3: @b2 + percentage(`Math.random()*@{r2}/100`); @f4: @b2 + percentage(`Math.random()*@{r2}/100`);
+    @d1: @b3 + percentage(`Math.random()*@{r3}/100`); @d2: @b3 + percentage(`Math.random()*@{r3}/100`);
+    @d3: @b3 + percentage(`Math.random()*@{r3}/100`); @d4: @b3 + percentage(`Math.random()*@{r3}/100`);
+    background:
+        -webkit-radial-gradient(@x1 @y1, @size @size, desaturate(fadeout(@color, @f1), @d1), @trans),
+        -webkit-radial-gradient(@x2 @y2, @size @size, desaturate(fadeout(@color, @f2), @d2), @trans),
+        -webkit-radial-gradient(@x3 @y3, @size @size, desaturate(fadeout(@color, @f3), @d3), @trans),
+        -webkit-radial-gradient(@x4 @y4, @size @size, desaturate(fadeout(@color, @f4), @d4), @trans);
+    background:
+        radial-gradient(@size at @x1 @y1, desaturate(fadeout(@color, @f1), @d1), @trans),
+        radial-gradient(@size at @x2 @y2, desaturate(fadeout(@color, @f2), @d2), @trans),
+        radial-gradient(@size at @x3 @y3, desaturate(fadeout(@color, @f3), @d3), @trans),
+        radial-gradient(@size at @x4 @y4, desaturate(fadeout(@color, @f4), @d4), @trans);
+    // TODO: what the heck is the old -moz prefixed radial gradient syntax?
+}
+
+/* ==========================================================================
+Variables
+========================================================================== */
+
+// Failed experiment (firefox slows to a crawl)
+@use-instagram: "nuh uh";
+
+// MEDIA QUERIES FOR BOOTSTRAP3 (xs, sm, md, lg)
+// _up/_down suffixes meaning "at this size and up/down"
+@xs: ~"only screen and (max-width: 767px)";
+@sm: ~"only screen and (min-width: 768px) and (max-width: 991px)";
+@md: ~"only screen and (min-width: 992px) and (max-width: 1199px)";
+@lg: ~"only screen and (min-width: 1200px)";
+
+@sm_up: ~"only screen and (min-width: 768px)";
+@md_up: ~"only screen and (min-width: 992px)";
+
+@sm_down: ~"only screen and (max-width: 991px)";
+@md_down: ~"only screen and (max-width: 1199px)";
+
+// Style tiles, Colours
+@white: #ffffff;
+@gray: #7A7979;
+@darkGray: #393939;
+@lightGray: rgb(240,240,240);
+@bodyText: #5c5d60;
+@blockHeaders: #093742;
+@articleHeaders: #628C00;
+@articleDesc: #575756;
+@linkText: #083643;
+@bodyBackground: white;
+@value: #4fa179;
+@story: #97c23a;
+@solution: #eb9626;
+@theory: #d65031;
+@principle: #4daec4;
+@buttons: @brando;
+@meta: #5c5d60;
+// Brand coloring
+@brando: #49c8ef;
+@lightBrando: #dbf4fc;
+
+// Style tiles, Fonts
+@fontDefault: "source-sans-pro";
+@fontHeadersDefault: "alternate-gothic-no-2-d";
+
 // Sizes
 @std-padding: 20px;
+@huge: 5000px;
+@header-size: 42px;
 
 /* ==========================================================================
 Global selectors
@@ -99,6 +161,10 @@ body {
     background-color: @bodyBackground;
     color: @bodyText;
     font-family: @fontDefault;
+    padding-top: @header-size;
+    @media @sm_down {
+        padding-top: @header-size * 2;
+    }
 }
 
 .row.no-pad {
@@ -110,6 +176,20 @@ body {
     padding-right: 0;
 }
 
+// HACK! HACK! HACK! For simplicity's sake, these don't work exactly
+// like the standard bootstrap classes: whereas bootstrap col-sz-n
+// will set the width for sz-and-greater to n, these apply an extra
+// half column to exactly the size specified ONLY (for more control).
+.generate-col-extra-half();
+.generate-col-extra-half(@n: 1) when (@n =< 11) {
+    @p: percentage((1/12)*(@n + .5));
+    .col-xs-@{n}.col-xs-extra-half { @media @xs { width: @p; } }
+    .col-sm-@{n}.col-sm-extra-half { @media @sm { width: @p; } }
+    .col-md-@{n}.col-md-extra-half { @media @md { width: @p; } } 
+    .col-lg-@{n}.col-lg-extra-half { @media @lg { width: @p; } }
+    .generate-col-extra-half(@n + 1); 
+}
+
 a:link, a:visited, a:hover {
     color: @brando;
 }
@@ -119,6 +199,9 @@ a:link, a:visited, a:hover {
 .icon-button, .module-list-item, .filter, .values li, .tags li {
     cursor: pointer;
 }
+.values li:hover, .tags li:hover {
+    text-decoration: underline;
+}
 
 /* ==========================================================================
 Type
@@ -127,6 +210,9 @@ Type
 h1, h2, h3, h4 {
     font-family: @fontHeadersDefault;
 }
+h1 {
+    line-height: 1;
+}
 
 /* ==========================================================================
 Layout
@@ -134,10 +220,31 @@ Layout
 
 footer.site-footer {
     background: black;
-    height: 200px;
+    min-height: 200px;
     margin-top: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
+    a:link, a:visited {
+        color: lighten(@bodyText, 20%);
+    }
+    a:hover {
+        color: white;
+    }
+    h1 {
+        text-indent: -5000px;
+        margin-bottom: 0px;
+    }
+    .tce h1 {
+        background: url('/ui/img/TCEwordmark-bw.svg') no-repeat;
+        background-size: 170px;
+    }
+    .bsol h1 {
+        background: url('/ui/img/BSOLwordmark-bw.svg') no-repeat;
+        background-size: 170px;
+    }
+    .copyright {
+        margin-top: 20px;
+    }
 }
 
 /* ==========================================================================
@@ -146,6 +253,13 @@ Modules
 
 // Module: Header navigation, .site-nav
 header.site-header {
+    .overflow-rect(@color) {
+        position: absolute;
+        background-color: @color;
+        height: 100%;
+        content: "";
+        width: @huge;
+    }
     background: black;
     padding-left: 0px;
     .icon-button {
@@ -155,8 +269,20 @@ header.site-header {
         top: 12px;
     }
     .tce {
-        height: 42px;
+        height: @header-size;
         background: black;
+        // Extended nav coloring
+        position: relative;
+        &:before {
+            .overflow-rect(black);
+            right: 100%;
+        }
+        @media @sm_down {
+            &:after {
+                .overflow-rect(black);
+                left: 100%;
+            }
+        }
         h1 {
             background: url('/ui/img/TCEwordmark.svg') no-repeat 0px 8px black;
             text-indent: -5000px;
@@ -166,15 +292,38 @@ header.site-header {
         }
     }
     .bsol {
-        height: 42px;
+        height: @header-size;
         background-color: @brando;
+        // Extended nav coloring
+        position: relative;
+        &:after {
+            .overflow-rect(@brando);
+            left: 100%;
+        }
+        @media @sm_down {
+            &:before {
+                .overflow-rect(@brando);
+                right: 100%;
+            }
+        }
         h1 {
             background: url('/ui/img/BSOLwordmark.svg') no-repeat 0px 8px;
             float: left;
             width: 240px;
             text-indent: -5000px;
-            margin: 0px;
+            margin: 0px 0px 0px 15px;
             cursor: pointer;
+            @media @sm_down { 
+                margin: 0; 
+            }
+        }
+        .dropdown {
+            float: left;
+            position: relative;
+        }
+        .dropdown-menu {
+            top: 150%;
+            left: -14px;
         }
         .icon-menu {
             float: left;
@@ -184,6 +333,7 @@ header.site-header {
         }
         .icon-lab {
             float: right;
+            margin-right: 10px;
         }
     }
 }
@@ -191,7 +341,7 @@ header.site-header {
 // Module: Modules list view (gallery view)
 // body.modules-list-view
 body.modules-list-view {
-    #modules-gallery{
+    #modules-gallery {
         padding-top: 10px;
         header ul {
             padding-top: 6px;
@@ -202,23 +352,53 @@ body.modules-list-view {
                 text-transform: uppercase;
             }
             li.filter {
-                color: @bodyText;
+                color: fadeout(black, 35%);
             }
-            li.active {
+            li.default {
                 color: black;
             }
+            li.values:hover {
+                color: fadeout(@value, 35%);
+            }
+            li.values.active {
+                color: @value;
+            }
+            li.stories:hover {
+                color: fadeout(@story, 35%);
+            }
+            li.stories.active {
+                color: @story;
+            }
+            li.solutions:hover {
+                color: fadeout(@solution, 35%);
+            }
+            li.solutions.active {
+                color: @solution;
+            }
+            li.theories:hover {
+                color: fadeout(@theory, 35%);
+            }
+            li.theories.active {
+                color: @theory;
+            }
+        }
+        #filter-passion {
+            position: relative;
+            left: 4px;
         }
     }
+    .module-list-item {
+        border-right: 2px solid white;
+        border-bottom: 2px solid white;
+        width: 33.3%;
+    }
     .module-list-item.size-1 {
-        width: 33%;
         height: 250px;
     }
     .module-list-item.size-2 {
-        width: 33%;
         height: 300px;
     }
     .module-list-item.size-3 {
-        width: 33%;
         height: 400px;
     }
     .caption {
@@ -254,10 +434,11 @@ body.value-detail-view {
 article#value {
     #related-list {
         .module-list-item {
-            width: 198px;
             height: 198px;
             color: white;
-            border: 1px solid @gray;
+            width: 33.3%;
+            border-right: 2px solid white;
+            border-bottom: 2px solid white;
         }
         .caption {
             width: 100%;
@@ -284,6 +465,7 @@ article#value {
     }
     header {
         margin-top: 20px;
+        margin-right: @std-padding;
         .type {
             text-transform: uppercase;
             position: relative;
@@ -301,20 +483,13 @@ article#value {
             font-size: 1.188em;
         }
     }
-    section
-    #summary {
-        padding-right: 20px;
+    section #summary {
+        margin-right: @std-padding;
     }
-    #button-bar {
-        button {
-            color: white;
-            font-weight: bold;
-            background: @bodyText;
-            border: none;
-            text-align: center;
-            text-transform: uppercase;
-            padding: 6px 40px 6px 40px;
-        }
+    #button-bar button {
+        .button-style(@bodyText, @buttons);
+        padding-left: 40px;
+        padding-right: 40px;
     }
 }
 
@@ -322,17 +497,33 @@ article#value {
 // body.module-detail-view
 article#module {
     figure {
-        img {
-            // Find a better solution
+        .background-wrapper {
+            z-index: -1;
             position: fixed;
-            top: 0; left: 0;
-            width: 100%;
-            z-index: -9999;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            img {
+                position: absolute;
+                top: 0; right: 0; bottom: 0; left: 0;
+                margin: auto;
+                min-width: 50%;
+                min-height: 50%;
+                /*
+                // Find a better solution
+                position: fixed;
+                top: 0; left: 0;
+                width: 100%;
+                z-index: -9999;
+                */
+            }
         }
         figcaption {
             .mixin-photocredits;
             position: relative;
             top: 10px;
+            min-height: 40px;
         }
     }
     header {
@@ -370,7 +561,7 @@ article#module {
             font-weight: bold;
         }
         .byline span {
-            color: @brando;
+            color: @bodyText;
             text-transform: uppercase;
             font-weight: normal;
         }
@@ -414,6 +605,7 @@ article#module {
             font-family: "source-sans-pro",sans-serif;
             font-style: normal;
             font-weight: 300;
+            font-size: 1.150em;
         }
         .meta {
             float: left;
@@ -421,7 +613,6 @@ article#module {
             border-top: 1px solid #eee;
             border-bottom: 1px solid #eee;
             padding: 10px 0px 6px 0px;
-            margin-bottom: 20px;
         }
         .icon-tags {
             float: left;
@@ -433,13 +624,10 @@ article#module {
         }
     }
     #button-bar button {
-        background-color: @buttons;
-        text-transform: uppercase;
-        border: none;
-        color: white;
-        padding: 4px 8px 4px 8px;
+        .button-style;
     }
     aside#learn-more {
+        margin-bottom: 20px;
         h2 {
             background: @bodyText;
             color: white;
@@ -448,12 +636,15 @@ article#module {
             font-weight: normal;
             padding: 4px 0px 0px 20px;
             text-transform: uppercase;
+            // FF rendering bug 
+            display: inline-block;
+            width: 100%;
         }
         .learn-more-type {
             padding-left: 35px;
             font-weight: bold;
             text-transform: uppercase;
-            font-size: 0.8em;
+            font-size: 0.7em;
         }
         .learn-more-item {
             padding-right: 30px;
@@ -490,15 +681,189 @@ article#module {
                 padding: 6px;
             }
         }
-        .tactic {
-            background-color: @tactic;
-        }
         .theory {
-            background-color: @theory;
+            background-color: fadeout(@theory, 45%);
         }
         .solution {
-            background-color: @solution;
+            background-color: fadeout(@solution, 45%);
         }
+        .story {
+            background-color: fadeout(@story, 45%);
+        }
+    }
+}
+
+// Module: IdeaLab-detail
+article#idealab-detail {
+    header {
+        margin-top: 26px;
+        margin-right: 20px;
+        margin-left: 20px;
+        h1 {
+            margin: 0;
+            font-size: 4.375em;
+            margin-top: 24px;
+        }
+        h5 {
+            font-family: @fontHeadersDefault;
+            margin: 0;
+            font-size: 1.188em;
+        }
+        #button-bar button {
+            .button-style(@bodyText, @buttons);
+        }
+    }   
+    section {
+        padding: 0 @std-padding @std-padding @std-padding;
+        .share-icon {
+            float: right;
+            color: @brando;
+        }
+        .module-type-icon {
+            &.value { color: @value; }
+            &.story { color: @story; }
+            &.solution { color: @solution; }
+            &.theory { color: @theory; }
+        }
+        // So confusing it might as well be minified
+        .byline, .date-added {
+            border-right: 1px solid @lightGray;
+            padding-right: 10px;
+        }
+        .module-type-icon, .date-added, .vote {
+            padding-left: 10px;
+            text-transform: uppercase;
+        }
+        .byline, .module-type-icon, .date-added {
+            font-size: 0.9em;
+            font-weight: bold;
+            span {
+                color: @bodyText;
+                text-transform: uppercase;
+                font-weight: normal;
+            }
+        }
+        .date-added span {
+            text-transform: none;
+        }
+        // End confusing section
+        .vote {
+            color: @brando;
+            font-weight: bold;
+            i {
+                font-size: 1.4em;
+            }
+        }
+        .icon-tags {
+            float: left;
+            width: 4%;
+        }
+        .meta {
+            float: left;
+            width:100%;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            padding: 10px 0px 6px 0px;
+        }
+        .tags span {
+            color: @meta;
+            font-size: 0.7em;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-right: 14px;
+        }
+        .tags li {
+            color: @brando;
+            font-size: 0.9em;
+        }
+        #summary {
+            padding-top: @std-padding;
+        }
+    }
+}
+// Module: IdeaLab-list
+article#idealab-list {
+    .tab {
+        font-family: @fontHeadersDefault;
+        font-size: 1.4em;
+        color: white;
+        text-transform: uppercase;
+        line-height: 1em;
+        display: inline-block;
+        background-size: cover;
+        &.tab-active { 
+            background-image: url('/ui/img/tab-blue.svg'); 
+            z-index: 2;
+        }
+        &.tab-inactive { 
+            background-image: url('/ui/img/tab-gray.svg'); 
+            z-index: 1;
+        }
+        // There's some nutty math behind this actually working
+        padding: 11px 16px;
+        width: 160px;
+        position: relative;
+        right: 6px;
+        &:nth-of-type(1) { // fancy!
+            right: 0;
+        }
+    }
+    header {
+        margin-top: @header-size;
+        margin-right: 20px;
+        margin-left: 20px;
+        h1 {
+            margin: 0;
+            font-size: 4.375em;
+        }
+        h5 {
+            font-family: @fontHeadersDefault;
+            margin: 0;
+            font-size: 1.188em;
+        }
+        p {
+            margin-top: 20px;
+            margin-bottom: 20px; 
+        }
+    }   
+    table {
+        th, td {
+            padding: 10px 15px;
+            border-bottom: 1px solid @gray;
+            line-height: 1em;
+        }
+        thead tr {
+            border-left: 4px solid @brando;
+        }
+        tbody tr {
+            border-left: 4px solid transparent;
+        }
+        th:last-child, td:last-child { // icon column
+            text-align: center;
+        }
+        th {
+            text-transform: uppercase;
+            font-family: @fontHeadersDefault;
+            font-size: 1.4em;
+            vertical-align: bottom;
+            line-height: 1em;
+            color: @darkGray;
+            background: @brando;
+        }
+        &#idealab-published {
+            tr.value { border-left: 4px solid @value; }
+            tr.story { border-left: 4px solid @story; }
+            tr.solution { border-left: 4px solid @solution; }
+            tr.theory { border-left: 4px solid @theory; }
+            //tr.principle { border-left: 4px solid @principle; }
+        }
+        &#idealab-submitted {
+
+        }
+    }
+    aside#idealab-sidebar {
+        padding: @std-padding;
+        background: @lightBrando;
     }
 }
 
@@ -510,19 +875,39 @@ ul.share-tools {
     min-width: 50px;
 }
 
+// Module: Instagram
+body.value-detail-view, body.modules-list-view {
+    .module-list-item {
+        &.theory .caption { .instagram(@theory); }
+        &.story .caption { .instagram(@story); }
+        &.value .caption { .instagram(@value); }
+        &.solution .caption { .instagram(@solution); }
+    }
+}
+body.module-detail-view figure .filter {
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0;
+    z-index: -9998;
+    opacity: .5;
+    &.theory { .instagram(@theory, 60em); }
+    &.story { .instagram(@story, 60em); }
+    &.value { .instagram(@value, 60em); }
+    &.solution { .instagram(@solution, 60em); }
+}
+
 /* ==========================================================================
 Progressively enhance for larger screens
 ========================================================================== */
 
-@media screen and (min-width: 768px) { /* Adjust for large desktop */
+@media @lg { /* Adjust for large desktop */
 
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) { /* Adjust for standard desktop */
+@media @md { /* Adjust for standard desktop */
 
 }
 
-@media screen and (min-width:768px) and (max-width: 992px) { /* portrait tablets */
+@media @sm { /* portrait tablets */
 
 }
 

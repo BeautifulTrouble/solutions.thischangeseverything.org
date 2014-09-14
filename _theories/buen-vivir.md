@@ -7,29 +7,29 @@ when: ""
 who: ""
 scale: ""
 values:
-- Builds resilience
-- Celebrates life
-- Cultivates abundance
+- "Builds resilience"
+- "Celebrates life"
+- "Cultivates abundance"
 related_solutions:
 related_theories:
-- Appropriate scale
-- Decolonization
-- Environmental justice
-- Sense of place
-- Stewardship
-- The commons
+- "Appropriate scale"
+- "Decolonization"
+- "Environmental justice"
+- "Sense of place"
+- "Stewardship"
+- "The commons"
 related_stories:
-- Great Lakes Commons Initiative
-- Initiative 136
-- The river with the rights of a person
+- "Great Lakes Commons Initiative"
+- "Initiative 136"
+- "The river with the rights of a person"
 tags:
-- community development
-- culture
-- economics
-- indigenous rights
-- living economies
-- resource use
-- well-being
+- "community development"
+- "culture"
+- "economics"
+- "indigenous rights"
+- "living economies"
+- "resource use"
+- "well-being"
 learn_more:
 -
     title: "The Social Philosophy Inspiring Movements in South America"
@@ -53,10 +53,10 @@ learn_more:
     url: "http://www.resilience.org/stories/2013-12-17/ecuador-open-knowledge-and-buen-vivir"
 images:
 -
-    url: Buen-Vivir.jpg
-    name: Buen-Vivir.jpg
+    url: "Buen-Vivir.jpg"
+    name: "Buen-Vivir.jpg"
     caption: "Buen vivir illustrated by graphic notes"
-    source: "Zulma Patarroyo"
+    source: ""
     source_url: ""
 contributors:
 - "Sergio Beltrán"

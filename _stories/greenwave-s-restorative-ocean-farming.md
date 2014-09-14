@@ -7,34 +7,34 @@ when: "2012 &mash; Present"
 who: "GreenWave"
 scale: "Local; Regional"
 values:
-- Builds resilience
-- Creates more possibilities
-- Cultivates abundance
-- Deepens democracy
-- Extends the commons
+- "Builds resilience"
+- "Creates more possibilities"
+- "Cultivates abundance"
+- "Deepens democracy"
+- "Extends the commons"
 related_solutions:
-- Community supported agriculture
-- Permaculture
-- Worker cooperative
+- "Community supported agriculture"
+- "Permaculture"
+- "Worker cooperative"
 related_theories:
-- Buen vivir
-- Cooperative commonwealth
-- Environmental justice
-- Just transition
-- Stewardship
-- The commons
-- Usufruct
+- "Buen vivir"
+- "Cooperative commonwealth"
+- "Environmental justice"
+- "Just transition"
+- "Stewardship"
+- "The commons"
+- "Usufruct"
 related_stories:
-- Building community economies on Pine Ridge
-- Equitable Food Initiative
-- Great Lakes Commons Initiative
+- "Building community economies on Pine Ridge"
+- "Equitable Food Initiative"
+- "Great Lakes Commons Initiative"
 tags:
-- agriculture
-- climate
-- cooperatives
-- food
-- resource use
-- work
+- "agriculture"
+- "climate"
+- "cooperatives"
+- "food"
+- "resource use"
+- "work"
 learn_more:
 -
     title: "GreenWave"
@@ -53,10 +53,10 @@ learn_more:
     url: "https://www.youtube.com/watch?v=j8ViaskDSeI"
 images:
 -
-    url: Greenwaves-Restorative-Ocean-Farming.jpg
-    name: Greenwaves-Restorative-Ocean-Farming.jpg
+    url: "Greenwaves-Restorative-Ocean-Farming.jpg"
+    name: "Greenwaves-Restorative-Ocean-Farming.jpg"
     caption: "3D ocean farming: Turning fishermen into climate farmers."
-    source: "Greenwave"
+    source: ""
     source_url: ""
 contributors:
 - "Bren Smith"

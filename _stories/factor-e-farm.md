@@ -7,27 +7,27 @@ when: "2007 — Present"
 who: "Open Source Ecology"
 scale: "Local"
 values:
-- Builds resilience
-- Creates more possibilities
-- Cultivates abundance
-- Extends the commons
+- "Builds resilience"
+- "Creates more possibilities"
+- "Cultivates abundance"
+- "Extends the commons"
 related_solutions:
-- Community supported agriculture
-- Peer Production License
+- "Community supported agriculture"
+- "Peer Production License"
 related_theories:
-- Appropriate scale
-- Pluralist commonwealth
-- Sharing economy
-- Social imagination
-- The commons
+- "Appropriate scale"
+- "Pluralist commonwealth"
+- "Sharing economy"
+- "Social imagination"
+- "The commons"
 related_stories:
-- Trade school: barter-for-knowledge
-- Resilience Circles
+- "Trade school: barter-for-knowledge"
+- "Resilence Circles"
 tags:
-- agriculture
-- education
-- food
-- open source
+- "agriculture"
+- "education"
+- "food"
+- "open source"
 learn_more:
 -
     title: "Open Source Ecology: Factor e Farm in Five Minutes"
@@ -46,10 +46,10 @@ learn_more:
     url: "http://opensourceecology.org/wiki/Factor_e_Farm_Economic_Model"
 images:
 -
-    url: Factor-E-Farm.jpg
-    name: Factor-E-Farm.jpg
+    url: "Factor-E-Farm.jpg"
+    name: "Factor-E-Farm.jpg"
     caption: "LifeTrac 4 is a multipurpose, open-source tractor that is designed and built with a focus on a lifetime of usage and ease of repair."
-    source: "Open Source Ecology"
+    source: ""
     source_url: ""
 contributors:
 - "Dave Oswald Mitchell"

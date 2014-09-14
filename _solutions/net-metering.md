@@ -7,20 +7,20 @@ when: ""
 who: ""
 scale: "Individual; Local"
 values:
-- Builds resilience
-- Extends the commons
+- "Builds resilience"
+- "Extends the commons"
 related_solutions:
 related_theories:
-- Pluralist commonwealth
-- The commons
+- "Pluralist commonwealth"
+- "The commons"
 related_stories:
-- Boulder, Colorado vs. Xcel energy
-- Co-op Power
-- Ethical Electric
+- "Boulder, Colorado vs. Xcel energy"
+- "Co-op Power"
+- "Ethical Electric"
 tags:
-- energy
-- policy
-- urban planning
+- "energy"
+- "policy"
+- "urban planning"
 learn_more:
 -
     title: "Net metering programs by US state"
@@ -39,10 +39,10 @@ learn_more:
     url: "http://www.energymanagertoday.com/us-favors-net-metering-while-europe-japan-like-feed-in-tariffs-092374/"
 images:
 -
-    url: Net-Metering.jpg
-    name: Net-Metering.jpg
+    url: "Net-Metering.jpg"
+    name: "Net-Metering.jpg"
     caption: "Solar Co-operative with net metering."
-    source: "Andrewglaser"
+    source: ""
     source_url: ""
 contributors:
 - "Johnny Weiss"

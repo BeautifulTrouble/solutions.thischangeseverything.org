@@ -7,21 +7,21 @@ when: "1995 &mdash; Present"
 who: "Antanas Mockus, mayor of Bogotá"
 scale: "Local"
 values:
-- Celebrates life
-- Extends the commons
+- "Celebrates life"
+- "Extends the commons"
 related_solutions:
-- (Re)Claiming space through public art
-- Solutions seized through direct action
+- "(Re)Claiming space through public art"
+- "Solutions seized through direct action"
 related_theories:
-- Social imagination
-- Solutionary action logic
-- The commons
+- "Social imagination"
+- "Solutionary action logic"
+- "The commons"
 related_stories:
 tags:
-- culture
-- education
-- safety
-- transportation
+- "culture"
+- "education"
+- "safety"
+- "transportation"
 learn_more:
 -
     title: "Academic turns city into a social experiment"
@@ -40,10 +40,10 @@ learn_more:
     url: "http://www.theguardian.com/public-leaders-network/2013/oct/28/antanas-mockus-bogota-mayor"
 images:
 -
-    url: Traffic-Mimes.jpg
-    name: Traffic-Mimes.jpg
+    url: "Traffic-Mimes.jpg"
+    name: "Traffic-Mimes.jpg"
     caption: "A traffic mime in a Venezuela initiative inspired by Bogotá helps a woman cross the street."
-    source: "Associated Press"
+    source: ""
     source_url: ""
 contributors:
 - "Tomaz Capobianco"

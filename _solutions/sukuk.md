@@ -7,23 +7,23 @@ when: ""
 who: ""
 scale: "Local; Regional"
 values:
-- Advances justice
-- Cultivates abundance
-- Deepens democracy
-- Extends the commons
+- "Advances justice"
+- "Cultivates abundance"
+- "Deepens democracy"
+- "Extends the commons"
 related_solutions:
-- Credit union
-- Non-extractive financial cooperative
-- Public ownership
+- "Credit union"
+- "Non-extractive financial cooperative"
+- "Public ownership"
 related_theories:
-- Solidarity economics
-- Stewardship
-- Zakat
+- "Solidarity economics"
+- "Stewardship"
+- "Zakat"
 related_stories:
 tags:
-- community development
-- equity
-- financing
+- "community development"
+- "equity"
+- "financing"
 learn_more:
 -
     title: "Islamic Development Bank: What is Sukuk?"
@@ -37,10 +37,10 @@ learn_more:
     url: "http://www.deloitte.com/view/en_XD/xd/glossary/understandingsukuk/"
 images:
 -
-    url: Sukuk.jpg
-    name: Sukuk.jpg
+    url: "Sukuk.jpg"
+    name: "Sukuk.jpg"
     caption: "The answers to many of our current dilemmas can be found in existing cultural traditions."
-    source: "Pentocelo"
+    source: ""
     source_url: ""
 contributors:
 - "Sofia Fenner"
