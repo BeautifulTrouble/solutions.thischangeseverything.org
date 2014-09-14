@@ -162,6 +162,9 @@ body {
     color: @bodyText;
     font-family: @fontDefault;
     padding-top: @header-size;
+    @media @sm_down {
+        padding-top: @header-size * 2;
+    }
 }
 
 .row.no-pad {
