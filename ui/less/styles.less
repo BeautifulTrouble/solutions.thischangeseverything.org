@@ -103,7 +103,7 @@ Variables
 ========================================================================== */
 
 // Failed experiment (firefox slows to a crawl)
-@use-instagram: false;
+@use-instagram: "nuh uh";
 
 // MEDIA QUERIES FOR BOOTSTRAP3 (xs, sm, md, lg)
 // _up/_down suffixes meaning "at this size and up/down"
@@ -304,6 +304,7 @@ header.site-header {
         }
         .icon-lab {
             float: right;
+            margin-right: 10px;
         }
     }
 }
@@ -443,12 +444,27 @@ article#value {
 // body.module-detail-view
 article#module {
     figure {
-        img {
-            // Find a better solution
+        .background-wrapper {
+            z-index: -1;
             position: fixed;
-            top: 0; left: 0;
-            width: 100%;
-            z-index: -9999;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            img {
+                position: absolute;
+                top: 0; right: 0; bottom: 0; left: 0;
+                margin: auto;
+                min-width: 50%;
+                min-height: 50%;
+                /*
+                // Find a better solution
+                position: fixed;
+                top: 0; left: 0;
+                width: 100%;
+                z-index: -9999;
+                */
+            }
         }
         figcaption {
             .mixin-photocredits;
