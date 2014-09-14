@@ -173,7 +173,7 @@ App.ModulesListView = Backbone.View.extend({
     events: {
         'click .reset':  "resetFilters",
         'click .filter': "filterList",
-        'change select#filter-passion': "filterPassion"
+        'change select#filter-passion': "filterList"
     },
     beforeRender: function() {
         // Add the subviews to the view
