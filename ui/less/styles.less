@@ -220,10 +220,27 @@ Layout
 
 footer.site-footer {
     background: black;
-    height: 200px;
+    min-height: 200px;
     margin-top: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
+    a:link, a:visited {
+        color: lighten(@bodyText, 20%);
+    }
+    a:hover {
+        color: white;
+    }
+    .tce h1 {
+        text-indent: -5000px;
+        background: url('/ui/img/TCEwordmark-bw.svg') no-repeat;
+    }
+    .bsol h1 {
+        text-indent: -5000px;
+        background: url('/ui/img/BSOLwordmark-bw.svg') no-repeat;
+    }
+    .copyright {
+        margin-top: 20px;
+    }
 }
 
 /* ==========================================================================
