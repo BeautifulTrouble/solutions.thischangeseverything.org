@@ -230,12 +230,14 @@ footer.site-footer {
     a:hover {
         color: white;
     }
-    .tce h1 {
+    h1 {
         text-indent: -5000px;
+        background-size: 170px;
+    }
+    .tce h1 {
         background: url('/ui/img/TCEwordmark-bw.svg') no-repeat;
     }
     .bsol h1 {
-        text-indent: -5000px;
         background: url('/ui/img/BSOLwordmark-bw.svg') no-repeat;
     }
     .copyright {
@@ -340,10 +342,34 @@ body.modules-list-view {
                 text-transform: uppercase;
             }
             li.filter {
-                color: @bodyText;
+                color: fadeout(black, 35%);
             }
-            li.active, li.default {
+            li.default {
                 color: black;
+            }
+            li.values:hover {
+                color: fadeout(@value, 35%);
+            }
+            li.values.active {
+                color: @value;
+            }
+            li.stories:hover {
+                color: fadeout(@story, 35%);
+            }
+            li.stories.active {
+                color: @story;
+            }
+            li.solutions:hover {
+                color: fadeout(@solution, 35%);
+            }
+            li.solutions.active {
+                color: @solution;
+            }
+            li.theories:hover {
+                color: fadeout(@theory, 35%);
+            }
+            li.theories.active {
+                color: @theory;
             }
         }
         #filter-passion {
@@ -569,6 +595,7 @@ article#module {
             font-family: "source-sans-pro",sans-serif;
             font-style: normal;
             font-weight: 300;
+            font-size: 1.150em;
         }
         .meta {
             float: left;
@@ -607,7 +634,7 @@ article#module {
             padding-left: 35px;
             font-weight: bold;
             text-transform: uppercase;
-            font-size: 0.8em;
+            font-size: 0.7em;
         }
         .learn-more-item {
             padding-right: 30px;
