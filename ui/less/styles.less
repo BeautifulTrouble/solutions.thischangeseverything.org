@@ -147,6 +147,7 @@ Variables
 // Sizes
 @std-padding: 20px;
 @huge: 5000px;
+@header-size: 42px;
 
 /* ==========================================================================
 Global selectors
@@ -160,6 +161,7 @@ body {
     background-color: @bodyBackground;
     color: @bodyText;
     font-family: @fontDefault;
+    padding-top: @header-size;
 }
 
 .row.no-pad {
@@ -224,6 +226,13 @@ Modules
 
 // Module: Header navigation, .site-nav
 header.site-header {
+    .overflow-rect(@color) {
+        position: absolute;
+        background-color: @color;
+        height: 100%;
+        content: "";
+        width: @huge;
+    }
     background: black;
     padding-left: 0px;
     .icon-button {
@@ -233,8 +242,20 @@ header.site-header {
         top: 12px;
     }
     .tce {
-        height: 42px;
+        height: @header-size;
         background: black;
+        // Extended nav coloring
+        position: relative;
+        &:before {
+            .overflow-rect(black);
+            right: 100%;
+        }
+        @media @sm_down {
+            &:after {
+                .overflow-rect(black);
+                left: 100%;
+            }
+        }
         h1 {
             background: url('/ui/img/TCEwordmark.svg') no-repeat 0px 8px black;
             text-indent: -5000px;
@@ -244,24 +265,17 @@ header.site-header {
         }
     }
     .bsol {
-        height: 42px;
+        height: @header-size;
         background-color: @brando;
         // Extended nav coloring
         position: relative;
-        .overflow-rect() {
-            position: absolute;
-            background-color: @brando;
-            height: 100%;
-            content: "";
-            width: @huge;
-        }
         &:after {
-            .overflow-rect;
+            .overflow-rect(@brando);
             left: 100%;
         }
         @media @sm_down {
             &:before {
-                .overflow-rect;
+                .overflow-rect(@brando);
                 right: 100%;
             }
         }
@@ -669,7 +683,7 @@ article#idealab-list {
         }
     }
     header {
-        margin-top: 42px;
+        margin-top: @header-size;
         margin-right: 20px;
         margin-left: 20px;
         h1 {
