@@ -361,6 +361,9 @@ App.ValueDetailView = Backbone.View.extend({
             itemSelector: '.module-list-item',
             layoutMode: 'fitRows'
         });
+        $('.lazy').lazyload({
+            effect : "fadeIn"
+        });
     }
 });
 
