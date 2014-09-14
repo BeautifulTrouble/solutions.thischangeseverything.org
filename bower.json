@@ -23,6 +23,6 @@
     "isotope": "~2.0.0",
     "layoutmanager": "~0.9.5",
     "showdown": "~0.3.1",
-    "unveil": "~1.3.0"
+    "jquery.lazyload": "~1.9.3"
   }
 }
