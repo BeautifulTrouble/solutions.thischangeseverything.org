@@ -649,6 +649,12 @@ article#idealab-detail {
             float: right;
             color: @brando;
         }
+        .module-type-icon {
+            &.value { color: @value; }
+            &.story { color: @story; }
+            &.solution { color: @solution; }
+            &.theory { color: @theory; }
+        }
         // So confusing it might as well be minified
         .byline, .date-added {
             border-right: 1px solid @lightGray;
@@ -656,21 +662,26 @@ article#idealab-detail {
         }
         .module-type-icon, .date-added, .vote {
             padding-left: 10px;
-        }
-        .module-type-icon {
             text-transform: uppercase;
-            &.value { color: @value; }
-            &.story { color: @story; }
-            &.solution { color: @solution; }
-            &.theory { color: @theory; }
         }
-        .byline, .module-type-icon {
+        .byline, .module-type-icon, .date-added {
             font-size: 0.9em;
             font-weight: bold;
             span {
                 color: @bodyText;
                 text-transform: uppercase;
                 font-weight: normal;
+            }
+        }
+        .date-added span {
+            text-transform: none;
+        }
+        // End confusing section
+        .vote {
+            color: @brando;
+            font-weight: bold;
+            i {
+                font-size: 1.4em;
             }
         }
         .icon-tags {
@@ -684,7 +695,7 @@ article#idealab-detail {
             border-bottom: 1px solid #eee;
             padding: 10px 0px 6px 0px;
         }
-        .tags span, .date-added {
+        .tags span {
             color: @meta;
             font-size: 0.7em;
             font-weight: bold;
