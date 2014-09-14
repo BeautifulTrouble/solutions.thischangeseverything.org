@@ -8,7 +8,7 @@
 //= require underscore.js
 //= require isotope.pkgd.js
 //= require showdown.js
-
+//= require jquery.lazyload.min.js
 
 //= Then the app
 //=require backbone-app.js

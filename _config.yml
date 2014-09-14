@@ -93,11 +93,9 @@ assets:
     - bower_components/layoutmanager/
     - bower_components/domready/
     - bower_components/bootstrap/dist/css/
-    - bower_components/jquery.slimscroll/
-    - bower_components/fullpage.js/
-    - bower_components/fullpage.js/vendors/
     - bower_components/isotope/dist/
     - bower_components/showdown/compressed/
+    - bower_components/jquery.lazyload/
   js_compressor: yui
   css_compressor: yui
   cache: true

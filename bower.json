@@ -20,9 +20,9 @@
     "bootstrap": "~3.1.1",
     "backbone": "~1.1.2",
     "modernizr": "~2.8.3",
-    "fullpage.js": "~2.0.7",
     "isotope": "~2.0.0",
     "layoutmanager": "~0.9.5",
-    "showdown": "~0.3.1"
+    "showdown": "~0.3.1",
+    "jquery.lazyload": "~1.9.3"
   }
 }
