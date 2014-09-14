@@ -646,15 +646,47 @@ article#idealab-detail {
             float: right;
             color: @brando;
         }
-        .byline {
+        // So confusing it might as well be minified
+        .byline, .date-added {
             border-right: 1px solid @lightGray;
+            padding-right: 10px;
+        }
+        .module-type-icon, .date-added, .vote {
+            padding-left: 10px;
+        }
+        .module-type-icon {
+            text-transform: uppercase;
+        }
+        .byline, .module-type-icon {
             font-size: 0.9em;
             font-weight: bold;
+            span {
+                color: @bodyText;
+                text-transform: uppercase;
+                font-weight: normal;
+            }
         }
-        .byline span {
-            color: @bodyText;
+        .icon-tags {
+            float: left;
+            width: 4%;
+        }
+        .meta {
+            float: left;
+            width:100%;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            padding: 10px 0px 6px 0px;
+        }
+        .tags span, .date-added {
+            color: @meta;
+            font-size: 0.7em;
+            font-weight: bold;
             text-transform: uppercase;
-            font-weight: normal;
+            margin-right: 14px;
+        }
+        .tags li {
+            color: @brando;
+            font-size: 0.9em;
         }
     }
 }

@@ -14,25 +14,19 @@
                 </header>
                 <section>
                     <div class="row no-pad">
-                        <div class="col-md-3 byline">
-                            <p>by <span class="contributor"><%= contributors[0] %></span></p>
-                        </div> 
+                        <span class="byline">
+                            by <span class="contributor"><%= contributors[0] %></span>
+                        </span> 
                         
                         <% if (state == 'published') { %>
                         <!-- TODO: update module schema to include user-submitted flag; include ": User submitted" with type -->
-                        <div class="col-md-2">
                             <span class="module-type-icon"><%= type %></span>
-                        </div>
                         <% } else { %>
-                        <div class="col-md-2">
-                            <span class="date-added">Added <%= long_date %></span>
-                        </div>
-                        <div class="col-md-2">
+                            <span class="date-added">Added <span class="date"><%= long_date %></span></span>
                             <span class="vote"><i class="icon icon-love"></i>Love this idea</span>
-                        </div>
                         <% } %>
+                        <span class="share-icon"><i class="icon icon-share"></i></span>
 
-                        <span class="col-md-1 share-icon"><i class="icon icon-share"></i></span>
                     </div>
 
                     <div class="row no-pad">
