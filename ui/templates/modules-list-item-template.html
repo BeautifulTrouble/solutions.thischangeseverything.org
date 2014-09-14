@@ -1,6 +1,6 @@
 <% var random = Math.floor(Math.random() * 3) + 1 %>
 <% var tag_slugs = _.map(tags, function(tag) { if (tag) { return tag.replace(/\s/g , "-") } } ); %>
-<div class="module-list-item <%= type %> <% _.each( tag_slugs, function(tag) { %><%= tag %> <% } ); %> size-<%= random %>" data-category="<%= type %>" id="<%= slug %>" style="background-image: url('<%= images[0].thumb_url %>'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+<div class="lazy module-list-item <%= type %> <% _.each( tag_slugs, function(tag) { %><%= tag %> <% } ); %> size-<%= random %>" data-category="<%= type %>" id="<%= slug %>" style="background-image: url('/ui/img/grey.gif'); background-size: cover; background-repeat: no-repeat; background-position: center;" data-original="<%= images[0].thumb_url %>">
     <div class="caption">
         <h5 class="type"><%= type %>:</h5>
         <h3 class="title"><%= title %></h3>
