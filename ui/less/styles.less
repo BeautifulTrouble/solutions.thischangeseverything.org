@@ -42,7 +42,7 @@ Globals & Mixins
         content: "";
     }
 }
-.button-style(@color: @buttons) {
+.button-style(@color: @buttons, @hoverColor: @bodyText) {
     background-color: @color;
     text-transform: uppercase;
     font-weight: normal;
@@ -50,13 +50,16 @@ Globals & Mixins
     font-family: @fontHeadersDefault;
     border: none;
     color: white;
-    padding: 6px 20px 4px 20px;
+    padding: 3px 12px 0px 12px;
     margin-right: 6px;
     margin-bottom: 6px;
     i {
         font-size: .8em;
         position: relative;
         left: 3%;
+    }
+    &:hover {
+        background-color: @hoverColor;
     }
 }
 .mixin-photocredits {
@@ -388,6 +391,7 @@ article#value {
     }
     header {
         margin-top: 20px;
+        margin-right: @std-padding;
         .type {
             text-transform: uppercase;
             position: relative;
@@ -409,7 +413,7 @@ article#value {
         margin-right: @std-padding;
     }
     #button-bar button {
-        .button-style(@bodyText);
+        .button-style(@bodyText, @buttons);
         padding-left: 40px;
         padding-right: 40px;
     }
@@ -616,7 +620,7 @@ article#idealab-detail {
             font-size: 1.188em;
         }
         #button-bar button {
-            .button-style;
+            .button-style(@bodyText, @buttons);
         }
     }   
     section {
