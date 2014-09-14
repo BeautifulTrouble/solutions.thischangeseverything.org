@@ -2,9 +2,12 @@
     <article id="module">
         <figure>
             <img src="/full_images/<%= images[0].url %>" title="<%= images[0].caption %>">
-            <% if ( images[0].caption && images[0].source ) { %>
-            <figcaption><%= images[0].caption %> | <%= images[0].source %></figcaption>
-            <% } %>
+            <figcaption>
+                <% if ( images[0].caption && images[0].source ) { %>
+                <%= images[0].caption %> | <%= images[0].source %>
+                <% } %>
+            </figcaption>
+            <div class="filter <%= type %>"></div>
         </figure>
         <header>
             <h5 class="type"><%= type %>:</h5>
