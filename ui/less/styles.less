@@ -119,6 +119,20 @@ body {
     padding-right: 0;
 }
 
+// HACK! HACK! HACK! For simplicity's sake, these don't work exactly
+// like the standard bootstrap classes: whereas bootstrap col-sz-n
+// will set the width for sz-and-greater to n, these apply an extra
+// half column to exactly the size specified ONLY (for more control).
+.generate-col-extra-half();
+.generate-col-extra-half(@n: 1) when (@n =< 11) {
+    @p: percentage((1/12)*(@n + .5));
+    .col-xs-@{n}.col-xs-extra-half { @media @xs { width: @p; } }
+    .col-sm-@{n}.col-sm-extra-half { @media @sm { width: @p; } }
+    .col-md-@{n}.col-md-extra-half { @media @md { width: @p; } } 
+    .col-lg-@{n}.col-lg-extra-half { @media @lg { width: @p; } }
+    .generate-col-extra-half(@n + 1); 
+}
+
 a:link, a:visited, a:hover {
     color: @brando;
 }
@@ -344,7 +358,7 @@ article#value {
     }
     section
     #summary {
-        padding-right: 100px;
+        //padding-right: 100px;
     }
     #button-bar {
         button {
