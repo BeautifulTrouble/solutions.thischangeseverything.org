@@ -43,9 +43,41 @@ Globals & Mixins
     }
 }
 
+.instagram(@color, @size:18em) when (@use-instagram) {
+    // Generate some gauzy instagram-style phony coloring
+    @r1: 30;    // % range that gradient centers deviate from corners
+    @b2: 20%;   // Base fadeout value...
+    @r2: 30;    // ...plus a random percentage up to this number
+    @b3: 40%;   // Base desaturate value...
+    @r3: 10;    // ...plus a random percentage up to this number
+    @trans: transparent; //rgba(100,100,100,.05);  // What everything fades to
+    @x1: percentage(`Math.random()*@{r1}/100`); @y1: percentage(`Math.random()*@{r1}/100`);
+    @x2: percentage(`Math.random()*@{r1}/100`); @y2: 100% - percentage(`Math.random()*@{r1}/100`);
+    @x3: 100% - percentage(`Math.random()*@{r1}/100`); @y3: percentage(`Math.random()*@{r1}/100`);
+    @x4: 100% - percentage(`Math.random()*@{r1}/100`); @y4: 100% - percentage(`Math.random()*@{r1}/100`);
+    @f1: @b2 + percentage(`Math.random()*@{r2}/100`); @f2: @b2 + percentage(`Math.random()*@{r2}/100`);
+    @f3: @b2 + percentage(`Math.random()*@{r2}/100`); @f4: @b2 + percentage(`Math.random()*@{r2}/100`);
+    @d1: @b3 + percentage(`Math.random()*@{r3}/100`); @d2: @b3 + percentage(`Math.random()*@{r3}/100`);
+    @d3: @b3 + percentage(`Math.random()*@{r3}/100`); @d4: @b3 + percentage(`Math.random()*@{r3}/100`);
+    background:
+        -webkit-radial-gradient(@x1 @y1, @size @size, desaturate(fadeout(@color, @f1), @d1), @trans),
+        -webkit-radial-gradient(@x2 @y2, @size @size, desaturate(fadeout(@color, @f2), @d2), @trans),
+        -webkit-radial-gradient(@x3 @y3, @size @size, desaturate(fadeout(@color, @f3), @d3), @trans),
+        -webkit-radial-gradient(@x4 @y4, @size @size, desaturate(fadeout(@color, @f4), @d4), @trans);
+    background:
+        radial-gradient(@size at @x1 @y1, desaturate(fadeout(@color, @f1), @d1), @trans),
+        radial-gradient(@size at @x2 @y2, desaturate(fadeout(@color, @f2), @d2), @trans),
+        radial-gradient(@size at @x3 @y3, desaturate(fadeout(@color, @f3), @d3), @trans),
+        radial-gradient(@size at @x4 @y4, desaturate(fadeout(@color, @f4), @d4), @trans);
+    // TODO: what the heck is the old -moz prefixed radial gradient syntax?
+}
+
 /* ==========================================================================
 Variables
 ========================================================================== */
+
+// Failed experiment (firefox slows to a crawl)
+@use-instagram: false;
 
 // MEDIA QUERIES FOR BOOTSTRAP3 (xs, sm, md, lg)
 // _up/_down suffixes meaning "at this size and up/down"
@@ -705,6 +737,26 @@ ul.share-tools {
     padding: 0px;
     margin: 0px;
     min-width: 50px;
+}
+
+// Module: Instagram
+body.value-detail-view, body.modules-list-view {
+    .module-list-item {
+        &.theory .caption { .instagram(@theory); }
+        &.story .caption { .instagram(@story); }
+        &.value .caption { .instagram(@value); }
+        &.solution .caption { .instagram(@solution); }
+    }
+}
+body.module-detail-view figure .filter {
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0;
+    z-index: -9998;
+    opacity: .5;
+    &.theory { .instagram(@theory, 60em); }
+    &.story { .instagram(@story, 60em); }
+    &.value { .instagram(@value, 60em); }
+    &.solution { .instagram(@solution, 60em); }
 }
 
 /* ==========================================================================
