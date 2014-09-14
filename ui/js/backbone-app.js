@@ -205,6 +205,10 @@ App.ModulesListView = Backbone.View.extend({
         this.setFilters();
     },
     filterList: function(e) {
+        // TODO Need to clean this up a lot
+        // currently, the filters are additive.
+        // It should work that once the tag filter is activated
+        // the type filters actually become subtractive.
         var elem = e.currentTarget;
         if ( elem.nodeName === 'SELECT') {
             if ( $( elem ).val() === 'What are you passionate about') {
