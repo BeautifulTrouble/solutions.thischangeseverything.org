@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'bsol';
-  src: url('/fonts/bsol.eot?66965501');
-  src: url('/fonts/bsol.eot?66965501#iefix') format('embedded-opentype'),
-       url('/fonts/bsol.woff?66965501') format('woff'),
-       url('/fonts/bsol.ttf?66965501') format('truetype'),
-       url('/fonts/bsol.svg?66965501#bsol') format('svg');
+  src: url('/fonts/bsol.eot?35571668');
+  src: url('/fonts/bsol.eot?35571668#iefix') format('embedded-opentype'),
+       url('/fonts/bsol.woff?35571668') format('woff'),
+       url('/fonts/bsol.ttf?35571668') format('truetype'),
+       url('/fonts/bsol.svg?35571668#bsol') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -14,7 +14,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'bsol';
-    src: url('/fonts/bsol.svg?66965501#bsol') format('svg');
+    src: url('../font/bsol.svg?35571668#bsol') format('svg');
   }
 }
 */
@@ -44,7 +44,7 @@
   margin-left: .2em;
  
   /* you can be more comfortable with increased icons size */
-  font-size: 120%;
+  /* font-size: 120%; */
  
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
@@ -57,3 +57,8 @@
 .icon-love:before { content: '\e804'; } /* '' */
 .icon-share:before { content: '\e805'; } /* '' */
 .icon-tag:before { content: '\e806'; } /* '' */
+.icon-icn-social-fb-2:before { content: '\e807'; } /* '' */
+.icon-icn-social-twitter-2:before { content: '\e808'; } /* '' */
+.icon-icn-social-vimeo-2:before { content: '\e809'; } /* '' */
+.icon-icn-social-yt-2:before { content: '\e80a'; } /* '' */
+.icon-search-2:before { content: '\e80b'; } /* '' */
