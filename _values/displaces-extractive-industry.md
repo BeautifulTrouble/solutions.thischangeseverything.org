@@ -1,7 +1,7 @@
 ---
 id: a16E0000002QA2j
 title: Displaces extractive industry
-short_write_up: "We put our hearts into our work so that our lives and communities are made stronger and more beautiful. The current economic paradigm, however, runs on extraction. A coal company will strip mine an Appalachian hillside, and once they’ve taken all that’s valuable, leave behind an ugly, toxic scar. In a similar way, they also extract value out of the workers they employ. This kind of systematic extraction — of labor and carbon — is at the root of our twin crises of economic injustice and climate chaos. To survive as a species, and make our work lives more meaningful, we need to resist extraction, reduce consumption and build alternative institutions powered by renewable resources and freely associated labor."
+short_write_up: "<p>We put our hearts into our work so that our lives and communities are made stronger and more beautiful. The current economic paradigm, however, runs on extraction. A coal company will strip mine an Appalachian hillside, and once they’ve taken all that’s valuable, leave behind an ugly, toxic scar. In a similar way, they also extract value out of the workers they employ. This kind of systematic extraction — of labor and carbon — is at the root of our twin crises of economic injustice and climate chaos. To survive as a species, and make our work lives more meaningful, we need to resist extraction, reduce consumption and build alternative institutions powered by renewable resources and freely associated labor.</p>"
 where: ""
 when: ""
 who: ""
@@ -34,7 +34,7 @@ related_theories:
 - "Usufruct"
 related_stories:
 - "Boulder, Colorado vs. Xcel energy"
-- "Building community economies on Pine Rid"
+- "Building community economies on Pine Ridge"
 - "Co-op Power"
 - "Farm Workers Credit Union"
 - "Great Lakes Commons Initiative"
@@ -58,12 +58,11 @@ tags:
 learn_more:
 images:
 -
-    url: 'Community-Wealth-Building.jpg'
-    name: 'Community-Wealth-Building.jpg' 
-    caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
-    source: 'Ecomundo Cleaning Co-operative'
-    source_url: 'https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater'
-    rights: 'By permission of Ecomundo Cleaning'
+    url: "Value-Displaces-Extractive-Industry.jpg"
+    name: "Value-Displaces-Extractive-Industry.jpg"
+    caption: ""
+    source: ""
+    source_url: ""
 contributors:
 - "Andrew Boyd"
 ---
