@@ -65,15 +65,21 @@ App.Module = Backbone.Model.extend({
     }
 });
 
-App.IdeaLabModule = Backbone.Model.extend({
+// API Models
+App.APIModel = Backbone.Model.extend({
     parse: function(response) { 
+        // When called by corresponding APICollection.parse, the 
+        // data attribute will have already been plucked out
         return "data" in response ? response['data'] : response;
     }
 });
-App.Idea = App.IdeaLabModule.extend({
+App.User = App.APIModel.extend({
+    urlRoot: "/api/me"
+});
+App.Idea = App.APIModel.extend({
     urlRoot: "/api/ideas"
 });
-App.Improvement = App.IdeaLabModule.extend({
+App.Improvement = App.APIModel.extend({
     urlRoot: "/api/improvements"
 });
 
@@ -123,18 +129,18 @@ _.each(App.Collections, function(collection) {
 // Make module tags available to app
 //App.Tags = _.unique(_.flatten(App.Modules.pluck("tags")));
 
-// IdeaLab Collections
-App.IdeaLabCollection = Backbone.Collection.extend({
+// API Collections
+App.APICollection = Backbone.Collection.extend({
     parse: function(response) {
         return response['data'];
     }
 });
-App.IdeasCollection = App.IdeaLabCollection.extend({
+App.IdeasCollection = App.APICollection.extend({
     model: App.Idea,
     url: "/api/ideas",
     comparator: "title"
 });
-App.ImprovementsCollection = App.IdeaLabCollection.extend({
+App.ImprovementsCollection = App.APICollection.extend({
     model: App.Improvement,
     url: "/api/improvements"
 });
@@ -358,7 +364,7 @@ App.ValueDetailView = Backbone.View.extend({
     }
 });
 
-
+// IdeaLab views
 App.IdeaLabView = Backbone.View.extend({
     // This view's entire purpose in life is to contain 
     // two sub-views: mainView and sideView
@@ -370,6 +376,16 @@ App.IdeaLabView = Backbone.View.extend({
     beforeRender: function() {
         this.insertView('#idealab-main', this.mainView);
         this.insertView('#idealab-sidebar', this.sideView);
+    },
+    afterRender: function() {
+        // Insert name/contact into forms
+        var self = this;
+        var user = new App.User();
+        user.fetch({success: function() {
+            _.each(['name','contact'], function(name) {
+                self.$('form input[name=' + name + ']').val(user.attributes[name]);
+            });
+        } });
     }
 });
 
@@ -433,13 +449,12 @@ App.FormHelper = Backbone.View.extend({
         }
     }
 });
-
 App.IdeaLabIdeaView = App.FormHelper.extend({
     template: "idealab-idea-template",
     baseStateSelector: '#idealab-idea',
     events: {
         "click input.add-idea": function () { 
-            this.saveFormAs('form', App.Idea);
+            this.saveFormAs('form#add-idea', App.Idea);
         },
         "click button.add-another-idea": function () { this.setState(); }
     }
@@ -499,8 +514,8 @@ App.IdeaLabDetailView = Backbone.View.extend({
         }); 
     },
     events: {
-        "click button.view-published-idea": function() { navTo('module/', this); },
         "click button.view-gallery": function() { navTo(); },
+        "click button.view-published-idea": function() { navTo('module/', this); },
         "click button.view-all-published-ideas": function() { navTo('idealab/published'); },
         "click button.view-all-submitted-ideas": function() { navTo('idealab/submitted'); }
     },
@@ -515,7 +530,7 @@ App.IdeaLabDetailView = Backbone.View.extend({
     }
 });
 
-
+// Site-wide views
 App.HeaderView = Backbone.View.extend({
     template: "header",
     events: {
