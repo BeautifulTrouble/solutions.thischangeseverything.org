@@ -55,17 +55,6 @@ var navTo = function(prefix, context) {
     });
 };
 
-var getForm = function($form) {
-    // Example use:
-    // var idea = new App.Idea(getFormFields(this.$('form#whatever')));
-    // idea.save();
-    var results = {};
-    $.each($form.serializeArray(), function(i, field) {
-        results[field.name] = field.value;
-    });
-    return results;
-};
-var L = function(s) { console.log(s); };
 
 // ===================================================================
 // Models
@@ -142,7 +131,8 @@ App.IdeaLabCollection = Backbone.Collection.extend({
 });
 App.IdeasCollection = App.IdeaLabCollection.extend({
     model: App.Idea,
-    url: "/api/ideas"
+    url: "/api/ideas",
+    comparator: "title"
 });
 App.ImprovementsCollection = App.IdeaLabCollection.extend({
     model: App.Improvement,
@@ -370,7 +360,8 @@ App.ValueDetailView = Backbone.View.extend({
 
 
 App.IdeaLabView = Backbone.View.extend({
-    // This view's entire purpose in life is to contain two sub-views: mainView and sideView
+    // This view's entire purpose in life is to contain 
+    // two sub-views: mainView and sideView
     template: "idealab-template",
     initialize: function(options) {
         this.mainView = options.mainView;
@@ -379,30 +370,85 @@ App.IdeaLabView = Backbone.View.extend({
     beforeRender: function() {
         this.insertView('#idealab-main', this.mainView);
         this.insertView('#idealab-sidebar', this.sideView);
-    },
-    afterRender: function() {
-        L('after render on main idealab view');
-        $(window).scroll();
     }
 });
 
-App.IdeaLabIdeaView = Backbone.View.extend({
-    template: "idealab-idea-template",
-    events: {
-        "click input.add-idea": function () { 
-            var idea = new App.Idea(getForm(this.$('form')));
-            idea.save()
-            .done(function () {
-                console.log('Saved.');
-            })
-            .fail(function () {
-                console.log('Not Saved.');
-            });
+App.FormHelper = Backbone.View.extend({
+    // All the nasty logic needed to deal with form submission 
+    // and displaying multiple states within a view.
+    // 
+    // Example use:
+    //  this.saveFormAs('form.idea', App.Idea);
+    // Creates an instance of App.Idea and deals with toggling 
+    // the three states: done, fail, and login
+    //
+    // Example use:
+    //  this.setState();
+    //  this.setState('done');
+    //  this.setState('fail');
+    //  this.setState('arbitrary');
+    // Toggles between elements with markup like this:
+    //  <div id="something">Default screen</div>
+    //  <div id="something-done" class="hidden">Success screen</div>
+    //  <div id="something-fail" class="hidden">Fail screen</div>
+    //  <div id="something-arbitrary" class="hidden">...</div>
+    baseStateSelector: '',
+    states: 'done fail login',
+    setState: function(state) {
+        // Show/Hide base depending on state
+        this.$(this.baseStateSelector)[state ? 'addClass' : 'removeClass']('hidden');
+        // Show/Hide the -suffixed elements
+        var states = this.states.match(/\S+/g);
+        _.each(states, function (s) {
+            this.$(this.baseStateSelector + '-' + s)[
+                s == state ? 'removeClass' : 'addClass'
+            ]('hidden');
+        }, this);
+    },
+    saveFormAs: function(formSelector, Model) { 
+        var form = {};
+        _.each($(formSelector).serializeArray(), function(field) {
+            form[field.name] = field.value;
+        });
+        var obj = new Model(form);
+        obj.save(null, {
+            success: this.done || this._done, 
+            error: this.fail || this._fail,
+            context: this
+        }); 
+    },
+    _done: function(model, response, options) { 
+        var self = options.context;
+        self.setState('done'); 
+    },
+    _fail: function(model, response, options) {
+        var self = options.context;
+        var message = response.message ? response.message : 'API Unavailable';
+        var status = response.status ? response.status : 500;
+        if (status == 401) {
+            self.setState('login');
+        } else {
+            self.setState('fail');
+            self.$('.server-error').text(message);
         }
     }
 });
-App.IdeaLabImprovementView = Backbone.View.extend({
-    template: "idealab-improvement-template"
+
+App.IdeaLabIdeaView = App.FormHelper.extend({
+    template: "idealab-idea-template",
+    baseStateSelector: '#idealab-idea',
+    events: {
+        "click input.add-idea": function () { 
+            this.saveFormAs('form', App.Idea);
+        },
+        "click button.add-another-idea": function () { this.setState(); }
+    }
+});
+App.IdeaLabImprovementView = App.FormHelper.extend({
+    template: "idealab-improvement-template",
+    baseStateSelector: '#idealab-improvement',
+    events: {
+    }
 });
 
 App.IdeaLabListView = Backbone.View.extend({
@@ -459,7 +505,6 @@ App.IdeaLabDetailView = Backbone.View.extend({
         "click button.view-all-submitted-ideas": function() { navTo('idealab/submitted'); }
     },
     afterRender: function() {
-        console.log('after render');
         $('body').attr("class", "idealab-detail-view");
         this.$('.icon-share').popover({ 
             html : true, 
@@ -507,11 +552,9 @@ App.Router = Backbone.Router.extend({
         '': 'start',
         'module(/:name)': 'displayModule',
         'value(/:name)': 'displayValue',
-
         'idealab(/:state)': 'displayIdeaLabList',
         'idealab/published(/:name)': 'displayIdeaLabPublishedDetail',
         'idealab/submitted(/:name)': 'displayIdeaLabSubmittedDetail',
-
         '*default': 'defaultRoute'
     },
     start: function() {
