@@ -34,8 +34,8 @@
                            {% endfor %} null],
     "href"              : "{{ module.url }}",
     "slug"              : "{{ module.title | downcase | replace: ' ', '-' }}",
-    "short_write_up"    : "{{ module.short_write_up | | newline_to_br | strip_newlines }}",
-    "full_write_up"     : "{{ module.content | newline_to_br | strip_newlines }}"
+    "short_write_up"    : "{{ module.short_write_up | strip_newlines }}",
+    "full_write_up"     : "{{ module.content | strip_newlines }}"
 }{% if forloop.last %}{% else %},{% endif %}
 {% endfor %}
 ]

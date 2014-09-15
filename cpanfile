@@ -4,3 +4,4 @@ requires 'Mojo::Template', '';
 requires 'Mojo::Loader', '';
 requires 'HTML::Entities', '';
 requires 'Text::Markdown', '';
+requires 'Text::Typography', '';

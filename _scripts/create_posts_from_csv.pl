@@ -18,6 +18,9 @@ use Text::CSV_XS;
 use Mojo::Util qw/ trim encode slurp spurt /;
 use Mojo::Loader;
 use Mojo::Template;
+use Text::Markdown;
+use Text::Typography qw(typography);
+
 
 # Read the output path and filename from STDIN
 my $input_file = shift @ARGV;
@@ -47,10 +50,16 @@ my %module_type_map = (
     solution => '_solutions'
 );
 
+my $md = Text::Markdown->new;
+
 for my $row ( @rows ) {
     my $module_name
         = $row->{'Beautiful Solutions Entry: beautiful solution name'};
     my $module_type = $row->{'Type'};
+    my $text = $row->{'Short Write-Up'};
+    $text = typography($text);
+    my $summary_html = $md->markdown($text);
+    $summary_html =~ s/\n//g;
     next unless $module_name && $module_type;
     my $dir = $module_type_map{ lc( $module_type ) };
     ( my $output_file = lc( $module_name ) ) =~ s/\W/-/g;
@@ -58,7 +67,7 @@ for my $row ( @rows ) {
     my $loader      = Mojo::Loader->new;
     my $template    = $loader->data( __PACKAGE__, 'module' );
     my $mt          = Mojo::Template->new;
-    my $output_str  = $mt->render( $template, $row, \&parse_list, \&parse_learn );
+    my $output_str  = $mt->render( $template, $row, $summary_html, \&parse_list, \&parse_learn );
     $output_str = encode 'UTF-8', $output_str;
 
     ## Write the template output to a filehandle
@@ -95,12 +104,13 @@ sub parse_learn {
 __DATA__
 @@ module
 % my $module = shift;
+% my $summary_html = shift;
 % my $parse_list = shift;
 % my $parse_learn = shift;
 ---
 id: <%= $module->{'Beautiful Solutions Entry: ID'} %>
 title: <%= $module->{'Beautiful Solutions Entry: beautiful solution name'} %>
-short_write_up: "<%= $module->{'Short Write-Up'} %>"
+short_write_up: "<%= $summary_html %>"
 where: "<%= $module->{'Where?'} %>"
 when: "<%= $module->{'When'} %>"
 who: "<%= $module->{'Who?'} %>"

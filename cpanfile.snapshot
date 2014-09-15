@@ -320,3 +320,9 @@ DISTRIBUTIONS
       Test::Exception 0
       Test::More 0.42
       Text::Balanced 0
+  Text-Typography-0.01
+    pathname: T/TS/TSIBLEY/Text-Typography-0.01.tar.gz
+    provides:
+      Text::Typography 0.01
+    requirements:
+      Test::More 0
