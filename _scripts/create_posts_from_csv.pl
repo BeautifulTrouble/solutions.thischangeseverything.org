@@ -67,12 +67,20 @@ for my $row ( @rows ) {
     my $loader      = Mojo::Loader->new;
     my $template    = $loader->data( __PACKAGE__, 'module' );
     my $mt          = Mojo::Template->new;
-    my $output_str  = $mt->render( $template, $row, $summary_html, \&parse_list, \&parse_learn );
+    my $output_str  = $mt->render( $template, $row, $summary_html, \&clean_text, \&parse_list, \&parse_learn );
     $output_str = encode 'UTF-8', $output_str;
 
     ## Write the template output to a filehandle
     spurt $output_str, $output_path;
     say "Wrote $module_name to $output_path";
+}
+
+sub clean_text {
+    my $str = shift;
+    if ( $str ) {
+        $str = typography( $str );
+    }
+    return $str;
 }
 
 sub parse_list {
@@ -92,6 +100,7 @@ sub parse_learn {
     my $output_str = '';
     for my $item ( @learn_items ) {
         my ($title, $description, $type, $url ) = split( '\n', $item);
+        $title = typography($title);
         $output_str .= "-\n";
         $output_str .= "    title: \"$title\"\n";
         $output_str .= "    description: \"$description\"\n";
@@ -105,11 +114,12 @@ __DATA__
 @@ module
 % my $module = shift;
 % my $summary_html = shift;
+% my $clean_text = shift;
 % my $parse_list = shift;
 % my $parse_learn = shift;
 ---
 id: <%= $module->{'Beautiful Solutions Entry: ID'} %>
-title: <%= $module->{'Beautiful Solutions Entry: beautiful solution name'} %>
+title: "<%= $clean_text->( $module->{'Beautiful Solutions Entry: beautiful solution name'} ) %>"
 short_write_up: "<%= $summary_html %>"
 where: "<%= $module->{'Where?'} %>"
 when: "<%= $module->{'When'} %>"
@@ -132,8 +142,8 @@ images:
 -
     url: "<%= $module->{'image_name'} %>"
     name: "<%= $module->{'image_name'} %>"
-    caption: "<%= $module->{'image_caption'} %>"
-    source: "<%= $module->{'image_source'} %>"
+    caption: "<%= $clean_text->( $module->{'image_caption'} ) %>"
+    source: "<%= $clean_text->( $module->{'image_source'} ) %>"
     source_url: "<%= $module->{'image_source_url'} %>"
 <% } else { =%>
 -
@@ -145,6 +155,6 @@ images:
     rights: 'By permission of Ecomundo Cleaning'
 <% } =%>
 contributors:
-- "<%= $module->{'Primary contributor name'} %>"
+- "<%= $clean_text->( $module->{'Primary contributor name'} ) %>"
 ---
-Full write-up would go here.
+Full write-up goes here
