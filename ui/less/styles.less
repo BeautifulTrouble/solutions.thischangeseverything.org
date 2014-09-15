@@ -354,7 +354,13 @@ body.modules-list-view {
             li.filter {
                 color: fadeout(black, 35%);
             }
-            li.default {
+            li.reset {
+                color: fadeout(black, 35%);
+            }
+            li.reset:hover {
+                color: black;
+            }
+            li.reset.active {
                 color: black;
             }
             li.values:hover {
@@ -659,11 +665,11 @@ article#module {
             padding: 2px 0 0 4px;
         }
         .module-list-item {
-            width: 32%;
+            width: 32.9%;
             min-height: 100px;
             float: left;
-            margin-left: 1%;
-            margin-top: 1%;
+            margin-left: 2px;
+            margin-top: 2px;
             background-image: none !important;
             h5 {
                 font-family: @fontHeadersDefault;
