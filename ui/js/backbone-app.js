@@ -73,6 +73,9 @@ App.APIModel = Backbone.Model.extend({
         return "data" in response ? response['data'] : response;
     }
 });
+App.LastPOST = App.APIModel.extend({
+    urlRoot: "/api/last"
+});
 App.User = App.APIModel.extend({
     urlRoot: "/api/me"
 });
@@ -376,16 +379,6 @@ App.IdeaLabView = Backbone.View.extend({
     beforeRender: function() {
         this.insertView('#idealab-main', this.mainView);
         this.insertView('#idealab-sidebar', this.sideView);
-    },
-    afterRender: function() {
-        // Insert name/contact into forms
-        var self = this;
-        var user = new App.User();
-        user.fetch({success: function() {
-            _.each(['name','contact'], function(name) {
-                self.$('form input[name=' + name + ']').val(user.attributes[name]);
-            });
-        } });
     }
 });
 
@@ -447,6 +440,29 @@ App.FormHelper = Backbone.View.extend({
             self.setState('fail');
             self.$('.server-error').text(message);
         }
+    },
+    afterRender: function() {
+        // Insert name/contact into forms
+        var self = this;
+        var user = new App.User();
+        user.fetch({success: function() {
+            _.each(['name','contact'], function(name) {
+                self.$('form input[name=' + name + ']').val(user.attributes[name]);
+            });
+        } });
+        // Add next parameter to login/logout buttons
+        this.$('a.login, a.logout').each(function () {
+            var next = (this.href.indexOf('?') != -1) ? '&next=' : '?next=';
+            this.href = this.href + next + window.location.pathname + '%23' + Backbone.history.fragment;
+        });
+        // If there was form data and we lost it to a redirect...
+        // TODO: Just set the cookie/localStorage without the exchange
+        var last = new App.LastPOST();
+        last.fetch({success: function() {
+            _.each(last.attributes, function(value, key) {
+                this.$('form input[name=' + key + ']').val(value);
+            }, self);
+        } })
     }
 });
 App.IdeaLabIdeaView = App.FormHelper.extend({
