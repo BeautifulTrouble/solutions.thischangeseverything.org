@@ -9,6 +9,7 @@ favicon: 'favicon.ico'
 
 # Project settings - Reading
 exclude: [ 'local' ]
+encoding: "utf-8"
 
 # Project settings - Collections
 collections:

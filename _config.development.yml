@@ -1,4 +1,5 @@
 mode: 'development'
+highlighter: true
 
 # Switches off the asset bundler when developing
 asset_bundler:
