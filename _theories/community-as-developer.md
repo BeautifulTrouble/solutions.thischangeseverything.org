@@ -1,7 +1,7 @@
 ---
 id: a16E0000002QA2U
-title: Community as developer
-short_write_up: "Most cities and even many smaller towns are run, in all but name, by developers — entrepreneurs who identify opportunities to leverage public and private resources to build new businesses, housing complexes, malls, ports, and other major projects that can earn them money. The idea of the community as developer is that a whole community, or a substantial section of it, can be organized to carry out the functions of a developer, but rather than having maximum profit as their goal, they would have a goal of meeting common needs in a sustainable fashion and keeping wealth circulating within the community."
+title: "Community as developer"
+short_write_up: "<p>Most cities and even many smaller towns are run, in all but name, by developers — entrepreneurs who identify opportunities to leverage public and private resources to build new businesses, housing complexes, malls, ports, and other major projects that can earn them money. The idea of the community as developer is that a whole community, or a substantial section of it, can be organized to carry out the functions of a developer, but rather than having maximum profit as their goal, they would have a goal of meeting common needs in a sustainable fashion and keeping wealth circulating within the community.</p>"
 where: ""
 when: ""
 who: ""
@@ -29,7 +29,7 @@ related_stories:
 - "Boulder, Colorado vs. Xcel energy"
 - "Building community economies on Pine Ridge"
 - "Dudley Street Neighborhood Initiative"
-- "Philidelphia Land Bank"
+- "Philadelphia Land Bank"
 tags:
 - "community development"
 - "decision-making"
@@ -40,7 +40,7 @@ tags:
 - "urban planning"
 learn_more:
 -
-    title: "Why the 'teach a man to fish' parable is a lie"
+    title: "Why the &#8216;teach a man to fish&#8217; parable is a lie"
     description: "by Ed Whitfield"
     type: "Video"
     url: "https://www.youtube.com/watch?v=fPcIumnhB8I"
@@ -53,10 +53,10 @@ images:
 -
     url: "Community-As-Developer.jpg"
     name: "Community-As-Developer.jpg"
-    caption: "What could our communities look like if they weren't designed to maximize profit?"
-    source: ""
-    source_url: ""
+    caption: "What could our communities look like if they weren&#8217;t designed to maximize profit?"
+    source: "Mad Physicist"
+    source_url: "https://www.flickr.com/photos/madphysicist/4373620486/sizes/l"
 contributors:
 - "Ed Whitfield"
 ---
-Full write-up would go here.
+Full write-up goes here

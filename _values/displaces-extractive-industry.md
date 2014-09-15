@@ -1,6 +1,6 @@
 ---
 id: a16E0000002QA2j
-title: Displaces extractive industry
+title: "Displaces extractive industry"
 short_write_up: "<p>We put our hearts into our work so that our lives and communities are made stronger and more beautiful. The current economic paradigm, however, runs on extraction. A coal company will strip mine an Appalachian hillside, and once they’ve taken all that’s valuable, leave behind an ugly, toxic scar. In a similar way, they also extract value out of the workers they employ. This kind of systematic extraction — of labor and carbon — is at the root of our twin crises of economic injustice and climate chaos. To survive as a species, and make our work lives more meaningful, we need to resist extraction, reduce consumption and build alternative institutions powered by renewable resources and freely associated labor.</p>"
 where: ""
 when: ""
@@ -66,4 +66,4 @@ images:
 contributors:
 - "Andrew Boyd"
 ---
-Full write-up would go here.
+Full write-up goes here

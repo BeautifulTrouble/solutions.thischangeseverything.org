@@ -1,7 +1,7 @@
 ---
 id: a16E0000002QA2e
-title: Stewardship
-short_write_up: "Diverse cultural and faith traditions teach us that no human ownership is truly absolute. Any control we have over the assets of this planet may be a gift from God, nature, or our ancestors, but one thing is for sure: our dominion is only temporary. Others bequeathed us these assets, and others will depend upon them after we are gone. Stewardship, as opposed to ownership, embraces this reality. Whereas ownership suggests a right to do as we please, stewardship emphasizes our responsibility to protect, cultivate, and serve that which nourishes us. As such, the concept of stewardship forms a solid foundation for conversations about distributive justice and regenerative systems. "
+title: "Stewardship"
+short_write_up: "<p>Diverse cultural and faith traditions teach us that no human ownership is truly absolute. Any control we have over the assets of this planet may be a gift from God, nature, or our ancestors, but one thing is for sure: our dominion is only temporary. Others bequeathed us these assets, and others will depend upon them after we are gone. Stewardship, as opposed to ownership, embraces this reality. Whereas ownership suggests a right to do as we please, stewardship emphasizes our responsibility to protect, cultivate, and serve that which nourishes us. As such, the concept of stewardship forms a solid foundation for conversations about distributive justice and regenerative systems. </p>"
 where: ""
 when: ""
 who: ""
@@ -57,9 +57,9 @@ images:
     url: "Stewardship.jpg"
     name: "Stewardship.jpg"
     caption: "Intergenerational rice terraces in China."
-    source: ""
+    source: "Opalpeterliu"
     source_url: ""
 contributors:
 - "Sofia Fenner"
 ---
-Full write-up would go here.
+Full write-up goes here

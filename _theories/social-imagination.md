@@ -1,7 +1,7 @@
 ---
 id: a16E0000002QA1b
-title: Social imagination
-short_write_up: "Philosopher Maxine Greene describes social imagination as the ability to “look at the world as if it could be otherwise.” It is the capacity, both creative and moral, to envision alternative possibilities for our communities and our world. The social imagination makes social change possible because an understanding of what might be gives us a perspective from which to challenge things as they are, as well as the hope and determination we need to build something different. To develop our social imaginations is to become more “wide-awake” to injustice in the world, a vital first step in inspiring us to change it."
+title: "Social imagination"
+short_write_up: "<p>Philosopher Maxine Greene describes social imagination as the ability to “look at the world as if it could be otherwise.” It is the capacity, both creative and moral, to envision alternative possibilities for our communities and our world. The social imagination makes social change possible because an understanding of what might be gives us a perspective from which to challenge things as they are, as well as the hope and determination we need to build something different. To develop our social imaginations is to become more “wide-awake” to injustice in the world, a vital first step in inspiring us to change it.</p>"
 where: ""
 when: ""
 who: ""
@@ -50,13 +50,12 @@ learn_more:
     url: "http://www.wiley.com/WileyCDA/WileyTitle/productCd-0787952915.html"
 images:
 -
-    url: 'Community-Wealth-Building.jpg'
-    name: 'Community-Wealth-Building.jpg' 
-    caption: "Grassroots organizers in New York City recently secured $1.2 million in funding from the city council for a key component of community wealth building: the development of worker cooperatives."
-    source: 'Ecomundo Cleaning Co-operative'
-    source_url: 'https://www.facebook.com/EcomundoClean/photos/pb.214582215279233.-2207520000.1409980196./642307309173386/?type=3&theater'
-    rights: 'By permission of Ecomundo Cleaning'
+    url: "Social-Imagination.jpg"
+    name: "Social-Imagination.jpg"
+    caption: "The Edible Bus Stop garden&#8217;s &#8220;Riot of Colour,&#8221; park bench designed by Will Sandy."
+    source: "Marshall Murray"
+    source_url: "http://marshallmurray.blogspot.ca/2012/07/riot-of-colour-rhs-goes-all-guerilla.html"
 contributors:
 - "Paul J. Kuttner"
 ---
-Full write-up would go here.
+Full write-up goes here

@@ -1,6 +1,6 @@
 ---
 id: a16E0000002QA25
-title: Deepens democracy
+title: "Deepens democracy"
 short_write_up: "<p>Democracy, “the direct exercise of sovereignty by the people themselves” (Fotopoulos), is not a new idea. As much as anything else, human history is the story of groups of people trying to put democracy into practice; still today, the liberatory potential of true democracy continues to shine as a beacon for popular struggles worldwide. Whether it’s workers organizing to take over a shuttered factory, landless peasants squatting and farming on fallow land, or a neighborhood assembly deciding how their share of the city budget will be allocated, people are working together in countless ways to bring about a truly democratic world. The solutions that most deepen democracy are those that provide meaningful opportunities for people to participate — individually and in concert with others — in setting the course of their own lives.</p>"
 where: ""
 when: ""
@@ -64,4 +64,4 @@ images:
 contributors:
 - "Dave Oswald Mitchell"
 ---
-Full write-up would go here.
+Full write-up goes here

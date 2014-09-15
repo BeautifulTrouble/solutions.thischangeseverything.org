@@ -1,7 +1,7 @@
 ---
 id: a16E0000002QA3D
-title: GreenWave’s restorative ocean farming
-short_write_up: "Ocean farming has the potential to restore ecosystems, mitigate climate change, and create jobs, all while providing food security worldwide. In Long Island Sound, a network of cooperatives called GreenWave has been growing shellfish and seaweed for food, biofuel and fertilizer without use of freshwater or other inputs - making it one of the most sustainable forms of food production on the planet. GreenWave’s model is open-source. The potential of replication is tremendous: a network of small ocean farms about the size of Washington state could feed the world and, as biofuel, replace all the oil in the United States, while simultaneously capturing five times the amount of carbon as land-based plants. "
+title: "GreenWave’s restorative ocean farming"
+short_write_up: "<p>Ocean farming has the potential to restore ecosystems, mitigate climate change, and create jobs, all while providing food security worldwide. In Long Island Sound, a network of cooperatives called GreenWave has been growing shellfish and seaweed for food, biofuel and fertilizer without use of freshwater or other inputs - making it one of the most sustainable forms of food production on the planet. GreenWave’s model is open-source. The potential of replication is tremendous: a network of small ocean farms about the size of Washington state could feed the world and, as biofuel, replace all the oil in the United States, while simultaneously capturing five times the amount of carbon as land-based plants. </p>"
 where: "Long Island Sound"
 when: "2012 &mash; Present"
 who: "GreenWave"
@@ -56,9 +56,9 @@ images:
     url: "Greenwaves-Restorative-Ocean-Farming.jpg"
     name: "Greenwaves-Restorative-Ocean-Farming.jpg"
     caption: "3D ocean farming: Turning fishermen into climate farmers."
-    source: ""
+    source: "Greenwave"
     source_url: ""
 contributors:
 - "Bren Smith"
 ---
-Full write-up would go here.
+Full write-up goes here

@@ -1,7 +1,7 @@
 ---
 id: a16E0000002QA0n
-title: Upstream thinking
-short_write_up: "Our current approach to healthcare is equivalent to jumping into a river to pull out drowning children, when instead we should head upstream to figure out why these children are falling in the river in the first place. The lesson is clear: to improve our health and wellbeing, we need to move beyond reactive healthcare and focus on the “upstream” factors — or social determinants — that most impact our health: income and its distribution, education, housing, nutrition, employment and the wider environment. Upstream thinking means taking wise collective action to ensure better outcomes rather than simply responding to, and being overwhelmed by, crises we could have foreseen."
+title: "Upstream thinking"
+short_write_up: "<p>Our current approach to healthcare is equivalent to jumping into a river to pull out drowning children, when instead we should head upstream to figure out why these children are falling in the river in the first place. The lesson is clear: to improve our health and wellbeing, we need to move beyond reactive healthcare and focus on the “upstream” factors — or social determinants — that most impact our health: income and its distribution, education, housing, nutrition, employment and the wider environment. Upstream thinking means taking wise collective action to ensure better outcomes rather than simply responding to, and being overwhelmed by, crises we could have foreseen.</p>"
 where: ""
 when: ""
 who: ""
@@ -52,9 +52,9 @@ images:
     url: "Upstream-Thinking.jpg"
     name: "Upstream-Thinking.jpg"
     caption: "Healthy communities create healthy people."
-    source: ""
+    source: "Upstream"
     source_url: ""
 contributors:
 - "Ryan Meili"
 ---
-Full write-up would go here.
+Full write-up goes here

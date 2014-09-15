@@ -1,7 +1,7 @@
 ---
 id: a16E0000002QA33
-title: Peer Production License
-short_write_up: "How can we ensure that the commons doesn’t just become free research and development for private parties? The Peer Production License (PPL), proposed by “venture communist” Dmytri Kleiner, is a reciprocity-based license by which commons are freely accessible to those who contribute to create them, while entities profiting from these commons without contributing are charged license fees. It helps protect digital, natural and biological resources such as software, seeds, plants and ancestral knowledge against the danger of privatization, while enabling their wider use. When paired with open-source producer cooperative models, the PPL can resist extractive global supply chains by supporting a reciprocal economy based on local industry and sustainable community sourcing, using open hardware designs and combined know-how."
+title: "Peer Production License"
+short_write_up: "<p>How can we ensure that the commons doesn’t just become free research and development for private parties? The Peer Production License (PPL), proposed by “venture communist” Dmytri Kleiner, is a reciprocity-based license by which commons are freely accessible to those who contribute to create them, while entities profiting from these commons without contributing are charged license fees. It helps protect digital, natural and biological resources such as software, seeds, plants and ancestral knowledge against the danger of privatization, while enabling their wider use. When paired with open-source producer cooperative models, the PPL can resist extractive global supply chains by supporting a reciprocal economy based on local industry and sustainable community sourcing, using open hardware designs and combined know-how.</p>"
 where: ""
 when: ""
 who: ""
@@ -38,10 +38,10 @@ images:
 -
     url: "Peer-Production-License.jpg"
     name: "Peer-Production-License.jpg"
-    caption: "Grafitti artist Banksy's work, including this 2008 Simpsons-inspired New Orleans mural, often plays with questions of ownership and commodification of art."
-    source: ""
-    source_url: ""
+    caption: "One group using PPL is Guerrilla Translation, a P2P translation collective and cooperative founded in Spain."
+    source: "Guerrilla Translation"
+    source_url: "http://guerrillatranslation.com/2014/06/26/a-charter-for-democracy/"
 contributors:
 - "Helene Finidori"
 ---
-Full write-up would go here.
+Full write-up goes here

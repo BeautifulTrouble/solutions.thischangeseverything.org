@@ -1,9 +1,7 @@
 ---
 id: a16E0000002QA2A
-title: The commons
-short_write_up: "In pre-capitalist times, shared commons were the source of sustenance for most people. Though corporations have now privatized and depleted much of the commons, it lives on in three portfolios: natural wealth (air, water, seeds, ecosystems, other species); community wealth (streets, parks, the Internet, money, social insur­ance); and cultural wealth (music, art, science, open-source software). All of these are gifts we share and are obliged to preserve for others and for future generations.   
- 
-Here’s the rub: under capitalism, common wealth is increasingly appro­­priated by private corporations and wealthy individuals for profit . To counter this, we need to expand and strengthen both the com­mons and the institu­tions that sustain them."
+title: "The commons"
+short_write_up: "<p>In pre-capitalist times, shared commons were the source of sustenance for most people. Though corporations have now privatized and depleted much of the commons, it lives on in three portfolios: natural wealth (air, water, seeds, ecosystems, other species); community wealth (streets, parks, the Internet, money, social insur­ance); and cultural wealth (music, art, science, open-source software). All of these are gifts we share and are obliged to preserve for others and for future generations.   </p><pre><code>Here’s the rub: under capitalism, common wealth is increasingly appro­­priated by private corporations and wealthy individuals for profit . To counter this, we need to expand and strengthen both the com­mons and the institu­tions that sustain them.</code></pre>"
 where: ""
 when: ""
 who: ""
@@ -72,9 +70,9 @@ images:
     url: "The-Commons.jpg"
     name: "The-Commons.jpg"
     caption: "Activists in Alberta, Canada, campaign to have water protected as a commons, and allocated equitably."
-    source: ""
+    source: "Paula Kirman"
     source_url: ""
 contributors:
 - "Peter Barnes"
 ---
-Full write-up would go here.
+Full write-up goes here

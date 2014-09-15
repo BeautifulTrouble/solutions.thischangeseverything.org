@@ -1,6 +1,6 @@
 ---
 id: a16E0000002QIin
-title: Cultivates abundance
+title: "Cultivates abundance"
 short_write_up: "<p>There is enough. Enough sunlight, wind, and water to nourish us and power our tools, enough roofs for everyone to sleep under one, enough work for everyone to have a livelihood, enough knowledge to keep teaching and learning forever. We start to believe there is not enough when we feel we need to own what could be shared, when we assign market value disconnected from use value, when those in power amass vast fortunes through stealing, hiding, and holding out of reach. A society that cultivates abundance does not treat human needs as something to be bought and sold, resists a culture that uses the perception of scarcity to obscure problems of distribution and discourage generosity, restores sovereignty, and operates on principles of solidarity and mutual aid.</p>"
 where: ""
 when: ""
@@ -52,4 +52,4 @@ images:
 contributors:
 - "Beautiful Solutions"
 ---
-Full write-up would go here.
+Full write-up goes here

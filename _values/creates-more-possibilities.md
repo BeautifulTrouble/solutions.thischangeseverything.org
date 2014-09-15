@@ -1,6 +1,6 @@
 ---
 id: a16E0000002QA2y
-title: Creates more possibilities
+title: "Creates more possibilities"
 short_write_up: "<p>To move from creating isolated solutions to transforming entire systems, we must build our solutions with an eye toward cultivating interdependence, embracing emergence, and creating possibilities for open sourcing, replication and scale. Our best solutions are those that dismantle the forces that hold us back, while constructing new ways of being in the world together. As adrienne maree brown writes, “We want to take actions that give us more options, give us more time, more resources, more life.” Solutions become transformational on a broad scale when they adapt to the times in imaginative ways, when they support thriving ecosystems of solutions by intentionally making use of the products of other revolutionary ideas that surround them, and when they change the conditions of their environment to make space for more solutions to take root.</p>"
 where: ""
 when: ""
@@ -54,4 +54,4 @@ images:
 contributors:
 - "Rachel Berliner Plattus"
 ---
-Full write-up would go here.
+Full write-up goes here
