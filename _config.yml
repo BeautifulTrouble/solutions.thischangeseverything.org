@@ -85,6 +85,7 @@ assets:
     - ui/img
     - ui/less
     - ui/css
+    - ui/templates
     - bower_components/jquery/dist/ 
     - bower_components/modernizr/
     - bower_components/bootstrap/dist/js/
