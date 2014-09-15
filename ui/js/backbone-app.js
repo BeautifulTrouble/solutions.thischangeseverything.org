@@ -55,16 +55,17 @@ var navTo = function(prefix, context) {
     });
 };
 
-var getForm = function(jForm) {
+var getForm = function($form) {
     // Example use:
     // var idea = new App.Idea(getFormFields(this.$('form#whatever')));
     // idea.save();
     var results = {};
-    $.each(jForm.serializeArray(), function(i, field) {
+    $.each($form.serializeArray(), function(i, field) {
         results[field.name] = field.value;
     });
     return results;
 };
+var L = function(s) { console.log(s); };
 
 // ===================================================================
 // Models
@@ -368,6 +369,42 @@ App.ValueDetailView = Backbone.View.extend({
 });
 
 
+App.IdeaLabView = Backbone.View.extend({
+    // This view's entire purpose in life is to contain two sub-views: mainView and sideView
+    template: "idealab-template",
+    initialize: function(options) {
+        this.mainView = options.mainView;
+        this.sideView = options.sideView;
+    },
+    beforeRender: function() {
+        this.insertView('#idealab-main', this.mainView);
+        this.insertView('#idealab-sidebar', this.sideView);
+    },
+    afterRender: function() {
+        L('after render on main idealab view');
+        $(window).scroll();
+    }
+});
+
+App.IdeaLabIdeaView = Backbone.View.extend({
+    template: "idealab-idea-template",
+    events: {
+        "click input.add-idea": function () { 
+            var idea = new App.Idea(getForm(this.$('form')));
+            idea.save()
+            .done(function () {
+                console.log('Saved.');
+            })
+            .fail(function () {
+                console.log('Not Saved.');
+            });
+        }
+    }
+});
+App.IdeaLabImprovementView = Backbone.View.extend({
+    template: "idealab-improvement-template"
+});
+
 App.IdeaLabListView = Backbone.View.extend({
     template: "idealab-list-template",
     initialize: function(options) {
@@ -385,6 +422,11 @@ App.IdeaLabListView = Backbone.View.extend({
             submitted: this.submitted
         }
     },
+    setState: function(state) {
+        App.router.navigate('idealab/' + state);
+        this.state = state;
+        this.render();
+    },
     events: {
         "click #idealab-published tr.data-slug": function (e) { 
             navTo('idealab/published/' + e.currentTarget.dataset.slug);
@@ -392,18 +434,8 @@ App.IdeaLabListView = Backbone.View.extend({
         "click #idealab-submitted tr.data-slug": function (e) { 
             navTo('idealab/submitted/' + e.currentTarget.dataset.slug);
         },
-        "click span.published": function () { navTo('idealab/published'); },
-        "click span.submitted": function () { navTo('idealab/submitted'); },
-        "click input.add-idea": function () { 
-            var idea = new App.Idea(getForm(this.$('form')));
-            idea.save()
-            .done(function () {
-                console.log('Saved.');
-            })
-            .fail(function () {
-                console.log('Not Saved.');
-            });
-        }
+        "click span.published": function () { this.setState('published'); },
+        "click span.submitted": function () { this.setState('submitted'); }
     },
     afterRender: function() {
         $('body').attr("class", "idealab-list-view");
@@ -427,13 +459,7 @@ App.IdeaLabDetailView = Backbone.View.extend({
         "click button.view-all-submitted-ideas": function() { navTo('idealab/submitted'); }
     },
     afterRender: function() {
-        /*
-    // TODO: google oauth refuses these redirects :( ...so use an ajaxier approach
-    this.$('a.login').each(function () {
-    var next_param = (this.href.indexOf('?') != -1) ? '&next=' : '?next=';
-    this.href = this.href + next_param + window.location.pathname + '%23' + Backbone.history.fragment;
-    });
-    */
+        console.log('after render');
         $('body').attr("class", "idealab-detail-view");
         this.$('.icon-share').popover({ 
             html : true, 
@@ -481,8 +507,11 @@ App.Router = Backbone.Router.extend({
         '': 'start',
         'module(/:name)': 'displayModule',
         'value(/:name)': 'displayValue',
-        'idealab': 'displayIdeaLab',
-        'idealab/:state(/:name)': 'displayIdeaLab',
+
+        'idealab(/:state)': 'displayIdeaLabList',
+        'idealab/published(/:name)': 'displayIdeaLabPublishedDetail',
+        'idealab/submitted(/:name)': 'displayIdeaLabSubmittedDetail',
+
         '*default': 'defaultRoute'
     },
     start: function() {
@@ -516,27 +545,49 @@ App.Router = Backbone.Router.extend({
             this.defaultRoute();
         }
     },
-    displayIdeaLab: function(state, name) {
-        if (!state && !name) { state = 'published'; }
-        if (state == 'submitted') {
-            // Where else can this awful async handler go? It's blocking the page rendering.
-            var collection = new App.IdeasCollection();
-            collection.fetch({
-                done: function() { 
-                    var model = collection.findWhere({slug: name});
-                    var view = model ? new App.IdeaLabDetailView({model: model, state: state})
-                        : new App.IdeaLabListView({state: state});
-                        App.Layout.setView("#content", view);
-                        App.Layout.render();
-                }
-            });
-        } else {
-            var model = this.collection.findWhere({slug: name});
-            var view = model ? new App.IdeaLabDetailView({model: model, state: state})
-                : new App.IdeaLabListView({state: state});
-                App.Layout.setView("#content", view);
-                App.Layout.render();
+    displayIdeaLabList: function(state) {
+        if (state != 'published' && state != 'submitted') {
+            state = 'published';
         }
+        App.router.navigate('idealab/' + state, {replace: true});
+        App.Layout.setView('#content', new App.IdeaLabView({
+            mainView: new App.IdeaLabListView({state: state}),
+            sideView: new App.IdeaLabIdeaView()
+        }) );
+        App.Layout.render();
+    },
+    displayIdeaLabPublishedDetail: function(name) {
+        var model = this.collection.findWhere({slug: name});
+        if (model) {
+            App.Layout.setView('#content', new App.IdeaLabView({
+                mainView: new App.IdeaLabDetailView({
+                    model: model,
+                    state: 'published'
+                }),
+                sideView: new App.IdeaLabImprovementView()
+            }) );
+            App.Layout.render();
+        } else {
+            this.defaultRoute();
+        }
+    },
+    displayIdeaLabSubmittedDetail: function(name) {
+        var collection = new App.IdeasCollection();
+        collection.fetch()
+            .done(function() {
+                var model = collection.findWhere({slug: name});
+                if (model) {
+                    App.Layout.setView('#content', new App.IdeaLabView({
+                        mainView: new App.IdeaLabDetailView({
+                            model: model,
+                            state: 'submitted'
+                        }),
+                        sideView: new App.IdeaLabImprovementView()
+                    }) );
+                    App.Layout.render();
+                } 
+            })
+            .fail(this.defaultRoute);
     },
     defaultRoute: function() {
         console.log("404");
