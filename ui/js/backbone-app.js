@@ -211,6 +211,7 @@ App.ModulesListView = Backbone.View.extend({
     },
     resetFilters: function(e) {
         $('.filter.active').removeClass('active');
+        $('.reset').addClass('active'); // Turn on the "All" option
         $("select#filter-passion")[0].selectedIndex = 0;
         this.filters = [];
         this.setFilters();
@@ -220,6 +221,7 @@ App.ModulesListView = Backbone.View.extend({
         // currently, the filters are additive.
         // It should work that once the tag filter is activated
         // the type filters actually become subtractive.
+        $('.reset').removeClass('active'); // Turn off the "All" option
         var elem = e.currentTarget;
         if ( elem.nodeName === 'SELECT') {
             if ( $( elem ).val() === 'What are you passionate about') {
