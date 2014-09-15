@@ -10,8 +10,10 @@
 //= require showdown.js
 //= require jquery.lazyload.min.js
 
-//= Then the app
-//=require backbone-app.js
+// Then the templates
+
+// Then the app
+//= require backbone-app.js
 
 $(function() {
     // Initialize a Showdown converter
