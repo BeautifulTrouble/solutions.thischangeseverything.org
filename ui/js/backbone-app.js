@@ -402,7 +402,9 @@ App.FormHelper = Backbone.View.extend({
     //  <div id="something-fail" class="hidden">Fail screen</div>
     //  <div id="something-arbitrary" class="hidden">...</div>
     baseStateSelector: '',
+    errorSelector: '.server-error',
     states: 'done fail login',
+    contactFields: ['name', 'contact'],
     setState: function(state) {
         // Show/Hide base depending on state
         this.$(this.baseStateSelector)[state ? 'addClass' : 'removeClass']('hidden');
@@ -429,6 +431,7 @@ App.FormHelper = Backbone.View.extend({
     _done: function(model, response, options) { 
         var self = options.context;
         self.setState('done'); 
+        new App.LastPOST().save();  // Absurd
     },
     _fail: function(model, response, options) {
         var self = options.context;
@@ -438,7 +441,7 @@ App.FormHelper = Backbone.View.extend({
             self.setState('login');
         } else {
             self.setState('fail');
-            self.$('.server-error').text(message);
+            self.$(self.errorSelector).text(message);
         }
     },
     afterRender: function() {
@@ -446,7 +449,7 @@ App.FormHelper = Backbone.View.extend({
         var self = this;
         var user = new App.User();
         user.fetch({success: function() {
-            _.each(['name','contact'], function(name) {
+            _.each(self.contactFields, function(name) {
                 self.$('form input[name=' + name + ']').val(user.attributes[name]);
             });
         } });
@@ -456,13 +459,12 @@ App.FormHelper = Backbone.View.extend({
             this.href = this.href + next + window.location.pathname + '%23' + Backbone.history.fragment;
         });
         // If there was form data and we lost it to a redirect...
-        // TODO: Just set the cookie/localStorage without the exchange
         var last = new App.LastPOST();
         last.fetch({success: function() {
-            _.each(last.attributes, function(value, key) {
+            _.each(_.omit(last.attributes, self.contactFields), function(value, key) {
                 this.$('form input[name=' + key + ']').val(value);
             }, self);
-        } })
+        } });
     }
 });
 App.IdeaLabIdeaView = App.FormHelper.extend({
@@ -472,7 +474,7 @@ App.IdeaLabIdeaView = App.FormHelper.extend({
         "click input.add-idea": function () { 
             this.saveFormAs('form#add-idea', App.Idea);
         },
-        "click button.add-another-idea": function () { this.setState(); }
+        "click button.add-another-idea": function () { this.render(); }
     }
 });
 App.IdeaLabImprovementView = App.FormHelper.extend({
