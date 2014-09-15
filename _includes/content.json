@@ -29,6 +29,7 @@
                               "name" : "{{ image.name }}", 
                               "caption" : "{{ image.caption}}", 
                               "source" : "{{ image.source }}",
+                              "source_url" : "{{ image.source_url }}",
                               "thumb_url" : "{% image thumb {{image.url}} %}"
                             },
                            {% endfor %} null],
