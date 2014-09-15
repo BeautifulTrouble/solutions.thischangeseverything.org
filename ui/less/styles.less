@@ -196,7 +196,8 @@ a:link, a:visited, a:hover {
 
 // Let's add some pointers
 
-.icon-button, .module-list-item, .filter, .values li, .tags li {
+.icon-button, .module-list-item, .filter, .values li, .tags li,
+#idealab-list tbody tr, .tab {
     cursor: pointer;
 }
 .values li:hover, .tags li:hover {
@@ -837,6 +838,10 @@ article#idealab-list {
         }
         tbody tr {
             border-left: 4px solid transparent;
+            &:hover {
+                td { background: lighten(@brando, 40%); }
+                color: @brando;
+            }
         }
         th:last-child, td:last-child { // icon column
             text-align: center;
