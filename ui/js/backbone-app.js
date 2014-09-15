@@ -482,19 +482,21 @@ App.IdeaLabImprovementView = App.FormHelper.extend({
     template: "idealab-improvement-template",
     baseStateSelector: '#idealab-improvement',
     events: {
-        "click button.add-an-example": function () { this.showForm('#add-an-example'); },
-        "click button.add-a-resource": function () { this.showForm('#add-a-resource'); },
-        "click button.add-a-question": function () { this.showForm('#add-a-question'); },
-        "click input.add-an-example": function () { this.saveForm('#add-an-example'); },
-        "click input.add-a-resource": function () { this.saveForm('#add-a-resource'); },
-        "click input.add-a-question": function () { this.saveForm('#add-a-question'); }
+        "click button.add-an-example": function () { this.showForm('add-an-example'); },
+        "click button.add-a-resource": function () { this.showForm('add-a-resource'); },
+        "click button.add-a-question": function () { this.showForm('add-a-question'); },
+        "click input.add-an-example": function () { this.saveForm('add-an-example'); },
+        "click input.add-a-resource": function () { this.saveForm('add-a-resource'); },
+        "click input.add-a-question": function () { this.saveForm('add-a-question'); }
     },
     saveForm: function (classOrId) {
         this.saveFormAs('form' + classOrId, App.Improvement);
     },
     showForm: function (classOrId) {
         this.$('form').addClass('hidden');
-        this.$('form' + classOrId).removeClass('hidden');
+        this.$('form#' + classOrId).removeClass('hidden');
+        this.$('button').removeClass('selected');
+        this.$('button.' + classOrId).addClass('selected');
     }
 });
 
