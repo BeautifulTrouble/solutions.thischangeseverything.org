@@ -406,6 +406,7 @@ App.FormHelper = Backbone.View.extend({
     states: 'done fail login',
     contactFields: ['name', 'contact'],
     setState: function(state) {
+        // TODO: Revisit this whole concept when not tired
         // Show/Hide base depending on state
         this.$(this.baseStateSelector)[state ? 'addClass' : 'removeClass']('hidden');
         // Show/Hide the -suffixed elements
@@ -458,7 +459,7 @@ App.FormHelper = Backbone.View.extend({
             var next = (this.href.indexOf('?') != -1) ? '&next=' : '?next=';
             this.href = this.href + next + window.location.pathname + '%23' + Backbone.history.fragment;
         });
-        // If there was form data and we lost it to a redirect...
+        // If there was form data and we lost it to an error or redirect...
         var last = new App.LastPOST();
         last.fetch({success: function() {
             _.each(_.omit(last.attributes, self.contactFields), function(value, key) {
@@ -481,6 +482,19 @@ App.IdeaLabImprovementView = App.FormHelper.extend({
     template: "idealab-improvement-template",
     baseStateSelector: '#idealab-improvement',
     events: {
+        "click button.add-an-example": function () { this.showForm('#add-an-example'); },
+        "click button.add-a-resource": function () { this.showForm('#add-a-resource'); },
+        "click button.add-a-question": function () { this.showForm('#add-a-question'); },
+        "click input.add-an-example": function () { this.saveForm('#add-an-example'); },
+        "click input.add-a-resource": function () { this.saveForm('#add-a-resource'); },
+        "click input.add-a-question": function () { this.saveForm('#add-a-question'); }
+    },
+    saveForm: function (classOrId) {
+        this.saveFormAs('form' + classOrId, App.Improvement);
+    },
+    showForm: function (classOrId) {
+        this.$('form').addClass('hidden');
+        this.$('form' + classOrId).removeClass('hidden');
     }
 });
 
@@ -640,7 +654,7 @@ App.Router = Backbone.Router.extend({
                     model: model,
                     state: 'published'
                 }),
-                sideView: new App.IdeaLabImprovementView()
+                sideView: new App.IdeaLabImprovementView({model: model})
             }) );
             App.Layout.render();
         } else {
@@ -658,7 +672,7 @@ App.Router = Backbone.Router.extend({
                             model: model,
                             state: 'submitted'
                         }),
-                        sideView: new App.IdeaLabImprovementView()
+                        sideView: new App.IdeaLabImprovementView({model: model})
                     }) );
                     App.Layout.render();
                 } 
