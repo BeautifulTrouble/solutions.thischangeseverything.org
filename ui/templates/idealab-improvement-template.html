@@ -1,11 +1,49 @@
                 <aside id="idealab-improvement">
                     <h2>Improve this idea</h2>
-                    <p>Stuff</p>
-                    <form>
-                        <h3>Your name:</h3>
-                        <input type="text" name="name"><br>
-                        <h3>Your email:</h3>
-                        <input type="text" name="contact"><br>
-                        <input type="button" value="Contribute" class="add-idea">
+                    <button type="button" class="add-an-example">Add an example</button>
+                    <form id="add-an-example" class="hidden">
+                        <p>Please add an example of this idea in action.</p>
+                        <input type="hidden" name="type" value="example">
+                        <input type="hidden" name="module" value="<%= slug %>">
+                        <h4>Description:</h4>
+                        <textarea rows="4" name="content" placeholder="Add description."></textarea>
+                        <h4>Link to example:</h4>
+                        <input type="text" name="link" placeholder="http://examplelink.com">
+                        <h4>Your email:</h4>
+                        <input type="text" name="contact" placeholder="you@mail.com">
+                        <input type="button" value="Contribute" class="add-an-example">
                     </form>
+                    <button type="button" class="add-a-resource">Add a resource</button>
+                    <form id="add-a-resource" class="hidden">
+                        <p>Know of a book, article, or documentary that explores this idea? Add it here.</p>
+                        <input type="hidden" name="type" value="resource">
+                        <input type="hidden" name="module" value="<%= slug %>">
+                        <h4>Description:</h4>
+                        <textarea rows="4" name="content" placeholder="Add description."></textarea>
+                        <h4>Link to resource:</h4>
+                        <input type="text" name="link" placeholder="http://resourcelink.com">
+                        <h4>Your email:</h4>
+                        <input type="text" name="contact" placeholder="you@mail.com">
+                        <input type="button" value="Contribute" class="add-a-resource">
+                    </form>
+                    <button type="button" class="add-a-question">Add a question</button>
+                    <form id="add-a-question" class="hidden">
+                        <p>Ask a question about this idea.</p>
+                        <input type="hidden" name="type" value="question">
+                        <input type="hidden" name="module" value="<%= slug %>">
+                        <h4>Your question:</h4>
+                        <textarea rows="4" name="content" placeholder="Add your question."></textarea>
+                        <h4>Your email:</h4>
+                        <input type="text" name="contact" placeholder="you@mail.com">
+                        <input type="button" value="Contribute" class="add-a-question">
+                    </form>
+                </aside>
+                <aside id="idealab-improvement-done" class="hidden">
+                done
+                </aside>
+                <aside id="idealab-improvement-login" class="hidden">
+                login
+                </aside>
+                <aside id="idealab-improvement-fail" class="hidden">
+                fail
                 </aside>
