@@ -6,7 +6,7 @@
             </div>
             <figcaption>
                 <% if ( images[0].caption && images[0].source ) { %>
-                <%= images[0].caption %> | <%= images[0].source %>
+                <%= images[0].caption %> | <% if ( images[0].source_url ) { %><a href="<%= images[0].source_url %>"><%= images[0].source %></a><% } else { %><%= images[0].source %><% } %>
                 <% } %>
             </figcaption>
             <div class="filter <%= type %>"></div>
