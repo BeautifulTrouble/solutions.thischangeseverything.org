@@ -61,6 +61,11 @@ Globals & Mixins
     &:hover {
         background-color: @hoverColor;
     }
+    &:focus, &:active {
+        outline: none;
+    }
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
 }
 .mixin-photocredits {
     color: white;
@@ -139,6 +144,8 @@ Variables
 // Brand coloring
 @brando: #49c8ef;
 @lightBrando: #dbf4fc;
+@twitter: #78cbef;
+@facebook: #547bbc;
 
 // Style tiles, Fonts
 @fontDefault: "source-sans-pro";
@@ -978,6 +985,14 @@ article#idealab-list {
     }
     h1, h2 {
         text-transform: uppercase;
+    }
+    div.login-icons {
+        a.login-google i    { color: darken(red, 20%); }
+        a.login-facebook i  { color: @facebook; }
+        a.login-twitter i   { color: @twitter; }
+        font-size: 60px;
+        text-align: center;
+        background: white;
     }
 }
 
