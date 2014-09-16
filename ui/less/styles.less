@@ -836,58 +836,14 @@ article#idealab-list {
         thead tr {
             border-left: @bordersize solid @brando;
         }
-        tbody {
-            .inner {
-                //position: absolute;
-            }
-        }
-        //tbody tr:hover td:last-child {
-        .hoverMix(@name) {
-            tbody tr:hover.@{name} .hover-tab:before { content: "@{name}"; background: @@name; }
-            tbody tr:hover.@{name} .hover-tab:after { border-color: transparent @@name transparent transparent; }
-        }
-        .hoverMix(value); .hoverMix(story); .hoverMix(theory); .hoverMix(solution);
-        tbody tr .hover-tab { &:before, &:after { display: none; } }
-        tbody tr:hover .hover-tab {
-            position: relative;
-            .hoverTab() {
-                color: white;
-                position: absolute;
-                display: inline-block;
-                z-index: 1;
-                text-align: left;
-                text-transform: uppercase;
-                font-family: @fontHeadersDefault;
-                font-size: 20px;
-                top: -4px;
-            }
-            &:before {
-                .hoverTab;
-                line-height: 24px;
-                background: @gray;
-                padding-right: 10px;
-                padding-left: 5px;
-                left: 38px;
-            }
-            &:after {
-                .hoverTab;
-                content: "";
-                width: 0; height: 0;
-                border-style: solid;
-                border-width: 12px 12px 12px 0;
-                border-color: transparent @gray transparent transparent;
-                left: 26px;
-            }
-        }
         tbody tr {
-            //position: absolute;
             border-left: @bordersize solid transparent;
             &:hover {
                 td { background: lighten(@brando, 40%); }
                 color: @brando;
             }
             i.disabled.icon-usersubmit {
-                color: @bodyText;
+                color: lighten(@gray, 30%);
             }
         }
         th:last-child, td:last-child { // icon column
@@ -912,6 +868,45 @@ article#idealab-list {
         }
         &#idealab-submitted {
 
+        }
+        @media @md_up {
+            .hoverMix(@name) {
+                tbody tr:hover.@{name} .hover-tab:before { content: "@{name}"; background: @@name; }
+                tbody tr:hover.@{name} .hover-tab:after { border-color: transparent @@name transparent transparent; }
+            }
+            .hoverMix(value); .hoverMix(story); .hoverMix(theory); .hoverMix(solution);
+            tbody tr .hover-tab { &:before, &:after { display: none; } }
+            tbody tr:hover .hover-tab {
+                position: relative;
+                .hoverTab() {
+                    color: white;
+                    position: absolute;
+                    display: inline-block;
+                    z-index: 1;
+                    text-align: left;
+                    text-transform: uppercase;
+                    font-family: @fontHeadersDefault;
+                    font-size: 20px;
+                    top: -4px;
+                }
+                &:before {
+                    .hoverTab;
+                    line-height: 24px;
+                    background: @gray;
+                    padding-right: 10px;
+                    padding-left: 5px;
+                    left: 38px;
+                }
+                &:after {
+                    .hoverTab;
+                    content: "";
+                    width: 0; height: 0;
+                    border-style: solid;
+                    border-width: 12px 12px 12px 0;
+                    border-color: transparent @gray transparent transparent;
+                    left: 26px;
+                }
+            }
         }
     }
 }

@@ -489,14 +489,14 @@ App.IdeaLabImprovementView = App.FormHelper.extend({
         "click input.add-a-resource": function () { this.saveForm('add-a-resource'); },
         "click input.add-a-question": function () { this.saveForm('add-a-question'); }
     },
-    saveForm: function (classOrId) {
-        this.saveFormAs('form' + classOrId, App.Improvement);
+    saveForm: function (s) {
+        this.saveFormAs('form#' + s, App.Improvement);
     },
-    showForm: function (classOrId) {
+    showForm: function (s) {
         this.$('form').addClass('hidden');
-        this.$('form#' + classOrId).removeClass('hidden');
+        this.$('form#' + s).removeClass('hidden');
         this.$('button').removeClass('selected');
-        this.$('button.' + classOrId).addClass('selected');
+        this.$('button.' + s).addClass('selected');
     }
 });
 
