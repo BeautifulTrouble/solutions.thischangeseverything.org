@@ -21,7 +21,7 @@ Backbone.Layout.configure({
 
         // If the path exists in the object, use it instead of fetching remotely.
         if (JST[path]) {
-            console.log('cached');
+            //console.log('cached');
             return JST[path];
         }
 
@@ -47,6 +47,7 @@ var navTo = function(prefix, context) {
     //  navTo('about');
     //  navTo('module/', this);
     //  navTo('value/', this);
+    //  navTo('tag/', this);
     //  navTo('idealab/published/', this);
     var slug = context ? context.model.get("slug") : "",
     prefix = prefix ? prefix : "";
@@ -61,7 +62,6 @@ var navTo = function(prefix, context) {
 // ===================================================================
 App.Module = Backbone.Model.extend({
     initialize: function() {
-        //console.log('Initialized a Module model');
     }
 });
 
@@ -157,6 +157,7 @@ App.ModulesListView = Backbone.View.extend({
     //el: false,
     collection: App.Modules,
     tags: '',
+    selectedTag: '',
     filters: [],
     initialize: function(options) {
         // Listen to events on the collection
@@ -202,12 +203,21 @@ App.ModulesListView = Backbone.View.extend({
                 type: '[data-category]',
                 title: '.caption .title'
             },
-            sortBy: "random",
+            //sortBy: "random",
         });
         this.container.isotope( 'on', 'layoutComplete', function( isoInstance, laidOutItems ) {
             $window.trigger("scroll");
         });
-        this.container.isotope('layout');
+        if ( this.selectedTag ) {
+            // filter by tag
+            this.container.isotope({ filter: '.' + this.selectedTag });
+            $("select#filter-passion").val(this.selectedTag);
+            this.container.isotope('layout'); // Trigger layout to lazy load to work
+        } else { 
+            // Do the default, sortBy: random
+           this.container.isotope({ sortBy: "random" });
+           this.container.isotope('layout'); // Trigger layout to lazy load to work
+        }
     },
     resetFilters: function(e) {
         $('.filter.active').removeClass('active');
@@ -248,7 +258,6 @@ App.ModulesListView = Backbone.View.extend({
 // Sub-view for a single item in the list
 App.ModulesListItemView = Backbone.View.extend({
     initialize: function(options) {
-        //console.log('ModulesListItemView initialized');
     },
     template: "modules-list-item-template",
     el: false,
@@ -272,15 +281,12 @@ App.ModuleDetailView = Backbone.View.extend({
     initialize: function(options) {
         this.collection.reset();
         this.listenTo(this.collection, "add", this.render);
-        //console.log('ModuleDetailView initialized');
         var relatedSolutions = this.model.get('related_solutions');
         var relatedTheories = this.model.get('related_theories');
         var relatedStories = this.model.get('related_stories');
         var relatedModules = relatedSolutions.concat(relatedStories).concat(relatedTheories);
-        // console.log(relatedModules);
         var self = this;
         _.each(relatedModules, function(name) {
-            //console.log(name);
             var module = App.Modules.findWhere({
                 title: name
             });
@@ -292,6 +298,7 @@ App.ModuleDetailView = Backbone.View.extend({
         "click button.close-detail": "closeDetail",
         "click .values li": "viewValue",
         "click button.improve-this": "improveThis",
+        "click .tags li": "viewTag"
     },
     closeDetail: function(e) { navTo(); },
     improveThis: function(e) { navTo('idealab/published/', this); },
@@ -304,6 +311,10 @@ App.ModuleDetailView = Backbone.View.extend({
         } else {
             console.log('TODO');
         }
+    },
+    viewTag: function(e) {
+        var tagName = $( e.currentTarget ).attr('data-filter');
+        navTo('tag/' + tagName);
     },
     beforeRender: function() {
         // Add the subviews to the view
@@ -329,12 +340,10 @@ App.ValueDetailView = Backbone.View.extend({
     initialize: function(options) {
         this.collection.reset();
         this.listenTo(this.collection, "add", this.render);
-        //console.log('ModuleDetailView initialized');
         var relatedSolutions = this.model.get('related_solutions');
         var relatedTheories = this.model.get('related_theories');
         var relatedStories = this.model.get('related_stories');
         var relatedModules = relatedSolutions.concat(relatedStories).concat(relatedTheories);
-        // console.log(relatedModules);
         var self = this;
         _.each(relatedModules, function(name) {
             var module = App.Modules.findWhere({
@@ -610,6 +619,7 @@ App.Router = Backbone.Router.extend({
         '': 'start',
         'module(/:name)': 'displayModule',
         'value(/:name)': 'displayValue',
+        'tag(/:name)': 'displayTag',
         'idealab(/:state)': 'displayIdeaLabList',
         'idealab/published(/:name)': 'displayIdeaLabPublishedDetail',
         'idealab/submitted(/:name)': 'displayIdeaLabSubmittedDetail',
@@ -646,6 +656,10 @@ App.Router = Backbone.Router.extend({
         } else {
             this.defaultRoute();
         }
+    },
+    displayTag: function(name) {
+        App.Layout.setView("#content", new App.ModulesListView({selectedTag: name}) );
+        App.Layout.render();
     },
     displayIdeaLabList: function(state) {
         if (state != 'published' && state != 'submitted') {

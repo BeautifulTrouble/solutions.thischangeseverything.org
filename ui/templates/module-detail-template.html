@@ -41,12 +41,11 @@
                         <div class="icon-tags">
                         <i class="icon icon-tag"></i>
                         </div>
-                    <!--https://basecamp.com/1850835/projects/6447119/messages/30549111#comment_195218482-->
                         <div class="meta-info">
                             <ul class="tags list-comma">
                                 <span>Tags</span>
                                 <% _.each(tags, function(tag) { if (tag) { %>
-                                <li><%= tag %></li>
+                                <li data-filter="<%= tag.replace(/\s/g , "-") %>"><%= tag %></li>
                                 <% } }); %>
                             </ul>
                             <% if ( type === 'story' ) { %>

@@ -40,7 +40,7 @@
               <select id="filter-passion" class="form-control">
                   <option class="filter" value="*" data-filter="">What are you passionate about?</option>
                   <% _.each(tags, function(tag) { if (tag) { %>
-                  <option class="filter" value=".<%= tag.replace(/\s/g , "-") %>" data-filter=".<%= tag.replace(/\s/g , "-") %>"><%= tag %></option>
+                  <option class="filter" value="<%= tag.replace(/\s/g , "-") %>" data-filter=".<%= tag.replace(/\s/g , "-") %>"><%= tag %></option>
                   <% } }) %>
               </select>
             </div>
