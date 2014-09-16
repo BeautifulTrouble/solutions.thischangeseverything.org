@@ -1,0 +1,43 @@
+                <aside id="idealab-idea">
+                    <h1>Add your own idea</h1>
+                    <p>Great minds think alike! Before submitting your own idea, please take a look around the Gallery and Lab for inspiration. Someone might already be thinking along the same lines.</p>
+                    <p>A selection of the best ideas will be turned into published gallery pieces.</p>
+                    <form id="add-idea">
+                        <h4>Title:</h4>
+                        <input type="text" name="title" placeholder="Name your idea.">
+                        <h4>Description:</h4>
+                        <textarea rows="6" name="short_write_up" placeholder="Briefly describe your idea (try to keep it under 256 words)."></textarea>
+                        <h4>Your name:</h4>
+                        <input type="text" name="name">
+                        <h4>Your email:</h4>
+                        <input type="text" name="contact">
+                        <input type="button" value="Contribute" class="add-idea">
+                    </form>
+                    <a href="/api/logout" class="logout"><i class="fa fa-close"></i></a>
+                </aside>
+                <aside id="idealab-idea-done" class="hidden">
+                    <h1>Add your own idea</h1>
+                    <p>Thank you for sharing your idea! We're so excited to learn more about your work.</p>
+                    <button type="button" class="add-another-idea">Add another idea</button>
+                </aside>
+                <aside id="idealab-idea-login" class="hidden">
+                    <h1>This is the login screen</h1>
+                    <div class="icon-wrapper"><i class="icon icon-usersubmit"></i></div>
+                    <p>
+                        Log in with one of these providers
+                        <div class="login-icons">
+                            <a href="/api/login/google" class="login login-google"><i class="icon fa fa-google-plus-square"></i></a>
+                            <a href="/api/login/facebook" class="login login-facebook"><i class="icon icon-icn-social-fb-2"></i></a>
+                            <a href="/api/login/twitter" class="login login-twitter"><i class="icon icon-icn-social-twitter-2"></i></a>
+                        </div>
+                    </p>
+                </aside>
+                <aside id="idealab-idea-fail" class="hidden">
+                    <h1>Oh %#$@!</h1>
+                    <div class="icon-wrapper"><i class="icon icon-usersubmit"></i></div>
+                    <p>
+                        The server responded with:
+                        <span class="server-error"></span>
+                    </p>
+                    <button type="button" class="add-another-idea">Try again</button>
+                </aside>

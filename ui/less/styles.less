@@ -60,6 +60,11 @@ Globals & Mixins
     &:hover {
         background-color: @hoverColor;
     }
+    &:focus, &:active {
+        outline: none;
+    }
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
 }
 .mixin-photocredits {
     color: white;
@@ -139,6 +144,8 @@ Variables
 // Brand coloring
 @brando: #49c8ef;
 @lightBrando: #dbf4fc;
+@twitter: #78cbef;
+@facebook: #547bbc;
 
 // Style tiles, Fonts
 @fontDefault: "source-sans-pro";
@@ -196,7 +203,8 @@ a:link, a:visited, a:hover {
 
 // Let's add some pointers
 
-.icon-button, .module-list-item, .filter, .values li, .tags li {
+.icon-button, .module-list-item, .filter, .values li, .tags li,
+#idealab-list tbody tr, .tab, .pointer {
     cursor: pointer;
 }
 .values li:hover, .tags li:hover {
@@ -832,7 +840,7 @@ article#idealab-list {
             z-index: 1;
         }
         // There's some nutty math behind this actually working
-        padding: 11px 16px;
+        padding: 10px 16px;
         width: 160px;
         position: relative;
         right: 6px;
@@ -848,10 +856,10 @@ article#idealab-list {
             margin: 0;
             font-size: 4.375em;
         }
-        h5 {
+        h4 {
             font-family: @fontHeadersDefault;
             margin: 0;
-            font-size: 1.188em;
+            text-transform: uppercase;
         }
         p {
             margin-top: 20px;
@@ -859,16 +867,24 @@ article#idealab-list {
         }
     }   
     table {
+        @bordersize: 6px;
         th, td {
             padding: 10px 15px;
             border-bottom: 1px solid @gray;
             line-height: 1em;
         }
         thead tr {
-            border-left: 4px solid @brando;
+            border-left: @bordersize solid @brando;
         }
         tbody tr {
-            border-left: 4px solid transparent;
+            border-left: @bordersize solid transparent;
+            &:hover {
+                td { background: lighten(@brando, 40%); }
+                color: @brando;
+            }
+            i.disabled.icon-usersubmit {
+                color: lighten(@gray, 30%);
+            }
         }
         th:last-child, td:last-child { // icon column
             text-align: center;
@@ -876,26 +892,110 @@ article#idealab-list {
         th {
             text-transform: uppercase;
             font-family: @fontHeadersDefault;
+            font-weight: normal;
             font-size: 1.4em;
             vertical-align: bottom;
             line-height: 1em;
             color: @darkGray;
             background: @brando;
+            border-bottom: none;
         }
         &#idealab-published {
-            tr.value { border-left: 4px solid @value; }
-            tr.story { border-left: 4px solid @story; }
-            tr.solution { border-left: 4px solid @solution; }
-            tr.theory { border-left: 4px solid @theory; }
-            //tr.principle { border-left: 4px solid @principle; }
+            tr.value { border-left: @bordersize solid @value; }
+            tr.story { border-left: @bordersize solid @story; }
+            tr.solution { border-left: @bordersize solid @solution; }
+            tr.theory { border-left: @bordersize solid @theory; }
         }
         &#idealab-submitted {
 
         }
+        @media @md_up {
+            .hoverMix(@name) {
+                tbody tr:hover.@{name} .hover-tab:before { content: "@{name}"; background: @@name; }
+                tbody tr:hover.@{name} .hover-tab:after { border-color: transparent @@name transparent transparent; }
+            }
+            .hoverMix(value); .hoverMix(story); .hoverMix(theory); .hoverMix(solution);
+            tbody tr .hover-tab { &:before, &:after { display: none; } }
+            tbody tr:hover .hover-tab {
+                position: relative;
+                .hoverTab() {
+                    color: white;
+                    position: absolute;
+                    display: inline-block;
+                    z-index: 1;
+                    text-align: left;
+                    text-transform: uppercase;
+                    font-family: @fontHeadersDefault;
+                    font-size: 20px;
+                    top: -4px;
+                }
+                &:before {
+                    .hoverTab;
+                    line-height: 24px;
+                    background: @gray;
+                    padding-right: 10px;
+                    padding-left: 5px;
+                    left: 38px;
+                }
+                &:after {
+                    .hoverTab;
+                    content: "";
+                    width: 0; height: 0;
+                    border-style: solid;
+                    border-width: 12px 12px 12px 0;
+                    border-color: transparent @gray transparent transparent;
+                    left: 26px;
+                }
+            }
+        }
     }
-    aside#idealab-sidebar {
-        padding: @std-padding;
-        background: @lightBrando;
+}
+#idealab-sidebar {
+    padding: @std-padding;
+    background: @lightBrando;
+    button, input[type=button] {
+        .button-style;
+    }
+    button[class^="add-"] { // full-width
+        &.selected {
+            .button-style(@bodyText, @bodyText);
+        }
+        display: block;
+        width: 100%;
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+    input[class^="add-"] { // contribute buttons
+        margin-top: 12px;
+        padding-left: 28px;
+        padding-right: 28px;
+    }
+    input[type=text], textarea {
+        padding: 8px;
+        display: block;
+        width: 100%;
+        background: white;
+        border: none; //1px solid @lightGray;
+        &:focus {
+            box-shadow: none;
+            outline: 0 none;
+        }
+    }
+    textarea { resize: none; }
+    form h4 {
+        text-transform: uppercase;
+        margin-bottom: 4px;
+    }
+    h1, h2 {
+        text-transform: uppercase;
+    }
+    div.login-icons {
+        a.login-google i    { color: darken(red, 20%); }
+        a.login-facebook i  { color: @facebook; }
+        a.login-twitter i   { color: @twitter; }
+        font-size: 60px;
+        text-align: center;
+        background: white;
     }
 }
 
