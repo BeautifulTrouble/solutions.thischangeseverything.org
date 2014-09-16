@@ -186,6 +186,9 @@ App.ModulesListView = Backbone.View.extend({
     },
     afterRender: function() {
         $('body').attr("class", "modules-list-view");
+        // Responsive ImageMaps, if you can believe it
+        $('img[usemap]').rwdImageMaps();
+        // Set-up the filter control DOM
         this.filterControl = $('#modules-gallery ul li');
         // Crazy-ass Isotope + Lazy Load shiz
         var $window = $(window);

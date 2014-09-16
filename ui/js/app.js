@@ -9,6 +9,7 @@
 //= require isotope.pkgd.js
 //= require showdown.js
 //= require jquery.lazyload.min.js
+//= require jquery.rwdImageMaps.min.js
 
 // Then the templates
 
