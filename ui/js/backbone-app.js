@@ -203,7 +203,7 @@ App.ModulesListView = Backbone.View.extend({
                 type: '[data-category]',
                 title: '.caption .title'
             },
-            //sortBy: "random",
+            sortBy: "random",
         });
         this.container.isotope( 'on', 'layoutComplete', function( isoInstance, laidOutItems ) {
             $window.trigger("scroll");
