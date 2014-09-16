@@ -135,6 +135,7 @@ Variables
 @principle: #4daec4;
 @buttons: @brando;
 @meta: #5c5d60;
+@backgroundAbout: #404040;
 // Brand coloring
 @brando: #49c8ef;
 @lightBrando: #dbf4fc;
@@ -924,6 +925,68 @@ body.module-detail-view figure .filter {
     &.story { .instagram(@story, 60em); }
     &.value { .instagram(@value, 60em); }
     &.solution { .instagram(@solution, 60em); }
+}
+
+// Module: About
+// body.about-view
+body.about-view {
+    background-color: @backgroundAbout;
+    color: white;
+    section {
+        padding-top: 40px;
+    }
+    #about-copy {
+        padding-right: 100px; // TODO Adrian, please do your fancy half-column thing here!
+        p {
+            font-size: 1.125em;
+        }
+    }
+    h2, h3 {
+        font-face: @fontHeadersDefault;
+    }
+    h2 {
+        text-transform: uppercase;
+    }
+    h3 {
+    }
+    .tab {
+        font-family: @fontHeadersDefault;
+        font-size: 1.4em;
+        color: white;
+        text-transform: uppercase;
+        line-height: 1em;
+        display: inline-block;
+        background-size: cover;
+        &.tab-active { 
+            background-image: url('/ui/img/tab-blue.svg'); 
+            z-index: 2;
+        }
+        &.tab-inactive { 
+            background-image: url('/ui/img/tab-gray.svg'); 
+            z-index: 1;
+        }
+        // There's some nutty math behind this actually working
+        padding: 11px 16px;
+        width: 160px;
+        position: relative;
+        right: 6px;
+        &:nth-of-type(1) { // fancy!
+            right: 0;
+            top: 20px;
+        }
+    }
+    #team {
+        background-color: @brando;
+        margin-top: 10px;
+        padding: 0px 30px 10px 15px;
+        a:link, a:visited {
+            color: white;
+            text-decoration: underline;
+        }
+        a:hover {
+            color: black;
+        }
+    }
 }
 
 /* ==========================================================================

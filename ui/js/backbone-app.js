@@ -460,6 +460,13 @@ App.FooterView = Backbone.View.extend({
     template: "footer"
 });
 
+App.AboutView = Backbone.View.extend({
+    template: "about",
+    afterRender: function() {
+        $('body').attr("class", "about-view");
+    }
+});
+
 // ===================================================================
 // Layouts
 // ===================================================================
@@ -485,6 +492,7 @@ App.Router = Backbone.Router.extend({
         'value(/:name)': 'displayValue',
         'idealab': 'displayIdeaLab',
         'idealab/:state(/:name)': 'displayIdeaLab',
+        'about': 'displayAbout',
         '*default': 'defaultRoute'
     },
     start: function() {
@@ -539,6 +547,10 @@ App.Router = Backbone.Router.extend({
                 App.Layout.setView("#content", view);
                 App.Layout.render();
         }
+    },
+    displayAbout: function() {
+            App.Layout.setView("#content", new App.AboutView());
+            App.Layout.render();
     },
     defaultRoute: function() {
         console.log("404");
