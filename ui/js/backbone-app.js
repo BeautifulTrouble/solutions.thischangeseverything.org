@@ -451,7 +451,7 @@ App.FormHelper = Backbone.View.extend({
         var user = new App.User();
         user.fetch({success: function() {
             _.each(self.contactFields, function(name) {
-                self.$('form input[name=' + name + ']').val(user.attributes[name]);
+                self.$('form [name=' + name + ']').val(user.attributes[name]);
             });
         } });
         // Add next parameter to login/logout buttons
@@ -463,7 +463,7 @@ App.FormHelper = Backbone.View.extend({
         var last = new App.LastPOST();
         last.fetch({success: function() {
             _.each(_.omit(last.attributes, self.contactFields), function(value, key) {
-                this.$('form input[name=' + key + ']').val(value);
+                this.$('form [name=' + key + ']').val(value);
             }, self);
         } });
     }
