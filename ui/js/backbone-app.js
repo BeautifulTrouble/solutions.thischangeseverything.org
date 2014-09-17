@@ -82,15 +82,15 @@ App.APIModel = Backbone.Model.extend({
             return [pair[0], pair[1].trim() == ""];
         }) );
         var err = this.validator(attrs, empties, options);
-        if (attrs.contact && !this.validEmail(attrs.contact)) err.contact = "Please provide a real email address";
+        if (!this.validEmail(attrs.contact)) err.contact = "Please provide a real email address";
         if (_.isEmpty(err)) return;
         return err;
     },
     validEmail: function(email) {
         var blank = /^\s*$/;
-        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        var valid = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (blank.test(email)) return false;
-        if (re.test(email)) return true;
+        if (valid.test(email)) return true;
         return false;
     }
 });
@@ -526,10 +526,10 @@ App.FormHelper = Backbone.View.extend({
         }
     },
     afterRender: function() {
-        // Insert name/contact into forms
+        // Insert name/contact into forms if we have them
         var self = this;
         this.user = new App.User();
-        this.user.fetch({success: _.bind(this.showLogout, this), error: _.bind(this.hideLogout, this)});
+        this.user.fetch({success: _.bind(this.loggedIn, this), error: _.bind(this.loggedOut, this)});
         // Add next parameter to login/logout buttons
         this.$('a.login, a.logout').each(function () {
             var next = (this.href.indexOf('?') != -1) ? '&next=' : '?next=';
@@ -540,27 +540,22 @@ App.FormHelper = Backbone.View.extend({
         last.fetch({success: function() {
             // _.omit: Prefer what's on the server, so people see what we have stored
             //_.each(_.omit(last.attributes, self.contactFields), function(value, key) {
-            // No _.omit: Prefer what user has typed over what the server holds
-            console.log('last');
             _.each(last.attributes, function(value, key) {
                 this.$('form [name=' + key + ']').val(value);
             }, self);
         } });
     },
-    showLogout: function() {
-        console.log('showlogout');
-        console.log(this.user.attributes);
+    loggedIn: function() {
+        // Could be called "loggedIn" but it's named this way because of some confusing semantics
         _.each(this.contactFields, function(name) {
             this.$('form [name=' + name + ']').val(this.user.attributes[name]);
         }, this);
         this.$('.logout-hack').removeClass('hidden');
-        //$('form [name=name], form [name=contact]').removeAttr('disabled');
     },
-    hideLogout: function() {
-        console.log('hidelogout');
-        this.$('form [name=name], form [name=contact]').val();
+    loggedOut: function() {
+        // Could be called "loggedOut" but it's named this way because of some confusing semantics
+        this.$('form [name=name], form [name=contact]').val("");
         this.$('.logout-hack').addClass('hidden');
-        //$('form [name=name], form [name=contact]').attr('disabled', 'disabled');
     }
 });
 App.IdeaLabIdeaView = App.FormHelper.extend({
@@ -572,8 +567,7 @@ App.IdeaLabIdeaView = App.FormHelper.extend({
         },
         "click button.add-another": function () { this.render(); },
         "click .logout-hack": function () { 
-            var self = this;
-            $.ajax('/api/logout', {success: _.bind(self.hideLogout, self), error: _.bind(self.showLogout, self)});
+            $.ajax('/api/logout', {success: _.bind(this.loggedOut, this), error: _.bind(this.loggedIn, this)});
         }
     }
 });
@@ -599,8 +593,7 @@ App.IdeaLabImprovementView = App.FormHelper.extend({
         "click input.add-a-question": function () { this.saveForm('add-a-question'); },
         "click button.add-another": function () { this.render(); },
         "click .logout-hack": function () { 
-            var self = this;
-            $.ajax('/api/logout', {success: _.bind(self.hideLogout, self), error: _.bind(self.showLogout, self)});
+            $.ajax('/api/logout', {success: _.bind(this.loggedOut, this), error: _.bind(this.loggedIn, this)});
         }
     },
     saveForm: function (s) {
@@ -634,8 +627,8 @@ App.IdeaLabListView = Backbone.View.extend({
         "click #idealab-published tr.data-slug": function (e) { 
             navTo('idealab/published/' + e.currentTarget.dataset.slug);
         },
-        // :not(.submitted) is the moderation^2 thing
-        "click #idealab-submitted:not(.submitted) tr.data-slug": function (e) { 
+        // :not(.submitted) is the moderation^2 thing TODO:TODO:TODO
+        "click #idealab-submitted tr:not(.submitted).data-slug": function (e) { 
             navTo('idealab/submitted/' + e.currentTarget.dataset.slug);
         },
         "click span.published": function () { this.setState('published'); },
