@@ -552,9 +552,12 @@ App.IdeaLabImprovementView = App.FormHelper.extend({
     template: "idealab-improvement-template",
     baseStateSelector: '#idealab-improvement',
     events: {
-        "click button.add-an-example": function () { this.showForm('add-an-example'); },
-        "click button.add-a-resource": function () { this.showForm('add-a-resource'); },
-        "click button.add-a-question": function () { this.showForm('add-a-question'); },
+        'click button[class^="add-a"]': function (e) { 
+            this.$('button.selected').removeClass('selected');
+            this.$('form').addClass('hidden');
+            this.$(e.currentTarget).toggleClass('selected').next('form').toggleClass('hidden');
+            this.clearFieldErrors(); // Normally automatic when you use proper views.
+        },
         "click input.add-an-example": function () { this.saveForm('add-an-example'); },
         "click input.add-a-resource": function () { this.saveForm('add-a-resource'); },
         "click input.add-a-question": function () { this.saveForm('add-a-question'); },
@@ -563,13 +566,6 @@ App.IdeaLabImprovementView = App.FormHelper.extend({
     saveForm: function (s) {
         this.saveFormAs('form#' + s, App.Improvement);
     },
-    showForm: function (s) {
-        this.$('form').addClass('hidden');
-        this.$('form#' + s).removeClass('hidden');
-        this.$('button').removeClass('selected');
-        this.$('button.' + s).addClass('selected');
-        this.clearFieldErrors(); // Normally automatic when you use proper views.
-    }
 });
 
 App.IdeaLabListView = Backbone.View.extend({
@@ -621,26 +617,9 @@ App.IdeaLabDetailView = Backbone.View.extend({
     },
     events: {
         "click button.view-gallery": function() { navTo(); },
-        "click button.view-published-idea": function() {
-            var type = this.model.get("type");
-            if ( type === 'value' ) {
-                navTo('value/', this);
-            } else {
-                navTo('module/', this);
-            }
-        },
+        "click button.view-published-idea": function() { navTo('module/', this); },
         "click button.view-all-published-ideas": function() { navTo('idealab/published'); },
         "click button.view-all-submitted-ideas": function() { navTo('idealab/submitted'); },
-        "click .values li": function(e) { 
-            var valueName = e.currentTarget.innerHTML;
-            var value = App.Values.findWhere({title: valueName});
-            if ( value ) {
-                var slug = value.get("slug");
-                navTo('value/' + slug); 
-            } else {
-                console.log('TODO');
-            }
-        },
         "click .tags li": function(e) {
             var tagName = $( e.currentTarget ).attr('data-filter');
             navTo('tag/' + tagName);

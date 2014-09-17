@@ -19,7 +19,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <% published.each(function(model) { if (model) { %>
+                            <% published.each(function(model) { if (model && model.attributes.type != "value") { %>
                             <tr class="<%= model.attributes.type %> data-slug" data-slug="<%= model.attributes.slug %>">
                                 <td><%= model.attributes.title %></td>
                                 <td>
