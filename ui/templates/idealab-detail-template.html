@@ -42,7 +42,7 @@
                                     <ul class="tags list-comma">
                                         <span>Tags</span>
                                         <% _.each(tags, function(tag) { if (tag) { %>
-                                        <li><%= tag %></li>
+                                        <li data-filter="<%= tag.replace(/\s/g , "-") %>"><%= tag %></li>
                                         <% } }); %>
                                     </ul>
                                 </div>

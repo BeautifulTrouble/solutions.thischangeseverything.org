@@ -630,7 +630,21 @@ App.IdeaLabDetailView = Backbone.View.extend({
             }
         },
         "click button.view-all-published-ideas": function() { navTo('idealab/published'); },
-        "click button.view-all-submitted-ideas": function() { navTo('idealab/submitted'); }
+        "click button.view-all-submitted-ideas": function() { navTo('idealab/submitted'); },
+        "click .values li": function(e) { 
+            var valueName = e.currentTarget.innerHTML;
+            var value = App.Values.findWhere({title: valueName});
+            if ( value ) {
+                var slug = value.get("slug");
+                navTo('value/' + slug); 
+            } else {
+                console.log('TODO');
+            }
+        },
+        "click .tags li": function(e) {
+            var tagName = $( e.currentTarget ).attr('data-filter');
+            navTo('tag/' + tagName);
+        }
     },
     afterRender: function() {
         $('body').attr("class", "idealab-detail-view");
