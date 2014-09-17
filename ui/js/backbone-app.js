@@ -227,7 +227,7 @@ App.ModulesListView = Backbone.View.extend({
         $('.filter.active').removeClass('active');
         $('.reset').addClass('active'); // Turn on the "All" option
         $("select#filter-passion")[0].selectedIndex = 0;
-        $("select#filter-passion").toggleClass("highlight");
+        $("select#filter-passion").removeClass("highlight");
         this.filters = [];
         this.setFilters();
     },
