@@ -345,16 +345,21 @@ header.site-header {
             font-size: 1.4em;
             text-transform: uppercase;
             color: white;
-            background-color: @brando;
         }
         .dropdown-menu li a:hover {
-            color: black;
+            background-color: #2e748a;
+        }
+        .dropdown-menu li.social a:hover {
             background-color: @brando;
+            color: black;
         }
         .dropdown-menu > li > a {
+            display: block;
+            padding: 0px;
+        }
+        .dropdown-menu > li.social > a {
             display: inline;
             padding: 0px;
-            
         }
         .dropdown-menu li.social {
             padding-top: 8px;

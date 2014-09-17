@@ -582,7 +582,7 @@ App.IdeaLabDetailView = Backbone.View.extend({
 App.HeaderView = Backbone.View.extend({
     template: "header",
     events: {
-        'click .bsol h1': function() { navTo(); },
+        //'click .bsol h1': function() { navTo(); },
         'click .icon-gallery': function() { navTo(); },
         'click .icon-lab': function() { navTo('idealab'); }
     }
