@@ -81,8 +81,13 @@ App.APIModel = Backbone.Model.extend({
             return [pair[0], pair[1].trim() == ""];
         }) );
         var err = this.validator(attrs, empties, options);
+        if (attrs.contact && !this.validEmail(attrs.contact)) err.contact = "Please provide a real email address";
         if (_.isEmpty(err)) return;
         return err;
+    },
+    validEmail: function(email) {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
     }
 });
 App.LastPOST = App.APIModel.extend({
@@ -502,6 +507,8 @@ App.FormHelper = Backbone.View.extend({
         var self = options.context;
         self.setState('done'); 
         new App.LastPOST().save();  // Absurd
+        // TODO: THIS is purportedly what backbone DOES and I'm calling it manually.
+        self.parentView.mainView.submitted.fetch({reset: true});
     },
     _fail: function(model, response, options) {
         var self = options.context;
@@ -732,7 +739,7 @@ App.Router = Backbone.Router.extend({
     },
     displayIdeaLabList: function(state) {
         if (state != 'published' && state != 'submitted') {
-            state = 'published';
+            state = 'submitted';
         }
         App.router.navigate('idealab/' + state, {replace: true});
         App.Layout.setView('#content', new App.IdeaLabView({
