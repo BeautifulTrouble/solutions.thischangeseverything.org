@@ -1,0 +1,64 @@
+                <article id="idealab-list">
+                    <header>
+                        <h4>Welcome to the</h4>
+                        <h1>Idea Lab</h1>
+                        <p>Welcome to the Beautiful Solutions Lab! If you, like millions around the world, have been busy building just and sustainable alternatives in your own community, we want to hear from you. Please share your solutions, ideas and resources on this platform, and explore the ideas others have submitted.</p>
+                        <p>Thanks in advance for your contributions!</p>
+                    </header>
+                    <span class="published tab tab-<%= state=='published'?'active':'inactive' %>">Published Gallery</span><span class="submitted tab tab-<%= state=='submitted'?'active':'inactive' %>">Submitted Ideas</span>
+
+                    <% if (state == "published") { %>
+
+                    <table id="idealab-published" class="table table-striped">
+                        <caption class="hide">Published Gallery</caption>
+                        <thead>
+                            <tr>
+                                <th>Idea</th>
+                                <th>Contributor</th>
+                                <th><i class="icon icon-usersubmit"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% published.each(function(model) { if (model && model.attributes.type != "value") { %>
+                            <tr class="<%= model.attributes.type %> data-slug" data-slug="<%= model.attributes.slug %>">
+                                <td><%= model.attributes.title %></td>
+                                <td>
+                                    <ul class="list-comma">
+                                        <% _.each(model.attributes.contributors, function(contributor) { if (contributor) { %>
+                                        <li><%= contributor %></li>
+                                        <% } }); %>
+                                    </ul>
+                                </td>
+                                <!-- TODO: show user-submitted-ness -->
+                                <td><div class="hover-tab"></div><i class="disabled icon icon-usersubmit"></i></td>
+                            </tr>
+                            <% } }); %>
+                        </tbody>
+                    </table>
+
+                    <% } else if (state == "submitted") { %>
+
+                    <table id="idealab-submitted" class="table table-striped">
+                        <caption class="hide">Submitted Ideas</caption>
+                        <thead>
+                            <tr>
+                                <th>Idea</th>
+                                <th>Contributor</th>
+                                <th>Added</th>
+                                <th><i class="icon icon-love"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% submitted.each(function(model) { if (model) { %>
+                            <tr class="data-slug" data-slug="<%= model.attributes.slug %>">
+                                <td><%= model.attributes.title %></td>
+                                <td><%= model.attributes.contributors[0] %></td>
+                                <td><%= model.attributes.short_date %></td>
+                                <td>0</td>
+                            </tr>
+                            <% } }); %>
+                        </tbody>
+                    </table>
+
+                    <% } %>
+                </article>

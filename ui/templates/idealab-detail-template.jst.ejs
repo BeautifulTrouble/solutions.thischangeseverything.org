@@ -1,0 +1,60 @@
+                <article id="idealab-detail">
+                    <header>
+                        <div id="button-bar" class="clearfix">
+                            <button type="button" class="view-all-<%= state %>-ideas">View All Ideas<i class="icon-lab"></i></button>
+                            <button type="button" class="view-gallery">View Gallery<i class="icon-gallery"></i></button>
+                            <% if (state == 'published') { %>
+                            <button type="button" class="view-published-idea">View Published Idea</button>
+                            <% } %>
+                        </div>
+                        <h1 class="title"><%= title %></h1>
+                    </header>
+                    <section>
+                        <div class="row no-pad">
+                            <span class="byline">
+                                by <span class="contributor"><%= contributors[0] %></span>
+                            </span> 
+                            
+                            <% if (state == 'published') { %>
+                            <!-- TODO: update module schema to include user-submitted flag; include ": User submitted" with type -->
+                                <span class="module-type-icon <%= type %>"><%= type %></span>
+                            <% } else { %>
+                                <span class="date-added">Added <span class="date"><%= long_date %></span></span>
+                                <span class="vote"><i class="icon icon-love"></i>Love this idea</span>
+                            <% } %>
+                            <span class="share-icon"><i class="icon icon-share"></i></span>
+
+                        </div>
+
+                        <div class="row no-pad">
+                            <div id="summary">
+                                <p><%= short_write_up %></p>
+                            </div>
+                        </div>
+                        
+                        <% if (state == 'published') { %>
+                        <div class="row no-pad">
+                            <div class="meta clearfix">
+                                <div class="icon-tags">
+                                    <i class="icon icon-tag"></i>
+                                </div>
+                                <div class="meta-info">
+                                    <ul class="tags list-comma">
+                                        <span>Tags</span>
+                                        <% _.each(tags, function(tag) { if (tag) { %>
+                                        <li data-filter="<%= tag.replace(/\s/g , "-") %>"><%= tag %></li>
+                                        <% } }); %>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+
+                    </section>
+                </article>
+                <div id="share-popover" style="display:none;">
+                    <ul class="list-inline share-tools">
+                        <li><a target="_blank" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fsolutions.thischangeseverything.org%2F%23idealab%2F<%- state %>%2F<%- slug %>&text=<%- title %>%3A%20one%20of%20many%20%23BeautifulSolutions%20worth%20fighting%20for%20(via%20%40be_solutions)"><i class="icon-icn-social-twitter-2"></i></a></li>
+                        <li><a target="_blank" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fsolutions.thischangeseverything.org%2F%23idealab%2F<%- state %>%2F<%- slug %>"><i class="icon-icn-social-fb-2"></i></a></li>
+                    </ul>
+                </div>

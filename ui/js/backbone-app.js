@@ -10,7 +10,9 @@ window.App = {};
 Backbone.Layout.configure({
     manage: true,
     // Set the prefix to where your templates live on the server
-    prefix: "/ui/templates/",
+    //prefix: "/ui/templates/",
+    // Not using prefix because the templates are compilted at JST['template-name']
+    // and setting prefix here looks for them with the prefix prepended.
 
     // This method will check for prebuilt templates first and fall back to
     // loading in via AJAX.
@@ -21,7 +23,6 @@ Backbone.Layout.configure({
 
         // If the path exists in the object, use it instead of fetching remotely.
         if (JST[path]) {
-            //console.log('cached');
             return JST[path];
         }
 
@@ -30,7 +31,7 @@ Backbone.Layout.configure({
         var done = this.async();
 
         // Fetch via jQuery's GET.  The third argument specifies the dataType.
-        $.get(path + '.html', function(contents) {
+        $.get('/ui/templates/' + path + '.jst.ejs', function(contents) {
             // Assuming you're using underscore templates, the compile step here is
             // `_.template`.
             done(_.template(contents));

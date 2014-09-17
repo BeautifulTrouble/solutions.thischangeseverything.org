@@ -19,6 +19,7 @@ GEM
     commonjs (0.2.7)
     domainatrix (0.0.11)
       addressable
+    ejs (1.1.1)
     execjs (2.0.2)
     fast-stemmer (1.0.2)
     ffi (1.9.3)
@@ -109,6 +110,7 @@ PLATFORMS
 DEPENDENCIES
   RedCloth
   domainatrix
+  ejs
   jekyll (= 2.0.3)
   jekyll-assets
   json
