@@ -162,7 +162,7 @@ App.ModulesListView = Backbone.View.extend({
     initialize: function(options) {
         // Listen to events on the collection
         this.listenTo(this.collection, "add remove sync", this.render);
-        this.tags = _.unique(_.flatten(this.collection.pluck("tags")));
+        this.tags = _.sortBy(_.unique(_.flatten(this.collection.pluck("tags"))), function (name) {return name});
     },
     template: "modules-list-template",
     serialize: function() {
@@ -243,6 +243,7 @@ App.ModulesListView = Backbone.View.extend({
             else {
                 $("select#filter-passion option").removeClass("active");
                 $("select#filter-passion option:selected").addClass("active");               
+                $("select#filter-passion").addClass("highlight");
             }
         } else {
             $( e.currentTarget ).toggleClass("active");
@@ -340,6 +341,7 @@ App.ModuleDetailView = Backbone.View.extend({
 
 App.ValueDetailView = Backbone.View.extend({
     collection: new App.ModulesCollection(),
+    values: App.Values,
     initialize: function(options) {
         this.collection.reset();
         this.listenTo(this.collection, "add", this.render);
@@ -378,6 +380,12 @@ App.ValueDetailView = Backbone.View.extend({
         $('.lazy').lazyload({
             effect : "fadeIn"
         });
+        this.$('.icon-share').popover({ 
+            html : true, 
+            placement: 'top',
+            content: function() {
+                return $('#share-popover').html();
+        }});
     }
 });
 

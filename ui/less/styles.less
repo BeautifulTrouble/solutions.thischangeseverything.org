@@ -164,6 +164,27 @@ html {
     overflow-y: scroll;
 }
 
+// Silliness to stick footer to the bottom
+html, body {
+    margin:0;
+    padding:0;
+    height:100%;
+}
+#wrapper {
+	min-height:100%;
+	position:relative;
+}
+#content {
+	padding-bottom: 230px;   /* Height of the footer element */
+}
+footer {
+	width:100%;
+	height:220px;
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+
 body {
     background-color: @bodyBackground;
     color: @bodyText;
@@ -228,12 +249,10 @@ Layout
 
 // Inital size of #content to avoid the weird lag on initial load
 #content {
-    min-height: 500px;
+    //min-height: 500px;
 }
 footer.site-footer {
     background: black;
-    min-height: 200px;
-    margin-top: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
     a:link, a:visited {
@@ -435,6 +454,9 @@ body.modules-list-view {
             position: relative;
             left: 4px;
         }
+        #filter-passion.highlight {
+            background: @brando;
+        }
     }
     .module-list-item {
         border-right: 2px solid white;
@@ -535,10 +557,20 @@ article#value {
     section #summary {
         margin-right: @std-padding;
     }
-    #button-bar button {
-        .button-style(@bodyText, @buttons);
-        padding-left: 40px;
-        padding-right: 40px;
+    .see-more-values{
+        background-color: @brando;
+        color: white;
+        font-size: 10px;
+        margin-top: 20px;
+        text-transform: uppercase;
+    }
+    #share {
+        color: @brando;
+        text-transform: uppercase;
+        .icon {
+            cursor: pointer;
+            font-size: 1.5em;
+        }
     }
 }
 
