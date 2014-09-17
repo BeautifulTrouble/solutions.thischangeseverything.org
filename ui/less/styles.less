@@ -250,11 +250,11 @@ Layout
 
 body.portrait {
     // Quick hack for responsive issues
-    #content, header, footer {
-        display: none;
-    }
     background: url('/ui/img/BSol_Rotate.png') no-repeat top left;
     background-size: cover;
+    #content, header.site-header, footer.site-footer {
+        display: none;
+    }
 }
 
 // Inital size of #content to avoid the weird lag on initial load
