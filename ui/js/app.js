@@ -12,6 +12,18 @@
 //= require jquery.rwdImageMaps.min.js
 
 // Then the templates
+//= require about
+//= require header
+//= require footer
+//= require modules-list-template
+//= require modules-list-item-template
+//= require module-detail-template
+//= require value-detail-template
+//= require idealab-detail-template
+//= require idealab-idea-template
+//= require idealab-list-template
+//= require idealab-template
+//= require idealab-idea-template
 
 // Then the app
 //= require backbone-app.js
