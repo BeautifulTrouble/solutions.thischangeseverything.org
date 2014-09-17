@@ -215,6 +215,7 @@ App.ModulesListView = Backbone.View.extend({
             // filter by tag
             this.container.isotope({ filter: '.' + this.selectedTag });
             $("select#filter-passion").val(this.selectedTag);
+            $("select#filter-passion").addClass("highlight");
             this.container.isotope('layout'); // Trigger layout to lazy load to work
         } else { 
             // Do the default, sortBy: random
@@ -226,6 +227,7 @@ App.ModulesListView = Backbone.View.extend({
         $('.filter.active').removeClass('active');
         $('.reset').addClass('active'); // Turn on the "All" option
         $("select#filter-passion")[0].selectedIndex = 0;
+        $("select#filter-passion").toggleClass("highlight");
         this.filters = [];
         this.setFilters();
     },
@@ -243,7 +245,7 @@ App.ModulesListView = Backbone.View.extend({
             else {
                 $("select#filter-passion option").removeClass("active");
                 $("select#filter-passion option:selected").addClass("active");               
-                $("select#filter-passion").addClass("highlight");
+                $("select#filter-passion").toggleClass("highlight");
             }
         } else {
             $( e.currentTarget ).toggleClass("active");
