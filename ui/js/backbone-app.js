@@ -621,7 +621,14 @@ App.IdeaLabDetailView = Backbone.View.extend({
     },
     events: {
         "click button.view-gallery": function() { navTo(); },
-        "click button.view-published-idea": function() { navTo('module/', this); },
+        "click button.view-published-idea": function() {
+            var type = this.model.get("type");
+            if ( type === 'value' ) {
+                navTo('value/', this);
+            } else {
+                navTo('module/', this);
+            }
+        },
         "click button.view-all-published-ideas": function() { navTo('idealab/published'); },
         "click button.view-all-submitted-ideas": function() { navTo('idealab/submitted'); }
     },
