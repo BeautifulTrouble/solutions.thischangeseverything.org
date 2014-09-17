@@ -684,6 +684,10 @@ App.Layout = new Backbone.Layout({
 
 App.Router = Backbone.Router.extend({
     collection: App.Modules,
+    initialize: function() { 
+        // Track every route and call trackPage
+        this.bind('route', this.trackPage);
+    },
     routes: {
         '': 'start',
         'module(/:name)': 'displayModule',
@@ -781,5 +785,15 @@ App.Router = Backbone.Router.extend({
     },
     defaultRoute: function() {
         console.log("404");
+    },
+    trackPageView: function() {
+        var url = Backbone.history.getFragment();
+        // Add a slash if neccesary
+        if (!/^\//.test(url)) url = '/' + url;
+        // Record page view
+        ga('send', {
+            'hitType': 'pageview',
+            'page': url
+        });
     }
 });

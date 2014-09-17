@@ -28,7 +28,7 @@ image:
       width: AUTO
 # Project settings - Analytics
 analytics:
-    ga_tracking_id: 'UA-12345-5'
+    ga_tracking_id: 'UA-54927000-1'
 
 # Project settings - Meta
 author: "TCE"
@@ -98,6 +98,7 @@ assets:
     - bower_components/isotope/dist/
     - bower_components/showdown/compressed/
     - bower_components/jquery.lazyload/
+    - bower_components/backbone.analytics/
   js_compressor: yui
   css_compressor: yui
   cache: true

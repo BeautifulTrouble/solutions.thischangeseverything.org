@@ -4,8 +4,8 @@
 // First the scaffolding
 //= require jquery.js
 //= require modernizr.js
-//= require bootstrap.js
 //= require underscore.js
+//= require bootstrap.js
 //= require isotope.pkgd.js
 //= require showdown.js
 //= require jquery.lazyload.min.js
