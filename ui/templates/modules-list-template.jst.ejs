@@ -1,0 +1,37 @@
+    <div class="container">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+                <img alt="Welcome to Beautiful Solutions" name="BSol_Intro_Slider" src="/ui/img/BSol_Intro_Slider.gif" width="1170" height="440" border="0" id="BSol_Intro_Slider" usemap="#m_BSol_Intro_Slider" alt="" /><map name="m_BSol_Intro_Slider" id="m_BSol_Intro_Slider">
+                <area shape="poly" coords="532,332,754,332,754,369,532,369,532,332" href="#idealab" alt="" />
+                <area shape="poly" coords="371,332,519,332,519,369,371,369,371,332" href="#about" alt="" />
+            </div>
+          </div>
+        </div>
+    </div>
+    <article id="modules-gallery" class="container">
+        <header class="row no-pad">
+            <ul class="list-inline col-md-6">
+                <li>Filter:</li>
+                <li class="reset active" data-filter="*">All</li>
+                <li class="filter values" data-filter=".value">Values</li>
+                <li class="filter stories" data-filter=".story">Stories</li>
+                <li class="filter solutions" data-filter=".solution">Solutions</li>
+                <li class="filter theories" data-filter=".theory">Theories</li>
+            </ul>
+            <div class="form-group col-md-6">
+              <select id="filter-passion" class="form-control">
+                  <option class="filter" value="*" data-filter="">What are you passionate about?</option>
+                  <% _.each(tags, function(tag) { if (tag) { %>
+                  <option class="filter" value="<%= tag.replace(/\s/g , "-") %>" data-filter=".<%= tag.replace(/\s/g , "-") %>"><%= tag %></option>
+                  <% } }) %>
+              </select>
+            </div>
+        </header>
+        <section id="modules-list">
+
+        </section>
+        <footer>
+        </footer>
+    </article>

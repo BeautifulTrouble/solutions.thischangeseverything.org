@@ -1,0 +1,39 @@
+<div class="container">
+    <article id="value">
+        <div class="row no-pad">
+            <div class="col-md-4 col-lg-3 col-lg-extra-half">
+              <div class="input-group-btn">
+                <button type="button" class="see-more-values btn btn-default dropdown-toggle" data-toggle="dropdown">See more values <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <% _.each(values, function(value) { if ( value.title != title ) { %>
+                    <li><a href="#value/<%= value.slug %>"><%= value.title %></a></li>
+                    <% } }); %>
+                </ul>
+              </div><!-- /btn-group -->
+                <header>
+                    <h5 class="type"><%= type %>:</h5>
+                    <h1 class="title"><%= title %></h1>
+                </header>
+                <section>
+                    <div id="summary">
+                        <p><%= short_write_up %></p>
+                    </div>
+                    <div id="share" class="clearfix">
+                        <i class="icon icon-share"></i> Share this value
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-8 col-lg-8 col-lg-extra-half">
+                <aside id="related-entries">
+                    <div id="related-list"></div>
+                </aside> 
+            </div>
+        </div>
+    </article>
+</div>
+<div id="share-popover" style="display:none;">
+    <ul class="list-inline share-tools">
+        <li><a target="_blank" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fsolutions.thischangeseverything.org%2F%23value%2F<%- slug %>&text=<%- title %>%3A%20a%20%23beautifulsolutions%20value%20to%20guide%20us%20forward%20together%20(via%20%40be_solutions)"><i class="icon-icn-social-twitter-2"></i></a></li>
+        <li><a target="_blank" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fsolutions.thischangeseverything.org%2F%23value%2F<%- slug %>"><i class="icon-icn-social-fb-2"></i></a></li>
+    </ul>
+</div>

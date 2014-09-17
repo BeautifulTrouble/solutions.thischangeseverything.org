@@ -30,7 +30,7 @@ Backbone.Layout.configure({
         var done = this.async();
 
         // Fetch via jQuery's GET.  The third argument specifies the dataType.
-        $.get(path + '.html', function(contents) {
+        $.get(path + '.jst.ejs', function(contents) {
             // Assuming you're using underscore templates, the compile step here is
             // `_.template`.
             done(_.template(contents));
