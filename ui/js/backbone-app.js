@@ -71,6 +71,18 @@ App.APIModel = Backbone.Model.extend({
         // When called by corresponding APICollection.parse, the 
         // data attribute will have already been plucked out
         return "data" in response ? response['data'] : response;
+    },
+    validate: function(attrs, options) {
+        // API should always return {'success': true}, which is how we tell
+        // incoming server data from data we generated here in backbone.
+        // Models which don't define validator [suffix: -or] are ignored.
+        if (attrs.success || !this.validator) return;
+        var empties = _.object(_.map(_.pairs(attrs), function (pair) {
+            return [pair[0], pair[1].trim() == ""];
+        }) );
+        var err = this.validator(attrs, empties, options);
+        if (_.isEmpty(err)) return;
+        return err;
     }
 });
 App.LastPOST = App.APIModel.extend({
@@ -80,10 +92,24 @@ App.User = App.APIModel.extend({
     urlRoot: "/api/me"
 });
 App.Idea = App.APIModel.extend({
-    urlRoot: "/api/ideas"
+    urlRoot: "/api/ideas",
+    validator: function (attrs, empties, options) {
+        var err = {};
+        if (empties.title) err.title = "This idea needs a title";
+        if (empties.short_write_up) err.short_write_up = "Looks like you forgot to write the idea iteself";
+        return err;
+    }
 });
 App.Improvement = App.APIModel.extend({
-    urlRoot: "/api/improvements"
+    urlRoot: "/api/improvements",
+    validator: function(attrs, empties, options) {
+        var err = {}
+        if (empties.content && empties.link) {
+            err.content = "Give us something to work with!";
+            err.link = "We'll settle for one of these";
+        }
+        return err;
+    }
 });
 
 // ===================================================================
@@ -374,7 +400,9 @@ App.IdeaLabView = Backbone.View.extend({
     template: "idealab-template",
     initialize: function(options) {
         this.mainView = options.mainView;
+        this.mainView.parentView = this;
         this.sideView = options.sideView;
+        this.sideView.parentView = this;
     },
     beforeRender: function() {
         this.insertView('#idealab-main', this.mainView);
@@ -402,10 +430,21 @@ App.FormHelper = Backbone.View.extend({
     //  <div id="something-fail" class="hidden">Fail screen</div>
     //  <div id="something-arbitrary" class="hidden">...</div>
     baseStateSelector: '',
-    errorSelector: '.server-error',
+    serverError: '.server-error',
+    fieldError: '.field-error',
     states: 'done fail login',
     contactFields: ['name', 'contact'],
+    setFieldErrors: function(obj) {
+        _.each(obj.validationError, function(text, field) {
+            this.$('form [name=' + field + '] + ' + this.fieldError).text(text);
+        }, this);
+        obj.validationError = null;
+    },
+    clearFieldErrors: function() {
+        this.$('form ' + this.fieldError).text('');
+    },
     setState: function(state) {
+        this.clearFieldErrors();
         // TODO: Revisit this whole concept when not tired
         // Show/Hide base depending on state
         this.$(this.baseStateSelector)[state ? 'addClass' : 'removeClass']('hidden');
@@ -418,16 +457,21 @@ App.FormHelper = Backbone.View.extend({
         }, this);
     },
     saveFormAs: function(formSelector, Model) { 
+        this.clearFieldErrors();
         var form = {};
         _.each($(formSelector).serializeArray(), function(field) {
             form[field.name] = field.value;
         });
         var obj = new Model(form);
-        obj.save(null, {
-            success: this.done || this._done, 
-            error: this.fail || this._fail,
-            context: this
-        }); 
+        if (obj.isValid()) {
+            obj.save(null, {
+                success: this.done || this._done, 
+                error: this.fail || this._fail,
+                context: this
+            }); 
+        } else {
+            this.setFieldErrors(obj);
+        }
     },
     _done: function(model, response, options) { 
         var self = options.context;
@@ -436,13 +480,13 @@ App.FormHelper = Backbone.View.extend({
     },
     _fail: function(model, response, options) {
         var self = options.context;
-        var message = response.message ? response.message : 'API Unavailable';
-        var status = response.status ? response.status : 500;
-        if (status == 401) {
+        var err = response.message ? response.message : 'API Unavailable';
+        var code = response.status ? response.status : 500;
+        if (code == 401) {
             self.setState('login');
         } else {
             self.setState('fail');
-            self.$(self.errorSelector).text(message);
+            self.$(self.serverError).text(code + ": " + err);
         }
     },
     afterRender: function() {
@@ -462,6 +506,7 @@ App.FormHelper = Backbone.View.extend({
         // If there was form data and we lost it to an error or redirect...
         var last = new App.LastPOST();
         last.fetch({success: function() {
+            // _.omit: Prefer what's on the server, so people see what we have stored
             _.each(_.omit(last.attributes, self.contactFields), function(value, key) {
                 this.$('form [name=' + key + ']').val(value);
             }, self);
@@ -475,7 +520,7 @@ App.IdeaLabIdeaView = App.FormHelper.extend({
         "click input.add-idea": function () { 
             this.saveFormAs('form#add-idea', App.Idea);
         },
-        "click button.add-another-idea": function () { this.render(); }
+        "click button.add-another": function () { this.render(); }
     }
 });
 App.IdeaLabImprovementView = App.FormHelper.extend({
@@ -487,7 +532,8 @@ App.IdeaLabImprovementView = App.FormHelper.extend({
         "click button.add-a-question": function () { this.showForm('add-a-question'); },
         "click input.add-an-example": function () { this.saveForm('add-an-example'); },
         "click input.add-a-resource": function () { this.saveForm('add-a-resource'); },
-        "click input.add-a-question": function () { this.saveForm('add-a-question'); }
+        "click input.add-a-question": function () { this.saveForm('add-a-question'); },
+        "click button.add-another": function () { this.render(); }
     },
     saveForm: function (s) {
         this.saveFormAs('form#' + s, App.Improvement);
@@ -497,6 +543,7 @@ App.IdeaLabImprovementView = App.FormHelper.extend({
         this.$('form#' + s).removeClass('hidden');
         this.$('button').removeClass('selected');
         this.$('button.' + s).addClass('selected');
+        this.clearFieldErrors(); // Normally automatic when you use proper views.
     }
 });
 
