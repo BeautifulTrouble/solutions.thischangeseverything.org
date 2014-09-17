@@ -87,8 +87,11 @@ App.APIModel = Backbone.Model.extend({
         return err;
     },
     validEmail: function(email) {
+        var blank = /^\s*$/;
         var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(email);
+        if (blank.test(email)) return false;
+        if (re.test(email)) return true;
+        return false;
     }
 });
 App.LastPOST = App.APIModel.extend({
@@ -508,8 +511,8 @@ App.FormHelper = Backbone.View.extend({
         var self = options.context;
         self.setState('done'); 
         new App.LastPOST().save();  // Absurd
-        // TODO: THIS is purportedly what backbone DOES and I'm calling it manually.
-        self.parentView.mainView.submitted.fetch({reset: true});
+        // TODO: THIS is purportedly what backbone DOES and I'm calling it manually. Gross.
+        try { self.parentView.mainView.submitted.fetch({reset: true}); } catch(e) { }
     },
     _fail: function(model, response, options) {
         var self = options.context;
@@ -525,12 +528,8 @@ App.FormHelper = Backbone.View.extend({
     afterRender: function() {
         // Insert name/contact into forms
         var self = this;
-        var user = new App.User();
-        user.fetch({success: function() {
-            _.each(self.contactFields, function(name) {
-                self.$('form [name=' + name + ']').val(user.attributes[name]);
-            });
-        } });
+        this.user = new App.User();
+        this.user.fetch({success: _.bind(this.showLogout, this), error: _.bind(this.hideLogout, this)});
         // Add next parameter to login/logout buttons
         this.$('a.login, a.logout').each(function () {
             var next = (this.href.indexOf('?') != -1) ? '&next=' : '?next=';
@@ -540,10 +539,28 @@ App.FormHelper = Backbone.View.extend({
         var last = new App.LastPOST();
         last.fetch({success: function() {
             // _.omit: Prefer what's on the server, so people see what we have stored
-            _.each(_.omit(last.attributes, self.contactFields), function(value, key) {
+            //_.each(_.omit(last.attributes, self.contactFields), function(value, key) {
+            // No _.omit: Prefer what user has typed over what the server holds
+            console.log('last');
+            _.each(last.attributes, function(value, key) {
                 this.$('form [name=' + key + ']').val(value);
             }, self);
         } });
+    },
+    showLogout: function() {
+        console.log('showlogout');
+        console.log(this.user.attributes);
+        _.each(this.contactFields, function(name) {
+            this.$('form [name=' + name + ']').val(this.user.attributes[name]);
+        }, this);
+        this.$('.logout-hack').removeClass('hidden');
+        //$('form [name=name], form [name=contact]').removeAttr('disabled');
+    },
+    hideLogout: function() {
+        console.log('hidelogout');
+        this.$('form [name=name], form [name=contact]').val();
+        this.$('.logout-hack').addClass('hidden');
+        //$('form [name=name], form [name=contact]').attr('disabled', 'disabled');
     }
 });
 App.IdeaLabIdeaView = App.FormHelper.extend({
@@ -553,7 +570,11 @@ App.IdeaLabIdeaView = App.FormHelper.extend({
         "click input.add-idea": function () { 
             this.saveFormAs('form#add-idea', App.Idea);
         },
-        "click button.add-another": function () { this.render(); }
+        "click button.add-another": function () { this.render(); },
+        "click .logout-hack": function () { 
+            var self = this;
+            $.ajax('/api/logout', {success: _.bind(self.hideLogout, self), error: _.bind(self.showLogout, self)});
+        }
     }
 });
 App.IdeaLabImprovementView = App.FormHelper.extend({
@@ -576,7 +597,11 @@ App.IdeaLabImprovementView = App.FormHelper.extend({
         "click input.add-an-example": function () { this.saveForm('add-an-example'); },
         "click input.add-a-resource": function () { this.saveForm('add-a-resource'); },
         "click input.add-a-question": function () { this.saveForm('add-a-question'); },
-        "click button.add-another": function () { this.render(); }
+        "click button.add-another": function () { this.render(); },
+        "click .logout-hack": function () { 
+            var self = this;
+            $.ajax('/api/logout', {success: _.bind(self.hideLogout, self), error: _.bind(self.showLogout, self)});
+        }
     },
     saveForm: function (s) {
         this.saveFormAs('form#' + s, App.Improvement);
@@ -609,7 +634,8 @@ App.IdeaLabListView = Backbone.View.extend({
         "click #idealab-published tr.data-slug": function (e) { 
             navTo('idealab/published/' + e.currentTarget.dataset.slug);
         },
-        "click #idealab-submitted tr.data-slug": function (e) { 
+        // :not(.submitted) is the moderation^2 thing
+        "click #idealab-submitted:not(.submitted) tr.data-slug": function (e) { 
             navTo('idealab/submitted/' + e.currentTarget.dataset.slug);
         },
         "click span.published": function () { this.setState('published'); },
