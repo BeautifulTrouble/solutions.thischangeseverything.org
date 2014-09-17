@@ -166,24 +166,29 @@ html {
 }
 
 // Silliness to stick footer to the bottom
-html, body {
-    margin:0;
-    padding:0;
-    height:100%;
-}
-#wrapper {
-	min-height:100%;
-	position:relative;
-}
-#content {
-	padding-bottom: 230px;   /* Height of the footer element */
-}
-footer {
-	width:100%;
-	height:220px;
-	position:absolute;
-	bottom:0;
-	left:0;
+//html, body {
+    //margin:0;
+    //padding:0;
+    //height:100%;
+//}
+//#wrapper {
+	//min-height:100%;
+	//position:relative;
+//}
+//#content {
+	//padding-bottom: 260px;   /* Height of the footer element */
+//}
+//footer {
+	//width:100%;
+	//height:250px;
+	//position:absolute;
+	//bottom:0;
+	//left:0;
+//}
+#content { 
+    // temp fix for footer position
+    min-height: 600px;
+    margin-bottom: 40px;
 }
 
 body {
