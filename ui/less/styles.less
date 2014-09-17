@@ -145,6 +145,7 @@ Variables
 @brando: #49c8ef;
 @lightBrando: #dbf4fc;
 @twitter: #78cbef;
+@google: #dc4937;
 @facebook: #547bbc;
 
 // Style tiles, Fonts
@@ -829,6 +830,7 @@ article#idealab-detail {
         }
         // End confusing section
         .vote {
+            display: none;  // TODO
             color: @brando;
             font-weight: bold;
             i {
@@ -1030,13 +1032,68 @@ article#idealab-list {
     h1, h2 {
         text-transform: uppercase;
     }
+    div.icon-wrapper {
+        i {
+            font-size: 60px;
+        }
+    }
+    .server-error {
+        font-family: monospace;
+        font-size: 20px;
+        display: block;
+    }
+    .field-error {
+        padding: 6px;
+        color: red;
+    }
+    .asterisk:after {
+        color: darken(@brando, 30%);
+        content: "\2021"; // double-dagger
+        font-size: 16px;
+    }
     div.login-icons {
-        a.login-google i    { color: darken(red, 20%); }
-        a.login-facebook i  { color: @facebook; }
-        a.login-twitter i   { color: @twitter; }
-        font-size: 60px;
+        .login-google {
+            a {
+                background: @google;
+                display: inline-block;
+                width: 72px;
+                height: 72px;
+                margin: 14.4px 14.4px 0 14.4px;
+            }
+            i { 
+                font-size: 42px;
+                color: white;
+            }
+            a, i {
+                position: relative;
+                bottom: 11px;
+            }
+        }
+        .login-facebook {
+            i { 
+                color: @facebook; 
+            }
+        }
+        .login-twitter {
+            i { 
+                color: @twitter; 
+            }
+        }
+        .provider {
+            display: inline-block;
+            padding-bottom: 0;
+            div {
+                display: block;
+                position: relative;
+                bottom: 8px;
+            }
+        }
+        a {
+            font-size: 60px;
+        }
         text-align: center;
         background: white;
+        padding-top: 20px;
     }
 }
 

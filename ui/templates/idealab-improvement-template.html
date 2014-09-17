@@ -7,10 +7,13 @@
                         <input type="hidden" name="module" value="<%= slug %>">
                         <h4>Description:</h4>
                         <textarea rows="4" name="content" placeholder="Add description."></textarea>
+                        <div class="field-error"></div>
                         <h4>Link to example:</h4>
                         <input type="text" name="link" placeholder="http://examplelink.com">
+                        <div class="field-error"></div>
                         <h4>Your email:</h4>
                         <input type="text" name="contact" placeholder="you@mail.com">
+                        <div class="field-error"></div>
                         <input type="button" value="Contribute" class="add-an-example">
                     </form>
                     <button type="button" class="add-a-resource">Add a resource</button>
@@ -20,10 +23,13 @@
                         <input type="hidden" name="module" value="<%= slug %>">
                         <h4>Description:</h4>
                         <textarea rows="4" name="content" placeholder="Add description."></textarea>
+                        <div class="field-error"></div>
                         <h4>Link to resource:</h4>
                         <input type="text" name="link" placeholder="http://resourcelink.com">
+                        <div class="field-error"></div>
                         <h4>Your email:</h4>
                         <input type="text" name="contact" placeholder="you@mail.com">
+                        <div class="field-error"></div>
                         <input type="button" value="Contribute" class="add-a-resource">
                     </form>
                     <button type="button" class="add-a-question">Add a question</button>
@@ -34,17 +40,50 @@
                         <input type="hidden" name="link" value="">
                         <h4>Your question:</h4>
                         <textarea rows="4" name="content" placeholder="Add your question."></textarea>
+                        <div class="field-error"></div>
                         <h4>Your email:</h4>
                         <input type="text" name="contact" placeholder="you@mail.com">
+                        <div class="field-error"></div>
                         <input type="button" value="Contribute" class="add-a-question">
                     </form>
                 </aside>
                 <aside id="idealab-improvement-done" class="hidden">
-                done
+                    <h2>Improve this idea</h2>
+                    <p>Thank you for suggesting improvements to this idea! Our team will review your submission and make changes as needed.</p>
+                    <button type="button" class="add-another">Add another improvement</button>
                 </aside>
                 <aside id="idealab-improvement-login" class="hidden">
-                login
+                    <h2>Please login</h2>
+                    <div class="icon-wrapper"><i class="icon icon-usersubmit"></i></div>
+                    <p>We just want to know you're somebody real. <br>Pick one of these services to vouch for you, and we'll leave it at that. <span class="asterisk"></span></p>
+                    <div class="login-icons">
+                        <span class="provider login-twitter">
+                            <a href="/api/login/twitter" class="login"><i class="icon icon-icn-social-twitter-2"></i></a>
+                            <div>Twitter</div>
+                        </span>
+                        <span class="provider login-facebook">
+                            <a href="/api/login/facebook" class="login"><i class="icon icon-icn-social-fb-2"></i></a>
+                            <div>Facebook</div>
+                        </span>
+                        <span class="provider login-google">
+                            <a href="/api/login/google" class="login"><i class="icon fa fa-google-plus"></i></a>
+                            <div>Google+</div>
+                        </span>
+                    </div>
+                    <h6>
+                        <span class="asterisk"></span>
+                        We're saving you from yet another account &amp; password. 
+                        And we're saving us from keeping track. 
+                        Apart from your <em>contributions</em>, the only thing we're storing is the name and contact you give us. 
+                        We hope this improves our chances of hearing from you.
+                    </h6>
                 </aside>
                 <aside id="idealab-improvement-fail" class="hidden">
-                fail
+                    <h1>Oh %#$@!</h1>
+                    <div class="icon-wrapper"><i class="icon icon-usersubmit"></i></div>
+                    <p>
+                        Something wrong happened on our end. We hope you'll try again soon. The server responded with:
+                        <span class="server-error"></span>
+                    </p>
+                    <button type="button" class="add-another">Try again</button>
                 </aside>
