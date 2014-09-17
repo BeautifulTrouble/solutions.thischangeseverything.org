@@ -1,0 +1,35 @@
+mode: 'development'
+highlighter: true
+
+# Switches off the asset bundler when developing
+asset_bundler:
+  dev: true
+
+# For when you've already built it with a more complete _config and want
+# fast save-generate-reload cycles and don't care about the images
+assets:
+  debug: true
+  cachebust: none
+  cache: true
+  sources:
+    - ui/js/
+    - ui/less/
+    - ui/css/
+    - ui/templates/
+    - bower_components/jquery/dist/ 
+    - bower_components/modernizr/
+    - bower_components/bootstrap/dist/js/
+    - bower_components/underscore/
+    - bower_components/handlebars/
+    - bower_components/backbone/
+    - bower_components/layoutmanager/
+    - bower_components/domready/
+    - bower_components/bootstrap/dist/css/
+    - bower_components/isotope/dist/
+    - bower_components/showdown/compressed/
+    - bower_components/jquery.lazyload/
+  js_compressor: none
+  css_compressor: none
+
+image:
+  source:

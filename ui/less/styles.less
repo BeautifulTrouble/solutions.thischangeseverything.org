@@ -970,7 +970,11 @@ article#idealab-list {
             tr.theory { border-left: @bordersize solid @theory; }
         }
         &#idealab-submitted {
-
+            tr.submitted { 
+                border-left: @bordersize solid @gray; 
+                color: lighten(@gray, 30%);
+            }
+            tr.published { border-left: @bordersize solid @brando; }
         }
         @media @md_up {
             .hoverMix(@name) {
@@ -978,7 +982,13 @@ article#idealab-list {
                 tbody tr:hover.@{name} .hover-tab:after { border-color: transparent @@name transparent transparent; }
             }
             .hoverMix(value); .hoverMix(story); .hoverMix(theory); .hoverMix(solution);
-            tbody tr .hover-tab { &:before, &:after { display: none; } }
+            .hoverMix(submitted); .hoverMix(published);
+            @submitted: @gray; @published: @brando;
+            // TODO: wordsmith; also wtf @less
+            tbody tr:hover.submitted .hover-tab:before { content: "Awaiting moderation"; }
+            tbody tr:hover.published .hover-tab:before { content: "Awaiting improvements"; }
+            // XXX: this used to be nthis.ecessary but now isn't?
+            //tbody tr .hover-tab { &:before, &:after { display: none; } }
             tbody tr:hover .hover-tab {
                 position: relative;
                 .hoverTab() {
@@ -1043,6 +1053,10 @@ article#idealab-list {
             box-shadow: none;
             outline: 0 none;
         }
+        &:disabled {
+            background: @lightGray;
+            color: @lightGray;
+        }
     }
     textarea { resize: none; }
     form h4 {
@@ -1065,6 +1079,15 @@ article#idealab-list {
     .field-error {
         padding: 6px;
         color: red;
+    }
+    .logout-hack {
+        position: absolute;
+        z-index: 1;
+        right: 45px;
+        font-size: 1.75em;
+        font-weight: bold;
+        cursor: pointer;
+        color: @brando;
     }
     .asterisk:after {
         color: darken(@brando, 30%);
@@ -1101,7 +1124,7 @@ article#idealab-list {
         }
         text-align: center;
         background: white;
-        padding-top: 20px;
+        padding-top: 10px;
     }
 }
 
@@ -1281,11 +1304,11 @@ Should be inlined to avoid required HTTP connection: h5bp.com/r
 // Custom font icons
 @font-face {
   font-family: 'bsol';
-  src: url('/fonts/bsol.eot?35571668');
-  src: url('/fonts/bsol.eot?35571668#iefix') format('embedded-opentype'),
-       url('/fonts/bsol.woff?35571668') format('woff'),
-       url('/fonts/bsol.ttf?35571668') format('truetype'),
-       url('/fonts/bsol.svg?35571668#bsol') format('svg');
+  src: url('../fonts/bsol.eot?78094920');
+  src: url('../fonts/bsol.eot?78094920#iefix') format('embedded-opentype'),
+       url('../fonts/bsol.woff?78094920') format('woff'),
+       url('../fonts/bsol.ttf?78094920') format('truetype'),
+       url('../fonts/bsol.svg?78094920#bsol') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -1295,7 +1318,7 @@ Should be inlined to avoid required HTTP connection: h5bp.com/r
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'bsol';
-    src: url('/fonts/bsol.svg?35571668#bsol') format('svg');
+    src: url('../font/bsol.svg?78094920#bsol') format('svg');
   }
 }
 */
@@ -1343,3 +1366,4 @@ Should be inlined to avoid required HTTP connection: h5bp.com/r
 .icon-icn-social-vimeo-2:before { content: '\e809'; } /* '' */
 .icon-icn-social-yt-2:before { content: '\e80a'; } /* '' */
 .icon-search-2:before { content: '\e80b'; } /* '' */
+.icon-icn-social-gplus-2:before { content: '\e80c'; } /* '' */

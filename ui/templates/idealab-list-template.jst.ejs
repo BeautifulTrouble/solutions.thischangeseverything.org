@@ -50,11 +50,11 @@
                         </thead>
                         <tbody>
                             <% submitted.each(function(model) { if (model) { %>
-                            <tr class="data-slug" data-slug="<%= model.attributes.slug %>">
+                            <tr class="<%= model.attributes.published && 'published' || 'submitted' %> data-slug" data-slug="<%= model.attributes.slug %>">
                                 <td><%= model.attributes.title %></td>
                                 <td><%= model.attributes.contributors[0] %></td>
                                 <td><%= model.attributes.short_date %></td>
-                                <td>0</td>
+                                <td><div class="hover-tab"></div>0</td>
                             </tr>
                             <% } }); %>
                         </tbody>

@@ -10,16 +10,14 @@
                         <textarea rows="6" name="short_write_up" placeholder="Briefly describe your idea (try to keep it under 256 words)."></textarea>
                         <div class="field-error"></div>
                         <h4>Your name:</h4>
-                        <input type="text" name="name">
+                        <input type="text" name="name" placeholder="First Middle Last">
                         <div class="field-error"></div>
                         <h4>Your email:</h4>
-                        <input type="text" name="contact">
+                        <div class="logout-hack" title="Log out">&times;</div>
+                        <input type="text" name="contact" placeholder="you@mail.com">
                         <div class="field-error"></div>
                         <input type="button" value="Contribute" class="add-idea">
                     </form>
-                    <!--
-                    <a href="/api/logout" class="logout"><i class="fa fa-close"></i></a>
-                    -->
                 </aside>
                 <aside id="idealab-idea-done" class="hidden">
                     <h1>Add your own idea</h1>
@@ -40,7 +38,7 @@
                             <div>Facebook</div>
                         </span>
                         <span class="provider login-google">
-                            <a href="/api/login/google" class="login"><i class="icon icon-icn-social-google-2"></i></a>
+                            <a href="/api/login/google" class="login"><i class="icon icon-icn-social-gplus-2"></i></a>
                             <div>Google+</div>
                         </span>
                     </div>
