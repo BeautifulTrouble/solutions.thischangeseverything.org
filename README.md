@@ -84,7 +84,7 @@ Work that is not yet complete:
 - [x] Image re-sizing during Jekyll build process (also need a way to reference the generated images)
 - [x] Sorting and filtering the modules list, possibly using Isotope
 - [X] Sub-views to display the related modules when in a module's detail view
-- [ ] Complile templates for production
+- [x] Complile templates for production
 - [ ] Possible addition of search (mostly done via Jekyll Lunar.js search plugin)
 - [ ] Offline mode
 
