@@ -216,6 +216,7 @@ App.ModulesListView = Backbone.View.extend({
             this.container.isotope({ filter: '.' + this.selectedTag });
             $("select#filter-passion").val(this.selectedTag);
             $("select#filter-passion").addClass("highlight");
+            $('.reset').removeClass('active'); // Turn off the "All" option
             this.container.isotope('layout'); // Trigger layout to lazy load to work
         } else { 
             // Do the default, sortBy: random
