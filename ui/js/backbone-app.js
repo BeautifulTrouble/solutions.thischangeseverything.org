@@ -638,7 +638,6 @@ App.Router = Backbone.Router.extend({
             "slug": name
         });
         if (model) {
-            // Curious where the collection of related modules should be aggregated in order to insert the nested views
             App.Layout.setView("#content", new App.ModuleDetailView({
                 model: model
             }));
@@ -646,6 +645,8 @@ App.Router = Backbone.Router.extend({
         } else {
             this.defaultRoute();
         }
+        // TODO Improve this lame fix for window positioning issue
+        window.scrollTo(0, 0);
     },
     displayValue: function(name) {
         var model = this.collection.findWhere({
