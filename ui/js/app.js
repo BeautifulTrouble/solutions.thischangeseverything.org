@@ -39,15 +39,16 @@ $(function() {
     // Check for orientation change, adjust body class
     function orient() {  
         if (window.orientation === 0 || window.orientation === 180) {
-            $("body").toggleClass("portrait");
+            //$("body").addClass("class", "portrait");
+            $("body").addClass("portrait");
+            $("body").removeClass("landscape");
             orientation = 'portrait';
-     
             return false;
         }
             else if (window.orientation === 90 || window.orientation === -90) {
-            $("body").toggleClass("landscape");
+            $("body").addClass("landscape");
+            $("body").removeClass("portrait");
             orientation = 'landscape';
-     
             return false;
         }
     }
