@@ -248,6 +248,15 @@ h1 {
 Layout
 ========================================================================== */
 
+body.portrait {
+    // Quick hack for responsive issues
+    #content, header, footer {
+        display: none;
+    }
+    background: url('/ui/img/BSol_Rotate.png') no-repeat top left;
+    background-size:cover;
+}
+
 // Inital size of #content to avoid the weird lag on initial load
 #content {
     //min-height: 500px;
