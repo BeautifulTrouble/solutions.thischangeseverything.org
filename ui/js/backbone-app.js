@@ -686,7 +686,7 @@ App.Router = Backbone.Router.extend({
     collection: App.Modules,
     initialize: function() { 
         // Track every route and call trackPage
-        this.bind('route', this.trackPage);
+        this.bind('route', this.trackPageView);
     },
     routes: {
         '': 'start',
