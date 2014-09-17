@@ -553,9 +553,16 @@ App.IdeaLabImprovementView = App.FormHelper.extend({
     baseStateSelector: '#idealab-improvement',
     events: {
         'click button[class^="add-a"]': function (e) { 
-            this.$('button.selected').removeClass('selected');
-            this.$('form').addClass('hidden');
-            this.$(e.currentTarget).toggleClass('selected').next('form').toggleClass('hidden');
+            // Why is this not one line of jQuery?
+            var $button = this.$(e.currentTarget);
+            if ($button.hasClass('selected')) {
+                $button.removeClass('selected');
+                $button.next('form').addClass('hidden');
+            } else {
+                this.$('form').addClass('hidden');
+                this.$('button').removeClass('selected');
+                $button.addClass('selected').next('form').removeClass('hidden');
+            }
             this.clearFieldErrors(); // Normally automatic when you use proper views.
         },
         "click input.add-an-example": function () { this.saveForm('add-an-example'); },
