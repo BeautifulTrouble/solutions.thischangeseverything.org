@@ -226,7 +226,7 @@ a:link, a:visited, a:hover {
 // Let's add some pointers
 
 .icon-button, .module-list-item, .filter, .values li, .tags li,
-#idealab-list tbody tr, .tab, .pointer {
+#idealab-list tbody tr, .tab, .pointer, .share-icon {
     cursor: pointer;
 }
 .values li:hover, .tags li:hover {
@@ -636,6 +636,9 @@ article#module {
         .share-icon {
             float: right;
             color: @brando;
+            > i {
+                font-size: 1.5em;
+            }
         }
         .byline {
             border-right: 1px solid @lightGray;
@@ -800,6 +803,9 @@ article#idealab-detail {
         .share-icon {
             float: right;
             color: @brando;
+            > i {
+                font-size: 1.5em;
+            }
         }
         .module-type-icon {
             &.value { color: @value; }
