@@ -964,6 +964,9 @@ article#idealab-list {
                 tbody tr:hover.@{name} .hover-tab:after { border-color: transparent @@name transparent transparent; }
             }
             .hoverMix(value); .hoverMix(story); .hoverMix(theory); .hoverMix(solution);
+            .hoverMix(@submitted); .hoverMix(@published);
+            @submitted: @gray;
+            @published: @brando;
             tbody tr .hover-tab { &:before, &:after { display: none; } }
             tbody tr:hover .hover-tab {
                 position: relative;
