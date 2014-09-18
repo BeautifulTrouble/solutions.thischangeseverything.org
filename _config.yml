@@ -1,5 +1,5 @@
 # Project settings - General
-version: 0.0.1
+version: 1.0.0
 title: "Beautiful Solutions | This Changes Everything"
 description: "We're gathering the most promising and contagious strategies for building a just, democratic, and resilient world."
 baseurl: ""
@@ -31,10 +31,10 @@ analytics:
     ga_tracking_id: 'UA-54927000-1'
 
 # Project settings - Meta
-author: "TCE"
+author: "Beautiful Solutions"
 robots: "index, follow"
 revisit: "1 day"
-copyright: "&copy; TCE 2014"
+copyright: "&copy; Beautiful Solutions 2014"
 
 # Project settings - Assets
 asset_paths:
@@ -45,10 +45,10 @@ asset_paths:
 social:
     facebook:
         fb_admins:
-            - 12345
-        og_url:
-        og_image:
-        og_sitename:
+            - 4707536 
+        og_url: https://www.facebook.com/beautifulsolutionsproject
+        og_image: "BSol_FBog.jpg"
+        og_sitename: "Beautiful Solutions"
     twitter:
     gplus:
 

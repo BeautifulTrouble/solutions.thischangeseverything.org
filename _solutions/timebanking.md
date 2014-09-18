@@ -41,11 +41,11 @@ learn_more:
     url: "http://www.yesmagazine.org/new-economy/time-banking-an-idea-whose-time-has-come"
 images:
 -
-    url: "Direct-Public-Offering.jpg"
-    name: "Direct-Public-Offering.jpg"
-    caption: "People&#8217;s Community Market in Oakland is using a DPO to raise local capital."
-    source: "People&#8217;s Community Market"
-    source_url: "http://peoplescommunitymarket.com/2013/10/30/the-front-porch/"
+    url: "Timebanking.jpg"
+    name: "Timebanking.jpg"
+    caption: "A UK-based Fair Shares member paints a fence in Gloucester."
+    source: "Reway2007"
+    source_url: "https://flic.kr/p/fh1Nfu"
 contributors:
 - "Allison Basile"
 ---

@@ -44,7 +44,7 @@ images:
 -
     url: "Remunicipalization.jpg"
     name: "Remunicipalization.jpg"
-    caption: "A demonstration for the re-municipalization of Hamburg&#8217;s energy utilities by the Our Hamburg &#8212; Our Grid coalition."
+    caption: "A demonstration for the re-municipalization of Hamburg’s energy utilities by the Our Hamburg—Our Grid coalition."
     source: "Unser Hamburg - Unser Netz"
     source_url: "https://www.facebook.com/Unser.Hamburg.Unser.Netz/photos/pb.100240010029504.-2207520000.1410669283./540053689381465/?type=3&theater"
 contributors:

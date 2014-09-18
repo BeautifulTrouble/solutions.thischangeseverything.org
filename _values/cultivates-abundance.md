@@ -41,6 +41,21 @@ related_stories:
 - "Thessaloniki's social solidarity clinic"
 - "The Zapatista Little School"
 tags:
+- "agriculture"
+- "community development"
+- "cooperatives"
+- "democracy"
+- "energy"
+- "equity"
+- "financing"
+- "food"
+- "indigenous rights"
+- "justice"
+- "land use"
+- "movement building"
+- "racial justice"
+- "resource use"
+- "stewardship"
 learn_more:
 images:
 -

@@ -3,7 +3,7 @@ id: a16E0000002QA1M
 title: "Factor E Farm"
 short_write_up: "<p>Factor E Farm is an experiment in creating resilient communities through open-source design. Located in rural Missouri, Factor E Farm serves as the hub of a dispersed network of farmers, engineers, architects and supporters that is working to develop the Global Village Construction Set, which developers describe as “an open technological platform that allows for the easy fabrication of the fifty different industrial machines that it takes to build a small civilization with modern comforts.” The goal is to produce these machines at the cost of materials in zero waste, self-replicating “micro-factories.” The project is volunteer-driven, fully open source, and prioritizes cradle-to-cradle construction.</p>"
 where: "North of Kansas City, Missouri, USA"
-when: "2007 — Present"
+when: "2007&ndash;Present"
 who: "Open Source Ecology"
 scale: "Local"
 values:
@@ -30,12 +30,12 @@ tags:
 - "open source"
 learn_more:
 -
-    title: "Open Source Ecology: Factor e Farm in Five Minutes"
+    title: "Open Source Ecology: Factor E Farm in Five Minutes"
     description: "Introducing the Global Village Construction Set"
     type: "Article"
     url: "http://www.scribd.com/doc/12745753/Factor-E-Farm-about"
 -
-    title: "Factor e Farm Social Contract"
+    title: "Factor E Farm Social Contract"
     description: "Joining an experimental community"
     type: "Webpage"
     url: "http://opensourceecology.org/wiki/Factor_e_Farm_Social_Contract_v1.0 "

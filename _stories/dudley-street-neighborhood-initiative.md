@@ -3,7 +3,7 @@ id: a16E0000002QGCU
 title: "Dudley Street Neighborhood Initiative"
 short_write_up: "<p>Decades of redlining, arson, and sham “urban renewal” efforts in the latter half of the twentieth century left 30 percent of the land in the Dudley neighborhood of Boston vacant. In response, residents started the Dudley Street Neighborhood Initiative and launched a grassroots, community-controlled planning effort. Their Declaration of Community Rights states that residents, “have the right to participate in all planning, programs, and policies affecting our lives.” This ongoing effort has reclaimed land from absentee landlords — through a Community Land Trust with the power of eminent domain — and created hundreds of units of affordable housing, along with schools, parks, gardens, and other public spaces.</p>"
 where: "Boston, MA"
-when: ""
+when: "1984&ndash;Present"
 who: "Dudley Street Neighborhood Initiative"
 scale: "Local"
 values:
@@ -48,8 +48,8 @@ learn_more:
     url: "http://www.holdinggroundproductions.com/"
 images:
 -
-    url: "Dudley-Street-Neighbourhood-Initiative.jpg"
-    name: "Dudley-Street-Neighbourhood-Initiative.jpg"
+    url: "Dudley-Street-Neighborhood-Initiative.jpg"
+    name: "Dudley-Street-Neighborhood-Initiative.jpg"
     caption: "Dudley Square headquarters of The Food Project, a DSNI supported organization."
     source: "Google Street View"
     source_url: ""

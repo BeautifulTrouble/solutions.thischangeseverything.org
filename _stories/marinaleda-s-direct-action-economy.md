@@ -3,7 +3,7 @@ id: a16E0000002QHS8
 title: "Marinaleda’s direct action economy"
 short_write_up: "<p>Since 1979, the community of Marinaleda, Spain, has managed with very little money and lots of direct action to address the town’s economic needs. The community occupied and eventually collectivized the land of a local aristocrat, turned it into a cooperatively run olive farm, built hundreds of co-op homes, and instituted collaborative justice and decision-making processes via community assembly. As a result, a culture of collective action has helped Marinaleda fare better than much of the rest of Spain since the economic crisis of 2008.</p>"
 where: "Marinaleda, Andalucia, Spain"
-when: "1979 &mdash; Present"
+when: "1979&ndash;Present"
 who: "The town of Marinaleda"
 scale: "Local"
 values:
