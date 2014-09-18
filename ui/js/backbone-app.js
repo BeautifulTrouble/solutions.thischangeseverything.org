@@ -510,7 +510,7 @@ App.FormHelper = Backbone.View.extend({
     _done: function(model, response, options) { 
         var self = options.context;
         self.setState('done'); 
-        new App.LastPOST().save();  // Absurd
+        new App.LastPOST().save();  // Absurdly erases the content at /last
         // TODO: THIS is purportedly what backbone DOES and I'm calling it manually. Gross.
         try { self.parentView.mainView.submitted.fetch({reset: true}); } catch(e) { }
     },
@@ -535,25 +535,21 @@ App.FormHelper = Backbone.View.extend({
             var next = (this.href.indexOf('?') != -1) ? '&next=' : '?next=';
             this.href = this.href + next + window.location.pathname + '%23' + Backbone.history.fragment;
         });
-        // If there was form data and we lost it to an error or redirect...
+        // If there was form data, set it again
         var last = new App.LastPOST();
         last.fetch({success: function() {
-            // _.omit: Prefer what's on the server, so people see what we have stored
-            //_.each(_.omit(last.attributes, self.contactFields), function(value, key) {
             _.each(last.attributes, function(value, key) {
                 this.$('form [name=' + key + ']').val(value);
             }, self);
         } });
     },
     loggedIn: function() {
-        // Could be called "loggedIn" but it's named this way because of some confusing semantics
         _.each(this.contactFields, function(name) {
             this.$('form [name=' + name + ']').val(this.user.attributes[name]);
         }, this);
         this.$('.logout-hack').removeClass('hidden');
     },
     loggedOut: function() {
-        // Could be called "loggedOut" but it's named this way because of some confusing semantics
         this.$('form [name=name], form [name=contact]').val("");
         this.$('.logout-hack').addClass('hidden');
     }
