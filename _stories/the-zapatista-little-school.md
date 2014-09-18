@@ -3,7 +3,7 @@ id: a16E0000002QHS3
 title: "The Zapatista Little School"
 short_write_up: "<p>The Zapatistas, the indigenous group that has resisted the Mexican state, neoliberal capitalism, and 500 years of colonization for over two decades, recently welcomed supporters from around the world to come and learn how they are building autonomy in the mountains of southern Mexico. The Escuelita Zapatista (Zapatista Little School) invited students to work the land, break bread together, and experience life in Zapatista communities so they could learn how the Zapatistas are practicing autonomy, horizontality and collective power. For many participants, learning about the Zapatistas’ struggles and successes was an inspiring experience that challenged them to return to their own communities to put what they’d learned into practice.</p>"
 where: "Chiapas, Mexico"
-when: "2013 &mdash; Present"
+when: "2013&ndash;Present"
 who: "The Zapatistas"
 scale: "Local"
 values:

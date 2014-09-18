@@ -3,7 +3,7 @@ id: a16E0000002Q9uZ
 title: "Traffic mimes in Bogotá"
 short_write_up: "<p>Faced with a notoriously corrupt traffic police force, sky-high traffic fatality rates, and chaos on the roads, Bogotá mayor Antanas Mockus took bold and audacious action: he disbanded the corrupt cops and offered to retrain and rehire them… as mimes. Using popular education techniques, the traffic mimes fanned out through the city, mocking lawbreakers, applauding courteous drivers, and dramatizing the frustrations and challenges of citizens moving through traffic. The result: a 50 percent drop in traffic fatalities, reduced traffic gridlock, and a marked shift in the traffic culture of the city.</p>"
 where: "Bogotá, Colombia"
-when: "1995 &mdash; Present"
+when: "1995&ndash;Present"
 who: "Antanas Mockus, mayor of Bogotá"
 scale: "Local"
 values:

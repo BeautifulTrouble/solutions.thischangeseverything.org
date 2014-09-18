@@ -52,7 +52,7 @@ images:
 -
     url: "Social-Imagination.jpg"
     name: "Social-Imagination.jpg"
-    caption: "The Edible Bus Stop garden&#8217;s &#8220;Riot of Colour,&#8221; park bench designed by Will Sandy."
+    caption: "The Edible Bus Stop garden’s “Riot of Colour,” park bench designed by Will Sandy."
     source: "Marshall Murray"
     source_url: "http://marshallmurray.blogspot.ca/2012/07/riot-of-colour-rhs-goes-all-guerilla.html"
 contributors:

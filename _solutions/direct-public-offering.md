@@ -27,11 +27,11 @@ learn_more:
     url: "http://www.cuttingedgecapital.com/resources-and-links/direct-public-offering/"
 images:
 -
-    url: "Timebanking.jpg"
-    name: "Timebanking.jpg"
-    caption: "A UK-based Fair Shares member paints a fence in Gloucester."
-    source: "Reway2007 Flickr"
-    source_url: "https://flic.kr/p/fh1Nfu"
+    url: "Direct-Public-Offering.jpg"
+    name: "Direct-Public-Offering.jpg"
+    caption: "People’s Community Market in Oakland is using a DPO to raise local capital."
+    source: "People’s Community Market"
+    source_url: "http://peoplescommunitymarket.com/2013/10/30/the-front-porch/"
 contributors:
 - "Lor Holmes"
 ---

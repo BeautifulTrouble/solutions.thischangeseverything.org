@@ -50,6 +50,17 @@ related_stories:
 - "The river with the rights of a person"
 - "Thessaloniki's social solidarity clinic"
 tags:
+- "agriculture"
+- "community development"
+- "cooperatives"
+- "crisis response"
+- "decision-making"
+- "energy"
+- "food"
+- "housing"
+- "movement building"
+- "organized labor"
+- "stewardship"
 learn_more:
 images:
 -

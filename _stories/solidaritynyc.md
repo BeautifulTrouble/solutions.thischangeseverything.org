@@ -3,7 +3,7 @@ id: a16E0000002QIjO
 title: "SolidarityNYC"
 short_write_up: "<p>New York City is the famous home of Wall Street greed, but it’s also home to a flourishing solidarity economy. While it rarely turns up in the news, thousands of New Yorkers are using solidarity practices to create jobs, produce food, house their families, educate themselves, entertain their communities, access healthcare, and restore the environment. SolidarityNYC is a collective of organizers and academics who render these practices visible and bring together solidarity economy groups to share a vision for a city where community needs matter more than capital. Through mapping projects, media-making, and community organizing, SolidarityNYC promotes a Big Apple that’s accessible to all, not just the 1%.</p>"
 where: "New York City, NY, USA"
-when: "2009 &mdash; Present"
+when: "2009&ndash;Present"
 who: "SolidarityNYC"
 scale: "Local"
 values:
@@ -64,7 +64,7 @@ images:
     name: "SolidarityNYC.jpg"
     caption: "SolidarityNYC promotes a Big Apple that’s accessible to all, not just the 1%."
     source: "SolidarityNYC"
-    source_url: "https://vimeo.com/81818864"
+    source_url: "https://www.facebook.com/SolidarityNYC/photos/pb.202447929828316.-2207520000.1410845607./294981830574925/?type=3&theater"
 contributors:
 - "Cheyenna Layne Weber"
 ---

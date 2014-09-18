@@ -1,9 +1,9 @@
 ---
 id: a16E0000002QA1R
 title: "Farm Workers Credit Union"
-short_write_up: "<p>During the United Farm Workers’ struggle to bring justice and dignity to the lives of farm workers, the farm worker community fought a key battle against banks that refused to provide loans to workers while financing the owners who were exploiting them on the fields. Labor leader and organizer Cesar Chavez argued for the community to start their own credit union. Pooling their resources allowed workers to meet their financial needs and support the movement during the winter months, making it easier to strike in the summer. Six years after its founding, the Farm Workers Credit Union had loaned $183,000 to 874 members. </p>"
+short_write_up: "<p>During the United Farm Workers’ struggle to bring justice and dignity to the lives of farm workers, the farm worker community fought a key battle against banks that refused to provide loans to workers while financing the owners who were exploiting them in the fields. Labor leader and organizer Cesar Chavez argued for the community to start their own credit union. Pooling their resources allowed workers to meet their financial needs and support the movement during the winter months, making it easier to strike in the summer. Six years after its founding, the Farm Workers Credit Union had loaned $183,000 to 874 members. </p>"
 where: "Delano, California"
-when: "1963 &mdash; 1993"
+when: "1963&ndash;1993"
 who: "Cesar Chavez & the United Farm Workers of America"
 scale: "Regional"
 values:

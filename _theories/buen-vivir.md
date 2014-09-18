@@ -55,9 +55,9 @@ images:
 -
     url: "Buen-Vivir.jpg"
     name: "Buen-Vivir.jpg"
-    caption: "Buen vivir illustrated by graphic notes"
-    source: "Zulma Patarroyo"
-    source_url: ""
+    caption: "Social movements and progressive governments have taken up the concept of Buen vivir as a philosophical and cosmological foundation for developing new and better ways of living well together."
+    source: "Espai Icaria"
+    source_url: "http://icarialibros.blogspot.com/2013/01/que-es-el-buen-vivir-aprendiendo-del-sur.html"
 contributors:
 - "Sergio Beltrán"
 ---

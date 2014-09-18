@@ -25,7 +25,7 @@ related_theories:
 - "The commons"
 related_stories:
 - "Great Lakes Commons Initiative"
-- "Greenwave's restorative ocean farming"
+- "Greenwave’s restorative ocean farming"
 - "Initiative 136"
 tags:
 - "agriculture"
@@ -52,7 +52,7 @@ images:
     url: "Usufruct.jpg"
     name: "Usufruct.jpg"
     caption: "Usufruct is the right to use and enjoy the “fruits” of a given resource, as long as the resource itself is preserved."
-    source: "The Forager&#8217;s Year"
+    source: "The Forager’s Year"
     source_url: "http://foragersyear.wordpress.com/2012/07/10/lemons-citrus-x-limon-and-the-idea-of-usufruct/"
 contributors:
 - "Paul J. Kuttner"

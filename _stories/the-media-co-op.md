@@ -3,7 +3,7 @@ id: a16E0000002QHRk
 title: "The Media Co-op"
 short_write_up: "<p>The Media Co-op seeks to bring the principles of participatory democracy and decentralized decision making to the world of alternative media in Canada. In contrast to an increasingly concentrated corporate ownership of media, the co-op is collectively owned and sustained by its journalists, readers and editors (paid and unpaid), and provides a grassroots perspective on under-reported topics, particularly Indigenous sovereignty and Canadian mining companies. The co-op depends on automatic monthly donations from its reader members for financial support. Major decisions like network-wide projects and budgets typically begin with a membership consultation and discussion, and sometimes involve a referendum. Founded in 2008, the Media Co-op now has autonomous locals operating in Halifax, Montreal, Toronto and Vancouver, and a national magazine called The Dominion .</p>"
 where: "Halifax, Montreal, Toronto, Vancouver, and across Canada"
-when: "2003 &mdash; Present"
+when: "2003&ndash;Present"
 who: "Media activists across Canada"
 scale: "Local; Regional; National"
 values:
@@ -47,8 +47,8 @@ learn_more:
     url: "https://www.youtube.com/watch?v=84kNemIQti0"
 images:
 -
-    url: "The-Media-Co-Op.jpg"
-    name: "The-Media-Co-Op.jpg"
+    url: "The-Media-Co-op.jpg"
+    name: "The-Media-Co-op.jpg"
     caption: "Creating community media in Halifax."
     source: "Maya Rolbin-Ghanie"
     source_url: ""

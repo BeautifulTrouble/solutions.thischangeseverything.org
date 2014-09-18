@@ -53,7 +53,7 @@ images:
 -
     url: "Community-As-Developer.jpg"
     name: "Community-As-Developer.jpg"
-    caption: "What could our communities look like if they weren&#8217;t designed to maximize profit?"
+    caption: "What could our communities look like if they weren’t designed to maximize profit?"
     source: "Mad Physicist"
     source_url: "https://www.flickr.com/photos/madphysicist/4373620486/sizes/l"
 contributors:

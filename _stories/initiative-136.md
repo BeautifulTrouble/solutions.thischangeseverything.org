@@ -3,7 +3,7 @@ id: a16E0000002QHS9
 title: "Initiative 136"
 short_write_up: "<p>When the Greek government announced the sale of Thessaloniki’s state-managed water company in 2011, activists from the occupied squares joined the water workers to propose an alternative to both private and state management. The resulting campaign, Initiative 136, proposes the democratic, transparent and environmentally responsible management of water by local non-profit cooperatives. Its main premise is that 136 euros contributed by each household would be enough to ensure true common ownership of this vital good. In May 2014, this campaign was the driving force behind a grassroots referendum where 98 percent of the voters rejected water privatization. Massive popular opposition and a Supreme Court decision have since obliged the government to freeze the privatization process. This, however, is only a partial victory; Initiative 136 continues organizing to make social control of water a reality.</p>"
 where: "Thessaloniki, Greece"
-when: "2011 &mdash; Present"
+when: "2011&ndash;Present"
 who: "Initiative 136"
 scale: "Local"
 values:
