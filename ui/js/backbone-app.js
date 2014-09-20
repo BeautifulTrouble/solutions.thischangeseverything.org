@@ -58,6 +58,21 @@ var navTo = function(prefix, context) {
 };
 
 
+var JSONStorage = function(store, prefix, empty) {
+    // Example:
+    //  Local = JSONStorage(typeof localStorage !== "undefined" ? localStorage : {});
+    //  Local('x', [1,2,3,4]);
+    //  Local('x');
+    prefix = prefix || 'jsonified_';    // Namespace all the values with this
+    empty = empty || 'null';            // Valid JSON string for non-existent keys
+    return function (key, value) {
+        if (value === void 0) return JSON.parse(store[prefix + key] || empty); 
+        store[prefix + key] = JSON.stringify(value); 
+    };
+};
+var Local = JSONStorage(typeof localStorage !== "undefined" ? localStorage : {});
+var Session = JSONStorage(typeof sessionStorage !== "undefined" ? sessionStorage : {});
+
 // ===================================================================
 // Models
 // ===================================================================
@@ -449,7 +464,7 @@ App.FormHelper = Backbone.View.extend({
     // and displaying multiple states within a view.
     // 
     // Example use:
-    //  this.saveFormAs('form.idea', App.Idea);
+    //  this.safeFormAsModel('form.idea', App.Idea);
     // Creates an instance of App.Idea and deals with toggling 
     // the three states: done, fail, and login
     //
@@ -490,7 +505,7 @@ App.FormHelper = Backbone.View.extend({
             ]('hidden');
         }, this);
     },
-    saveFormAs: function(formSelector, Model) { 
+    safeFormAsModel: function(formSelector, Model) { 
         this.clearFieldErrors();
         var form = {};
         _.each($(formSelector).serializeArray(), function(field) {
@@ -559,7 +574,7 @@ App.IdeaLabIdeaView = App.FormHelper.extend({
     baseStateSelector: '#idealab-idea',
     events: {
         "click input.add-idea": function () { 
-            this.saveFormAs('form#add-idea', App.Idea);
+            this.safeFormAsModel('form#add-idea', App.Idea);
         },
         "click button.add-another": function () { this.render(); },
         "click .logout-hack": function () { 
@@ -593,7 +608,7 @@ App.IdeaLabImprovementView = App.FormHelper.extend({
         }
     },
     saveForm: function (s) {
-        this.saveFormAs('form#' + s, App.Improvement);
+        this.safeFormAsModel('form#' + s, App.Improvement);
     },
 });
 
