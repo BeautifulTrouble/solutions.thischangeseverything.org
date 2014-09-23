@@ -58,13 +58,13 @@ var navTo = function(prefix, context) {
 };
 
 
-var JSONStorage = function(store, prefix, empty) {
+var JSONStorage = function(store, prefix) {
     // Example:
     //  Local = JSONStorage(typeof localStorage !== "undefined" ? localStorage : {});
     //  Local('x', [1,2,3,4]);
     //  Local('x');
     prefix = prefix || 'jsonified_';    // Namespace all the values with this
-    empty = empty || 'null';            // Valid JSON string for non-existent keys
+    empty = 'null';                     // Valid JSON string for non-existent keys
     return function (key, value) {
         if (value === void 0) return JSON.parse(store[prefix + key] || empty); 
         store[prefix + key] = JSON.stringify(value); 
@@ -186,12 +186,26 @@ _.each(App.Collections, function(collection) {
 App.APICollection = Backbone.Collection.extend({
     parse: function(response) {
         return response['data'];
-    }
+    },
+    comparator: function(a, b) {
+        var key = this.sortKey;
+        if (/^-/.test(key)) { // A sortKey like "-title" sorts by title in reverse.
+            var A = b.get(key.substring(1)), B = a.get(key.substring(1));
+        } else {
+            var A = a.get(key), B = b.get(key);
+        } // Perform the ancient sorting rite
+        return A > B ? 1 : (A < B ? -1 : 0);
+    },
+    sortToggle: function() {
+        // Reverse the ordering by prepending or discarding a "-" on sortKey
+        var key = this.sortKey;
+        return this.sortKey = /^-/.test(key) ? key.substring(1) : '-' + key;
+    },
+    sortKey: 'title'
 });
 App.IdeasCollection = App.APICollection.extend({
     model: App.Idea,
     url: "/api/ideas",
-    comparator: "title"
 });
 App.ImprovementsCollection = App.APICollection.extend({
     model: App.Improvement,
@@ -619,7 +633,7 @@ App.IdeaLabListView = Backbone.View.extend({
         this.published = App.Modules;
         this.submitted = new App.IdeasCollection();
         // Better yet, how can I defer rendering this until the collection fetches?
-        this.listenTo(this.submitted, "reset", this.render);
+        this.listenTo(this.submitted, "sort reset", this.render);
         this.submitted.fetch({reset: true});
     },
     serialize: function() { 
@@ -641,6 +655,16 @@ App.IdeaLabListView = Backbone.View.extend({
         // :not(.submitted) is the moderation^2 thing TODO:TODO:TODO
         "click #idealab-submitted tr:not(.submitted).data-slug": function (e) { 
             navTo('idealab/submitted/' + e.currentTarget.dataset.slug);
+        },
+        "click #idealab-submitted thead th": function(e) {
+            var sort = e.currentTarget.dataset.sortBy || 'title';
+            if (this.submitted.sortKey == sort) {
+                this.submitted.sortToggle();
+            } else {
+                this.submitted.sortKey = sort
+            }
+            console.log(this.submitted.sortKey);
+            this.submitted.sort();
         },
         "click span.published": function () { this.setState('published'); },
         "click span.submitted": function () { this.setState('submitted'); }
