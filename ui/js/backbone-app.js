@@ -58,6 +58,21 @@ var navTo = function(prefix, context) {
 };
 
 
+var JSONStorage = function(store, prefix) {
+    // Example:
+    //  Local = JSONStorage(typeof localStorage !== "undefined" ? localStorage : {});
+    //  Local('x', [1,2,3,4]);
+    //  Local('x');
+    prefix = prefix || 'jsonified_';    // Namespace all the values with this
+    empty = 'null';                     // Valid JSON string for non-existent keys
+    return function (key, value) {
+        if (value === void 0) return JSON.parse(store[prefix + key] || empty); 
+        store[prefix + key] = JSON.stringify(value); 
+    };
+};
+var Local = JSONStorage(typeof localStorage !== "undefined" ? localStorage : {});
+var Session = JSONStorage(typeof sessionStorage !== "undefined" ? sessionStorage : {});
+
 // ===================================================================
 // Models
 // ===================================================================
@@ -146,8 +161,36 @@ App.ValuesCollection = Backbone.Collection.extend({
 });
 // Collection of collections
 App.ModulesCollection = Backbone.Collection.extend({
+    // TODO: Move this to all App.*Collection types
     model: App.Module,
-    comparator: 'title'
+    comparator: function(a, b) {
+        // This comparator function allows for backward sorts by specifying a sortKey
+        // (which names a model attribute) and optionally including a leading minus (-)
+        var key = this.sortKeyName();
+        if (this.sortIsBackward()) {
+            var A = b.get(key), B = a.get(key);
+        } else {
+            var A = a.get(key), B = b.get(key);
+        } // Perform the ancient sorting rite
+        return A > B ? 1 : (A < B ? -1 : 0);
+    },
+    sortKey: 'title',
+    sortKeyName: function() { return this.sortKey.replace(/^-/, ''); },
+    sortIsBackward: function() { return /^-/.test(this.sortKey); },
+    sortToggle: function() {
+        var key = this.sortKeyName();
+        this.sortKey = this.sortIsBackward() ? key : '-' + key;
+    },
+    sortCollectionBy: function(key) {
+        // TODO: consolidate this a bit
+        var key = key || 'title';
+        if (this.sortKey == key) {
+            this.sortToggle();
+        } else {
+            this.sortKey = key;
+        }
+        this.sort();
+    }
 });
 
 // Load the collections & models from the bootstrapped data
@@ -168,7 +211,7 @@ _.each(App.Collections, function(collection) {
 //App.Tags = _.unique(_.flatten(App.Modules.pluck("tags")));
 
 // API Collections
-App.APICollection = Backbone.Collection.extend({
+App.APICollection = App.ModulesCollection.extend({
     parse: function(response) {
         return response['data'];
     }
@@ -176,7 +219,6 @@ App.APICollection = Backbone.Collection.extend({
 App.IdeasCollection = App.APICollection.extend({
     model: App.Idea,
     url: "/api/ideas",
-    comparator: "title"
 });
 App.ImprovementsCollection = App.APICollection.extend({
     model: App.Improvement,
@@ -449,7 +491,7 @@ App.FormHelper = Backbone.View.extend({
     // and displaying multiple states within a view.
     // 
     // Example use:
-    //  this.saveFormAs('form.idea', App.Idea);
+    //  this.safeFormAsModel('form.idea', App.Idea);
     // Creates an instance of App.Idea and deals with toggling 
     // the three states: done, fail, and login
     //
@@ -490,7 +532,7 @@ App.FormHelper = Backbone.View.extend({
             ]('hidden');
         }, this);
     },
-    saveFormAs: function(formSelector, Model) { 
+    safeFormAsModel: function(formSelector, Model) { 
         this.clearFieldErrors();
         var form = {};
         _.each($(formSelector).serializeArray(), function(field) {
@@ -559,7 +601,7 @@ App.IdeaLabIdeaView = App.FormHelper.extend({
     baseStateSelector: '#idealab-idea',
     events: {
         "click input.add-idea": function () { 
-            this.saveFormAs('form#add-idea', App.Idea);
+            this.safeFormAsModel('form#add-idea', App.Idea);
         },
         "click button.add-another": function () { this.render(); },
         "click .logout-hack": function () { 
@@ -593,7 +635,7 @@ App.IdeaLabImprovementView = App.FormHelper.extend({
         }
     },
     saveForm: function (s) {
-        this.saveFormAs('form#' + s, App.Improvement);
+        this.safeFormAsModel('form#' + s, App.Improvement);
     },
 });
 
@@ -602,9 +644,10 @@ App.IdeaLabListView = Backbone.View.extend({
     initialize: function(options) {
         this.state = options.state;
         this.published = App.Modules;
+        this.listenTo(this.published, "sort", this.render);
         this.submitted = new App.IdeasCollection();
         // Better yet, how can I defer rendering this until the collection fetches?
-        this.listenTo(this.submitted, "reset", this.render);
+        this.listenTo(this.submitted, "sort reset", this.render);
         this.submitted.fetch({reset: true});
     },
     serialize: function() { 
@@ -628,10 +671,26 @@ App.IdeaLabListView = Backbone.View.extend({
             navTo('idealab/submitted/' + e.currentTarget.dataset.slug);
         },
         "click span.published": function () { this.setState('published'); },
-        "click span.submitted": function () { this.setState('submitted'); }
+        "click span.submitted": function () { this.setState('submitted'); },
+        "click #idealab-submitted thead th": function(e) {
+            this.submitted.sortCollectionBy(e.currentTarget.dataset.sortBy);
+        },
+        "click #idealab-published thead th": function(e) {
+            this.published.sortCollectionBy(e.currentTarget.dataset.sortBy);
+        }
     },
     afterRender: function() {
         $('body').attr("class", "idealab-list-view");
+        // TODO: setState renders each state switch, so get the collection from the state
+        var sub = this.submitted.sortKeyName(), pub = this.published.sortKeyName();
+        this.$('#idealab-submitted thead th[data-sort-by=' + sub + ']').addClass('selected');
+        this.$('#idealab-published thead th[data-sort-by=' + pub + ']').addClass('selected');
+        if (this.submitted.sortIsBackward()) {
+            this.$('#idealab-submitted thead th[data-sort-by=' + sub + ']').addClass('backward');
+        }
+        if (this.published.sortIsBackward()) {
+            this.$('#idealab-published thead th[data-sort-by=' + pub + ']').addClass('backward');
+        }
     }
 });
 App.IdeaLabDetailView = Backbone.View.extend({
