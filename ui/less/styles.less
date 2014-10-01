@@ -226,7 +226,8 @@ a:link, a:visited, a:hover {
 // Let's add some pointers
 
 .icon-button, .module-list-item, .filter, .values li, .tags li,
-#idealab-list tbody tr, #idealab-list thead th, .tab, .pointer, .share-icon {
+#idealab-list tbody tr, #idealab-list thead th, .tab, .pointer, 
+.share-icon, .vote {
     cursor: pointer;
 }
 .values li:hover, .tags li:hover {
@@ -836,11 +837,15 @@ article#idealab-detail {
         }
         // End confusing section
         .vote {
-            display: none;  // TODO
+            transition: color .5s ease;
             color: @brando;
             font-weight: bold;
             i {
                 font-size: 1.4em;
+            }
+            &.loved {
+                color: transparent;
+                i { color: darken(red, 10%); }
             }
         }
         .icon-tags {
