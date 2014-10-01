@@ -20,7 +20,7 @@
                                 <span class="module-type-icon <%= type %>"><%= type %></span>
                             <% } else { %>
                                 <span class="date-added">Added <span class="date"><%= long_date %></span></span>
-                                <span class="vote"><i class="icon icon-love"></i>Love this idea</span>
+                                <span class="vote<%= loved && ' loved' || ''%>"><i class="icon icon-love"></i>Love this idea</span>
                             <% } %>
                             <span class="share-icon"><i class="icon icon-share"></i></span>
 

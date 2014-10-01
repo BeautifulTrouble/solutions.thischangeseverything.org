@@ -124,6 +124,9 @@ App.Idea = App.APIModel.extend({
         return err;
     }
 });
+App.IdeaVote = App.APIModel.extend({
+    urlRoot: "/api/love/idea"
+});
 App.Improvement = App.APIModel.extend({
     urlRoot: "/api/improvements",
     validator: function(attrs, empties, options) {
@@ -164,8 +167,8 @@ App.ModulesCollection = Backbone.Collection.extend({
     // TODO: Move this to all App.*Collection types
     model: App.Module,
     comparator: function(a, b) {
-        // This comparator function allows for backward sorts by specifying a sortKey
-        // (which names a model attribute) and optionally including a leading minus (-)
+        // This comparator function does backward sorting when a name is prefixed w/-
+        // For example, sortKey: '-title' sorts titles Z-A
         var key = this.sortKeyName();
         if (this.sortIsBackward()) {
             var A = b.get(key), B = a.get(key);
@@ -177,18 +180,12 @@ App.ModulesCollection = Backbone.Collection.extend({
     sortKey: 'title',
     sortKeyName: function() { return this.sortKey.replace(/^-/, ''); },
     sortIsBackward: function() { return /^-/.test(this.sortKey); },
-    sortToggle: function() {
-        var key = this.sortKeyName();
-        this.sortKey = this.sortIsBackward() ? key : '-' + key;
-    },
     sortCollectionBy: function(key) {
-        // TODO: consolidate this a bit
         var key = key || 'title';
         if (this.sortKey == key) {
-            this.sortToggle();
-        } else {
-            this.sortKey = key;
+            key = this.sortIsBackward() ? this.sortKeyName() : '-' + key;
         }
+        this.sortKey = key;
         this.sort();
     }
 });
@@ -712,6 +709,12 @@ App.IdeaLabDetailView = Backbone.View.extend({
         "click .tags li": function(e) {
             var tagName = $( e.currentTarget ).attr('data-filter');
             navTo('tag/' + tagName);
+        },
+        "click span.vote": function(e) {
+            var $el = this.$(e.currentTarget);
+            new App.IdeaVote({id: this.model.id}).save(null, {  // Poorly-documented arrrgh!
+                success: function() { $el.toggleClass('loved'); }
+            });
         }
     },
     afterRender: function() {
