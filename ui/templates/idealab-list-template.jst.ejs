@@ -1,8 +1,8 @@
                 <article id="idealab-list">
                     <header>
                         <h4>Welcome to the</h4>
-                        <h1>Idea Lab</h1>
-                        <p>Welcome to the Beautiful Solutions Lab! If you, like millions around the world, have been busy building just and sustainable alternatives in your own community, we want to hear from you. Please share your solutions, ideas and resources on this platform, and explore the ideas others have submitted.</p>
+                        <h1>Beautiful Solutions Lab</h1>
+                        <p>If you, like millions around the world, have been busy building just and sustainable alternatives in your own community, we want to hear from you. Please share your solutions, ideas and resources on this platform, and explore the ideas others have submitted.</p>
                         <p>Thanks in advance for your contributions!</p>
                     </header>
                     <span class="published tab tab-<%= state=='published'?'active':'inactive' %>">Published Gallery</span><span class="submitted tab tab-<%= state=='submitted'?'active':'inactive' %>">Submitted Ideas</span>
@@ -13,9 +13,9 @@
                         <caption class="hide">Published Gallery</caption>
                         <thead>
                             <tr>
-                                <th>Idea</th>
-                                <th>Contributor</th>
-                                <th><i class="icon icon-usersubmit"></i></th>
+                                <th data-sort-by="title">Idea</th>
+                                <th data-sort-by="contributors">Contributor</th>
+                                <th data-sort-by="user-submitted"><i class="icon icon-usersubmit"></i></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,10 +42,10 @@
                         <caption class="hide">Submitted Ideas</caption>
                         <thead>
                             <tr>
-                                <th>Idea</th>
-                                <th>Contributor</th>
-                                <th>Added</th>
-                                <th><i class="icon icon-love"></i></th>
+                                <th data-sort-by="title">Idea</th>
+                                <th data-sort-by="contributors">Contributor</th>
+                                <th data-sort-by="date">Added</th>
+                                <th data-sort-by="votes"><i class="icon icon-love"></i></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -54,7 +54,7 @@
                                 <td><%= model.attributes.title %></td>
                                 <td><%= model.attributes.contributors[0] %></td>
                                 <td><%= model.attributes.short_date %></td>
-                                <td><div class="hover-tab"></div>0</td>
+                                <td><%= model.attributes.votes %><div class="hover-tab"></div></td>
                             </tr>
                             <% } }); %>
                         </tbody>
