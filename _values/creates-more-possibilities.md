@@ -29,6 +29,7 @@ related_theories:
 related_stories:
 - "596 Acres"
 - "Anchor procurement in Cleveland"
+- "Brazilian Landless Workers' Movement"
 - "Building community economies on Pine Ridge"
 - "Dudley Street Neighborhood Initiative"
 - "Greenwave's restorative ocean farming"
@@ -37,7 +38,6 @@ related_stories:
 - "Running Chokwe Lumumba for mayor"
 - "Southern Grassroots Economies Project"
 - "The Zapatista Little School"
-- "Brazilian Landless Workers' Movement"
 tags:
 - "community development"
 - "movement building"

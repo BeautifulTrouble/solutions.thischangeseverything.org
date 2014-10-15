@@ -30,7 +30,7 @@ images:
     url: "Direct-Public-Offering.jpg"
     name: "Direct-Public-Offering.jpg"
     caption: "People’s Community Market in Oakland is using a DPO to raise local capital."
-    source: "People’s Community Market"
+    source: "People&#8217;s Community Market"
     source_url: "http://peoplescommunitymarket.com/2013/10/30/the-front-porch/"
 contributors:
 - "Lor Holmes"

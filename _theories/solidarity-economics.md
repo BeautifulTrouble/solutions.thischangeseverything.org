@@ -32,7 +32,7 @@ related_theories:
 related_stories:
 - "Marinaleda's direct action economy"
 - "Solidarity NYC"
-- "Thessaloniki’s social solidarity clinic"
+- "Thessaloniki's social solidarity clinic"
 - "Trade school: barter-for-knowledge"
 tags:
 - "decision-making"
