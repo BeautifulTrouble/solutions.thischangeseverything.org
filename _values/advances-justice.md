@@ -32,7 +32,7 @@ related_stories:
 - "Marinaleda's direct action economy"
 - "The Media Co-op"
 - "The river with the rights of a person"
-- "Thessaloniki’s social solidarity clinic"
+- "Thessaloniki's social solidarity clinic"
 tags:
 - "crisis response"
 - "democracy"

@@ -21,7 +21,7 @@ related_theories:
 - "Solidarity economics"
 related_stories:
 - "Co-op Power"
-- "New Era Windows"
+- "New Era Windows Cooperative"
 tags:
 - "community development"
 - "cooperatives"
