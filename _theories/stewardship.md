@@ -25,13 +25,13 @@ related_theories:
 - "The commons"
 - "Usufruct"
 related_stories:
+- "Brazilian Landless Workers' Movement"
 - "Building community economies on Pine Ridge"
 - "Great Lakes Commons Initiative"
 - "Greenwave's restorative ocean farming"
 - "Initiative 136"
 - "The Beaver Lake Cree's tarsands lawsuit"
 - "The river with the rights of a person"
-- "Brazilian Landless Workers' Movement"
 - "Idle No More"
 tags:
 - "agriculture"

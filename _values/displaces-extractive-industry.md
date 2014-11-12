@@ -34,6 +34,7 @@ related_theories:
 - "Usufruct"
 related_stories:
 - "Boulder, Colorado vs. Xcel energy"
+- "Brazilian Landless Workers' Movement"
 - "Building community economies on Pine Ridge"
 - "Co-op Power"
 - "Farm Workers Credit Union"
@@ -42,7 +43,6 @@ related_stories:
 - "The Beaver Lake Cree's tarsands lawsuit"
 - "The river with the rights of a person"
 - "The Zapatista Little School"
-- "Brazilian Landless Workers' Movement"
 - "Idle No More"
 tags:
 - "climate"

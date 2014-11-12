@@ -37,13 +37,13 @@ related_theories:
 related_stories:
 - "596 Acres"
 - "Alaska Permanent Fund"
+- "Brazilian Landless Workers' Movement"
 - "Building community economies on Pine Ridge"
 - "Factor E Farm"
 - "Great Lakes Commons Initiative"
 - "Initiative 136"
 - "The Beaver Lake Cree's tarsands lawsuit"
 - "The river with the rights of a person"
-- "Brazilian Landless Workers' Movement"
 tags:
 - "agriculture"
 - "climate"

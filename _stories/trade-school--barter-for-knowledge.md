@@ -18,7 +18,7 @@ related_theories:
 - "The commons"
 related_stories:
 - "Cowry Collective timebank"
-- "Thessaloniki’s social solidarity clinic"
+- "Thessaloniki's social solidarity clinic"
 - "The Zapatista Little School"
 tags:
 - "community development"
