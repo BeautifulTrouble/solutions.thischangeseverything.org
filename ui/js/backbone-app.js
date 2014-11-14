@@ -643,6 +643,8 @@ App.IdeaLabListView = Backbone.View.extend({
         this.published = App.Modules;
         this.listenTo(this.published, "sort", this.render);
         this.submitted = new App.IdeasCollection();
+        // Set default sorting to # of votes
+        this.submitted.sortKey = '-votes';
         // Better yet, how can I defer rendering this until the collection fetches?
         this.listenTo(this.submitted, "sort reset", this.render);
         this.submitted.fetch({reset: true});
