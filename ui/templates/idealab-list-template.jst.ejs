@@ -52,7 +52,7 @@
                             <tr class="<%= model.attributes.published && 'published' || 'submitted' %> data-slug" data-slug="<%= model.attributes.slug %>">
                                 <td><%= model.attributes.title %></td>
                                 <td><%= model.attributes.short_date %></td>
-                                <td><%= model.attributes.votes %><div class="hover-tab"></div></td>
+                                <td><div class="hover-tab"></div><%= model.attributes.votes %></td>
                             </tr>
                             <% } }); %>
                         </tbody>

@@ -956,6 +956,7 @@ article#idealab-list {
         }
         th:last-child, td:last-child { // icon column
             text-align: center;
+            min-width: 80px;    // prevent heart icon from wrapping
         }
         th {
             text-transform: uppercase;
@@ -1008,7 +1009,7 @@ article#idealab-list {
             // TODO: wordsmith; also wtf @less
             tbody tr:hover.submitted .hover-tab:before { content: "Awaiting moderation"; }
             tbody tr:hover.published .hover-tab:before { content: "Awaiting improvements"; }
-            // XXX: this used to be nthis.ecessary but now isn't?
+            // XXX: this used to be necessary but now isn't??
             //tbody tr .hover-tab { &:before, &:after { display: none; } }
             tbody tr:hover .hover-tab {
                 position: relative;
@@ -1029,7 +1030,7 @@ article#idealab-list {
                     background: @gray;
                     padding-right: 10px;
                     padding-left: 5px;
-                    left: 38px;
+                    left: 48px;
                 }
                 &:after {
                     .hoverTab;
@@ -1038,7 +1039,7 @@ article#idealab-list {
                     border-style: solid;
                     border-width: 12px 12px 12px 0;
                     border-color: transparent @gray transparent transparent;
-                    left: 26px;
+                    left: 36px;
                 }
             }
         }
