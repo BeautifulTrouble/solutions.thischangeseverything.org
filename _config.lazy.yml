@@ -28,8 +28,8 @@ assets:
     - bower_components/isotope/dist/
     - bower_components/showdown/compressed/
     - bower_components/jquery.lazyload/
-  js_compressor: none
-  css_compressor: none
+  js_compressor: yui
+  css_compressor: yui
 
 image:
   source:
