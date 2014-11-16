@@ -129,7 +129,7 @@ App.IdeaVote = App.APIModel.extend({
 App.Improvement = App.APIModel.extend({
     urlRoot: "/api/improvements",
     validator: function(attrs, empties, options) {
-        var err = {}
+        var err = {};
         if (empties.content && empties.link) {
             err.content = "Give us something to work with!";
             err.link = "We'll settle for one of these";
@@ -214,7 +214,7 @@ App.APICollection = App.ModulesCollection.extend({
 });
 App.IdeasCollection = App.APICollection.extend({
     model: App.Idea,
-    url: "/api/ideas",
+    url: "/api/ideas"
 });
 App.ImprovementsCollection = App.APICollection.extend({
     model: App.Improvement,
@@ -279,7 +279,7 @@ App.ModulesListView = Backbone.View.extend({
                 type: '[data-category]',
                 title: '.caption .title'
             },
-            sortBy: "random",
+            sortBy: "random"
         });
         this.container.isotope( 'on', 'layoutComplete', function( isoInstance, laidOutItems ) {
             $window.trigger("scroll");
@@ -435,7 +435,7 @@ App.ValueDetailView = Backbone.View.extend({
     },
     template: "value-detail-template",
     events: {
-        "click button.close-detail": "closeDetail",
+        "click button.close-detail": "closeDetail"
     },
     closeDetail: function(e) { navTo(); },
     beforeRender: function() {
@@ -467,22 +467,6 @@ App.ValueDetailView = Backbone.View.extend({
 
 // IdeaLab views
 App.IdeaLabView = Backbone.View.extend({
-    // This view's entire purpose in life is to contain 
-    // two sub-views: mainView and sideView
-    template: "idealab-template",
-    initialize: function(options) {
-        this.mainView = options.mainView;
-        this.mainView.parentView = this;
-        this.sideView = options.sideView;
-        this.sideView.parentView = this;
-    },
-    beforeRender: function() {
-        this.insertView('#idealab-main', this.mainView);
-        this.insertView('#idealab-sidebar', this.sideView);
-    }
-});
-
-App.IdeaLabViewNew = Backbone.View.extend({
     template: "idealab-template",
     initialize: function () {
         // showSide will be called from jquery callbacks, so make that "easy."
@@ -495,7 +479,7 @@ App.IdeaLabViewNew = Backbone.View.extend({
         this.insertView('#idealab-sidebar', this.sideView);
     },
     showSide: function(view) {
-        console.log('gen128')
+        console.log('gen130')
         this.prevSideView = this.sideView;
         this.sideView = new view();
         this.render();
@@ -506,6 +490,7 @@ App.IdeaLabViewNew = Backbone.View.extend({
         this.render();
     },
     loginOrCall: function (callback) {
+        // TODO: This should do something smart about context/this
         new App.User().fetch({
             success: callback,
             error: _.partial(this.showSide, App.IdeaLabLoginView)
@@ -513,254 +498,7 @@ App.IdeaLabViewNew = Backbone.View.extend({
     }
 });
 
-App.IdeaLabLoginView = Backbone.View.extend({
-    template: "idealab-login-template",
-});
-App.IdeaLabErrorView = Backbone.View.extend({
-    template: "idealab-error-template",
-    events: {
-        "click .add-another": function () { this.parentView.unshowSide(); }
-    }
-});
-App.IdeaLabIdeaDoneView = Backbone.View.extend({
-    template: "idealab-idea-done-template",
-    events: {
-        "click .add-another": function () { this.parentView.unshowSide(); }
-    }
-});
-App.IdeaLabImprovementDoneView = Backbone.View.extend({
-    template: "idealab-improvement-done-template",
-    events: {
-        "click .add-another": function () { this.parentView.unshowSide(); }
-    }
-});
-
-App.FormHelper = Backbone.View.extend({
-    // All the nasty logic needed to deal with form submission 
-    // and displaying multiple states within a view.
-    // 
-    // Example use:
-    //  this.safeFormAsModel('form.idea', App.Idea);
-    // Creates an instance of App.Idea and deals with toggling 
-    // the three states: done, fail, and login
-    //
-    // Example use:
-    //  this.setState();
-    //  this.setState('done');
-    //  this.setState('fail');
-    //  this.setState('arbitrary');
-    // Toggles between elements with markup like this:
-    //  <div id="something">Default screen</div>
-    //  <div id="something-done" class="hidden">Success screen</div>
-    //  <div id="something-fail" class="hidden">Fail screen</div>
-    //  <div id="something-arbitrary" class="hidden">...</div>
-    baseStateSelector: '',
-    serverError: '.server-error',
-    fieldError: '.field-error',
-    states: 'done fail login',
-    contactFields: ['name', 'contact'],
-    setFieldErrors: function(obj) {
-        _.each(obj.validationError, function(text, field) {
-            this.$('form [name=' + field + '] + ' + this.fieldError).text(text);
-        }, this);
-        obj.validationError = null;
-    },
-    clearFieldErrors: function() {
-        this.$('form ' + this.fieldError).text('');
-    },
-    setState: function(state) {
-        this.clearFieldErrors();
-        // TODO: Revisit this whole concept when not tired
-        // Show/Hide base depending on state
-        this.$(this.baseStateSelector)[state ? 'addClass' : 'removeClass']('hidden');
-        // Show/Hide the -suffixed elements
-        var states = this.states.match(/\S+/g);
-        _.each(states, function (s) {
-            this.$(this.baseStateSelector + '-' + s)[
-                s == state ? 'removeClass' : 'addClass'
-            ]('hidden');
-        }, this);
-    },
-    safeFormAsModel: function(formSelector, Model) { 
-        this.clearFieldErrors();
-        var form = {};
-        _.each($(formSelector).serializeArray(), function(field) {
-            form[field.name] = field.value;
-        });
-        var obj = new Model(form);
-        if (obj.isValid()) {
-            obj.save(null, {
-                success: this.done || this._done, 
-                error: this.fail || this._fail,
-                context: this
-            }); 
-        } else {
-            this.setFieldErrors(obj);
-        }
-    },
-    _done: function(model, response, options) { 
-        var self = options.context;
-        self.setState('done'); 
-        new App.LastPOST().save();  // Absurdly erases the content at /last
-        // TODO: THIS is purportedly what backbone DOES and I'm calling it manually. Gross.
-        try { self.parentView.mainView.submitted.fetch({reset: true}); } catch(e) { }
-    },
-    _fail: function(model, response, options) {
-        var self = options.context;
-        var err = response.message ? response.message : 'API Unavailable';
-        var code = response.status ? response.status : 500;
-        if (code == 401) {
-            self.setState('login');
-        } else {
-            self.setState('fail');
-            self.$(self.serverError).text(code + ": " + err);
-        }
-    },
-    afterRender: function() {
-        // Insert name/contact into forms if we have them
-        var self = this;
-        this.user = new App.User();
-        this.user.fetch({success: _.bind(this.loggedIn, this), error: _.bind(this.loggedOut, this)});
-        // Add next parameter to login/logout buttons
-        this.$('a.login, a.logout').each(function () {
-            var next = (this.href.indexOf('?') != -1) ? '&next=' : '?next=';
-            this.href = this.href + next + window.location.pathname + '%23' + Backbone.history.fragment;
-        });
-        // If there was form data, set it again
-        var last = new App.LastPOST();
-        last.fetch({success: function() {
-            _.each(last.attributes, function(value, key) {
-                this.$('form [name=' + key + ']').val(value);
-            }, self);
-        } });
-    },
-    loggedIn: function() {
-        _.each(this.contactFields, function(name) {
-            this.$('form [name=' + name + ']').val(this.user.attributes[name]);
-        }, this);
-        this.$('.logout-hack').removeClass('hidden');
-    },
-    loggedOut: function() {
-        this.$('form [name=name], form [name=contact]').val("");
-        this.$('.logout-hack').addClass('hidden');
-    }
-});
-
-//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-App.FormHelperNew = Backbone.View.extend({
-    getForm: function (selector) {
-        // Get form values from localStorage
-        return Local('form-' + selector) || {};
-    },
-    forgetForm: function (selector) {
-        // Overwrite form values in localStorage
-        Local('form-' + selector, null);
-    },
-    storeForm: function (selector) {
-        // Store form values in localStorage
-        var form = {};
-        _.each($(selector).serializeArray(), function(field) {
-            form[field.name] = field.value;
-        });
-        Local('form-' + selector, form);
-    },
-    restoreForm: function (selector) {
-        // Restore form values from localStorage
-        var form = this.getForm(selector);
-        _.each(form, function(value, key) {
-            this.$(selector + ' [name=' + key + ']').val(form[key]);
-        }, this);
-    },
-    showFormErrors: function(obj) {
-        _.each(obj.validationError, function(text, field) {
-            this.$('form [name=' + field + '] + .field-error').text(text);
-        }, this);
-        obj.validationError = null;
-    },
-    hideFormErrors: function() {
-        this.$('form .field-error').text('');
-    }
-});
-
-App.IdeaLabIdeaViewNew = App.FormHelperNew.extend({
-    template: "idealab-idea-template",
-    afterRender: function () {
-        this.restoreForm('#add-idea');
-    },
-    events: {
-        "click input.add-idea": function () {
-            var self = this;
-            this.hideFormErrors();
-            this.storeForm('#add-idea');
-            this.parentView.loginOrCall(function () {
-                var idea = new App.Idea(self.getForm('#add-idea'));
-                if (idea.isValid()) {
-                    idea.save(null, {
-                        error: _.partial(self.parentView.showSide, App.IdeaLabErrorView),
-                        success: function () {
-                            self.forgetForm('#add-idea');
-                            // TODO: does it matter how soon the user's idea shows in the list?
-                            //self.parentView.mainView.submitted.fetch({reset: true});
-                            self.parentView.showSide(App.IdeaLabIdeaDoneView);
-                        }
-                    });
-                } else {
-                    self.showFormErrors(idea);
-                }
-            });
-        },
-        "click .logout": function () {
-            $.ajax('/api/logout');
-        }
-    }
-
-});
-App.IdeaLabIdeaView = App.FormHelper.extend({
-    template: "idealab-idea-template",
-    baseStateSelector: '#idealab-idea',
-    events: {
-        "click input.add-idea": function () { 
-            this.safeFormAsModel('form#add-idea', App.Idea);
-        },
-        "click button.add-another": function () { this.render(); },
-        "click .logout-hack": function () { 
-            $.ajax('/api/logout', {success: _.bind(this.loggedOut, this), error: _.bind(this.loggedIn, this)});
-        }
-    }
-});
-App.IdeaLabImprovementView = App.FormHelper.extend({
-    template: "idealab-improvement-template",
-    baseStateSelector: '#idealab-improvement',
-    events: {
-        'click button[class^="add-a"]': function (e) { 
-            // Why is this not one line of jQuery?
-            var $button = this.$(e.currentTarget);
-            if ($button.hasClass('selected')) {
-                $button.removeClass('selected');
-                $button.next('form').addClass('hidden');
-            } else {
-                this.$('form').addClass('hidden');
-                this.$('button').removeClass('selected');
-                $button.addClass('selected').next('form').removeClass('hidden');
-            }
-            this.clearFieldErrors(); // Normally automatic when you use proper views.
-        },
-        "click input.add-an-example": function () { this.saveForm('add-an-example'); },
-        "click input.add-a-resource": function () { this.saveForm('add-a-resource'); },
-        "click input.add-a-question": function () { this.saveForm('add-a-question'); },
-        "click button.add-another": function () { this.render(); },
-        "click .logout-hack": function () { 
-            $.ajax('/api/logout', {success: _.bind(this.loggedOut, this), error: _.bind(this.loggedIn, this)});
-        }
-    },
-    saveForm: function (s) {
-        this.safeFormAsModel('form#' + s, App.Improvement);
-    },
-});
-//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
+// Idealab main views
 App.IdeaLabListView = Backbone.View.extend({
     template: "idealab-list-template",
     initialize: function(options) {
@@ -817,6 +555,7 @@ App.IdeaLabListView = Backbone.View.extend({
         }
     }
 });
+
 App.IdeaLabDetailView = Backbone.View.extend({
     template: "idealab-detail-template",
     initialize: function(options) {
@@ -838,10 +577,13 @@ App.IdeaLabDetailView = Backbone.View.extend({
             navTo('tag/' + tagName);
         },
         "click span.vote": function(e) {
+            var self = this;
             var $el = this.$(e.currentTarget);
-            new App.IdeaVote({id: this.model.id}).save(null, {  // Poorly-documented arrrgh!
-                success: function() { $el.toggleClass('loved'); }
-            });
+            this.parentView.loginOrCall(function () {
+                new App.IdeaVote({id: self.model.id}).save(null, { 
+                    success: function() { $el.toggleClass('loved'); }
+                });
+            })
         }
     },
     afterRender: function() {
@@ -852,6 +594,135 @@ App.IdeaLabDetailView = Backbone.View.extend({
             content: function() {
                 return $('#share-popover').html();
             }});
+    }
+});
+
+// Idealab sidebar views
+App.IdeaLabFormHelper = Backbone.View.extend({
+    storeForm: function (selector) {
+        // Store form values in localStorage
+        var form = {};
+        _.each($(selector).serializeArray(), function(field) {
+            form[field.name] = field.value;
+        });
+        Local('form-' + selector, form);
+    },
+    restoreForm: function (selector) {
+        // Restore form values from localStorage
+        var form = this.getForm(selector);
+        _.each(form, function(value, key) {
+            this.$(selector + ' [name=' + key + ']').val(form[key]);
+        }, this);
+    },
+    getForm: function (selector) {
+        // Get form values from localStorage
+        return Local('form-' + selector) || {};
+    },
+    forgetForm: function (selector) {
+        // Erase form values in localStorage
+        Local('form-' + selector, null);
+    },
+    showFormErrors: function(obj) {
+        // After an attempted saveForm, this can be called to show errors
+        _.each(obj.validationError, function(text, field) {
+            this.$('form [name=' + field + '] + .field-error').text(text);
+        }, this);
+        obj.validationError = null;
+    },
+    hideFormErrors: function() {
+        // Call freely to clear error fields
+        this.$('form .field-error').text('');
+    },
+    saveForm: function (selector, model, successView, errorView) {
+        // Named to avoid confusion with storeForm, THIS is the real save method
+        var self = this;
+        this.hideFormErrors();
+        this.storeForm(selector);
+        this.parentView.loginOrCall(function () {
+            var object = new model(self.getForm(selector));
+            if (object.isValid()) {
+                object.save(null, {
+                    error: _.partial(self.parentView.showSide, errorView),
+                    success: function () {
+                        self.forgetForm(selector);
+                        self.parentView.showSide(successView);
+                    }
+                });
+            } else {
+                self.showFormErrors(object);
+            }
+        });
+    }
+});
+
+App.IdeaLabIdeaView = App.IdeaLabFormHelper.extend({
+    template: "idealab-idea-template",
+    afterRender: function () {
+        this.restoreForm('#add-idea');
+    },
+    events: {
+        "click .logout": function () { $.ajax('/api/logout'); },
+        "click input.add-idea": function () { 
+            this.saveForm('#add-idea', App.Idea, App.IdeaLabIdeaDoneView, App.IdeaLabErrorView);
+        }
+    }
+});
+
+App.IdeaLabImprovementView = App.IdeaLabFormHelper.extend({
+    template: "idealab-improvement-template",
+    events: {
+        "click .logout": function () { $.ajax('/api/logout'); },
+        'click button[class^="add-a"]': function (e) { 
+            var $button = this.$(e.currentTarget);
+            if ($button.hasClass('selected')) {
+                $button.removeClass('selected');
+                $button.next('form').addClass('hidden');
+            } else {
+                this.$('form').addClass('hidden');
+                this.$('button').removeClass('selected');
+                $button.addClass('selected').next('form').removeClass('hidden');
+            }
+        },
+        "click input.add-an-example": function () { 
+            this.saveForm('#add-an-example', App.Improvement, 
+                App.IdeaLabImprovementDoneView, App.IdeaLabErrorView);
+        },
+        "click input.add-a-resource": function () { 
+            this.saveForm('#add-a-resource', App.Improvement, 
+                App.IdeaLabImprovementDoneView, App.IdeaLabErrorView);
+        },
+        "click input.add-a-question": function () { 
+            this.saveForm('#add-a-question', App.Improvement, 
+                App.IdeaLabImprovementDoneView, App.IdeaLabErrorView);
+        }
+    }
+});
+
+App.IdeaLabLoginView = Backbone.View.extend({
+    template: "idealab-login-template",
+    afterRender: function () {
+        this.$('a.login').each(function () {
+            var next = (this.href.indexOf('?') == -1) ? '?next=' : '&next=';
+            this.href = this.href + next + window.location.pathname + '%23' + Backbone.history.fragment;
+        });
+    }
+});
+App.IdeaLabErrorView = Backbone.View.extend({
+    template: "idealab-error-template",
+    events: {
+        "click .add-another": function () { this.parentView.unshowSide(); }
+    }
+});
+App.IdeaLabIdeaDoneView = Backbone.View.extend({
+    template: "idealab-idea-done-template",
+    events: {
+        "click .add-another": function () { this.parentView.unshowSide(); }
+    }
+});
+App.IdeaLabImprovementDoneView = Backbone.View.extend({
+    template: "idealab-improvement-done-template",
+    events: {
+        "click .add-another": function () { this.parentView.unshowSide(); }
     }
 });
 
@@ -951,16 +822,16 @@ App.Router = Backbone.Router.extend({
             state = 'submitted';
         }
         App.router.navigate('idealab/' + state, {replace: true});
-        App.Layout.setView('#content', new App.IdeaLabViewNew({
+        App.Layout.setView('#content', new App.IdeaLabView({
             mainView: new App.IdeaLabListView({state: state}),
-            sideView: new App.IdeaLabIdeaViewNew()
+            sideView: new App.IdeaLabIdeaView()
         }) );
         App.Layout.render();
     },
     displayIdeaLabPublishedDetail: function(name) {
         var model = this.collection.findWhere({slug: name});
         if (model) {
-            App.Layout.setView('#content', new App.IdeaLabViewNew({
+            App.Layout.setView('#content', new App.IdeaLabView({
                 mainView: new App.IdeaLabDetailView({
                     model: model,
                     state: 'published'
@@ -978,7 +849,7 @@ App.Router = Backbone.Router.extend({
             .done(function() {
                 var model = collection.findWhere({slug: name});
                 if (model) {
-                    App.Layout.setView('#content', new App.IdeaLabViewNew({
+                    App.Layout.setView('#content', new App.IdeaLabView({
                         mainView: new App.IdeaLabDetailView({
                             model: model,
                             state: 'submitted'
