@@ -103,16 +103,17 @@ App.APIModel = Backbone.Model.extend({
             return [pair[0], pair[1].trim() == ""];
         }) );
         var err = this.validator(attrs, empties, options);
-        if (!this.validEmail(attrs.contact)) err.contact = "Please provide a real email address";
+        if (!this.validEmail(attrs.contact)) {
+            err.contact = "Please provide a real email address";
+        }
         if (_.isEmpty(err)) return;
         return err;
     },
     validEmail: function(email) {
-        var blank = /^\s*$/;
         var valid = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if (blank.test(email)) return false;
-        if (valid.test(email)) return true;
-        return false;
+        if (valid.test(email)) {
+            return true;
+        }
     }
 });
 App.LastPOST = App.APIModel.extend({
@@ -125,8 +126,12 @@ App.Idea = App.APIModel.extend({
     urlRoot: "/api/ideas",
     validator: function (attrs, empties, options) {
         var err = {};
-        if (empties.title) err.title = "This idea needs a title";
-        if (empties.short_write_up) err.short_write_up = "Looks like you forgot to write the idea itself";
+        if (empties.title) {
+            err.title = "This idea needs a title";
+        }
+        if (empties.short_write_up) {
+            err.short_write_up = "Looks like you forgot to write the idea itself";
+        }
         return err;
     }
 });
@@ -593,9 +598,8 @@ App.IdeaLabDetailView = Backbone.View.extend({
         this.$('.icon-share').popover({ 
             html : true, 
             placement: 'top',
-            content: function() {
-                return $('#share-popover').html();
-            }});
+            content: function() { return $('#share-popover').html(); }
+        });
     }
 });
 
