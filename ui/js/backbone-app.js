@@ -494,16 +494,7 @@ App.IdeaLabView = Backbone.View.extend({
         this.prevSideView || location.reload();
         this.sideView = this.prevSideView;
         this.render();
-    },
-    /*
-    loginOrCall: function (callback) {
-        // TODO: This should do something smart about context/this
-        new App.User().fetch({
-            success: callback,
-            error: _.partial(this.showSide, App.IdeaLabLoginView)
-        });
     }
-    */
 });
 
 // Idealab main views
@@ -595,13 +586,6 @@ App.IdeaLabDetailView = Backbone.View.extend({
                 },
                 error: _.partial(this.parentView.showSide, App.IdeaLabLoginView)
             });
-            /*
-            this.parentView.loginOrCall(function () {
-                new App.IdeaVote({id: self.model.id}).save(null, { 
-                    success: function() { $el.toggleClass('loved'); }
-                });
-            })
-            */
         }
     },
     afterRender: function() {
@@ -657,46 +641,23 @@ App.IdeaLabFormMixer = Backbone.View.extend({
         this.hideFormErrors();
         this.storeForm(selector);
         loggedInOrElse({
+            error: login,
             success: function () {
                 var object = new model(self._getForm(selector));
                 if (object.isValid()) {
                     object.save(null, {
+                        error: error,
                         success: function () {
                             self._forgetForm(selector);
                             success();
-                            //self.parentView.showSide(successView);
-                        },
-                        error: error //_.partial(self.parentView.showSide, errorView),
+                        }
                     });
                 } else {
                     self.showFormErrors(object);
                 }
-            },
-            error: login //_.partial(self.parentView.showSide, errorView),
-        });
-    },
-    /*
-    saveForm: function (selector, model, successView, errorView) {
-        // Don't confuse this with storeForm! Only saveForm saves to the database
-        var self = this;
-        this.hideFormErrors();
-        this.storeForm(selector);
-        this.parentView.loginOrCall(function () {
-            var object = new model(self._getForm(selector));
-            if (object.isValid()) {
-                object.save(null, {
-                    error: _.partial(self.parentView.showSide, errorView),
-                    success: function () {
-                        self._forgetForm(selector);
-                        self.parentView.showSide(successView);
-                    }
-                });
-            } else {
-                self.showFormErrors(object);
             }
         });
     },
-    */
     _getForm: function (selector) {
         return Local('form-' + selector) || {};
     },
