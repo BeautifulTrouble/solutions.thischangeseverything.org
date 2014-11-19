@@ -62,7 +62,7 @@ var JSONStorage = function(store, prefix) {
     //  Local = JSONStorage(typeof localStorage !== "undefined" ? localStorage : {});
     //  Local('x', [1,2,3,4]);
     //  Local('x');
-    prefix = prefix || 'jsonified-';    // Namespace all the values with this
+    prefix = prefix || '';              // Namespace all the values with this
     empty = 'null';                     // Valid JSON string for non-existent keys
     return function (key, value) {
         if (value === void 0) return JSON.parse(store[prefix + key] || empty); 
@@ -71,6 +71,13 @@ var JSONStorage = function(store, prefix) {
 };
 var Local = JSONStorage(typeof localStorage !== "undefined" ? localStorage : {});
 var Session = JSONStorage(typeof sessionStorage !== "undefined" ? sessionStorage : {});
+
+var loggedInOrElse = function (callbacks) {
+    new App.User().fetch({
+        success: callbacks.success || _.noop,
+        error: callbacks.error || _.noop
+    });
+};
 
 // ===================================================================
 // Models
@@ -112,14 +119,14 @@ App.LastPOST = App.APIModel.extend({
     urlRoot: "/api/last"
 });
 App.User = App.APIModel.extend({
-    urlRoot: "/api/me"
+    urlRoot: "/api/me",
 });
 App.Idea = App.APIModel.extend({
     urlRoot: "/api/ideas",
     validator: function (attrs, empties, options) {
         var err = {};
         if (empties.title) err.title = "This idea needs a title";
-        if (empties.short_write_up) err.short_write_up = "Looks like you forgot to write the idea iteself";
+        if (empties.short_write_up) err.short_write_up = "Looks like you forgot to write the idea itself";
         return err;
     }
 });
@@ -469,7 +476,7 @@ App.ValueDetailView = Backbone.View.extend({
 App.IdeaLabView = Backbone.View.extend({
     template: "idealab-template",
     initialize: function () {
-        // showSide will be called from jquery callbacks, so make that "easy."
+        // Make this act like a backbone method even when jQuery calls it
         this.showSide = _.bind(this.showSide, this);
     },
     beforeRender: function () {
@@ -479,7 +486,6 @@ App.IdeaLabView = Backbone.View.extend({
         this.insertView('#idealab-sidebar', this.sideView);
     },
     showSide: function(view) {
-        console.log('gen130')
         this.prevSideView = this.sideView;
         this.sideView = new view();
         this.render();
@@ -489,6 +495,7 @@ App.IdeaLabView = Backbone.View.extend({
         this.sideView = this.prevSideView;
         this.render();
     },
+    /*
     loginOrCall: function (callback) {
         // TODO: This should do something smart about context/this
         new App.User().fetch({
@@ -496,6 +503,7 @@ App.IdeaLabView = Backbone.View.extend({
             error: _.partial(this.showSide, App.IdeaLabLoginView)
         });
     }
+    */
 });
 
 // Idealab main views
@@ -528,7 +536,7 @@ App.IdeaLabListView = Backbone.View.extend({
         "click #idealab-published tr.data-slug": function (e) { 
             navTo('idealab/published/' + e.currentTarget.dataset.slug);
         },
-        // :not(.submitted) is the moderation^2 thing TODO:TODO:TODO
+        // :not(.submitted) meaning "approved" (submitted idealab != submitted gallery)
         "click #idealab-submitted tr:not(.submitted).data-slug": function (e) { 
             navTo('idealab/submitted/' + e.currentTarget.dataset.slug);
         },
@@ -579,11 +587,21 @@ App.IdeaLabDetailView = Backbone.View.extend({
         "click span.vote": function(e) {
             var self = this;
             var $el = this.$(e.currentTarget);
+            loggedInOrElse({
+                success: function () {
+                    new App.IdeaVote({id: self.model.id}).save(null, {
+                        success: function() { $el.toggleClass('loved'); }
+                    });
+                },
+                error: _.partial(this.parentView.showSide, App.IdeaLabLoginView)
+            });
+            /*
             this.parentView.loginOrCall(function () {
                 new App.IdeaVote({id: self.model.id}).save(null, { 
                     success: function() { $el.toggleClass('loved'); }
                 });
             })
+            */
         }
     },
     afterRender: function() {
@@ -598,7 +616,10 @@ App.IdeaLabDetailView = Backbone.View.extend({
 });
 
 // Idealab sidebar views
-App.IdeaLabFormHelper = Backbone.View.extend({
+App.IdeaLabFormMixer = Backbone.View.extend({
+    // These form-handling functions should have only 2 external dependencies:
+    // Local for localStorage and loggedInOrElse for handling deciding between
+    // two functions to call based on the existence of a User object.
     storeForm: function (selector) {
         // Store form values in localStorage
         var form = {};
@@ -608,19 +629,11 @@ App.IdeaLabFormHelper = Backbone.View.extend({
         Local('form-' + selector, form);
     },
     restoreForm: function (selector) {
-        // Restore form values from localStorage
-        var form = this.getForm(selector);
+        // Restore [type!=hidden] form values from localStorage
+        var form = this._getForm(selector);
         _.each(form, function(value, key) {
-            this.$(selector + ' [name=' + key + ']').val(form[key]);
+            this.$(selector + ' [name=' + key + '][type!=hidden]').val(form[key]);
         }, this);
-    },
-    getForm: function (selector) {
-        // Get form values from localStorage
-        return Local('form-' + selector) || {};
-    },
-    forgetForm: function (selector) {
-        // Erase form values in localStorage
-        Local('form-' + selector, null);
     },
     showFormErrors: function(obj) {
         // After an attempted saveForm, this can be called to show errors
@@ -633,18 +646,48 @@ App.IdeaLabFormHelper = Backbone.View.extend({
         // Call freely to clear error fields
         this.$('form .field-error').text('');
     },
+    saveForm: function (options) {
+        // Don't confuse this with storeForm! Only saveForm saves to the database
+        var self = this;
+        var selector = options.selector;
+        var model = options.model;
+        var error = options.error || _.noop;
+        var login = options.login || _.noop;
+        var success = options.success || _.noop;
+        this.hideFormErrors();
+        this.storeForm(selector);
+        loggedInOrElse({
+            success: function () {
+                var object = new model(self._getForm(selector));
+                if (object.isValid()) {
+                    object.save(null, {
+                        success: function () {
+                            self._forgetForm(selector);
+                            success();
+                            //self.parentView.showSide(successView);
+                        },
+                        error: error //_.partial(self.parentView.showSide, errorView),
+                    });
+                } else {
+                    self.showFormErrors(object);
+                }
+            },
+            error: login //_.partial(self.parentView.showSide, errorView),
+        });
+    },
+    /*
     saveForm: function (selector, model, successView, errorView) {
-        // Named to avoid confusion with storeForm, THIS is the real save method
+        // Don't confuse this with storeForm! Only saveForm saves to the database
         var self = this;
         this.hideFormErrors();
         this.storeForm(selector);
         this.parentView.loginOrCall(function () {
-            var object = new model(self.getForm(selector));
+            var object = new model(self._getForm(selector));
             if (object.isValid()) {
                 object.save(null, {
                     error: _.partial(self.parentView.showSide, errorView),
                     success: function () {
-                        self.forgetForm(selector);
+                        self._forgetForm(selector);
                         self.parentView.showSide(successView);
                     }
                 });
@@ -652,27 +695,48 @@ App.IdeaLabFormHelper = Backbone.View.extend({
                 self.showFormErrors(object);
             }
         });
+    },
+    */
+    _getForm: function (selector) {
+        return Local('form-' + selector) || {};
+    },
+    _forgetForm: function (selector) {
+        Local('form-' + selector, null);
     }
 });
 
-App.IdeaLabIdeaView = App.IdeaLabFormHelper.extend({
+App.IdeaLabIdeaView = App.IdeaLabFormMixer.extend({
     template: "idealab-idea-template",
     afterRender: function () {
         this.restoreForm('#add-idea');
     },
     events: {
         "click .logout": function () { $.ajax('/api/logout'); },
-        "click input.add-idea": function () { 
-            this.saveForm('#add-idea', App.Idea, App.IdeaLabIdeaDoneView, App.IdeaLabErrorView);
-        }
+        "click input.add-idea": 'saveIdea'
+    },
+    saveIdea: function () {
+        this.saveForm({
+            selector: '#add-idea', 
+            model: App.Idea, 
+            error: _.partial(this.parentView.showSide, App.IdeaLabErrorView),
+            login: _.partial(this.parentView.showSide, App.IdeaLabLoginView),
+            success: _.partial(this.parentView.showSide, App.IdeaLabIdeaDoneView)
+        });
     }
 });
 
-App.IdeaLabImprovementView = App.IdeaLabFormHelper.extend({
+App.IdeaLabImprovementView = App.IdeaLabFormMixer.extend({
     template: "idealab-improvement-template",
+    afterRender: function () {
+        this.restoreForm('#add-an-example');
+        this.restoreForm('#add-a-resource');
+        this.restoreForm('#add-a-question');
+    },
     events: {
         "click .logout": function () { $.ajax('/api/logout'); },
         'click button[class^="add-a"]': function (e) { 
+            this.hideFormErrors();
+            // Do the button toggle dance...
             var $button = this.$(e.currentTarget);
             if ($button.hasClass('selected')) {
                 $button.removeClass('selected');
@@ -683,18 +747,18 @@ App.IdeaLabImprovementView = App.IdeaLabFormHelper.extend({
                 $button.addClass('selected').next('form').removeClass('hidden');
             }
         },
-        "click input.add-an-example": function () { 
-            this.saveForm('#add-an-example', App.Improvement, 
-                App.IdeaLabImprovementDoneView, App.IdeaLabErrorView);
-        },
-        "click input.add-a-resource": function () { 
-            this.saveForm('#add-a-resource', App.Improvement, 
-                App.IdeaLabImprovementDoneView, App.IdeaLabErrorView);
-        },
-        "click input.add-a-question": function () { 
-            this.saveForm('#add-a-question', App.Improvement, 
-                App.IdeaLabImprovementDoneView, App.IdeaLabErrorView);
-        }
+        "click input.add-an-example": function () { this.saveImprovement('#add-an-example') },
+        "click input.add-a-resource": function () { this.saveImprovement('#add-a-resource') },
+        "click input.add-a-question": function () { this.saveImprovement('#add-a-question') }
+    },
+    saveImprovement: function (selector) {
+        this.saveForm({
+            selector: selector,
+            model: App.Improvement,
+            error: _.partial(this.parentView.showSide, App.IdeaLabErrorView),
+            login: _.partial(this.parentView.showSide, App.IdeaLabLoginView),
+            success: _.partial(this.parentView.showSide, App.IdeaLabImprovementDoneView)
+        });
     }
 });
 
