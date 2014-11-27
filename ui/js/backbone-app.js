@@ -73,9 +73,11 @@ var Local = JSONStorage(typeof localStorage !== "undefined" ? localStorage : {})
 var Session = JSONStorage(typeof sessionStorage !== "undefined" ? sessionStorage : {});
 
 var ensureLoggedIn = function (callbacks) {
+    // App.currentUser is currently instantiated by App.HeaderView
     App.currentUser && App.currentUser.fetch(callbacks || {});
 };
 var logOut = function () {
+    // App.currentUser is currently instantiated by App.HeaderView
     $.ajax('/api/logout');
     App.currentUser && App.currentUser.unset('name');
 };
@@ -620,9 +622,16 @@ App.IdeaLabFormMixer = Backbone.View.extend({
     restoreForm: function (selector) {
         // Restore [type!=hidden] form values from localStorage
         var form = this._getForm(selector);
+        var restored = false;
         _.each(form, function(value, key) {
-            this.$(selector + ' [name=' + key + '][type!=hidden]').val(form[key]);
+            var field = this.$(selector + ' [name=' + key + '][type!=hidden]');
+            if (field && form[key]) {
+                field.val(form[key]);
+                restored = true;
+            }
         }, this);
+        // Return true if any form data was restored
+        return restored;
     },
     showFormErrors: function(obj) {
         // After an attempted saveForm, this can be called to show errors
@@ -674,7 +683,14 @@ App.IdeaLabFormMixer = Backbone.View.extend({
 App.IdeaLabIdeaView = App.IdeaLabFormMixer.extend({
     template: "idealab-idea-template",
     afterRender: function () {
-        this.restoreForm('#add-idea');
+        if (this.restoreForm('#add-idea')) {
+            // If the form is valid and the user is logged in, auto-submit it.
+            this.saveForm({
+                selector: '#add-idea',
+                model: App.Idea,
+                success: _.partial(this.parentView.showSide, App.IdeaLabIdeaDoneView)
+            });
+        }
     },
     events: {
         "click .logout": logOut,
@@ -694,9 +710,16 @@ App.IdeaLabIdeaView = App.IdeaLabFormMixer.extend({
 App.IdeaLabImprovementView = App.IdeaLabFormMixer.extend({
     template: "idealab-improvement-template",
     afterRender: function () {
-        this.restoreForm('#add-an-example');
-        this.restoreForm('#add-a-resource');
-        this.restoreForm('#add-a-question');
+        _.each(['#add-an-example', '#add-a-resource', '#add-a-question'], function(selector) {
+            if (this.restoreForm(selector)) {
+                // If the form is valid and the user is logged in, auto-submit it.
+                this.saveForm({
+                    selector: selector,
+                    model: App.Improvement,
+                    success: _.partial(this.parentView.showSide, App.IdeaLabImprovementDoneView)
+                });
+            }
+        }, this);
     },
     events: {
         "click .logout": logOut,
@@ -766,6 +789,7 @@ App.HeaderView = Backbone.View.extend({
         'click .logout': logOut
     },
     initialize: function () {
+        // App.currentUser is used by ensureLoggedIn and logOut
         App.currentUser = new App.User();
         this.listenTo(App.currentUser, 'change', this.render);
         App.currentUser.fetch();
