@@ -543,9 +543,14 @@ App.IdeaLabListView = Backbone.View.extend({
         "click span.submitted": function () { this.setState('submitted'); },
         "click #idealab-submitted thead th": function(e) {
             this.submitted.sortCollectionBy(e.currentTarget.dataset.sortBy);
+            // XXX: I shouldn't have to call this manually but something about
+            //      the way I insert views seems to break event listening.
+            //      TODO: investigate layoutManager
+            this.render();
         },
         "click #idealab-published thead th": function(e) {
             this.published.sortCollectionBy(e.currentTarget.dataset.sortBy);
+            this.render();
         }
     },
     afterRender: function() {
