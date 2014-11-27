@@ -72,11 +72,12 @@ var JSONStorage = function(store, prefix) {
 var Local = JSONStorage(typeof localStorage !== "undefined" ? localStorage : {});
 var Session = JSONStorage(typeof sessionStorage !== "undefined" ? sessionStorage : {});
 
-var loggedInOrElse = function (callbacks) {
-    new App.User().fetch({
-        success: callbacks.success || _.noop,
-        error: callbacks.error || _.noop
-    });
+var ensureLoggedIn = function (callbacks) {
+    App.currentUser && App.currentUser.fetch(callbacks || {});
+};
+var logOut = function () {
+    $.ajax('/api/logout');
+    App.currentUser && App.currentUser.unset('name');
 };
 
 // ===================================================================
@@ -583,13 +584,13 @@ App.IdeaLabDetailView = Backbone.View.extend({
         "click span.vote": function(e) {
             var self = this;
             var $el = this.$(e.currentTarget);
-            loggedInOrElse({
+            ensureLoggedIn({
+                error: _.partial(this.parentView.showSide, App.IdeaLabLoginView),
                 success: function () {
                     new App.IdeaVote({id: self.model.id}).save(null, {
                         success: function() { $el.toggleClass('loved'); }
                     });
-                },
-                error: _.partial(this.parentView.showSide, App.IdeaLabLoginView)
+                }
             });
         }
     },
@@ -606,7 +607,7 @@ App.IdeaLabDetailView = Backbone.View.extend({
 // Idealab sidebar views
 App.IdeaLabFormMixer = Backbone.View.extend({
     // These form-handling functions should have only 2 external dependencies:
-    // Local for localStorage and loggedInOrElse for handling deciding between
+    // Local for localStorage and ensureLoggedIn for handling deciding between
     // two functions to call based on the existence of a User object.
     storeForm: function (selector) {
         // Store form values in localStorage
@@ -644,7 +645,7 @@ App.IdeaLabFormMixer = Backbone.View.extend({
         var success = options.success || _.noop;
         this.hideFormErrors();
         this.storeForm(selector);
-        loggedInOrElse({
+        ensureLoggedIn({
             error: login,
             success: function () {
                 var object = new model(self._getForm(selector));
@@ -676,7 +677,7 @@ App.IdeaLabIdeaView = App.IdeaLabFormMixer.extend({
         this.restoreForm('#add-idea');
     },
     events: {
-        "click .logout": function () { $.ajax('/api/logout'); },
+        "click .logout": logOut,
         "click input.add-idea": 'saveIdea'
     },
     saveIdea: function () {
@@ -698,7 +699,7 @@ App.IdeaLabImprovementView = App.IdeaLabFormMixer.extend({
         this.restoreForm('#add-a-question');
     },
     events: {
-        "click .logout": function () { $.ajax('/api/logout'); },
+        "click .logout": logOut,
         'click button[class^="add-a"]': function (e) { 
             this.hideFormErrors();
             // Do the button toggle dance...
@@ -761,7 +762,18 @@ App.HeaderView = Backbone.View.extend({
     events: {
         //'click .bsol h1': function() { navTo(); },
         'click .icon-gallery': function() { navTo(); },
-        'click .icon-lab': function() { navTo('idealab'); }
+        'click .icon-lab': function() { navTo('idealab'); },
+        'click .logout': logOut
+    },
+    initialize: function () {
+        App.currentUser = new App.User();
+        this.listenTo(App.currentUser, 'change', this.render);
+        App.currentUser.fetch();
+    },
+    afterRender: function () {
+        var name = App.currentUser.get('name');
+        $('.user-indicator .username').text(name);
+        $('.user-indicator')[name ? 'removeClass' : 'addClass']('hidden');
     }
 });
 
