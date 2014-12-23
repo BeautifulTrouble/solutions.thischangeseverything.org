@@ -119,9 +119,6 @@ App.APIModel = Backbone.Model.extend({
         }
     }
 });
-App.LastPOST = App.APIModel.extend({
-    urlRoot: "/api/last"
-});
 App.User = App.APIModel.extend({
     urlRoot: "/api/me",
 });
