@@ -568,12 +568,24 @@ App.IdeaLabListView = Backbone.View.extend({
 App.IdeaLabDetailView = Backbone.View.extend({
     template: "idealab-detail-template",
     initialize: function(options) {
+        var that = this;
         this.state = options.state;
         this.model = options.model;
+        // Since the App has global state, why load data on each page view?
+        // I think some data binding is the crucial missing piece here,
+        // because what I'm doing seems way too manual and clunky...
+        this.improvements = new App.ImprovementsCollection();
+        this.improvementset = [];
+        //this.listenTo(this.improvements, "reset", this.render);
+        this.improvements.fetch({reset: true}).done(function () {
+            that.improvementset = that.improvements.where({module: that.model.get('slug')});
+            that.render();
+        });
     },
     serialize: function() { 
         return _.extend(this.model.attributes, {
             state: this.state, 
+            improvements: this.improvementset || []
         }); 
     },
     events: {

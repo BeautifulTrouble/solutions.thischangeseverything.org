@@ -50,6 +50,20 @@
                         </div>
                         <% } %>
 
+                        <div class="row no-pad">
+                            <% if (improvements.length > 0) { %>
+                            <div id="improvements">
+                                <h2 class="learn-more">Improvements</h2>
+                                <% _.each(improvements, function(improvement) { %>
+                                <h4 class="type"><%= improvement.get('type') %></h4>
+                                <span class="byline">by <span class="contributor"><%= improvement.get('username') %></span></span>
+                                <span class="date-added">Added <span class="date"><%= improvement.get('long_date') %></span></span>
+                                <p class="content"><%= improvement.get('content') %></p>
+                                <% }); %>
+                            </div>
+                            <% } %>
+                        </div>
+
                     </section>
                 </article>
                 <div id="share-popover" style="display:none;">
