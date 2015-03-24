@@ -7,8 +7,8 @@
 //= require underscore.js
 //= require bootstrap.js
 //= require isotope.pkgd.js
-//= require showdown.js
-//= require jquery.lazyload.min.js
+//= require Showdown.js
+//= require jquery.lazyload.js
 //= require jquery.rwdImageMaps.min.js
 
 // Then the templates
