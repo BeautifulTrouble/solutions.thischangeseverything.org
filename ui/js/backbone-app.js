@@ -42,6 +42,16 @@ Backbone.Layout.configure({
 // ===================================================================
 // Utilities
 // ===================================================================
+var nl2ip = function(string, classes) {
+    // nl2ip: newlines2innerparagraphs
+    //var p = /(?:\r\n|\r|\n){2}/g;    // Does this make more sense?
+    var p = /(?:\r\n\r\n|\r\r|\n\n)/g;
+    var br = /(?:\r\n|\r|\n)/g;
+    string = string.replace(p, classes ? '</p><p class="' + classes + '">' : '</p><p>');
+    string = string.replace(br, '<br>');
+    return string;
+};
+
 var navTo = function(prefix, context) {
     // Examples:
     //  navTo();
@@ -584,6 +594,7 @@ App.IdeaLabDetailView = Backbone.View.extend({
     },
     serialize: function() { 
         return _.extend(this.model.attributes, {
+            nl2ip: nl2ip,
             state: this.state, 
             improvements: this.improvementset || []
         }); 
