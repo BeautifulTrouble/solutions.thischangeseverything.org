@@ -1,5 +1,5 @@
 ---
-id: a16E0000002QIjS
+id: a16E0000002QIjSIAW
 title: "Public ownership"
 short_write_up: "<p>Public ownership is when a municipality, state, nation, or other public body controls and derives benefit from an enterprise or resource. It is a means of ensuring and enhancing community control of the socio-economic decisions that affect local lives and livelihoods. By providing democratic accountability over economically important institutions and enterprises, public ownership can fulfill a variety of objectives, including: increasing public revenues, improving and expanding service, reducing costs for users, providing stable employment, and achieving environmentally sustainable growth or stasis. There are real-world contemporary and historical examples of highly successful public ownership in virtually every economic sector and in cultures and nations across the world.</p>"
 where: ""
@@ -13,17 +13,20 @@ values:
 - "Displaces extractive industry"
 - "Extends the commons"
 related_solutions:
-- "Public banking"
+- "Community land trust"
 - "Re-municipalization"
+- "Sukuk"
 related_theories:
-- "Economic democracy"
+- "Community as developer"
+- "Participatory democracy"
 - "Pluralist commonwealth"
 - "The commons"
+- "Usufruct"
 related_stories:
 - "Alaska Permanent Fund"
-- "Boulder, Colorado vs. Xcel energy"
-- "Great Lakes Commons Initiative"
-- "Philadelphia Land Bank"
+- "Anchor procurement in Cleveland"
+- "Marinaleda’s direct action economy"
+- "The Great Lakes Commons"
 tags:
 - "community development"
 - "decision-making"
@@ -62,4 +65,3 @@ images:
 contributors:
 - "Thomas Hanna"
 ---
-Full write-up goes here

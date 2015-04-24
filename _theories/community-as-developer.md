@@ -1,5 +1,5 @@
 ---
-id: a16E0000002QA2U
+id: a16E0000002QA2UIAW
 title: "Community as developer"
 short_write_up: "<p>Most cities and even many smaller towns are run, in all but name, by developers — entrepreneurs who identify opportunities to leverage public and private resources to build new businesses, housing complexes, malls, ports, and other major projects that can earn them money. The idea of the community as developer is that a whole community, or a substantial section of it, can be organized to carry out the functions of a developer, but rather than having maximum profit as their goal, they would have a goal of meeting common needs in a sustainable fashion and keeping wealth circulating within the community.</p>"
 where: ""
@@ -13,23 +13,17 @@ values:
 - "Displaces extractive industry"
 - "Extends the commons"
 related_solutions:
-- "Community land trusts"
+- "Community land trust"
 - "Community wealth building"
-- "Participatory budgeting"
-- "Public banking"
 - "Public ownership"
 related_theories:
-- "Cooperative commonwealth"
-- "Economic democracy"
 - "Participatory democracy"
-- "Sense of place"
 - "The commons"
 related_stories:
 - "596 Acres"
-- "Boulder, Colorado vs. Xcel energy"
 - "Building community economies on Pine Ridge"
 - "Dudley Street Neighborhood Initiative"
-- "Philadelphia Land Bank"
+- "SolidarityNYC"
 tags:
 - "community development"
 - "decision-making"
@@ -59,4 +53,3 @@ images:
 contributors:
 - "Ed Whitfield"
 ---
-Full write-up goes here

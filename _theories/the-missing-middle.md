@@ -1,5 +1,5 @@
 ---
-id: a16E0000002QA2P
+id: a16E0000002QA2PIAW
 title: "The missing middle"
 short_write_up: "<p>Without access to capital or markets for their crops, millions of small farmers in the developing world are trapped in a cycle of poverty. Small businesses, nonprofits and cooperatives that connect producers and consumers are often too big for microfinance but too small or risky for conventional banks — they are in “the missing middle” of developing world finance. A number of innovative efforts — the nonprofit social investment fund Root Capital, out of Cambridge, MA, for example — are stepping into that missing middle, growing rural prosperity in poor, ecologically vulnerable places by lending capital, delivering financial training, and strengthening market connections for rural businesses.</p>"
 where: ""
@@ -9,8 +9,6 @@ scale: ""
 values:
 - "Cultivates abundance"
 related_solutions:
-- "Community impacting investment"
-- "Non-extractive financial cooperative"
 related_theories:
 - "Solidarity economics"
 related_stories:
@@ -40,4 +38,3 @@ images:
 contributors:
 - "Stephanie Daniels"
 ---
-Full write-up goes here

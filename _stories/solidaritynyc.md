@@ -1,5 +1,5 @@
 ---
-id: a16E0000002QIjO
+id: a16E0000002QIjOIAW
 title: "SolidarityNYC"
 short_write_up: "<p>New York City is the famous home of Wall Street greed, but it’s also home to a flourishing solidarity economy. While it rarely turns up in the news, thousands of New Yorkers are using solidarity practices to create jobs, produce food, house their families, educate themselves, entertain their communities, access healthcare, and restore the environment. SolidarityNYC is a collective of organizers and academics who render these practices visible and bring together solidarity economy groups to share a vision for a city where community needs matter more than capital. Through mapping projects, media-making, and community organizing, SolidarityNYC promotes a Big Apple that’s accessible to all, not just the 1%.</p>"
 where: "New York City, NY, USA"
@@ -13,22 +13,16 @@ values:
 - "Cultivates abundance"
 - "Deepens democracy"
 related_solutions:
-- "Community land trusts"
+- "Community land trust"
 - "Community wealth building"
 - "Housing cooperative"
-- "Non-extractive financial cooperative"
-- "Worker cooperative"
 related_theories:
 - "Community as developer"
-- "Cooperative commonwealth"
-- "Economic democracy"
 - "Resilience-based organizing"
 - "Solidarity economics"
-- "Solidarity organizing"
 related_stories:
 - "596 Acres"
-- "Cooperative Homecare Associates"
-- "Southern Grassroots Economies Project"
+- "Cooperative Home Care Associates"
 - "The Media Co-op"
 tags:
 - "community development"
@@ -68,4 +62,3 @@ images:
 contributors:
 - "Cheyenna Layne Weber"
 ---
-Full write-up goes here

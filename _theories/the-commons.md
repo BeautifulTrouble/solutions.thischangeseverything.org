@@ -1,7 +1,8 @@
 ---
-id: a16E0000002QA2A
+id: a16E0000002QA2AIAW
 title: "The commons"
-short_write_up: "<p>In pre-capitalist times, shared commons were the source of sustenance for most people. Though corporations have now privatized and depleted much of the commons, it lives on in three portfolios: natural wealth (air, water, seeds, ecosystems, other species); community wealth (streets, parks, the Internet, money, social insur­ance); and cultural wealth (music, art, science, open-source software). All of these are gifts we share and are obliged to preserve for others and for future generations.</p><p>Here’s the rub: under capitalism, common wealth is increasingly appro­­priated by private corporations and wealthy individuals for profit . To counter this, we need to expand and strengthen both the com­mons and the institu­tions that sustain them.</p>"
+short_write_up: "<p>In pre-capitalist times, shared commons were the source of sustenance for most people. Though corporations have now privatized and depleted much of the commons, it lives on in three portfolios: natural wealth (air, water, seeds, ecosystems, other species); community wealth (streets, parks, the Internet, money, social insur­ance); and cultural wealth (music, art, science, open-source software). All of these are gifts we share and are obliged to preserve for others and for future generations.</p>
+<p>Here’s the rub: under capitalism, common wealth is increasingly appro­­priated by private corporations and wealthy individuals for profit . To counter this, we need to expand and strengthen both the com­mons and the institu­tions that sustain them.</p>"
 where: ""
 when: ""
 who: ""
@@ -17,33 +18,35 @@ values:
 - "Extends the commons"
 related_solutions:
 - "Basic income"
-- "Community land trusts"
-- "Guerrilla gardening"
+- "Community land trust"
+- "Net metering"
 - "Peer Production License"
 - "Public ownership"
-- "Cap & dividend"
-- "Reclaiming common wealth"
+- "Re-municipalization"
 related_theories:
-- "Appropriate scale"
 - "Buen vivir"
+- "Community as developer"
 - "Comunalidad"
-- "Cooperative commonwealth"
-- "Environmental justice"
+- "Decolonization"
 - "Pluralist commonwealth"
-- "Sharing economy"
 - "Solidarity economics"
 - "Stewardship"
 - "Usufruct"
+- "Zakat"
 related_stories:
 - "596 Acres"
 - "Alaska Permanent Fund"
 - "Brazilian Landless Workers' Movement"
 - "Building community economies on Pine Ridge"
-- "Factor E Farm"
-- "Great Lakes Commons Initiative"
+- "Dudley Street Neighborhood Initiative"
+- "Factor e Farm"
+- "GreenWave’s restorative ocean farming"
 - "Initiative 136"
-- "The Beaver Lake Cree's tarsands lawsuit"
+- "The Great Lakes Commons"
+- "The Media Co-op"
 - "The river with the rights of a person"
+- "Trade School: barter-for-knowledge"
+- "Traffic mimes in Bogotá"
 tags:
 - "agriculture"
 - "climate"
@@ -75,4 +78,3 @@ images:
 contributors:
 - "Peter Barnes"
 ---
-Full write-up goes here

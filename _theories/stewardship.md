@@ -1,5 +1,5 @@
 ---
-id: a16E0000002QA2e
+id: a16E0000002QA2eIAG
 title: "Stewardship"
 short_write_up: "<p>Diverse cultural and faith traditions teach us that no human ownership is truly absolute. Any control we have over the assets of this planet may be a gift from God, nature, or our ancestors, but one thing is for sure: our dominion is only temporary. Others bequeathed us these assets, and others will depend upon them after we are gone. Stewardship, as opposed to ownership, embraces this reality. Whereas ownership suggests a right to do as we please, stewardship emphasizes our responsibility to protect, cultivate, and serve that which nourishes us. As such, the concept of stewardship forms a solid foundation for conversations about distributive justice and regenerative systems. </p>"
 where: ""
@@ -12,27 +12,27 @@ values:
 - "Celebrates life"
 - "Creates more possibilities"
 - "Cultivates abundance"
+- "Displaces extractive industry"
 - "Extends the commons"
 related_solutions:
-- "Community land trusts"
-- "Guerrilla gardening"
-- "Permaculture"
+- "Community land trust"
+- "Re-municipalization"
+- "Sukuk"
 related_theories:
-- "Appropriate scale"
 - "Buen vivir"
 - "Comunalidad"
-- "Environmental justice"
+- "Pluralist commonwealth"
 - "The commons"
+- "Upstream thinking"
 - "Usufruct"
 related_stories:
+- "596 Acres"
 - "Brazilian Landless Workers' Movement"
 - "Building community economies on Pine Ridge"
-- "Great Lakes Commons Initiative"
-- "Greenwave's restorative ocean farming"
+- "GreenWave’s restorative ocean farming"
 - "Initiative 136"
-- "The Beaver Lake Cree's tarsands lawsuit"
+- "The Great Lakes Commons"
 - "The river with the rights of a person"
-- "Idle No More"
 tags:
 - "agriculture"
 - "climate"
@@ -62,4 +62,3 @@ images:
 contributors:
 - "Sofia Fenner"
 ---
-Full write-up goes here

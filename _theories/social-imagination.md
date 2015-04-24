@@ -1,5 +1,5 @@
 ---
-id: a16E0000002QA1b
+id: a16E0000002QA1bIAG
 title: "Social imagination"
 short_write_up: "<p>Philosopher Maxine Greene describes social imagination as the ability to “look at the world as if it could be otherwise.” It is the capacity, both creative and moral, to envision alternative possibilities for our communities and our world. The social imagination makes social change possible because an understanding of what might be gives us a perspective from which to challenge things as they are, as well as the hope and determination we need to build something different. To develop our social imaginations is to become more “wide-awake” to injustice in the world, a vital first step in inspiring us to change it.</p>"
 where: ""
@@ -11,28 +11,20 @@ values:
 - "Creates more possibilities"
 - "Cultivates abundance"
 related_solutions:
-- "(Re)Claiming space through public art"
 - "Basic income"
-- "Community currency"
 - "Maximum wage"
 - "Peer Production License"
-- "Shorter work week"
-- "Solutions seized through direct action"
-- "Pay it forward"
 related_theories:
 - "Buen vivir"
 - "Comunalidad"
 - "Decolonization"
-- "Emergent strategy"
 related_stories:
 - "596 Acres"
-- "Factor E Farm"
-- "Marinaleda's direct action economy"
-- "The Beaver Lake Cree's tarsands lawsuit"
-- "The river with the rights of a person"
-- "Thessaloniki's social solidarity clinic"
+- "Cowry Collective timebank"
+- "Factor e Farm"
 - "The Zapatista Little School"
-- "Trade school: barter-for-knowledge"
+- "The river with the rights of a person"
+- "Thessaloniki’s social solidarity clinic"
 - "Traffic mimes in Bogotá"
 tags:
 - "culture"
@@ -58,4 +50,3 @@ images:
 contributors:
 - "Paul J. Kuttner"
 ---
-Full write-up goes here

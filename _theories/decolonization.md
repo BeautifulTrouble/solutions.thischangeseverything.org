@@ -1,5 +1,5 @@
 ---
-id: a16E0000002Qf9b
+id: a16E0000002Qf9bIAC
 title: "Decolonization"
 short_write_up: "<p>Colonization is an historical and ongoing form of territorial, economic, and mental conquest wherein one group of indigenous people (first inhabitants of a place) is subordinated and put in service to another group of people under the system of imperialism. Decolonization is a set of ideas and lived experiences that challenge imperialism — a form of bottom-up disobedience to colonization. Theories and enactments of decolonization prioritize indigenous (non-Western) forms of knowledge, spirituality, cultural practices, and sovereignty. Decolonization theory raises questions about working with or without the “master’s tools” to envision alternatives to imperialism’s constellations of power.</p>"
 where: ""
@@ -16,17 +16,15 @@ values:
 - "Extends the commons"
 related_solutions:
 - "Recuperated workplaces"
-- "Reinvestment in just transition"
 related_theories:
 - "Buen vivir"
 - "Comunalidad"
-- "Environmental justice"
-- "Just transition"
+- "Social imagination"
 - "The commons"
 related_stories:
 - "Building community economies on Pine Ridge"
-- "Great Lakes Commons Initiative"
-- "The Beaver Lake Cree's tarsands lawsuit"
+- "The Zapatista Little School"
+- "The river with the rights of a person"
 tags:
 - "agriculture"
 - "food"
@@ -63,4 +61,3 @@ images:
 contributors:
 - "Danielle Endres"
 ---
-Full write-up goes here

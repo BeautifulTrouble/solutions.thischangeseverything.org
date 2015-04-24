@@ -1,11 +1,11 @@
 ---
-id: a16E0000002QA3N
+id: a16E0000002QA3NIAW
 title: "Net metering"
 short_write_up: "<p>Net metering policy, now adopted by forty-three U.S. states, allows electricity end-users to “run the meter backwards,” meaning that utility customers can receive retail credit for generating solar power and feeding it back to the grid. This measure provides homeowners, businesses and industry with an economic incentive to install solar panels, while at the same time increasing the resilience and reducing the environmental impact of the grid by distributing power generation among many small energy producers. Particularly when accompanied by measures to encourage household, community, and co-operative energy generation projects, net metering can be a useful tool for distributing and democratizing the grid.</p>"
 where: ""
 when: ""
 who: ""
-scale: "Individual; Local"
+scale: "Individual, Local"
 values:
 - "Builds resilience"
 - "Extends the commons"
@@ -14,9 +14,6 @@ related_theories:
 - "Pluralist commonwealth"
 - "The commons"
 related_stories:
-- "Boulder, Colorado vs. Xcel energy"
-- "Co-op Power"
-- "Ethical Electric"
 tags:
 - "energy"
 - "policy"
@@ -47,4 +44,3 @@ images:
 contributors:
 - "Johnny Weiss"
 ---
-Full write-up goes here

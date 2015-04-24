@@ -1,5 +1,5 @@
 ---
-id: a16E0000002QIjP
+id: a16E0000002QIjPIAW
 title: "Alaska Permanent Fund"
 short_write_up: "<p>For more than thirty years, all residents of Alaska have received yearly dividends from an entity called the Alaska Permanent Fund. Revenue comes from each Alaskan’s claim on the oil wealth extracted by the publicly owned North Slope oil fields. These dividends have ranged from about $1,000 per person per year to over $3,000. Since children are included, a dividend of $2,000 boosts a family of four’s income by $8,000. While it doesn’t do anything to reduce our reliance on fossil fuels, the Fund does prove that a basic income program is both possible and popular: even conservative Alaskan Governor Sarah Palin expanded the levy.</p>"
 where: "Alaska, USA"
@@ -41,4 +41,3 @@ images:
 contributors:
 - "Chuck Collins"
 ---
-Full write-up goes here

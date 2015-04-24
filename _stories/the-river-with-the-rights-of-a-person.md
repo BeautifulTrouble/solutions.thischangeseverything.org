@@ -1,33 +1,30 @@
 ---
-id: a16E0000002QA1g
+id: a16E0000002QA1gIAG
 title: "The river with the rights of a person"
 short_write_up: "<p>In 2012, following more than a century of petitions and legal action by local iwi (Maori tribal group), the Whanganui river in New Zealand was granted the legal status of a person under the name Te Awa Tupua. This legal victory means that the river now enjoys the same rights and responsibilities before the law as people (and corporations!). The New Zealand government has officially recognised the river as a source of great physical and spiritual sustenance to the people who live alongside it. This precedent-setting legal case is the first time the rights of a river have been guaranteed in this way, opening up exciting possibilities for protecting, and changing how we understand our relationship with, the natural world.</p>"
 where: "Whanganui River, New Zealand"
 when: "19th century&ndash;2014"
 who: "Maori tribes near the Whanganui River in conjunction with the New Zealand Government"
-scale: "Regional; National"
+scale: "Regional, National"
 values:
 - "Advances justice"
+- "Builds resilience"
 - "Celebrates life"
 - "Creates more possibilities"
+- "Displaces extractive industry"
 - "Extends the commons"
 related_solutions:
-- "Solutions seized through direct action"
-- "Reclaiming common wealth"
 related_theories:
 - "Buen vivir"
 - "Decolonization"
-- "Environmental justice"
-- "Sense of place"
 - "Social imagination"
 - "Stewardship"
 - "The commons"
+- "Upstream thinking"
 related_stories:
-- "Great Lakes Commons Initiative"
 - "Initiative 136"
-- "The Beaver Lake Cree's tarsands lawsuit"
+- "The Great Lakes Commons"
 - "The Zapatista Little School"
-- "Idle No More"
 tags:
 - "indigenous rights"
 - "justice"
@@ -60,4 +57,3 @@ images:
 contributors:
 - "Jen Wilton"
 ---
-Full write-up goes here

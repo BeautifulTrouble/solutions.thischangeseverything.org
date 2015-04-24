@@ -1,5 +1,5 @@
 ---
-id: a16E0000002Qf8d
+id: a16E0000002Qf8dIAC
 title: "Community land trust"
 short_write_up: "<p>A community land trust is a form of collective land ownership that prioritizes community uses of the land, promoting affordable and cooperative housing, sustainable agriculture, and other uses not fully valued by the market. Community land trusts are nonprofits that typically have a three-part board, representing leaseholders, the surrounding community, and the broader public interest. The trust owns and stewards the land in perpetuity and leases the land to homeowners, farmers, and businesses, who must comply with terms set by the community land trust, such as preserving affordability. The first community land trust was established in 1969 in Georgia to secure land for black farmers; there are now almost 250 land trusts in nearly every U.S. state, and many more around the world.</p>"
 where: ""
@@ -20,10 +20,15 @@ related_solutions:
 - "Public ownership"
 related_theories:
 - "Community as developer"
+- "Pluralist commonwealth"
 - "Solidarity economics"
+- "Stewardship"
+- "The commons"
+- "Usufruct"
 related_stories:
 - "Brazilian Landless Workers' Movement"
 - "Dudley Street Neighborhood Initiative"
+- "SolidarityNYC"
 tags:
 - "community development"
 - "equity"
@@ -58,4 +63,3 @@ images:
 contributors:
 - "Penn Loh"
 ---
-Full write-up goes here

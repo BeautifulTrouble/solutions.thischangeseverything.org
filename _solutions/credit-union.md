@@ -1,21 +1,20 @@
 ---
-id: a16E0000002QA2t
+id: a16E0000002QA2tIAG
 title: "Credit union"
 short_write_up: "<p>A credit union is a cooperatively owned, not-for-profit financial institution that offers banking, loans, and other financial services to members. Often focused on one or more specific populations such as workers at a company or residents in a neighborhood, credit unions are a vital alternative to large corporate banks — a value highlighted in the 2008 crash, during which U.S. credit unions saw relative stability while many banks were bailed out with massive infusions of public money. While not all credit unions live up to their promise, the institution is  structurally democratic, with each member having an equal vote in governance decisions. Credit unions can be an integral part of community-based development efforts, offering low-cost, locally accountable financial services.</p>"
 where: ""
 when: ""
 who: ""
-scale: "Local; Regional"
+scale: "Local, Regional"
 values:
 - "Builds resilience"
 - "Deepens democracy"
 - "Displaces extractive industry"
 related_solutions:
 - "Community wealth building"
-- "Non-extractive financial cooperative"
+- "Housing cooperative"
+- "Sukuk"
 related_theories:
-- "Cooperative commonwealth"
-- "Economic democracy"
 - "Solidarity economics"
 related_stories:
 - "Farm Workers Credit Union"
@@ -49,4 +48,3 @@ images:
 contributors:
 - "Paul J. Kuttner"
 ---
-Full write-up goes here

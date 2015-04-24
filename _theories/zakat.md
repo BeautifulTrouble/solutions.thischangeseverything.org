@@ -1,5 +1,5 @@
 ---
-id: a16E0000002QIjU
+id: a16E0000002QIjUIAW
 title: "Zakat"
 short_write_up: "<p>In the Islamic tradition, zakat is the mandatory gifting of a portion of one’s income and wealth to poorer citizens, debtors, the enslaved, those struggling for justice, and those far from home. Over centuries, zakat has been reduced to depoliticized charity, often at the expense of the principle’s fundamental point: we all have real claims on one another. The poor have some right to what we think of as the property of the rich. Immigrants have a right to a compassionate welcome. We need not devise new principles, or export Western ones, in our search for alternatives: the values that will support sustainable societies already exist all over the world. What we need to do is reclaim them.</p>"
 where: ""
@@ -15,7 +15,6 @@ related_solutions:
 - "Maximum wage"
 - "Sukuk"
 related_theories:
-- "Economic democracy"
 - "The commons"
 related_stories:
 tags:
@@ -38,4 +37,3 @@ images:
 contributors:
 - "Sofia Fenner"
 ---
-Full write-up goes here

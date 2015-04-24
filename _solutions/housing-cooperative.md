@@ -1,24 +1,25 @@
 ---
-id: a16E0000002QA2Z
+id: a16E0000002QA2ZIAW
 title: "Housing cooperative"
-short_write_up: "<p>Housing cooperatives are jointly owned residential properties, held in common by the residents. Residents purchase shares in the cooperative and divide responsibility for the upkeep and management of the building or buildings, often run using principles of democratic decision-making. Many cooperatives are designed as affordable housing, with residents receiving limited equity in order to maintain a low cost of membership. Other benefits to cooperative living can include environmental sustainability, self-determination, and strong, supportive communities. In fact, some cooperatives are designed as “intentional communities” based around shared values and goals, such as the seven cooperative principles (see “Learn more” links below).</p>"
+short_write_up: "<p>Housing cooperatives are jointly owned residential properties, held in common by the residents. Residents purchase shares in the cooperative and divide responsibility for the upkeep and management of the building or buildings, often run using principles of democratic decision-making. Many cooperatives are designed as affordable housing, with residents receiving limited equity in order to maintain a low cost of membership. Other benefits to cooperative living can include environmental sustainability, self-determination, and strong, supportive communities. In fact, some cooperatives are designed as “intentional communities” based around shared values and goals, such as the seven cooperative principles.</p>"
 where: ""
 when: ""
 who: ""
-scale: "Individual; Local"
+scale: "Individual, Local"
 values:
+- "Builds resilience"
 - "Deepens democracy"
 - "Extends the commons"
 related_solutions:
+- "Community land trust"
 - "Credit union"
-- "Worker cooperative"
 related_theories:
-- "Cooperative commonwealth"
-- "Economic democracy"
 - "Participatory democracy"
 - "Pluralist commonwealth"
-- "Solidarity organizing"
+- "Solidarity economics"
 related_stories:
+- "Marinaleda’s direct action economy"
+- "SolidarityNYC"
 tags:
 - "community development"
 - "cooperatives"
@@ -45,4 +46,3 @@ images:
 contributors:
 - "Paul J. Kuttner"
 ---
-Full write-up goes here

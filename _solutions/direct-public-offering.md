@@ -1,5 +1,5 @@
 ---
-id: a16E0000002QIjQ
+id: a16E0000002QIjQIAW
 title: "Direct Public Offering"
 short_write_up: "<p>One of the primary hurdles worker cooperatives encounter is access to capital. Those without cash or collateral simply cannot obtain traditional loans, and venture capitalists looking for big profits and a quick exit will not consider supporting a co-op because their investment won’t come with control of the company. A Direct Public Offering (DPO) is one way for businesses to raise money by selling stock to ordinary people, not just accredited investors. A DPO allows a business to have more control over the terms and to advertise the offering publicly, increasing the pool of investors exponentially! For the business, a DPO provides the “patient” capital it needs to start-up, expand or weather a storm. For the investor, a DPO can bring the potential for annual dividends and the ability to directly support community enterprise.</p>"
 where: ""
@@ -10,11 +10,8 @@ values:
 - "Builds resilience"
 - "Displaces extractive industry"
 related_solutions:
-- "Community impacting investment"
 - "Sukuk"
-- "Worker cooperative"
 related_theories:
-- "Economic democracy"
 related_stories:
 tags:
 - "cooperatives"
@@ -35,4 +32,3 @@ images:
 contributors:
 - "Lor Holmes"
 ---
-Full write-up goes here

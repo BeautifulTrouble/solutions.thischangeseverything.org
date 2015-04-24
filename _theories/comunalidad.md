@@ -1,5 +1,5 @@
 ---
-id: a16E0000002QHSD
+id: a16E0000002QHSDIA4
 title: "Comunalidad"
 short_write_up: "<p>Comunalidad is an ever-evolving framework, a dialogue between the lived experience of pueblos in Mesoamerica and indigenous anthropologists naming and describing this worldview and perspective. The theory centers around four pillars of communal life: communal authority and governance via the popular assembly; communal territory, or land held in common; communal celebration, or feast days; and communal work for the benefit of the whole. For activists today, living models of self-governing community are potentially valuable, as well as paradoxical and sometimes difficult to imagine applied in Western contexts of the Global North. Given that comunalidad is deeply woven into place itself, uprooting the theory without this grounded connection poses serious challenges.</p>"
 where: ""
@@ -17,10 +17,11 @@ values:
 - "Extends the commons"
 related_solutions:
 related_theories:
-- "Environmental justice"
+- "Decolonization"
 - "Horizontalism"
-- "Sense of place"
+- "Social imagination"
 - "Solidarity economics"
+- "Stewardship"
 - "The commons"
 - "Usufruct"
 related_stories:
@@ -67,4 +68,3 @@ images:
 contributors:
 - "Aerin Dunford"
 ---
-Full write-up goes here

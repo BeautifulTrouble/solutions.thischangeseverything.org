@@ -1,7 +1,7 @@
 ---
-id: a16E0000002QHSE
+id: a16E0000002QHSEIA4
 title: "Usufruct"
-short_write_up: "<p>Usufruct is the right to use and enjoy the “fruits” of a given resource, as long as the resource itself is preserved. The term comes from Roman property law, but is also used to describe ancient and Indigenous land-use paradigms in which land is held in common while individuals retain the right to hunt, fish, garden, or otherwise use the land sustainably. Usufruct is a key tenet of commons economies, offering a more just and sustainable alternative to private ownership. It is a recognition that we do not own the land and its resources — we are stewards, maintaining and improving our world for future generations.</p>"
+short_write_up: "<p>Usufruct is the right to use and enjoy the “fruits” of a given resource, as long as the resource itself is preserved. The term comes from Roman property law, but is also used to describe ancient and indigenous land-use paradigms in which land is held in common while individuals retain the right to hunt, fish, garden, or otherwise use the land sustainably. Usufruct is a key tenet of commons economies, offering a more just and sustainable alternative to private ownership. It is a recognition that we do not own the land and its resources — we are stewards, maintaining and improving our world for future generations.</p>"
 where: ""
 when: ""
 who: ""
@@ -15,17 +15,18 @@ values:
 - "Displaces extractive industry"
 - "Extends the commons"
 related_solutions:
-- "Community land trusts"
+- "Community land trust"
 - "Public ownership"
 - "Re-municipalization"
 related_theories:
 - "Buen vivir"
-- "Environmental justice"
+- "Comunalidad"
+- "Pluralist commonwealth"
 - "Stewardship"
 - "The commons"
 related_stories:
-- "Great Lakes Commons Initiative"
-- "Greenwave's restorative ocean farming"
+- "Brazilian Landless Workers' Movement"
+- "GreenWave’s restorative ocean farming"
 - "Initiative 136"
 tags:
 - "agriculture"
@@ -57,4 +58,3 @@ images:
 contributors:
 - "Paul J. Kuttner"
 ---
-Full write-up goes here

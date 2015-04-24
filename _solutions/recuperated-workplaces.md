@@ -1,5 +1,5 @@
 ---
-id: a16E0000002Qf84
+id: a16E0000002Qf84IAC
 title: "Recuperated workplaces"
 short_write_up: "<p>Occupy, Resist, Produce! This slogan, borrowed from the landless movement in Brazil, summarizes how workers around the world, beginning in Argentina, have been taking back their lives and their work. Instead of accepting unemployment due to workplace closure, workers form horizontal assemblies and “recuperate” (take back) their workplace, resist eviction, and begin producing again. Many recuperated workplaces organize horizontally and with equal remuneration. This phenomenon has been spreading, from the South to the North, with recent recuperations in Greece, Italy and France.</p>"
 where: ""
@@ -14,17 +14,12 @@ values:
 - "Deepens democracy"
 - "Displaces extractive industry"
 related_solutions:
-- "Non-extractive financial cooperative"
-- "Solutions seized through direct action"
-- "Worker cooperative"
 related_theories:
-- "Cooperative commonwealth"
-- "Economic democracy"
+- "Decolonization"
 - "Solidarity economics"
 related_stories:
-- "Marinaleda's direct action economy"
+- "Brazilian Landless Workers' Movement"
 - "New Era Windows Cooperative"
-- "Thessaloniki's social solidarity clinic"
 tags:
 - "cooperatives"
 - "justice"
@@ -57,4 +52,3 @@ images:
 contributors:
 - "Marina Sitrin"
 ---
-Full write-up goes here

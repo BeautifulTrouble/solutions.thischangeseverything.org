@@ -1,5 +1,5 @@
 ---
-id: a16E0000002QHS8
+id: a16E0000002QHS8IAO
 title: "Marinaleda’s direct action economy"
 short_write_up: "<p>Since 1979, the community of Marinaleda, Spain, has managed with very little money and lots of direct action to address the town’s economic needs. The community occupied and eventually collectivized the land of a local aristocrat, turned it into a cooperatively run olive farm, built hundreds of co-op homes, and instituted collaborative justice and decision-making processes via community assembly. As a result, a culture of collective action has helped Marinaleda fare better than much of the rest of Spain since the economic crisis of 2008.</p>"
 where: "Marinaleda, Andalucia, Spain"
@@ -17,10 +17,7 @@ values:
 related_solutions:
 - "Housing cooperative"
 - "Public ownership"
-- "Solutions seized through direct action"
-- "Worker cooperative"
 related_theories:
-- "Cooperative commonwealth"
 - "Horizontalism"
 - "Participatory democracy"
 - "Solidarity economics"
@@ -57,4 +54,3 @@ images:
 contributors:
 - "Liam Barrington-Bush and Jen Wilton"
 ---
-Full write-up goes here

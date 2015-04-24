@@ -1,11 +1,12 @@
 ---
-id: a16E0000002QexX
+id: a16E0000002QexXIAS
 title: "Wage ratio"
-short_write_up: "<p>Some businesses, as a matter of good governance, adopt wage ratios linking highest and lowest salaries. For many years, Ben &amp; Jerry’s ice cream retained a six-to-one ratio between CEO and lowest paid employee. The seventh largest enterprise in Spain, Mondragon, maintains a 5:1 average ratio across its companies. For comparison, the average ratio in the United States is 231:1. Wage ratios are more than a number; they reflect deeply held beliefs about the value of different kinds of work.At the national level, the tax system could encourage wage ratios by denying corporations the ability to deduct CEO pay that exceeds a specific ratio or dollar amount, whichever is higher. In the US, such caps were applied to financial bailout recipient firms and will be applied to health insurance companies under Obama’s healthcare reform legislation. Wage ratios, whether at the enterprise or national level, are a potentially powerful mechanism for reigning in growing wage disparities.</p>"
+short_write_up: "<p>Some businesses, as a matter of good governance, adopt wage ratios linking highest and lowest salaries. For many years, Ben &amp; Jerry’s ice cream retained a six-to-one ratio between CEO and lowest paid employee. The seventh largest enterprise in Spain, Mondragon, maintains a 5:1 average ratio across its companies. For comparison, the average ratio in the United States is 231:1. Wage ratios are more than a number; they reflect deeply held beliefs about the value of different kinds of work.</p>
+<p>At the national level, the tax system could encourage wage ratios by denying corporations the ability to deduct CEO pay that exceeds a specific ratio or dollar amount, whichever is higher. In the US, such caps were applied to financial bailout recipient firms and will be applied to health insurance companies under Obama’s healthcare reform legislation. Wage ratios, whether at the enterprise or national level, are a potentially powerful mechanism for reigning in growing wage disparities.</p>"
 where: ""
 when: ""
 who: ""
-scale: "Local; National"
+scale: "Local, National"
 values:
 - "Advances justice"
 - "Builds resilience"
@@ -14,11 +15,8 @@ related_solutions:
 - "Basic income"
 - "Maximum wage"
 related_theories:
-- "Appropriate scale"
-- "Economic democracy"
 - "Horizontalism"
 related_stories:
-- "Marinaleda's direct action economy"
 tags:
 - "economics"
 - "justice"
@@ -45,4 +43,3 @@ images:
 contributors:
 - "Chuck Collins"
 ---
-Full write-up goes here

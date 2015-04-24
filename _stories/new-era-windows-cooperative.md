@@ -1,5 +1,5 @@
 ---
-id: a16E0000002QerZ
+id: a16E0000002QerZIAS
 title: "New Era Windows Cooperative"
 short_write_up: "<p>In 2008, the workers at Republic Windows held one of the first sit-down strike factory occupations in the U.S. since they were made illegal sixty-one years prior. And they won. This shocking labor victory proved that ordinary people have the power to transform their workplaces, even against the world’s largest bank and its corrupt business partners. Four years later, the same workers made another transformative move. Partnering with a grassroots cooperative financial organization, The Working World, the workers bought out their old factory and began making windows under democratic worker-control and a new name: New Era Windows Cooperative. The workers’ perseverance through this process demonstrated that with community support and cooperative power, we can fight the abuses of extractive finance, and we can win.</p>"
 where: "2008&ndash;Present"
@@ -14,16 +14,13 @@ values:
 - "Deepens democracy"
 - "Displaces extractive industry"
 related_solutions:
-- "Non-extractive financial cooperative"
-- "Solutions seized through direct action"
-- "Worker cooperative"
+- "Recuperated workplaces"
 related_theories:
-- "Cooperative commonwealth"
 - "Solidarity economics"
 related_stories:
 - "Anchor procurement in Cleveland"
-- "Cooperative Homecare Associates"
-- "Worker-Owned Roackaways Cooperatives"
+- "Cooperative Home Care Associates"
+- "Worker-Owned Rockaways Cooperatives"
 tags:
 - "cooperatives"
 - "financing"
@@ -60,4 +57,3 @@ images:
 contributors:
 - "The Working World"
 ---
-Full write-up goes here

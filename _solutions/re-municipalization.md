@@ -1,5 +1,5 @@
 ---
-id: a16E0000002QHSB
+id: a16E0000002QHSBIA4
 title: "Re-municipalization"
 short_write_up: "<p>Re-municipalization refers to efforts by citizens to reverse the privatization of local services. It is most closely associated with movements to return local water services to public control, but can also include other important local services such as waste management, recycling, and energy generation. Significant examples of re-municipalization include cities like Paris and Buenos Aires, where previous private control of local water by transnationals Suez and Veolia resulted in soaring water fees, reduced access, crumbling infrastructure and poorer water quality. Re-municipalization represents an important challenge to neoliberalism because it repudiates the supposed superiority of private ownership and control of public goods, and shows that public utilities lost to privatization can, with concerted citizen action, be reclaimed.</p>"
 where: ""
@@ -8,6 +8,7 @@ who: ""
 scale: "Local"
 values:
 - "Advances justice"
+- "Builds resilience"
 - "Cultivates abundance"
 - "Deepens democracy"
 - "Displaces extractive industry"
@@ -15,12 +16,13 @@ values:
 related_solutions:
 - "Public ownership"
 related_theories:
-- "Economic democracy"
+- "Participatory democracy"
 - "Pluralist commonwealth"
 - "Stewardship"
 - "The commons"
+- "Usufruct"
 related_stories:
-- "Boulder, Colorado vs. Xcel energy"
+- "Alaska Permanent Fund"
 - "Initiative 136"
 tags:
 - "community development"
@@ -40,6 +42,16 @@ learn_more:
     description: "Case studies of successful re-municipalization initiatives"
     type: "Website"
     url: "http://www.municipalservicesproject.org"
+-
+    title: "Here to stay: Water remunicipalisation as a global trend"
+    description: "Global list of re-municipalisation examples"
+    type: "Report"
+    url: "http://www.tni.org/briefing/here-stay-water-remunicipalisation-global-trend?context=599"
+-
+    title: "Water Remunicipalisation Tracker"
+    description: "Map and descriptions of successful and ongoing remunicipalisation efforts"
+    type: "Website"
+    url: "http://www.remunicipalisation.org"
 images:
 -
     url: "Remunicipalization.jpg"
@@ -50,4 +62,3 @@ images:
 contributors:
 - "Simon Enoch"
 ---
-Full write-up goes here

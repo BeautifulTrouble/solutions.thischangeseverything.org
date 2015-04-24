@@ -1,7 +1,8 @@
 ---
-id: a16E0000002Qewy
+id: a16E0000002QewyIAC
 title: "The Great Lakes Commons"
-short_write_up: "<p>The Great Lakes are an incredible gift of nature that make up ninety percent of North America’s freshwater. Millions of lives depend on them. And yet, these vital waters are threatened by farm run-off, mining, and any other instance of putting private interest before public good. The Great Lakes Commons is a grassroots initiative to establish the Lakes as a living commons — waters we share, care for, and protect together. Weaving commons-based and indigenous approaches, the Great Lakes Commons seeks to reawaken surrounding communities’ relationship to these bodies of water and instill a sense of collaborative responsibility for their future.</p>"
+short_write_up: "<p>The Great Lakes are an incredible gift of nature that make up ninety percent of North America’s freshwater. Millions of lives depend on them. And yet, these vital waters are threatened by farm run-off, mining, and any other instance of putting private interest before public good. </p>
+<p>The Great Lakes Commons is a grassroots initiative to establish the Lakes as a living commons — waters we share, care for, and protect together. Weaving commons-based and indigenous approaches, the Great Lakes Commons seeks to reawaken surrounding communities’ relationship to these bodies of water and instill a sense of collaborative responsibility for their future.</p>"
 where: "The Great Lakes, a trans-border bio-region in North America"
 when: "2010&ndash;Present"
 who: "A growing network of people and organizations from the Great Lakes bio-region"
@@ -47,4 +48,3 @@ images:
 contributors:
 - "Alexa Bradley"
 ---
-Full write-up goes here

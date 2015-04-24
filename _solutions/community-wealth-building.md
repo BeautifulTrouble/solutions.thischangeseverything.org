@@ -1,5 +1,5 @@
 ---
-id: a16E0000002QA2o
+id: a16E0000002QA2oIAG
 title: "Community wealth building"
 short_write_up: "<p>In communities around the world, people have responded to economic pain, growing wealth inequality and neighborhood disinvestment by experimenting with new economic institutions and approaches, including cooperatives, worker-owned firms, non-profit neighborhood corporations, social enterprises, community-based financial institutions, land trusts, and municipal ownership. This is community wealth building, a fast-growing economic development model and movement that strengthens our communities through democratic ownership and control of business and jobs. Community wealth building builds on local talents, capacities, facilities, capital and financial flows to develop locally owned — and often community-owned — businesses that are anchored in place and can sustain the local economy for the long haul.</p>"
 where: ""
@@ -13,14 +13,17 @@ values:
 - "Displaces extractive industry"
 - "Extends the commons"
 related_solutions:
-- "Community currency"
-- "Community impacting investment"
+- "Community land trust"
+- "Credit union"
 related_theories:
 - "Community as developer"
+- "Pluralist commonwealth"
 related_stories:
 - "Anchor procurement in Cleveland"
 - "Building community economies on Pine Ridge"
 - "Dudley Street Neighborhood Initiative"
+- "SolidarityNYC"
+- "Worker-Owned Rockaways Cooperatives"
 tags:
 - "community development"
 - "cooperatives"
@@ -47,4 +50,3 @@ images:
 contributors:
 - "Ted Howard"
 ---
-Full write-up goes here

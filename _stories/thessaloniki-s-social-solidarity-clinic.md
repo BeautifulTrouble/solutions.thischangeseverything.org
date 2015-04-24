@@ -1,5 +1,5 @@
 ---
-id: a16E0000002QHS6
+id: a16E0000002QHS6IAO
 title: "Thessaloniki’s social solidarity clinic"
 short_write_up: "<p>In February 2011, 300 immigrant workers in Greece went on hunger strike demanding dignity and basic civil rights. After the successful conclusion of this protest, the medical team that monitored and supported the hunger strikers in Thessaloniki decided to form a permanent structure to provide health care services to the nearly three million uninsured Greeks and immigrants, who have been left to fend for themselves after the dismantling of the public health system under the dictates of the International Monetary Fund (IMF) and the European Commission. To date, more than 350 volunteers have cared for hundreds of thousands of patients at the Social Solidarity Clinic, which is sustained entirely by the donations of individuals and movement organizations, and managed horizontally by a general assembly.</p>"
 where: "Thessaloniki, Greece"
@@ -12,7 +12,6 @@ values:
 - "Creates more possibilities"
 - "Cultivates abundance"
 related_solutions:
-- "Solutions seized through direct action"
 related_theories:
 - "Horizontalism"
 - "Resilience-based organizing"
@@ -20,7 +19,6 @@ related_theories:
 - "Solidarity economics"
 related_stories:
 - "Initiative 136"
-- "Trade school: barter-for-knowledge"
 tags:
 - "crisis response"
 - "decision-making"
@@ -42,4 +40,3 @@ images:
 contributors:
 - "Theodoros Karyotis"
 ---
-Full write-up goes here

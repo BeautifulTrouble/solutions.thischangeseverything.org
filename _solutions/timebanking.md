@@ -1,5 +1,5 @@
 ---
-id: a16E0000002QIjR
+id: a16E0000002QIjRIAW
 title: "Timebanking"
 short_write_up: "<p>Timebanking is a way to formalize the exchange of skills and favors while building circles of trust and reciprocity. For every hour you spend doing a favor for someone in the time bank, you earn one time credit, which can then be spent receiving a favor from someone else participating in the timebank. Everyone’s time is valued equally, meaning those whose time is undervalued by the monetary economy (childcare workers, for example) do proportionally better. Examples of exchanges include language lessons, car rides, moving assistance, massage, gardening, web design and music lessons. Time credits may be tracked in an online database, a notebook, or a paper scrip.</p>"
 where: ""
@@ -11,13 +11,12 @@ values:
 - "Creates more possibilities"
 - "Cultivates abundance"
 related_solutions:
-- "Community currency"
 related_theories:
 - "Resilience-based organizing"
-- "Sense of place"
 - "Solidarity economics"
 related_stories:
 - "Cowry Collective timebank"
+- "Trade School: barter-for-knowledge"
 tags:
 - "community development"
 - "education"
@@ -49,4 +48,3 @@ images:
 contributors:
 - "Allison Basile"
 ---
-Full write-up goes here

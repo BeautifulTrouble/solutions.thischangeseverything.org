@@ -1,20 +1,21 @@
 ---
-id: a16E0000002QA33
+id: a16E0000002QA33IAG
 title: "Peer Production License"
 short_write_up: "<p>How can we ensure that the commons doesn’t just become free research and development for private parties? The Peer Production License (PPL), proposed by “venture communist” Dmytri Kleiner, is a reciprocity-based license by which commons are freely accessible to those who contribute to create them, while entities profiting from these commons without contributing are charged license fees. It helps protect digital, natural and biological resources such as software, seeds, plants and ancestral knowledge against the danger of privatization, while enabling their wider use. When paired with open-source producer cooperative models, the PPL can resist extractive global supply chains by supporting a reciprocal economy based on local industry and sustainable community sourcing, using open hardware designs and combined know-how.</p>"
 where: ""
 when: ""
 who: ""
-scale: "National; Global"
+scale: "National, Global"
 values:
 - "Extends the commons"
 related_solutions:
 related_theories:
 - "Horizontalism"
+- "Pluralist commonwealth"
 - "Social imagination"
 - "The commons"
 related_stories:
-- "Factor E Farm"
+- "Factor e Farm"
 tags:
 - "governance"
 - "open source"
@@ -44,4 +45,3 @@ images:
 contributors:
 - "Helene Finidori"
 ---
-Full write-up goes here

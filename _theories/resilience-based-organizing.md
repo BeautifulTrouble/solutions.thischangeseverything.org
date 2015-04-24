@@ -1,5 +1,5 @@
 ---
-id: a16E0000002QfB4
+id: a16E0000002QfB4IAK
 title: "Resilience-based organizing"
 short_write_up: "<p>Resilience-based organizing is a movement-building strategy that focuses on improving the ability of communities to meet their needs through shared work, democratic self-governance, and contesting power. The approach departs from traditional campaign-based organizing approaches in which communities pressure a political figure with decision-making power to act on their demands, thereby re-enforcing existing structures of power. Instead, people organize to create visionary and oppositional economies in ways that strengthen community control and are ecologically regenerative. Resilience-based organizing was foundational to black liberation movements such as the Black Panther Party, which had more than sixty &#8216;self help&#8217; programs. We see it applied today in Zapatista communities and through the Landless Workers’ Movement in Brazil.</p>"
 where: ""
@@ -12,17 +12,21 @@ values:
 - "Creates more possibilities"
 - "Cultivates abundance"
 - "Deepens democracy"
+- "Displaces extractive industry"
 related_solutions:
-- "Solutions seized through direct action"
+- "Timebanking"
 related_theories:
 - "Horizontalism"
 - "Solidarity economics"
 related_stories:
-- "Boulder, Colorado vs. Xcel energy"
+- "596 Acres"
 - "Brazilian Landless Workers' Movement"
-- "Running Chokwe Lumumba for mayor"
-- "Solidarity NYC"
+- "Cowry Collective timebank"
+- "Farm Workers Credit Union"
+- "SolidarityNYC"
 - "The Zapatista Little School"
+- "Thessaloniki’s social solidarity clinic"
+- "Worker-Owned Rockaways Cooperatives"
 tags:
 - "crisis response"
 - "movement building"
@@ -47,4 +51,3 @@ images:
 contributors:
 - "Movement Generation Justice & Ecology Project"
 ---
-Full write-up goes here

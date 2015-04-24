@@ -1,11 +1,11 @@
 ---
-id: a16E0000002QHRk
+id: a16E0000002QHRkIAO
 title: "The Media Co-op"
 short_write_up: "<p>The Media Co-op seeks to bring the principles of participatory democracy and decentralized decision making to the world of alternative media in Canada. In contrast to an increasingly concentrated corporate ownership of media, the co-op is collectively owned and sustained by its journalists, readers and editors (paid and unpaid), and provides a grassroots perspective on under-reported topics, particularly Indigenous sovereignty and Canadian mining companies. The co-op depends on automatic monthly donations from its reader members for financial support. Major decisions like network-wide projects and budgets typically begin with a membership consultation and discussion, and sometimes involve a referendum. Founded in 2008, the Media Co-op now has autonomous locals operating in Halifax, Montreal, Toronto and Vancouver, and a national magazine called The Dominion .</p>"
 where: "Halifax, Montreal, Toronto, Vancouver, and across Canada"
 when: "2003&ndash;Present"
 who: "Media activists across Canada"
-scale: "Local; Regional; National"
+scale: "Local, Regional, National"
 values:
 - "Advances justice"
 - "Builds resilience"
@@ -14,15 +14,12 @@ values:
 - "Deepens democracy"
 - "Extends the commons"
 related_solutions:
-- "Worker cooperative"
 related_theories:
-- "Appropriate scale"
-- "Cooperative commonwealth"
 - "Horizontalism"
 - "Participatory democracy"
-- "Sense of place"
 - "The commons"
 related_stories:
+- "SolidarityNYC"
 tags:
 - "art"
 - "culture"
@@ -55,4 +52,3 @@ images:
 contributors:
 - "Dru Oja Jay"
 ---
-Full write-up goes here

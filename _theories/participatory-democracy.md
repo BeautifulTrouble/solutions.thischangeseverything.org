@@ -1,5 +1,5 @@
 ---
-id: a16E0000002QfAF
+id: a16E0000002QfAFIA0
 title: "Participatory democracy"
 short_write_up: "<p>Participatory democracy is a system that facilitates the active involvement of individuals in all important decisions and institutions affecting their lives. In contrast to traditional representative democracy, which prescribes a relatively limited set of roles for individuals in political life (e.g. voting, writing to politicians), participatory democracy embraces social movements and other forms of collective action as vital forms of political change. Participatory democracy does not confine itself to the formal political realm, instead calling for broad inclusion in all of society’s institutions, including families, schools, businesses, and the media. Rather than being a static system, participatory democracy is a constant process of contention and transformation.</p>"
 where: ""
@@ -12,16 +12,17 @@ values:
 - "Creates more possibilities"
 - "Deepens democracy"
 related_solutions:
-- "Participatory budgeting"
+- "Housing cooperative"
 - "Public ownership"
 - "Re-municipalization"
 related_theories:
 - "Community as developer"
-- "Cooperative commonwealth"
 - "Horizontalism"
 - "Solidarity economics"
 related_stories:
-- "Marinaleda's direct action economy"
+- "Marinaleda’s direct action economy"
+- "The Media Co-op"
+- "The Zapatista Little School"
 tags:
 - "decision-making"
 - "democracy"
@@ -53,4 +54,3 @@ images:
 contributors:
 - "Paul Kuttner"
 ---
-Full write-up goes here

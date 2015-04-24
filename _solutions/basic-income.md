@@ -1,5 +1,5 @@
 ---
-id: a16E0000002QHSA
+id: a16E0000002QHSAIA4
 title: "Basic income"
 short_write_up: "<p>A basic income (a.k.a. guaranteed income or social wage) is a policy that’s useful for furthering so many critical projects that it is often called a “non-reformist reform.” Were the government to distribute an unconditional income sufficient for subsistence to every permanent resident, it would mitigate poverty, empower women, increase workers’ leverage in labor conflicts, provide people with the resources they need to participate in political and cultural life, and counteract the ecologically disastrous market imperative to incessantly extract, produce, and consume. Though this measure may sound idealistic, we know it can work: among other examples around the globe, Alaskans receive a small, variable guaranteed income.</p>"
 where: ""
@@ -12,11 +12,13 @@ values:
 - "Cultivates abundance"
 - "Extends the commons"
 related_solutions:
-- "Land value tax"
 - "Maximum wage"
-- "Wage ratios"
+- "Wage ratio"
 related_theories:
-- "Economic democracy"
+- "Pluralist commonwealth"
+- "Social imagination"
+- "The commons"
+- "Upstream thinking"
 related_stories:
 - "Alaska Permanent Fund"
 tags:
@@ -57,4 +59,3 @@ images:
 contributors:
 - "Jesse Myerson"
 ---
-Full write-up goes here

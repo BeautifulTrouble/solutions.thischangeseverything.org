@@ -1,5 +1,5 @@
 ---
-id: a16E0000002QNGt
+id: a16E0000002QNGtIAO
 title: "Extends the commons"
 short_write_up: "<p>For centuries, wealthy individuals, corporations, and the state have sought to enclose and privatize commonly held resources, particularly those belonging to indigenous and agrarian societies that understand our relationship to the commons as one of stewardship rather than ownership. These communities have resisted such encroachments, fighting not just to defend common control of land, housing, healthcare, human knowledge, and other vital spheres that shape our daily lives, but to extend those commons. Today’s efforts to defend and extend the commons are helping us all to rediscover relationships rooted in cooperation, solidarity and stewardship, rather than competition, egotism and exploitation.</p>"
 where: ""
@@ -9,13 +9,11 @@ scale: ""
 values:
 related_solutions:
 - "Basic income"
-- "Community land trusts"
+- "Community land trust"
 - "Community wealth building"
 - "Housing cooperative"
 - "Net metering"
-- "Participatory budgeting"
 - "Peer Production License"
-- "Public banking"
 - "Public ownership"
 - "Re-municipalization"
 - "Sukuk"
@@ -24,8 +22,6 @@ related_theories:
 - "Community as developer"
 - "Comunalidad"
 - "Decolonization"
-- "Economic democracy"
-- "Environmental justice"
 - "Horizontalism"
 - "Pluralist commonwealth"
 - "Solidarity economics"
@@ -37,20 +33,20 @@ related_stories:
 - "596 Acres"
 - "Alaska Permanent Fund"
 - "Anchor procurement in Cleveland"
-- "Boulder, Colorado vs. Xcel energy"
+- "Brazilian Landless Workers' Movement"
 - "Building community economies on Pine Ridge"
 - "Cowry Collective timebank"
 - "Dudley Street Neighborhood Initiative"
-- "Factor E Farm"
-- "Great Lakes Commons Initiative"
-- "Greenwave's restorative ocean farming"
+- "Factor e Farm"
+- "GreenWave’s restorative ocean farming"
 - "Initiative 136"
-- "Marinaleda's direct action economy"
-- "The Beaver Lake Cree's tarsands lawsuit"
+- "Marinaleda’s direct action economy"
+- "The Great Lakes Commons"
 - "The Media Co-op"
-- "The river with the rights of a person"
-- "Thessaloniki's social solidarity clinic"
 - "The Zapatista Little School"
+- "The river with the rights of a person"
+- "Trade School: barter-for-knowledge"
+- "Traffic mimes in Bogotá"
 tags:
 - "agriculture"
 - "climate"
@@ -79,4 +75,3 @@ images:
 contributors:
 - "Beautiful Solutions"
 ---
-Full write-up goes here

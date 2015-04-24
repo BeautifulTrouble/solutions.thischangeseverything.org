@@ -1,5 +1,5 @@
 ---
-id: a16E0000002QIjT
+id: a16E0000002QIjTIAW
 title: "Maximum wage"
 short_write_up: "<p>A maximum wage is effectively a 100 percent tax on all income above a certain amount. This is far from a novel idea, having been instituted or proposed using a range of mechanisms and in contexts as diverse as revolutionary Russia and WWII wartime US. One proposal circulating in the US in recent years is to levy a 100 percent income tax rate on incomes that exceed a ratio of the federal minimum wage. So if the minimum wage is $10 an hour, a maximum wage could be tied to, say, 50 times the minimum wage. In this scenario, all income above $1.04 million per year, would be taxed at 100 percent. Effectively, no one would make more than a million dollars per year. Who needs more than that anyway?</p>"
 where: ""
@@ -9,9 +9,10 @@ scale: "National"
 values:
 - "Advances justice"
 - "Cultivates abundance"
+- "Displaces extractive industry"
 related_solutions:
 - "Basic income"
-- "Land value tax"
+- "Wage ratio"
 related_theories:
 - "Social imagination"
 - "Zakat"
@@ -41,4 +42,3 @@ images:
 contributors:
 - "Chuck Collins"
 ---
-Full write-up goes here

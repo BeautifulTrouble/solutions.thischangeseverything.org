@@ -1,5 +1,5 @@
 ---
-id: a16E0000002QGCU
+id: a16E0000002QGCUIA4
 title: "Dudley Street Neighborhood Initiative"
 short_write_up: "<p>Decades of redlining, arson, and sham “urban renewal” efforts in the latter half of the twentieth century left 30 percent of the land in the Dudley neighborhood of Boston vacant. In response, residents started the Dudley Street Neighborhood Initiative and launched a grassroots, community-controlled planning effort. Their Declaration of Community Rights states that residents, “have the right to participate in all planning, programs, and policies affecting our lives.” This ongoing effort has reclaimed land from absentee landlords — through a Community Land Trust with the power of eminent domain — and created hundreds of units of affordable housing, along with schools, parks, gardens, and other public spaces.</p>"
 where: "Boston, MA"
@@ -15,13 +15,13 @@ values:
 - "Displaces extractive industry"
 - "Extends the commons"
 related_solutions:
-- "Community land trusts"
+- "Community land trust"
 - "Community wealth building"
 related_theories:
 - "Community as developer"
 - "The commons"
 related_stories:
-- "Philadelphia Land Bank"
+- "596 Acres"
 tags:
 - "community development"
 - "democracy"
@@ -56,4 +56,3 @@ images:
 contributors:
 - "Paul J. Kuttner"
 ---
-Full write-up goes here
