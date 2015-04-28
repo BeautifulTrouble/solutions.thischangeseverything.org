@@ -10,6 +10,7 @@ values:
 - "Extends the commons"
 related_solutions:
 - "Basic income"
+- "Climate risk bonds"
 - "Public ownership"
 - "Re-municipalization"
 related_theories:

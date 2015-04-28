@@ -15,6 +15,7 @@ values:
 - "Displaces extractive industry"
 - "Extends the commons"
 related_solutions:
+- "Climate risk bonds"
 - "Community land trust"
 - "Re-municipalization"
 - "Sukuk"

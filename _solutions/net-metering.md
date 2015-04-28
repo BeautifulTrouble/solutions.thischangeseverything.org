@@ -10,6 +10,7 @@ values:
 - "Builds resilience"
 - "Extends the commons"
 related_solutions:
+- "Climate risk bonds"
 related_theories:
 - "Pluralist commonwealth"
 - "The commons"

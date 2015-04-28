@@ -8,9 +8,21 @@ who: ""
 scale: "Local, Regional, National"
 values:
 related_solutions:
+- "Net metering"
 related_theories:
+- "Stewardship"
+- "Usufruct"
 related_stories:
+- "Alaska Permanent Fund"
 tags:
+- "climate"
+- "crisis response"
+- "energy"
+- "policy"
+- "resource use"
+- "safety"
+- "stewardship"
+- "taxation"
 learn_more:
 -
     title: "Climate risk bonds: Making the polluter pay"
