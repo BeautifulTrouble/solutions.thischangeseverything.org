@@ -9,6 +9,7 @@ scale: ""
 values:
 related_solutions:
 - "Basic income"
+- "Climate risk bonds"
 - "Community land trust"
 - "Community wealth building"
 - "Recuperated workplaces"

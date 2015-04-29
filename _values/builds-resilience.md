@@ -9,6 +9,7 @@ who: ""
 scale: ""
 values:
 related_solutions:
+- "Climate risk bonds"
 - "Community land trust"
 - "Community wealth building"
 - "Credit union"

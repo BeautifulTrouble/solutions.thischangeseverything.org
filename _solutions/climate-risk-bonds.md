@@ -7,6 +7,8 @@ when: ""
 who: ""
 scale: "Local, Regional, National"
 values:
+- "Builds resilience"
+- "Creates more possibilities"
 related_solutions:
 - "Net metering"
 related_theories:
