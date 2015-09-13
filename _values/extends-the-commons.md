@@ -47,6 +47,7 @@ related_stories:
 - "The river with the rights of a person"
 - "Trade School: barter-for-knowledge"
 - "Traffic mimes in Bogotá"
+- "Vio.Me Occupied Factory"
 tags:
 - "agriculture"
 - "climate"

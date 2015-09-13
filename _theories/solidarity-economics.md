@@ -19,6 +19,7 @@ related_solutions:
 - "Credit union"
 - "Housing cooperative"
 - "Recuperated workplaces"
+- "Repair Café"
 - "Sukuk"
 - "Timebanking"
 related_theories:

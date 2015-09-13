@@ -20,6 +20,7 @@ related_theories:
 related_stories:
 - "Anchor procurement in Cleveland"
 - "Cooperative Home Care Associates"
+- "Vio.Me Occupied Factory"
 - "Worker-Owned Rockaways Cooperatives"
 tags:
 - "cooperatives"

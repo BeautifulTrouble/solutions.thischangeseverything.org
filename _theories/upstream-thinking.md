@@ -17,6 +17,7 @@ related_theories:
 - "Pluralist commonwealth"
 - "Stewardship"
 related_stories:
+- "Rebuilding Greensburg, Kansas"
 - "The river with the rights of a person"
 tags:
 - "community development"

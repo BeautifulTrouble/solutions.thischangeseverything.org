@@ -24,6 +24,7 @@ related_theories:
 related_stories:
 - "Alaska Permanent Fund"
 - "Initiative 136"
+- "Rebuilding Greensburg, Kansas"
 tags:
 - "community development"
 - "energy"

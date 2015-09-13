@@ -11,6 +11,7 @@ values:
 - "Creates more possibilities"
 - "Cultivates abundance"
 related_solutions:
+- "Repair Café"
 related_theories:
 - "Resilience-based organizing"
 - "Solidarity economics"

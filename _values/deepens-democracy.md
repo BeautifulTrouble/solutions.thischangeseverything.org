@@ -43,6 +43,7 @@ related_stories:
 - "The Media Co-op"
 - "The Zapatista Little School"
 - "Trade School: barter-for-knowledge"
+- "Vio.Me Occupied Factory"
 - "Worker-Owned Rockaways Cooperatives"
 tags:
 - "cooperatives"

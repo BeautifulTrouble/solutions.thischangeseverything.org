@@ -22,6 +22,7 @@ related_stories:
 - "Anchor procurement in Cleveland"
 - "Building community economies on Pine Ridge"
 - "Dudley Street Neighborhood Initiative"
+- "Rebuilding Greensburg, Kansas"
 - "SolidarityNYC"
 - "Worker-Owned Rockaways Cooperatives"
 tags:

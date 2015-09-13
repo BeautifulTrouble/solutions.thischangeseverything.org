@@ -19,6 +19,7 @@ related_solutions:
 - "Public ownership"
 - "Re-municipalization"
 - "Recuperated workplaces"
+- "Repair Café"
 - "Timebanking"
 - "Wage ratio"
 related_theories:
@@ -47,11 +48,13 @@ related_stories:
 - "Initiative 136"
 - "Marinaleda’s direct action economy"
 - "New Era Windows Cooperative"
+- "Rebuilding Greensburg, Kansas"
 - "SolidarityNYC"
 - "The Great Lakes Commons"
 - "The Media Co-op"
 - "The river with the rights of a person"
 - "Thessaloniki’s social solidarity clinic"
+- "Vio.Me Occupied Factory"
 - "Worker-Owned Rockaways Cooperatives"
 tags:
 - "agriculture"

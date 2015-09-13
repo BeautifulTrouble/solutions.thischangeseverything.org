@@ -28,6 +28,7 @@ related_stories:
 - "The Media Co-op"
 - "The Zapatista Little School"
 - "Thessaloniki’s social solidarity clinic"
+- "Vio.Me Occupied Factory"
 tags:
 - "cooperatives"
 - "culture"

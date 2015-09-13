@@ -9,6 +9,7 @@ scale: ""
 values:
 related_solutions:
 - "Basic income"
+- "Repair Café"
 related_theories:
 - "Buen vivir"
 - "Comunalidad"

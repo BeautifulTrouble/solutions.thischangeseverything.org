@@ -23,6 +23,7 @@ related_solutions:
 - "Peer Production License"
 - "Public ownership"
 - "Re-municipalization"
+- "Repair Café"
 related_theories:
 - "Buen vivir"
 - "Community as developer"

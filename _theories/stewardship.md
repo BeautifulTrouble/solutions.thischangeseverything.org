@@ -32,6 +32,7 @@ related_stories:
 - "Building community economies on Pine Ridge"
 - "GreenWave’s restorative ocean farming"
 - "Initiative 136"
+- "Rebuilding Greensburg, Kansas"
 - "The Great Lakes Commons"
 - "The river with the rights of a person"
 tags:

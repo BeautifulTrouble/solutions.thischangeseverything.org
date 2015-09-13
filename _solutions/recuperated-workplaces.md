@@ -20,6 +20,7 @@ related_theories:
 related_stories:
 - "Brazilian Landless Workers' Movement"
 - "New Era Windows Cooperative"
+- "Vio.Me Occupied Factory"
 tags:
 - "cooperatives"
 - "justice"

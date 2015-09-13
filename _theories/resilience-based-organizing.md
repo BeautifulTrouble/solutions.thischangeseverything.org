@@ -14,6 +14,7 @@ values:
 - "Deepens democracy"
 - "Displaces extractive industry"
 related_solutions:
+- "Repair Café"
 - "Timebanking"
 related_theories:
 - "Horizontalism"
@@ -23,6 +24,7 @@ related_stories:
 - "Brazilian Landless Workers' Movement"
 - "Cowry Collective timebank"
 - "Farm Workers Credit Union"
+- "Rebuilding Greensburg, Kansas"
 - "SolidarityNYC"
 - "The Zapatista Little School"
 - "Thessaloniki’s social solidarity clinic"
@@ -30,6 +32,7 @@ related_stories:
 tags:
 - "crisis response"
 - "movement building"
+- "resilience"
 learn_more:
 -
     title: "Movement Generation Justice & Ecology Project"

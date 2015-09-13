@@ -16,6 +16,7 @@ related_solutions:
 - "Public ownership"
 - "Re-municipalization"
 - "Recuperated workplaces"
+- "Repair Café"
 related_theories:
 - "Buen vivir"
 - "Community as developer"

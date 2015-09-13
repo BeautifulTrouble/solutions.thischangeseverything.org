@@ -13,6 +13,7 @@ values:
 - "Cultivates abundance"
 - "Extends the commons"
 related_solutions:
+- "Repair Café"
 - "Timebanking"
 related_theories:
 - "Resilience-based organizing"

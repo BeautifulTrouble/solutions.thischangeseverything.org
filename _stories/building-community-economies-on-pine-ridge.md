@@ -22,6 +22,7 @@ related_theories:
 - "The commons"
 related_stories:
 - "GreenWave’s restorative ocean farming"
+- "Rebuilding Greensburg, Kansas"
 tags:
 - "community development"
 - "cooperatives"

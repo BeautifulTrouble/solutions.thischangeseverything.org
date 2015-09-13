@@ -14,6 +14,7 @@ related_solutions:
 - "Public ownership"
 - "Re-municipalization"
 - "Recuperated workplaces"
+- "Repair Café"
 - "Sukuk"
 - "Timebanking"
 - "Wage ratio"

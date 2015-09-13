@@ -13,6 +13,7 @@ related_solutions:
 - "Community land trust"
 - "Community wealth building"
 - "Recuperated workplaces"
+- "Repair Café"
 - "Timebanking"
 related_theories:
 - "Buen vivir"
@@ -41,6 +42,7 @@ related_stories:
 - "Initiative 136"
 - "Marinaleda’s direct action economy"
 - "New Era Windows Cooperative"
+- "Rebuilding Greensburg, Kansas"
 - "SolidarityNYC"
 - "The Media Co-op"
 - "The Zapatista Little School"

@@ -15,6 +15,7 @@ related_theories:
 - "Pluralist commonwealth"
 - "The commons"
 related_stories:
+- "Rebuilding Greensburg, Kansas"
 tags:
 - "energy"
 - "policy"
