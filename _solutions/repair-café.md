@@ -3,7 +3,7 @@ id: a16E0000005MkBjIAK
 title: "Repair Café"
 short_write_up: "<p>A Repair Café is a community space where people can come to repair their broken electrical equipment, clothes, bikes, toys, or anything else, with help from volunteering local repair experts. Repair Cafés foster local community, with all ages mixing to fix together and learn from each other in a fun, informal environment. They contribute to fostering a more economically and environmentally sustainable and resilient way of life for participants.</p>
 <p>The first Repair Café was organized in Amsterdam in 2010 by Martine Postma. Now there are about 750 all over the world. It is very easy to start one. All you need is a space, some tools and a couple of passionate repair volunteers. We have found there is an abundance of all of these.</p>
-<p><em>Originally submitted to the <a href="https://solutions.thischangeseverything.org/#idealab/submitted/repair-caf%C3%A9">Beautiful Solutions lab</a></em></p>"
+<p><em>Originally submitted to the <a href=\"https://solutions.thischangeseverything.org/#idealab/submitted/repair-caf%C3%A9\">Beautiful Solutions lab</a></em></p>"
 where: ""
 when: ""
 who: ""

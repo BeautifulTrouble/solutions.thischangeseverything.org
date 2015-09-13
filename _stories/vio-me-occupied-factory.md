@@ -2,7 +2,7 @@
 id: a16E0000005MkGpIAK
 title: "Vio.Me Occupied Factory"
 short_write_up: "<p>When the Viomichaniki Metalleutiki (Vio.Me) building materials factory in Thessaloniki, Greece, was abandoned by its owners in May 2011, the workers decided to occupy it and resume production under workers&#8217; self-management, shifting the production towards ecologically non-harmful detergents. Now embroiled in a complex legal, political and economic struggle, the Vio.Me factory has turned into a symbol of creative popular resistance to destructive neoliberal policies and has spawned a wide and dedicated solidarity movement at a national and international level.</p>
-<p><em>Originally submitted to the <a href="https://solutions.thischangeseverything.org/#idealab/submitted/viome-occupied-self-managed-factory-in-thessaloniki-greece">Beautiful Solutions lab</a></em></p>"
+<p><em>Originally submitted to the <a href=\"https://solutions.thischangeseverything.org/#idealab/submitted/viome-occupied-self-managed-factory-in-thessaloniki-greece\">Beautiful Solutions lab</a></em></p>"
 where: "Thessaloniki, Greece"
 when: "2011&ndash;Present"
 who: "Vio.Me Factory Workers"
