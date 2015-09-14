@@ -35,6 +35,21 @@ tags:
 - "resource use"
 - "urban planning"
 learn_more:
+-
+    title: "City of Greensburg Website"
+    description: "Background, updates and links to learn more"
+    type: "Website"
+    url: "https://www.greensburgks.org/"
+-
+    title: "Greensburg GreenTown"
+    description: "Website of a community organization supporting Greensburg’s transition to a green city"
+    type: "Website"
+    url: "http://www.greensburggreentown.org/"
+-
+    title: "After devastating tornado, town is reborn ‘green’"
+    description: "By Patrick Quinn, USA TODAY"
+    type: "Article"
+    url: "http://www.usatoday.com/story/news/greenhouse/2013/04/13/greensburg-kansas/2078901/"
 images:
 -
     url: "Rebuilding-Greensburg-Kansas.jpg"

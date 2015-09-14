@@ -29,25 +29,25 @@ tags:
 - "resource use"
 learn_more:
 -
-    title: "Title: Repair Café global website"
-    description: "Description: General information about the Repair Café movement and support in setting one up yourself"
-    type: "Type: Website"
-    url: "URL: http://repaircafe.org"
+    title: "Repair Café global website"
+    description: "General information about the Repair Café movement and support in setting one up yourself"
+    type: "Website"
+    url: "http://repaircafe.org"
 -
-    title: "Title: Repair Café Bilthoven"
-    description: "Description: Pictures of the Repair Café in Bilthoven, Netherlands"
-    type: "Type: Website"
-    url: "URL: https://www.facebook.com/ttdebilt"
+    title: "Repair Café Bilthoven"
+    description: "Pictures of the Repair Café in Bilthoven, Netherlands"
+    type: "Website"
+    url: "https://www.facebook.com/ttdebilt"
 -
-    title: "Title: Repair Café Toronto"
-    description: "Description: Pictures and an interview about Repair Café Toronto"
-    type: "Type: URL"
-    url: "URL: http://repaircafetoronto.ca/"
+    title: "Repair Café Toronto"
+    description: "Pictures and an interview about Repair Café Toronto"
+    type: "Website"
+    url: "http://repaircafetoronto.ca/"
 -
-    title: "Title: Repair Cafés fix stuff, bring communities together"
-    description: "Description: By Julia Bluff, IFixIt.org"
-    type: "Type: Article"
-    url: "URL: http://ifixit.org/blog/5071/repair-cafes-fix-stuff-bring-communities-together/"
+    title: "Repair Cafés fix stuff, bring communities together"
+    description: "By Julia Bluff, IFixIt.org"
+    type: "Article"
+    url: "http://ifixit.org/blog/5071/repair-cafes-fix-stuff-bring-communities-together/"
 images:
 -
     url: "Repair-Cafe.jpg"

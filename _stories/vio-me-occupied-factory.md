@@ -27,20 +27,20 @@ tags:
 - "work"
 learn_more:
 -
-    title: "Title: Vio.Me Website"
-    description: "Description: Background, updates and ways to get involved with the Vio.Me. workers struggle for self-management"
-    type: "Type: Website"
-    url: "URL: http://www.viome.org/"
+    title: "Vio.Me Website"
+    description: "Background, updates and ways to get involved with the Vio.Me. workers struggle for self-management"
+    type: "Website"
+    url: "http://www.viome.org/"
 -
-    title: "Title: Vio.Me: the Greek factory without bosses — an interview"
-    description: "Description: By Leonidas Oikonomakis, Roar Magazine Online"
-    type: "Type: Article"
-    url: "URL: http://roarmag.org/2013/06/vio-me-factory-without-bosses/"
+    title: "Vio.Me: the Greek factory without bosses — an interview"
+    description: "By Leonidas Oikonomakis, Roar Magazine Online"
+    type: "Article"
+    url: "http://roarmag.org/2013/06/vio-me-factory-without-bosses/"
 -
-    title: "Title: Vio.Me: Self-Organization in Greece"
-    description: "Description: Documentary by Brandon Jourdan"
-    type: "Type: Video"
-    url: "URL: https://vimeo.com/67236882"
+    title: "Vio.Me: Self-Organization in Greece"
+    description: "Documentary by Brandon Jourdan"
+    type: "Video"
+    url: "https://vimeo.com/67236882"
 images:
 -
     url: "VioMe-Occupied-Factory.jpg"
