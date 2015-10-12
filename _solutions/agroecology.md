@@ -24,6 +24,10 @@ related_theories:
 related_stories:
 - "Brazilian Landless Workers' Movement"
 tags:
+- "agriculture"
+- "climate"
+- "food"
+- "land use"
 learn_more:
 -
     title: "“Family Farmers Hold Keys to Agriculture in a Warming World”"
