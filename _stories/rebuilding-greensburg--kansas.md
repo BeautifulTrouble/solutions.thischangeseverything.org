@@ -24,6 +24,7 @@ related_theories:
 - "Upstream thinking"
 related_stories:
 - "Building community economies on Pine Ridge"
+- "REPOWERBalcombe"
 tags:
 - "climate"
 - "community development"

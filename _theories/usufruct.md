@@ -15,6 +15,7 @@ values:
 - "Displaces extractive industry"
 - "Extends the commons"
 related_solutions:
+- "Agroecology"
 - "Climate risk bonds"
 - "Community land trust"
 - "Public ownership"

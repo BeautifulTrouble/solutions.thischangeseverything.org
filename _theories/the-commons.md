@@ -17,6 +17,7 @@ values:
 - "Displaces extractive industry"
 - "Extends the commons"
 related_solutions:
+- "Agroecology"
 - "Basic income"
 - "Community land trust"
 - "Net metering"

@@ -42,6 +42,7 @@ related_stories:
 - "Initiative 136"
 - "Marinaleda’s direct action economy"
 - "New Era Windows Cooperative"
+- "REPOWERBalcombe"
 - "Rebuilding Greensburg, Kansas"
 - "SolidarityNYC"
 - "The Media Co-op"

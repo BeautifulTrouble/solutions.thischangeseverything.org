@@ -8,6 +8,7 @@ who: ""
 scale: ""
 values:
 related_solutions:
+- "Agroecology"
 - "Basic income"
 - "Community land trust"
 - "Maximum wage"

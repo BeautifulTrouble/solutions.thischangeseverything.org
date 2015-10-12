@@ -9,6 +9,7 @@ who: ""
 scale: ""
 values:
 related_solutions:
+- "Agroecology"
 - "Climate risk bonds"
 - "Community land trust"
 - "Community wealth building"
@@ -48,6 +49,7 @@ related_stories:
 - "Initiative 136"
 - "Marinaleda’s direct action economy"
 - "New Era Windows Cooperative"
+- "REPOWERBalcombe"
 - "Rebuilding Greensburg, Kansas"
 - "SolidarityNYC"
 - "The Great Lakes Commons"

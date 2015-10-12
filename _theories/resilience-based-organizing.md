@@ -14,6 +14,7 @@ values:
 - "Deepens democracy"
 - "Displaces extractive industry"
 related_solutions:
+- "Agroecology"
 - "Repair Café"
 - "Timebanking"
 related_theories:

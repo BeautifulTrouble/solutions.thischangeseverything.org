@@ -23,6 +23,7 @@ related_stories:
 - "596 Acres"
 - "Building community economies on Pine Ridge"
 - "Dudley Street Neighborhood Initiative"
+- "REPOWERBalcombe"
 - "Rebuilding Greensburg, Kansas"
 - "SolidarityNYC"
 tags:

@@ -16,6 +16,7 @@ values:
 - "Displaces extractive industry"
 - "Extends the commons"
 related_solutions:
+- "Agroecology"
 - "Community land trust"
 - "Recuperated workplaces"
 related_theories:

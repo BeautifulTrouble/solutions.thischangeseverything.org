@@ -26,6 +26,7 @@ related_stories:
 - "Alaska Permanent Fund"
 - "Anchor procurement in Cleveland"
 - "Marinaleda’s direct action economy"
+- "REPOWERBalcombe"
 - "The Great Lakes Commons"
 tags:
 - "community development"

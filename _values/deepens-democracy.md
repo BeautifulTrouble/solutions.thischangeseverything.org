@@ -39,6 +39,7 @@ related_stories:
 - "Initiative 136"
 - "Marinaleda’s direct action economy"
 - "New Era Windows Cooperative"
+- "REPOWERBalcombe"
 - "SolidarityNYC"
 - "The Media Co-op"
 - "The Zapatista Little School"

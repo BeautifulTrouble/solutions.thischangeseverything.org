@@ -22,6 +22,7 @@ related_stories:
 - "596 Acres"
 - "Cowry Collective timebank"
 - "Factor e Farm"
+- "REPOWERBalcombe"
 - "Rebuilding Greensburg, Kansas"
 - "The Zapatista Little School"
 - "The river with the rights of a person"

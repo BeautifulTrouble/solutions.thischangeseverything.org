@@ -15,6 +15,7 @@ values:
 - "Displaces extractive industry"
 - "Extends the commons"
 related_solutions:
+- "Agroecology"
 - "Community wealth building"
 - "Housing cooperative"
 - "Public ownership"

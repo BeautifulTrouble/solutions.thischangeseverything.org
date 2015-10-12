@@ -41,6 +41,7 @@ related_stories:
 - "GreenWave’s restorative ocean farming"
 - "Initiative 136"
 - "Marinaleda’s direct action economy"
+- "REPOWERBalcombe"
 - "The Great Lakes Commons"
 - "The Media Co-op"
 - "The Zapatista Little School"

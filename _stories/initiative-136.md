@@ -25,6 +25,7 @@ related_theories:
 - "Usufruct"
 related_stories:
 - "Brazilian Landless Workers' Movement"
+- "REPOWERBalcombe"
 - "The Great Lakes Commons"
 - "The river with the rights of a person"
 - "Thessaloniki’s social solidarity clinic"

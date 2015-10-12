@@ -8,6 +8,7 @@ who: ""
 scale: ""
 values:
 related_solutions:
+- "Agroecology"
 - "Basic income"
 - "Repair Café"
 related_theories:
