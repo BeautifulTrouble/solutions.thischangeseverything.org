@@ -49,7 +49,7 @@
                         </thead>
                         <tbody>
                             <% submitted.each(function(model) { if (model) { %>
-                            <tr class="<%= model.attributes.published && 'published' || 'submitted' %> data-slug" data-slug="<%= model.attributes.slug %>">
+                            <tr class="<%= model.attributes.published && 'published' || 'submitted' %> <%= model.attributes.solution && 'solution' || '' %> data-slug" data-slug="<%= model.attributes.slug %>">
                                 <td><%= model.attributes.title %></td>
                                 <td><%= model.attributes.short_date %></td>
                                 <td><div class="hover-tab"></div><%= model.attributes.votes %></td>
