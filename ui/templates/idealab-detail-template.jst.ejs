@@ -3,7 +3,7 @@
                         <div id="button-bar" class="clearfix">
                             <button type="button" class="view-all-<%= state %>-ideas">View All Ideas<i class="icon-lab"></i></button>
                             <button type="button" class="view-gallery">View Gallery<i class="icon-gallery"></i></button>
-                            <% if (state == 'published') { %>
+                            <% if (state == 'published' || solution) { %>
                             <button type="button" class="view-published-idea">View Published Idea</button>
                             <% } %>
                         </div>
