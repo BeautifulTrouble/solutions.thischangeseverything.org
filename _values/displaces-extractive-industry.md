@@ -31,6 +31,7 @@ related_theories:
 - "Usufruct"
 related_stories:
 - "Anchor procurement in Cleveland"
+- "Boulder, Colorado, vs. Xcel Energy"
 - "Brazilian Landless Workers' Movement"
 - "Building community economies on Pine Ridge"
 - "Cooperative Home Care Associates"

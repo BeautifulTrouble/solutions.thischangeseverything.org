@@ -18,6 +18,7 @@ related_theories:
 - "Pluralist commonwealth"
 - "Solidarity economics"
 related_stories:
+- "Chitsvachirimurutsoka Cooperative, Zimbabwe"
 - "Marinaleda’s direct action economy"
 - "SolidarityNYC"
 tags:

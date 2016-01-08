@@ -24,6 +24,7 @@ related_theories:
 - "The commons"
 - "Usufruct"
 related_stories:
+- "Boulder, Colorado, vs. Xcel Energy"
 - "Brazilian Landless Workers' Movement"
 - "REPOWERBalcombe"
 - "The Great Lakes Commons"

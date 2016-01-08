@@ -15,6 +15,7 @@ related_theories:
 - "Pluralist commonwealth"
 - "The commons"
 related_stories:
+- "Boulder, Colorado, vs. Xcel Energy"
 - "REPOWERBalcombe"
 - "Rebuilding Greensburg, Kansas"
 tags:

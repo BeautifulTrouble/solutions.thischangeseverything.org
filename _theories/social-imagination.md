@@ -20,6 +20,7 @@ related_theories:
 - "Decolonization"
 related_stories:
 - "596 Acres"
+- "Boulder, Colorado, vs. Xcel Energy"
 - "Cowry Collective timebank"
 - "Factor e Farm"
 - "REPOWERBalcombe"

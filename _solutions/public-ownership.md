@@ -25,6 +25,7 @@ related_theories:
 related_stories:
 - "Alaska Permanent Fund"
 - "Anchor procurement in Cleveland"
+- "Boulder, Colorado, vs. Xcel Energy"
 - "Marinaleda’s direct action economy"
 - "REPOWERBalcombe"
 - "The Great Lakes Commons"

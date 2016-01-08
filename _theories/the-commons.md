@@ -38,6 +38,7 @@ related_theories:
 related_stories:
 - "596 Acres"
 - "Alaska Permanent Fund"
+- "Boulder, Colorado, vs. Xcel Energy"
 - "Brazilian Landless Workers' Movement"
 - "Building community economies on Pine Ridge"
 - "Dudley Street Neighborhood Initiative"

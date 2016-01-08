@@ -51,7 +51,7 @@ images:
     name: "Resilience-Based-Organizing.jpg"
     caption: "Charles Bursey of the Black Panther Party serving breakfast to children for the Panther Free Breakfast Program in Oakland, CA in 1969"
     source: "Pirkle Jones Foundation"
-    source_url: "www.pirklejones.com"
+    source_url: "http://www.pirklejones.com"
 contributors:
 - "Movement Generation Justice & Ecology Project"
 ---

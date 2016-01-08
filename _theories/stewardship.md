@@ -29,6 +29,7 @@ related_theories:
 - "Usufruct"
 related_stories:
 - "596 Acres"
+- "Boulder, Colorado, vs. Xcel Energy"
 - "Brazilian Landless Workers' Movement"
 - "Building community economies on Pine Ridge"
 - "GreenWave’s restorative ocean farming"

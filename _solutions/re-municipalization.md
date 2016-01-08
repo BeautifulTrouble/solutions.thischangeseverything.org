@@ -23,6 +23,7 @@ related_theories:
 - "Usufruct"
 related_stories:
 - "Alaska Permanent Fund"
+- "Boulder, Colorado, vs. Xcel Energy"
 - "Initiative 136"
 - "REPOWERBalcombe"
 - "Rebuilding Greensburg, Kansas"

@@ -22,6 +22,7 @@ related_theories:
 - "Community as developer"
 - "Social imagination"
 related_stories:
+- "Boulder, Colorado, vs. Xcel Energy"
 - "Building community economies on Pine Ridge"
 - "Initiative 136"
 - "Rebuilding Greensburg, Kansas"

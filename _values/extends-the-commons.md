@@ -33,6 +33,7 @@ related_stories:
 - "596 Acres"
 - "Alaska Permanent Fund"
 - "Anchor procurement in Cleveland"
+- "Boulder, Colorado, vs. Xcel Energy"
 - "Brazilian Landless Workers' Movement"
 - "Building community economies on Pine Ridge"
 - "Cowry Collective timebank"

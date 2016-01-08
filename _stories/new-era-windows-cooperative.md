@@ -19,6 +19,7 @@ related_theories:
 - "Solidarity economics"
 related_stories:
 - "Anchor procurement in Cleveland"
+- "Chitsvachirimurutsoka Cooperative, Zimbabwe"
 - "Cooperative Home Care Associates"
 - "Vio.Me Occupied Factory"
 - "Worker-Owned Rockaways Cooperatives"

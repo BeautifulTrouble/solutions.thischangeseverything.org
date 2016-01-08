@@ -22,6 +22,7 @@ related_theories:
 - "The commons"
 related_stories:
 - "596 Acres"
+- "Boulder, Colorado, vs. Xcel Energy"
 tags:
 - "community development"
 - "democracy"

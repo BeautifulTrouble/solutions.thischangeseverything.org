@@ -31,6 +31,7 @@ related_theories:
 - "The commons"
 - "The missing middle"
 related_stories:
+- "Chitsvachirimurutsoka Cooperative, Zimbabwe"
 - "Cooperative Home Care Associates"
 - "Farm Workers Credit Union"
 - "Marinaleda’s direct action economy"

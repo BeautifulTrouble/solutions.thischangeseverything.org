@@ -21,6 +21,7 @@ related_theories:
 - "Stewardship"
 - "The commons"
 related_stories:
+- "Boulder, Colorado, vs. Xcel Energy"
 - "GreenWave’s restorative ocean farming"
 - "REPOWERBalcombe"
 - "Rebuilding Greensburg, Kansas"

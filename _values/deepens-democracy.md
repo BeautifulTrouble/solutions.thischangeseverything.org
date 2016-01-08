@@ -30,8 +30,10 @@ related_theories:
 related_stories:
 - "596 Acres"
 - "Anchor procurement in Cleveland"
+- "Boulder, Colorado, vs. Xcel Energy"
 - "Brazilian Landless Workers' Movement"
 - "Building community economies on Pine Ridge"
+- "Chitsvachirimurutsoka Cooperative, Zimbabwe"
 - "Cooperative Home Care Associates"
 - "Dudley Street Neighborhood Initiative"
 - "Farm Workers Credit Union"

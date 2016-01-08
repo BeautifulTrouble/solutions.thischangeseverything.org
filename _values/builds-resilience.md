@@ -40,6 +40,7 @@ related_stories:
 - "596 Acres"
 - "Brazilian Landless Workers' Movement"
 - "Building community economies on Pine Ridge"
+- "Chitsvachirimurutsoka Cooperative, Zimbabwe"
 - "Cooperative Home Care Associates"
 - "Cowry Collective timebank"
 - "Dudley Street Neighborhood Initiative"
