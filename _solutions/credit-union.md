@@ -15,6 +15,7 @@ related_solutions:
 - "Housing cooperative"
 - "Sukuk"
 related_theories:
+- "Economic democracy"
 - "Solidarity economics"
 related_stories:
 - "Farm Workers Credit Union"

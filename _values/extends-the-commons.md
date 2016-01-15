@@ -22,6 +22,7 @@ related_theories:
 - "Community as developer"
 - "Comunalidad"
 - "Decolonization"
+- "Economic democracy"
 - "Horizontalism"
 - "Pluralist commonwealth"
 - "Solidarity economics"

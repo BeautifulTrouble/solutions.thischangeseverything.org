@@ -15,6 +15,7 @@ related_solutions:
 - "Maximum wage"
 - "Wage ratio"
 related_theories:
+- "Economic democracy"
 - "Pluralist commonwealth"
 - "Social imagination"
 - "The commons"

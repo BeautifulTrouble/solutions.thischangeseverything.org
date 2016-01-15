@@ -20,6 +20,7 @@ related_solutions:
 - "Re-municipalization"
 related_theories:
 - "Community as developer"
+- "Economic democracy"
 - "Social imagination"
 related_stories:
 - "Boulder, Colorado, vs. Xcel Energy"

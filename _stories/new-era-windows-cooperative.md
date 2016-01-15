@@ -16,6 +16,7 @@ values:
 related_solutions:
 - "Recuperated workplaces"
 related_theories:
+- "Economic democracy"
 - "Solidarity economics"
 related_stories:
 - "Anchor procurement in Cleveland"

@@ -12,6 +12,7 @@ values:
 related_solutions:
 - "Sukuk"
 related_theories:
+- "Economic democracy"
 related_stories:
 tags:
 - "cooperatives"

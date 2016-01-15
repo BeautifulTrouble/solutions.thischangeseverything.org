@@ -18,6 +18,7 @@ related_solutions:
 - "Sukuk"
 related_theories:
 - "Community as developer"
+- "Economic democracy"
 - "Participatory democracy"
 - "Pluralist commonwealth"
 - "The commons"

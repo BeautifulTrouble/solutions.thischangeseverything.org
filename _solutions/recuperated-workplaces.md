@@ -16,6 +16,7 @@ values:
 related_solutions:
 related_theories:
 - "Decolonization"
+- "Economic democracy"
 - "Solidarity economics"
 related_stories:
 - "Brazilian Landless Workers' Movement"

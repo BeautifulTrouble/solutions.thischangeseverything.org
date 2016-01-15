@@ -16,6 +16,7 @@ values:
 - "Displaces extractive industry"
 related_solutions:
 related_theories:
+- "Economic democracy"
 - "Pluralist commonwealth"
 - "Solidarity economics"
 related_stories:

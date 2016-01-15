@@ -24,6 +24,7 @@ related_solutions:
 - "Timebanking"
 related_theories:
 - "Comunalidad"
+- "Economic democracy"
 - "Horizontalism"
 - "Participatory democracy"
 - "Pluralist commonwealth"

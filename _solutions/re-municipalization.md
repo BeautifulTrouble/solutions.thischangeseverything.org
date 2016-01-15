@@ -16,6 +16,7 @@ values:
 related_solutions:
 - "Public ownership"
 related_theories:
+- "Economic democracy"
 - "Participatory democracy"
 - "Pluralist commonwealth"
 - "Stewardship"

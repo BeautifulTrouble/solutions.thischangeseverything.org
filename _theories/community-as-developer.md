@@ -17,6 +17,7 @@ related_solutions:
 - "Community wealth building"
 - "Public ownership"
 related_theories:
+- "Economic democracy"
 - "Participatory democracy"
 - "The commons"
 related_stories:

@@ -14,6 +14,7 @@ related_solutions:
 - "Basic income"
 related_theories:
 - "Buen vivir"
+- "Economic democracy"
 - "Pluralist commonwealth"
 - "Stewardship"
 related_stories:

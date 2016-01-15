@@ -15,6 +15,7 @@ values:
 related_solutions:
 - "Recuperated workplaces"
 related_theories:
+- "Economic democracy"
 - "Horizontalism"
 related_stories:
 - "New Era Windows Cooperative"

@@ -15,6 +15,7 @@ related_solutions:
 - "Credit union"
 - "Sukuk"
 related_theories:
+- "Economic democracy"
 - "Resilience-based organizing"
 - "Solidarity economics"
 related_stories:

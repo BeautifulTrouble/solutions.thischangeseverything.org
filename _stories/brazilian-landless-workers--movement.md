@@ -21,6 +21,7 @@ related_solutions:
 - "Recuperated workplaces"
 related_theories:
 - "Buen vivir"
+- "Economic democracy"
 - "Resilience-based organizing"
 - "Stewardship"
 - "The commons"

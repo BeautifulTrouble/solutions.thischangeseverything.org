@@ -20,6 +20,7 @@ related_theories:
 - "Community as developer"
 - "Comunalidad"
 - "Decolonization"
+- "Economic democracy"
 - "Horizontalism"
 - "Participatory democracy"
 - "Resilience-based organizing"

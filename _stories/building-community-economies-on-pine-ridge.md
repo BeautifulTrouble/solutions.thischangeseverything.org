@@ -18,6 +18,7 @@ related_solutions:
 related_theories:
 - "Community as developer"
 - "Decolonization"
+- "Economic democracy"
 - "Stewardship"
 - "The commons"
 related_stories:

@@ -17,6 +17,7 @@ related_solutions:
 related_theories:
 - "Comunalidad"
 - "Decolonization"
+- "Economic democracy"
 - "Horizontalism"
 - "Participatory democracy"
 - "Resilience-based organizing"

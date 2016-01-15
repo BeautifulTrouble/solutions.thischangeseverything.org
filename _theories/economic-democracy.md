@@ -1,0 +1,90 @@
+---
+id: a16E0000005LMdqIAG
+title: "Economic democracy"
+short_write_up: "<p>Economic democracy is an emerging framework for a new solidarity economy that prioritizes people and planet over private profits. As an alternative to capitalism and state socialism, economic democracy asserts the rights of communities to establish a basic standard of living, and to use their collective resources to achieve that standard. The “invisible hand” is replaced by community-based processes to steward capital, land and labor. Economic democracy establishes the right of popular planning as a foundation for a new economy created by the people, for the people. Worker-owned co-ops, community land trusts, participatory budgeting, and community credit unions are examples of economic democracy at a local level.</p>"
+where: ""
+when: ""
+who: ""
+scale: ""
+values:
+- "Advances justice"
+- "Builds resilience"
+- "Creates more possibilities"
+- "Deepens democracy"
+- "Displaces extractive industry"
+- "Extends the commons"
+related_solutions:
+- "Basic income"
+- "Community land trust"
+- "Credit union"
+- "Direct Public Offering"
+- "Housing cooperative"
+- "Public ownership"
+- "Re-municipalization"
+- "Recuperated workplaces"
+- "Wage ratio"
+related_theories:
+- "Community as developer"
+- "Comunalidad"
+- "Participatory democracy"
+- "Pluralist commonwealth"
+- "Solidarity economics"
+- "The commons"
+- "Upstream thinking"
+- "Zakat"
+related_stories:
+- "Brazilian Landless Workers' Movement"
+- "Building community economies on Pine Ridge"
+- "Chitsvachirimurutsoka Cooperative, Zimbabwe"
+- "Cooperative Home Care Associates"
+- "Farm Workers Credit Union"
+- "Initiative 136"
+- "New Era Windows Cooperative"
+- "REPOWERBalcombe"
+- "SolidarityNYC"
+- "Vio.Me Occupied Factory"
+tags:
+- "community development"
+- "cooperatives"
+- "decision-making"
+- "democracy"
+- "governance"
+- "resilience"
+- "resource use"
+- "urban planning"
+learn_more:
+-
+    title: "Economic Democracy"
+    description: "By Ted Howard, Steve Dubb and Sarah McKinley"
+    type: "Article"
+    url: "http://democracycollaborative.org/content/economic-democracy"
+-
+    title: "A Preface to Economic Democracy"
+    description: "By Robert Alan Dahl"
+    type: "Book"
+    url: "https://books.google.com/books/about/A_Preface_to_Economic_Democracy.html?id=nd1f4qfBVJoC"
+-
+    title: "After Capitalism"
+    description: "By David Schweickart"
+    type: "Book"
+    url: "https://books.google.com/books/about/After_Capitalism.html?id=KWy9JbWvjywC"
+-
+    title: "Can We Do It Ourselves"
+    description: "A Swedish documentary about Economic Democracy with English subtitles"
+    type: "Film"
+    url: "https://www.youtube.com/watch?v=H6O6NjDvlfA"
+-
+    title: "What Then Can I Do? Ten Ways to Democratize the Economy"
+    description: "By Gar Alperovitz and Keane Bhatt"
+    type: "Article"
+    url: "http://www.garalperovitz.com/what-then-can-i-do/"
+images:
+-
+    url: "Economic_Democracy.jpg"
+    name: "Economic_Democracy.jpg"
+    caption: "People practicing direct democracy in Washington Square Park during the Occupy Wall Street movement"
+    source: "Darwin Yamamoto"
+    source_url: "https://flic.kr/p/auaqQ6"
+contributors:
+- "Aaron Tanaka"
+---

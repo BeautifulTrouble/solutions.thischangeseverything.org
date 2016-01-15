@@ -17,6 +17,7 @@ related_solutions:
 - "Re-municipalization"
 related_theories:
 - "Community as developer"
+- "Economic democracy"
 - "Horizontalism"
 - "Solidarity economics"
 related_stories:

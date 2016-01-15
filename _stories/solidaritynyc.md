@@ -18,6 +18,7 @@ related_solutions:
 - "Housing cooperative"
 related_theories:
 - "Community as developer"
+- "Economic democracy"
 - "Resilience-based organizing"
 - "Solidarity economics"
 related_stories:

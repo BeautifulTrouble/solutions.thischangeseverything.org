@@ -21,6 +21,7 @@ related_solutions:
 - "Public ownership"
 related_theories:
 - "Community as developer"
+- "Economic democracy"
 - "Pluralist commonwealth"
 - "Solidarity economics"
 - "Stewardship"

@@ -18,6 +18,7 @@ values:
 related_solutions:
 related_theories:
 - "Decolonization"
+- "Economic democracy"
 - "Horizontalism"
 - "Social imagination"
 - "Solidarity economics"

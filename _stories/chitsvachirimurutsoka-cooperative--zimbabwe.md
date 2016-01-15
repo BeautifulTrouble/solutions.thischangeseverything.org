@@ -14,6 +14,7 @@ values:
 related_solutions:
 - "Housing cooperative"
 related_theories:
+- "Economic democracy"
 - "Solidarity economics"
 related_stories:
 - "New Era Windows Cooperative"

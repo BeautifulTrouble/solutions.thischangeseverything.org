@@ -14,6 +14,7 @@ related_solutions:
 - "Community land trust"
 - "Credit union"
 related_theories:
+- "Economic democracy"
 - "Participatory democracy"
 - "Pluralist commonwealth"
 - "Solidarity economics"

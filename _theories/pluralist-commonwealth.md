@@ -21,6 +21,7 @@ related_solutions:
 - "Public ownership"
 - "Re-municipalization"
 related_theories:
+- "Economic democracy"
 - "Solidarity economics"
 - "Stewardship"
 - "The commons"

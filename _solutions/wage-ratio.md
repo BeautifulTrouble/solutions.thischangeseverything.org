@@ -15,6 +15,7 @@ related_solutions:
 - "Basic income"
 - "Maximum wage"
 related_theories:
+- "Economic democracy"
 - "Horizontalism"
 related_stories:
 tags:

@@ -19,6 +19,7 @@ related_solutions:
 - "Re-municipalization"
 related_theories:
 - "Buen vivir"
+- "Economic democracy"
 - "Pluralist commonwealth"
 - "Stewardship"
 - "The commons"

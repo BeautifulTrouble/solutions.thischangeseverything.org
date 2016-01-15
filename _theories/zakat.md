@@ -15,6 +15,7 @@ related_solutions:
 - "Maximum wage"
 - "Sukuk"
 related_theories:
+- "Economic democracy"
 - "The commons"
 related_stories:
 tags:
