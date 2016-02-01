@@ -3,7 +3,7 @@ version: 1.0.0
 title: "Beautiful Solutions | This Changes Everything"
 description: "We're gathering the most promising and contagious strategies for building a just, democratic, and resilient world."
 baseurl: ""
-url: "https://solutions.thischangeseverything.org"
+url: "https://solutions.thischangeseverything.org/"
 logo: 'logo.png'
 favicon: 'favicon.ico'
 
