@@ -97,7 +97,7 @@ App.updateMeta = function(model) {
     var image = model.get('images');
     var summary = model.get('summary');
     image = image[0].url;
-    var img_path = 'full_images/';
+    var img_path = '/full_images/';
     var path  = model.get('href');
     var url = domain + path;
     if ( title && summary && image && url ) {
