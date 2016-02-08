@@ -113,6 +113,7 @@ App.updateMeta = function(model) {
         $('meta[property="og:image:url"]').remove();
         $('meta[name="twitter:image:src"]').remove();
         $('meta[property="og:url"]').remove();
+        $('link[rel="canonical"]').remove();
         $("head").append('<title>' + title + '</title>');
         $("head").append('<meta property="og:title" content="' + title + '">');
         $("head").append('<meta name="twitter:title" content="' + title + '">');
@@ -123,6 +124,7 @@ App.updateMeta = function(model) {
         $("head").append('<meta property="og:image:url" content="' + domain + img_path + image + '">');
         $("head").append('<meta name="twitter:image:src" content="' + domain + img_path + image + '">');
         $("head").append('<meta property="og:url" content="' + url + '">');   
+        $("head").append('<link rel="canonical" href="' + url + '" />');   
     }
 };
 
