@@ -33,7 +33,7 @@
                               "thumb_url" : "{% image thumb {{image.url}} %}"
                             },
                            {% endfor %} null],
-    "href"              : "{{ module.url }}",
+    "href"              : "/module/{{ module.title | downcase | replace: ' ', '-' | replace: '&#8217;' '-' }}",
     "slug"              : "{{ module.title | downcase | replace: ' ', '-' | replace: '&#8217;' '-' }}",
     "short_write_up"    : "{{ module.short_write_up | strip_newlines }}",
     "full_write_up"     : "{{ module.content | strip_newlines }}",
