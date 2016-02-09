@@ -115,7 +115,7 @@ App.updateMeta = function(model) {
         $('meta[property="og:url"]').remove();
         $('link[rel="canonical"]').remove();
         $("head").append('<title>' + title + '</title>');
-        $("head").append('<meta property="og:title" content="' + title + '">');
+        $("head").append('<meta property="og:title" content="' + title + ' | Beautiful Solutions">');
         $("head").append('<meta name="twitter:title" content="' + title + '">');
         $("head").append('<meta property="og:description" content="' + summary + '">');
         $("head").append('<meta name="description" content="' + summary + '">');
