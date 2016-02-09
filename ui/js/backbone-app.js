@@ -124,7 +124,7 @@ App.updateMeta = function(model) {
         $("head").append('<meta property="og:image:url" content="' + domain + img_path + image + '">');
         $("head").append('<meta name="twitter:image:src" content="' + domain + img_path + image + '">');
         $("head").append('<meta property="og:url" content="' + url + '">');   
-        $("head").append('<link rel="canonical" href="' + url + '" />');   
+        $("head").append('<link rel="canonical" href="' + url + '">');
     }
 };
 
