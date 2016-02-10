@@ -92,6 +92,43 @@ var logOut = function () {
     App.currentUser && App.currentUser.unset('name');
 };
 
+App.updateMeta = function(model) {
+    var title = model.get('title');
+    var image = model.get('images');
+    var summary = model.get('summary');
+    image = image[0].url;
+    var img_path = '/full_images/';
+    var path  = model.get('href');
+    var url = domain + path;
+    if ( title && summary && image && url ) {
+        $('title').remove();
+        $('meta[property="og:title"]').remove();
+        $('meta[property="DC.title"]').remove();
+        $('meta[name="twitter:title"]').remove();
+        $('meta[name="description"]').remove();
+        $('meta[property="DC.description"]').remove();
+        $('meta[property="og:description"]').remove();
+        $('meta[name="twitter:description"]').remove();
+        $('meta[property="og:image"]').remove();
+        $('meta[property="og:image:url"]').remove();
+        $('meta[name="twitter:image:src"]').remove();
+        $('meta[property="og:url"]').remove();
+        $('link[rel="canonical"]').remove();
+        $("head").append('<title>' + title + '</title>');
+        $("head").append('<meta property="og:title" content="' + title + ' | Beautiful Solutions">');
+        $("head").append('<meta name="twitter:title" content="' + title + '">');
+        $("head").append('<meta property="og:description" content="' + summary + '">');
+        $("head").append('<meta name="description" content="' + summary + '">');
+        $("head").append('<meta name="twitter:description" content="' + summary + '">');
+        $("head").append('<meta property="og:image" content="' + domain + img_path + image + '">');
+        $("head").append('<meta property="og:image:url" content="' + domain + img_path + image + '">');
+        $("head").append('<meta name="twitter:image:src" content="' + domain + img_path + image + '">');
+        $("head").append('<meta property="og:url" content="' + url + '">');   
+        $("head").append('<link rel="canonical" href="' + url + '">');
+    }
+};
+
+
 // ===================================================================
 // Models
 // ===================================================================
@@ -434,6 +471,9 @@ App.ModuleDetailView = Backbone.View.extend({
             content: function() {
                 return $('#share-popover').html();
             }});
+        // Update the meta information for this module
+        // ... for sharing! 
+        App.updateMeta( this.model );
     }
 });
 

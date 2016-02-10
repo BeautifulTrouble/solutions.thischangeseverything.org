@@ -99,6 +99,6 @@ assets:
     - bower_components/showdown/compressed/
     - bower_components/jquery.lazyload/
     - bower_components/backbone.analytics/
-  js_compressor: yui
+  js_compressor: uglifier
   css_compressor: yui
   cache: true
