@@ -10,7 +10,8 @@ $(function() {
     // Initialize the Backbone router.
     App.router = new App.Router();
     {% if site.mode != 'development' %}
-            Backbone.history.start({ pushState: true });
+            //Backbone.history.start({ pushState: true });
+            Backbone.history.start();
     {% else %}
             Backbone.history.start();
     {% endif %}
