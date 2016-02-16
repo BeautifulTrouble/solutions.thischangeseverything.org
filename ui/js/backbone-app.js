@@ -821,7 +821,7 @@ App.IdeaLabLoginView = Backbone.View.extend({
     afterRender: function () {
         this.$('a.login').each(function () {
             var next = (this.href.indexOf('?') == -1) ? '?next=' : '&next=';
-            this.href = this.href + next + window.location.pathname + '%23' + Backbone.history.fragment;
+            this.href = this.href + next + window.location.pathname;
         });
     }
 });
