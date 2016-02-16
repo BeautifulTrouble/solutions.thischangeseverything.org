@@ -6,7 +6,7 @@
                 <button type="button" class="see-more-values btn btn-default dropdown-toggle" data-toggle="dropdown">See more values <span class="caret"></span></button>
                 <ul class="dropdown-menu" role="menu">
                     <% _.each(values, function(value) { if ( value.title != title ) { %>
-                    <li><a href="#value/<%= value.slug %>"><%= value.title %></a></li>
+                    <li><a href="/value/<%= value.slug %>"><%= value.title %></a></li>
                     <% } }); %>
                 </ul>
               </div><!-- /btn-group -->
