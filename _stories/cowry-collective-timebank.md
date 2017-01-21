@@ -29,7 +29,7 @@ learn_more:
     title: "The Cowry Collective"
     description: "The Cowry Collective homepage"
     type: "Website"
-    url: "www.thecowrycollective.org"
+    url: "http://www.cowrycollective.org"
 -
     title: "Time Is Money: Chinyere Oteh on Time Banking"
     description: "An article in St. Louis Magazine by Rosalind Early"
